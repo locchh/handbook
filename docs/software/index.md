@@ -8,6 +8,7 @@ Welcome to the Software Engineering section of my handbook. This section covers 
 - **[Design Principles](basics/principles.md)** - SOLID, DRY/KISS/YAGNI, and clean code habits.
 - **[Philosophies & Methodologies](basics/methodologies.md)** - Where the ideas came from: Lean, Agile, DevOps, Scrum, XP, TDD, DDD — with primary sources.
 - **[Architecture](basics/architecture.md)** - Layers, code organization, system patterns, and system design building blocks.
+- **[System Design Notes](basics/system_design.md)** - Design patterns, API types and protocols, auth methods, SSH, and deployment strategies, built from six cited posts.
 - **[Lifecycle](basics/lifecycle.md)** - SDLC, Agile, testing, CI/CD, and version control.
 - **[Git: Merge vs Rebase](basics/git.md)** - Branch mechanics, conflicts, and the daily workflow.
 - **[Code Review](basics/code_review.md)** - Reading a diff, reviewing a PR, and AI-assisted review.

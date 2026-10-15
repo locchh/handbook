@@ -9,6 +9,7 @@ nav:
   - Networking: networking.md
   - APIs: apis.md
   - Security: security.md
+  - System Design Notes: system_design.md
   - Lifecycle: lifecycle.md
   - "Git: Merge vs Rebase": git.md
   - Code Review: code_review.md

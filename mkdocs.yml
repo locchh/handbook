@@ -29,6 +29,7 @@ theme:
 # Markdown extensions
 markdown_extensions:
   - admonition
+  - footnotes
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight
