@@ -8,6 +8,7 @@ Welcome to the Software Engineering section of my handbook. This section covers 
 - **[Design Principles](https://locchh.github.io/sw-handbook/software/basics/principles/index.md)** - SOLID, DRY/KISS/YAGNI, and clean code habits.
 - **[Philosophies & Methodologies](https://locchh.github.io/sw-handbook/software/basics/methodologies/index.md)** - Where the ideas came from: Lean, Agile, DevOps, Scrum, XP, TDD, DDD — with primary sources.
 - **[Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md)** - Layers, code organization, system patterns, and system design building blocks.
+- **[System Design Notes](https://locchh.github.io/sw-handbook/software/basics/system_design/index.md)** - Design patterns, API types and protocols, auth methods, SSH, and deployment strategies, built from six cited posts.
 - **[Lifecycle](https://locchh.github.io/sw-handbook/software/basics/lifecycle/index.md)** - SDLC, Agile, testing, CI/CD, and version control.
 - **[Git: Merge vs Rebase](https://locchh.github.io/sw-handbook/software/basics/git/index.md)** - Branch mechanics, conflicts, and the daily workflow.
 - **[Code Review](https://locchh.github.io/sw-handbook/software/basics/code_review/index.md)** - Reading a diff, reviewing a PR, and AI-assisted review.

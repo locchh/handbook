@@ -1,0 +1,3929 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A handbook about Software Engineering, Data and AI">
+      
+      
+        <meta name="author" content="locch">
+      
+      
+        <link rel="canonical" href="https://locchh.github.io/sw-handbook/software/basics/system_design/">
+      
+      
+        <link rel="prev" href="../security/">
+      
+      
+        <link rel="next" href="../lifecycle/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>System Design Notes - Software Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-design-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Software Handbook" class="md-header__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Design Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/locchh/sw-handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/sw-handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Software Handbook" class="md-nav__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/locchh/sw-handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/sw-handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures & Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-seven-design-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Seven Design Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Seven Design Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-types-of-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Types of APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Types of APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-seven-api-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Seven API Protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Seven API Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-six-auth-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Six Auth Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Six Auth Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-ssh-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How SSH Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How SSH Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-six-deployment-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Six Deployment Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Six Deployment Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original posts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-sources-for-the-added-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary sources for the added material
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git: Merge vs Rebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../becoming_senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senior_curriculum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abbreviations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abbreviations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/machine_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/server_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/linux_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/introduction_to_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modelling & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality & Cleansing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance & Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Classification & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/big_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/skills_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The AI Engineering Skills Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The LLM Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/spec_driven_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/claude_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-seven-design-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Seven Design Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Seven Design Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-types-of-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Types of APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Types of APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-seven-api-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Seven API Protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Seven API Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-six-auth-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Six Auth Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Six Auth Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-ssh-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How SSH Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How SSH Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-six-deployment-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Six Deployment Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Six Deployment Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original posts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-sources-for-the-added-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary sources for the added material
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="system-design-notes">System Design Notes<a class="headerlink" href="#system-design-notes" title="Permanent link">&para;</a></h1>
+<p>Six short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, and deployment strategies. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.</p>
+<p>For the building blocks these notes sit on, see <a href="../architecture/">Architecture</a>, <a href="../apis/">APIs</a>, <a href="../security/">Security</a>, and <a href="../networking/">Networking</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">About the images</p>
+<p>The infographics are copied from the original posts and remain the work of their authors. Each one is credited in its caption and linked back to the post. All posts were read on 2026-10-15.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Topic</th>
+<th>Post author</th>
+<th>Posted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="#1-seven-design-patterns">Design Patterns</a></td>
+<td>Anubhav Sethi</td>
+<td>2026-10-04</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="#2-types-of-apis">Types of APIs</a></td>
+<td>Ritik Jain</td>
+<td>2026-10-11</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#3-seven-api-protocols">API Protocols</a></td>
+<td>Neo Kim</td>
+<td>2026-09-24</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="#4-six-auth-methods">Auth Methods</a></td>
+<td>Anubhav Sethi</td>
+<td>2026-10-09</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="#5-how-ssh-works">How SSH Works</a></td>
+<td>Alex Xu (ByteByteGo)</td>
+<td>2026-10-01</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="#6-six-deployment-strategies">Deployment Strategies</a></td>
+<td>Anubhav Sethi</td>
+<td>2026-09-26</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-seven-design-patterns">1. Seven Design Patterns<a class="headerlink" href="#1-seven-design-patterns" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Anubhav Sethi, <em>"7 design patterns that every engineer must know"</em>, LinkedIn, 2026-10-04. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-designpatterns-softwareengineering-activity-7512460719934697472-f1qM">https://www.linkedin.com/posts/anubhavintech_systemdesign-designpatterns-softwareengineering-activity-7512460719934697472-f1qM</a></p>
+</div>
+<p><img alt="Seven design patterns: Singleton, Factory, Observer, Strategy, Adapter, Decorator, Builder" src="../../../assets/system-design/design-patterns.gif" /></p>
+<p><em>Image: © Anubhav Sethi (<a href="https://www.linkedin.com/in/anubhavintech">@anubhavintech</a>), from the post above.</em></p>
+<h3 id="what-the-post-says">What the post says<a class="headerlink" href="#what-the-post-says" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Most bad code isn't wrong. It's just hard to change six months later. Design patterns exist to fix that second problem.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>One-liner (from the post)</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Singleton</strong></td>
+<td>Only one instance ever exists, however many times it's requested</td>
+<td>Shared config, connection pool. "Overused everywhere else."</td>
+</tr>
+<tr>
+<td><strong>Factory</strong></td>
+<td>One method creates different object types depending on what you ask for</td>
+<td>Keeps the "which class do I create?" logic in one place</td>
+</tr>
+<tr>
+<td><strong>Observer</strong></td>
+<td>Subscribers are notified automatically when something they care about changes</td>
+<td>Event systems, pub/sub</td>
+</tr>
+<tr>
+<td><strong>Strategy</strong></td>
+<td>Swap the algorithm without touching the code that calls it</td>
+<td>Several ways to do one job: sorting, pricing rules</td>
+</tr>
+<tr>
+<td><strong>Adapter</strong></td>
+<td>Converts one interface into another so incompatible pieces work together</td>
+<td>Wrapping a third-party library</td>
+</tr>
+<tr>
+<td><strong>Decorator</strong></td>
+<td>Wraps an object to add behaviour without changing the object</td>
+<td>Middleware, logging wrappers</td>
+</tr>
+<tr>
+<td><strong>Builder</strong></td>
+<td>Assembles a complex object step by step</td>
+<td>Avoiding a 12-argument constructor with many optional fields</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interview tip from the post:</strong> in a low-level design (LLD) round, explaining <em>why</em> a pattern fits the problem matters more than naming it.</p>
+<h3 id="going-deeper">Going deeper<a class="headerlink" href="#going-deeper" title="Permanent link">&para;</a></h3>
+<p>All seven come from the "Gang of Four" (GoF) catalogue<sup id="fnref:gof"><a class="footnote-ref" href="#fn:gof">1</a></sup>. GoF sorts its 23 patterns into three families, which tells you what problem each one solves:</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Problem it solves</th>
+<th>Patterns here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Creational</strong></td>
+<td><em>How</em> objects get made</td>
+<td>Singleton, Factory Method, Builder</td>
+</tr>
+<tr>
+<td><strong>Structural</strong></td>
+<td>How objects are <em>composed</em></td>
+<td>Adapter, Decorator</td>
+</tr>
+<tr>
+<td><strong>Behavioral</strong></td>
+<td>How objects <em>communicate</em> and divide work</td>
+<td>Observer, Strategy</td>
+</tr>
+</tbody>
+</table>
+<p>Points the post leaves out:</p>
+<ul>
+<li><strong>"Factory" is several patterns.</strong> GoF has <em>Factory Method</em> (a subclass decides which class to create) and <em>Abstract Factory</em> (creates a whole family of related objects). The post describes the everyday <strong>simple factory</strong>, a function with a <code>switch</code>/<code>dict</code> lookup. That one is not in GoF, but it is the most common form in practice.</li>
+<li><strong>Singleton is mostly a warning.</strong> It is global mutable state, it hides dependencies, and it makes tests share state. The modern habit is to build <em>one</em> instance at the composition root and pass it in with dependency injection. You still get a single instance, without the global access. See <a href="../principles/">Design Principles</a> (Dependency Inversion).</li>
+<li><strong>Strategy and Decorator are composition over inheritance.</strong> Both swap or stack behaviour at runtime instead of growing a class tree. This is GoF's own central advice: <em>"Favor object composition over class inheritance."</em><sup id="fnref2:gof"><a class="footnote-ref" href="#fn:gof">1</a></sup></li>
+<li><strong>Adapter and Decorator look alike but differ in intent.</strong> An Adapter <em>changes</em> the interface to match one the caller expects. A Decorator <em>keeps</em> the interface and adds behaviour. A <em>Proxy</em> keeps the interface and controls access.</li>
+<li><strong>Observer at system scale is pub/sub.</strong> In-process Observer calls subscribers directly and synchronously. Across services, the same idea becomes a message broker (Kafka, RabbitMQ, MQTT, see <a href="#3-seven-api-protocols">§3</a>) that decouples the publisher in time and in failure. One common bug: forgetting to unsubscribe, so the subject keeps dead listeners alive (a memory leak).</li>
+<li><strong>Many languages have the pattern built in.</strong> Python decorators (<code>@functools.cache</code>), first-class functions as strategies, <code>dataclasses</code> with defaults instead of a Builder, a module as a natural singleton. Peter Norvig showed back in 1996 that 16 of the 23 GoF patterns are "invisible or simpler" in dynamic languages<sup id="fnref:norvig"><a class="footnote-ref" href="#fn:norvig">2</a></sup>.</li>
+</ul>
+<details class="example">
+<summary>Minimal Python sketches</summary>
+<div class="highlight"><pre><span></span><code><span class="c1"># Strategy: the algorithm is just a parameter</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">checkout</span><span class="p">(</span><span class="n">cart</span><span class="p">,</span> <span class="n">pricing</span><span class="p">):</span>            <span class="c1"># pricing: Callable[[Cart], float]</span>
+    <span class="k">return</span> <span class="n">pricing</span><span class="p">(</span><span class="n">cart</span><span class="p">)</span>
+
+<span class="n">regular</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">total</span>
+<span class="n">black_fri</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">total</span> <span class="o">*</span> <span class="mf">0.7</span>
+<span class="n">checkout</span><span class="p">(</span><span class="n">cart</span><span class="p">,</span> <span class="n">black_fri</span><span class="p">)</span>
+
+<span class="c1"># Simple factory: one place decides which class</span>
+<span class="n">PARSERS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"json"</span><span class="p">:</span> <span class="n">JsonParser</span><span class="p">,</span> <span class="s2">"csv"</span><span class="p">:</span> <span class="n">CsvParser</span><span class="p">}</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_parser</span><span class="p">(</span><span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">PARSERS</span><span class="p">[</span><span class="n">kind</span><span class="p">]()</span>
+
+<span class="c1"># Adapter: make a 3rd-party client look like *our* interface</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StripeGateway</span><span class="p">:</span>                    <span class="c1"># implements our PaymentGateway</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span> <span class="o">=</span> <span class="n">client</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">charge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cents</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c</span><span class="o">.</span><span class="n">PaymentIntent</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">amount</span><span class="o">=</span><span class="n">cents</span><span class="p">,</span> <span class="n">payment_method</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+<span class="c1"># Decorator: same interface, extra behaviour</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">logged</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"call </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="c1"># Observer</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Subject</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">subscribe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">notify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subs</span><span class="p">:</span> <span class="n">fn</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+<span class="c1"># Builder (fluent)</span>
+<span class="n">req</span> <span class="o">=</span> <span class="p">(</span><span class="n">RequestBuilder</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"/users"</span><span class="p">)</span>
+       <span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">"Accept"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">)</span>
+       <span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+       <span class="o">.</span><span class="n">build</span><span class="p">())</span>
+</code></pre></div>
+</details>
+<p><strong>When <em>not</em> to use a pattern:</strong> when no change is expected yet. Applying a pattern ahead of need is a classic YAGNI violation (see <a href="../principles/">Design Principles</a>). Refactor <em>towards</em> a pattern once the second or third variant actually shows up<sup id="fnref:kerievsky"><a class="footnote-ref" href="#fn:kerievsky">3</a></sup>.</p>
+<hr />
+<h2 id="2-types-of-apis">2. Types of APIs<a class="headerlink" href="#2-types-of-apis" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Ritik Jain, <em>"REST, GraphQL, SOAP… choosing an API isn't just about knowing the names"</em>, LinkedIn, 2026-10-11. <a href="https://www.linkedin.com/posts/rjritikjain_apis-backenddevelopment-softwareengineering-activity-7514878700392280064-0r3T">https://www.linkedin.com/posts/rjritikjain_apis-backenddevelopment-softwareengineering-activity-7514878700392280064-0r3T</a></p>
+</div>
+<p><img alt="Types of APIs and their use cases: Open (REST, SOAP, GraphQL), Internal (backend-to-backend, frontend-to-backend, service-to-database), Partner (B2B, affiliate, data sharing)" src="../../../assets/system-design/api-types.gif" /></p>
+<p><em>Image: © Ritik Jain, from the post above.</em></p>
+<h3 id="what-the-post-says_1">What the post says<a class="headerlink" href="#what-the-post-says_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Example uses (from the visual)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REST</strong></td>
+<td>Weather data, login systems, product fetch</td>
+</tr>
+<tr>
+<td><strong>SOAP</strong></td>
+<td>Bank transfers, insurance claims, government records: enterprise settings where strict contracts matter</td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>Social feeds, GitHub stats, custom queries: clients choose exactly the fields they need</td>
+</tr>
+<tr>
+<td><strong>Internal</strong></td>
+<td>Backend↔backend (payment sync, token verify), frontend↔backend (login, live search), service↔database</td>
+</tr>
+<tr>
+<td><strong>Partner</strong></td>
+<td>B2B integration (hotel booking, airline data, payment gateways), affiliate integration (commission tracking)</td>
+</tr>
+<tr>
+<td><strong>Data-sharing</strong></td>
+<td>Health records, finance data, logistics tracking</td>
+</tr>
+</tbody>
+</table>
+<p>The post's key point:</p>
+<blockquote>
+<p>These categories aren't all mutually exclusive. REST, SOAP, and GraphQL describe API <strong>approaches</strong>, while internal, partner, and data-sharing APIs describe <strong>how or where</strong> APIs are used.</p>
+</blockquote>
+<p>Questions to ask when designing one: <em>Who consumes it? What data is exchanged? How do authentication and security work? What performance, reliability, and compatibility requirements apply?</em></p>
+<h3 id="going-deeper_1">Going deeper<a class="headerlink" href="#going-deeper_1" title="Permanent link">&para;</a></h3>
+<p>The point about mutual exclusivity is the most useful part of the post. Treat an API as <strong>two independent choices</strong>:</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph A["Axis 1 — Audience (who calls it)"]
+        P[Public / Open]
+        PA[Partner]
+        I[Internal / Private]
+    end
+    subgraph B["Axis 2 — Style (how it talks)"]
+        R[REST]
+        G[GraphQL]
+        S[SOAP]
+        RPC[gRPC]
+        E[Event / async]
+    end
+    A --- B</code></pre>
+<p>A Stripe payment API is <em>public + REST</em>. A Netflix internal call is <em>internal + gRPC</em>. A bank-to-regulator feed may be <em>partner + SOAP</em>. "Data-sharing" is really a partner or public API whose <em>payload</em> is the product.</p>
+<p><strong>Audience changes the non-functional requirements more than the style does:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Public</th>
+<th>Partner</th>
+<th>Internal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auth</strong></td>
+<td>API keys, OAuth 2.0 for user data</td>
+<td>OAuth client credentials, mTLS, signed requests</td>
+<td>mTLS or service mesh identity, short-lived tokens</td>
+</tr>
+<tr>
+<td><strong>Versioning</strong></td>
+<td>Strict; you can't see your callers</td>
+<td>Contractual, negotiated deprecation windows</td>
+<td>Can move faster; consumers are known (consumer-driven contract tests)</td>
+</tr>
+<tr>
+<td><strong>Rate limiting</strong></td>
+<td>Mandatory, per key</td>
+<td>Per partner, often per SLA tier</td>
+<td>Protective, against cascading failure</td>
+</tr>
+<tr>
+<td><strong>Docs</strong></td>
+<td>Public portal, OpenAPI, SDKs</td>
+<td>Private portal, onboarding</td>
+<td>OpenAPI / <code>.proto</code> in the repo</td>
+</tr>
+<tr>
+<td><strong>Typical style</strong></td>
+<td>REST (cacheable, universal)</td>
+<td>REST or SOAP (legacy, regulated)</td>
+<td>gRPC, events, REST</td>
+</tr>
+</tbody>
+</table>
+<p><strong>On SOAP specifically.</strong> It is an XML envelope protocol (W3C SOAP 1.2<sup id="fnref:soap"><a class="footnote-ref" href="#fn:soap">4</a></sup>) with a machine-readable contract (WSDL) and a family of WS-* standards (WS-Security for message-level signing and encryption, WS-ReliableMessaging). Those standards are why it survives in banking, insurance, and government, even though almost no new public APIs choose it.</p>
+<p><strong>On GraphQL.</strong> It fixes over-fetching and under-fetching for varied clients. The cost moves to the server: HTTP caching gets harder (one <code>POST /graphql</code> endpoint), you need query depth and cost limits to stop expensive queries, and per-field resolvers can cause the <em>N+1</em> query problem, which tools like DataLoader batch away<sup id="fnref:graphql"><a class="footnote-ref" href="#fn:graphql">5</a></sup>.</p>
+<p>The style comparison table and the contract rules (status codes, idempotency, versioning, pagination) are in <a href="../apis/">APIs</a>.</p>
+<hr />
+<h2 id="3-seven-api-protocols">3. Seven API Protocols<a class="headerlink" href="#3-seven-api-protocols" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Neo Kim, <em>"If you want to go GOD-level with API design, learn these 7 protocols"</em>, LinkedIn, 2026-09-24. <a href="https://www.linkedin.com/posts/nk-systemdesign-one_if-you-want-to-go-god-level-with-api-design-activity-7508871465753034753--hym">https://www.linkedin.com/posts/nk-systemdesign-one_if-you-want-to-go-god-level-with-api-design-activity-7508871465753034753--hym</a></p>
+<p><em>Disclosure in the original:</em> the post and graphic are co-branded with and sponsored by <strong>Svix</strong>, a webhook-infrastructure vendor.</p>
+</div>
+<p><img alt="7 API protocols: REST, GraphQL, gRPC, WebSockets, Webhooks, SSE, MQTT" src="../../../assets/system-design/api-protocols.gif" /></p>
+<p><em>Image: © Neo Kim + Svix, from the post above (animated).</em></p>
+<h3 id="what-the-post-says_2">What the post says<a class="headerlink" href="#what-the-post-says_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Mechanism</th>
+<th>Use cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REST</strong></td>
+<td>Resources + standard HTTP methods, stateless</td>
+<td>CRUD APIs for web and mobile</td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>Client requests exactly the data it needs</td>
+<td>Apps with complex or changing data requirements</td>
+</tr>
+<tr>
+<td><strong>WebSockets</strong></td>
+<td>Bidirectional connection kept open</td>
+<td>Chat, multiplayer games, real-time updates</td>
+</tr>
+<tr>
+<td><strong>gRPC</strong></td>
+<td>Remote calls via strongly typed contracts</td>
+<td>Fast internal microservice communication</td>
+</tr>
+<tr>
+<td><strong>Webhooks</strong></td>
+<td>Event notifications pushed from one system to another</td>
+<td>Event-driven workflows, real-time AI agents</td>
+</tr>
+<tr>
+<td><strong>MQTT</strong></td>
+<td>Lightweight publish/subscribe messages</td>
+<td>IoT, unreliable or low-bandwidth networks</td>
+</tr>
+<tr>
+<td><strong>SSE</strong></td>
+<td>Server streams updates to the client over HTTP</td>
+<td>Live feeds, notifications, AI response streaming</td>
+</tr>
+</tbody>
+</table>
+<h3 id="going-deeper_2">Going deeper<a class="headerlink" href="#going-deeper_2" title="Permanent link">&para;</a></h3>
+<p>The seven differ mainly in <strong>who starts the conversation</strong> and <strong>whether the connection stays open</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Transport</th>
+<th>Direction</th>
+<th>Connection</th>
+<th>Payload</th>
+<th>Spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REST</strong></td>
+<td>HTTP/1.1, 2, 3</td>
+<td>client → server (request/response)</td>
+<td>short-lived</td>
+<td>usually JSON</td>
+<td>Fielding, 2000<sup id="fnref:rest"><a class="footnote-ref" href="#fn:rest">6</a></sup></td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>usually HTTP <code>POST</code></td>
+<td>client → server (+ subscriptions)</td>
+<td>short-lived (subscriptions use WS/SSE)</td>
+<td>JSON</td>
+<td>GraphQL spec<sup id="fnref2:graphql"><a class="footnote-ref" href="#fn:graphql">5</a></sup></td>
+</tr>
+<tr>
+<td><strong>gRPC</strong></td>
+<td>HTTP/2</td>
+<td>unary, server-stream, client-stream, bidi</td>
+<td>long-lived, multiplexed</td>
+<td>Protocol Buffers (binary)</td>
+<td>grpc.io<sup id="fnref:grpc"><a class="footnote-ref" href="#fn:grpc">7</a></sup></td>
+</tr>
+<tr>
+<td><strong>WebSockets</strong></td>
+<td>TCP, upgraded from HTTP</td>
+<td>full-duplex</td>
+<td>long-lived</td>
+<td>text or binary frames</td>
+<td>RFC 6455<sup id="fnref:ws"><a class="footnote-ref" href="#fn:ws">8</a></sup></td>
+</tr>
+<tr>
+<td><strong>SSE</strong></td>
+<td>HTTP</td>
+<td>server → client only</td>
+<td>long-lived</td>
+<td>UTF-8 text events</td>
+<td>WHATWG HTML<sup id="fnref:sse"><a class="footnote-ref" href="#fn:sse">9</a></sup></td>
+</tr>
+<tr>
+<td><strong>Webhooks</strong></td>
+<td>HTTP <code>POST</code></td>
+<td>server → <em>another server</em></td>
+<td>one request per event</td>
+<td>usually JSON</td>
+<td>Standard Webhooks<sup id="fnref:webhooks"><a class="footnote-ref" href="#fn:webhooks">10</a></sup></td>
+</tr>
+<tr>
+<td><strong>MQTT</strong></td>
+<td>TCP (or WebSocket)</td>
+<td>pub/sub via a <strong>broker</strong></td>
+<td>long-lived</td>
+<td>binary, tiny header</td>
+<td>OASIS MQTT 5.0<sup id="fnref2:mqtt"><a class="footnote-ref" href="#fn:mqtt">11</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choosing between them:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    Q1{Who initiates?}
+    Q1 --&gt;|Client asks| Q2{Internal service-to-service&lt;br/&gt;and latency-sensitive?}
+    Q2 --&gt;|Yes| GRPC[gRPC]
+    Q2 --&gt;|No| Q3{Many clients needing&lt;br/&gt;different shapes of data?}
+    Q3 --&gt;|Yes| GQL[GraphQL]
+    Q3 --&gt;|No| REST[REST]
+    Q1 --&gt;|Server pushes| Q4{Receiver is...}
+    Q4 --&gt;|Another server| WH[Webhooks]
+    Q4 --&gt;|Browser, one-way| SSE[SSE]
+    Q4 --&gt;|Browser, two-way| WS[WebSockets]
+    Q4 --&gt;|Constrained devices,&lt;br/&gt;flaky network| MQTT[MQTT]</code></pre>
+<p>Practical notes on each:</p>
+<ul>
+<li><strong>gRPC in browsers.</strong> Browsers can't speak raw gRPC (they don't expose HTTP/2 trailers), so you need gRPC-Web plus a proxy, or Connect. This is why gRPC usually stays <em>internal</em>.</li>
+<li><strong>WebSockets need more operations work than they first appear to.</strong> Connections are stateful, so load balancers need sticky sessions or a shared pub/sub backplane (Redis) to fan messages out across nodes. You also own heartbeats, reconnects, and back-pressure.</li>
+<li><strong>SSE is often enough.</strong> If the client only <em>listens</em> (notifications, dashboards, LLM token streaming), SSE is plain HTTP. It passes through proxies, and the browser's <code>EventSource</code> reconnects automatically, resuming from the <code>Last-Event-ID</code> header. On HTTP/1.1 browsers limit each origin to about 6 connections, which HTTP/2 removes.</li>
+<li><strong>Webhooks: the hard parts are what Svix sells.</strong> The receiver must verify an <strong>HMAC signature</strong> (do not trust the source IP) and reject old timestamps to stop replays. It should respond <code>2xx</code> <em>fast</em> and process asynchronously, and it should be <strong>idempotent</strong>, because senders retry and deliver at least once. The <a href="https://www.standardwebhooks.com/">Standard Webhooks</a> spec codifies these headers.</li>
+<li><strong>MQTT QoS levels:</strong> <code>0</code> at most once (fire and forget), <code>1</code> at least once (may duplicate), <code>2</code> exactly once (four-step handshake, most expensive). <em>Retained messages</em> give a new subscriber the last known value, and <em>Last Will</em> announces a device that disconnected uncleanly<sup id="fnref:mqtt"><a class="footnote-ref" href="#fn:mqtt">11</a></sup>.</li>
+<li><strong>Webhooks vs. polling.</strong> Polling every <em>N</em> seconds adds up to <em>N</em> seconds of latency and wastes most requests. Webhooks deliver immediately, but the receiver must be reachable and must handle duplicates. Many systems use both: webhooks for speed, plus a periodic reconcile poll so missed events still get picked up.</li>
+</ul>
+<hr />
+<h2 id="4-six-auth-methods">4. Six Auth Methods<a class="headerlink" href="#4-six-auth-methods" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Anubhav Sethi, <em>"6 Auth Methods Every Engineer Should Know"</em>, LinkedIn, 2026-10-09. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-authentication-share-7514229617755369472-wjLf">https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-authentication-share-7514229617755369472-wjLf</a></p>
+</div>
+<p><img alt="Six auth methods: session cookie, JWT, OAuth, API key, SSO, mTLS" src="../../../assets/system-design/auth-methods.gif" /></p>
+<p><em>Image: © Anubhav Sethi (<a href="https://www.linkedin.com/in/anubhavintech">@anubhavintech</a>), from the post above.</em></p>
+<h3 id="what-the-post-says_3">What the post says<a class="headerlink" href="#what-the-post-says_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Method</th>
+<th>How it works</th>
+<th>Good for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Session cookie</strong></td>
+<td>Server stores the session; the browser holds only an ID in a cookie</td>
+<td>Classic web apps</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>JWT</strong></td>
+<td>Signed token carries user info; server checks the signature, no DB lookup</td>
+<td>Stateless APIs. <em>You can't easily revoke one before it expires.</em></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>OAuth</strong></td>
+<td>Auth server gives an app a token to call an API on your behalf; no password shared</td>
+<td>"Sign in with Google", third-party access</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>API key</strong></td>
+<td>One secret sent with every request; identifies the <strong>app</strong>, not the user</td>
+<td>Server-to-server, public APIs</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>SSO</strong></td>
+<td>Log in once with an identity provider, get into many apps</td>
+<td>Companies with many internal tools</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>mTLS</strong></td>
+<td>Client and server both present certificates and verify each other</td>
+<td>Service-to-service traffic</td>
+</tr>
+</tbody>
+</table>
+<p>The post's summary:</p>
+<blockquote>
+<p>Sessions and JWT answer <strong>"who is this user?"</strong>
+OAuth answers <strong>"what is this app allowed to do for the user?"</strong>
+API keys and mTLS answer <strong>"which app or service is this?"</strong></p>
+</blockquote>
+<h3 id="going-deeper_3">Going deeper<a class="headerlink" href="#going-deeper_3" title="Permanent link">&para;</a></h3>
+<p><strong>These are not six alternatives. They sit at different layers</strong>, and real systems stack them. A typical SaaS uses SSO (OIDC) to log the user in, a session cookie to keep them logged in, OAuth access tokens (often JWTs) for its API, API keys for customer scripts, and mTLS between its own microservices.</p>
+<pre class="mermaid"><code>flowchart LR
+    U((User)) --&gt;|"SSO login (OIDC/SAML)"| IdP[Identity Provider]
+    IdP --&gt;|ID token| Web[Web app]
+    Web --&gt;|"session cookie&lt;br/&gt;(HttpOnly, Secure, SameSite)"| U
+    Web --&gt;|"OAuth access token (JWT)"| API[Public API]
+    Script[Customer script] --&gt;|API key| API
+    API --&gt;|mTLS| Svc1[Orders svc]
+    Svc1 --&gt;|mTLS| Svc2[Billing svc]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Where state lives</th>
+<th>Revocation</th>
+<th>Main pitfall</th>
+<th>Spec / guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session cookie</strong></td>
+<td>Server (DB/Redis)</td>
+<td>Instant: delete the row</td>
+<td>CSRF, session fixation</td>
+<td>OWASP Session Mgmt<sup id="fnref:owasp-sess"><a class="footnote-ref" href="#fn:owasp-sess">12</a></sup></td>
+</tr>
+<tr>
+<td><strong>JWT</strong></td>
+<td>In the token</td>
+<td>Hard: wait for expiry or keep a denylist</td>
+<td><code>alg: none</code> / algorithm confusion, long expiries, storing in <code>localStorage</code> (XSS)</td>
+<td>RFC 7519<sup id="fnref:jwt"><a class="footnote-ref" href="#fn:jwt">13</a></sup>, OWASP JWT<sup id="fnref:owasp-jwt"><a class="footnote-ref" href="#fn:owasp-jwt">14</a></sup></td>
+</tr>
+<tr>
+<td><strong>OAuth 2.0</strong></td>
+<td>Auth server</td>
+<td>Revoke grant / refresh token</td>
+<td>Using it <em>as</em> login without OIDC; implicit flow</td>
+<td>RFC 6749<sup id="fnref:oauth"><a class="footnote-ref" href="#fn:oauth">15</a></sup>, PKCE RFC 7636<sup id="fnref2:pkce"><a class="footnote-ref" href="#fn:pkce">16</a></sup></td>
+</tr>
+<tr>
+<td><strong>API key</strong></td>
+<td>Server lookup</td>
+<td>Rotate the key</td>
+<td>Leaked in git, URLs, or client apps; no user context</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>SSO</strong></td>
+<td>Identity provider</td>
+<td>Disable the user at the IdP</td>
+<td>IdP becomes a single point of failure</td>
+<td>OIDC<sup id="fnref2:oidc"><a class="footnote-ref" href="#fn:oidc">17</a></sup>, SAML 2.0</td>
+</tr>
+<tr>
+<td><strong>mTLS</strong></td>
+<td>Certificates (PKI)</td>
+<td>Short-lived certs, CRL/OCSP</td>
+<td>Certificate rotation and CA operations</td>
+<td>RFC 8446 (TLS 1.3)<sup id="fnref:tls"><a class="footnote-ref" href="#fn:tls">18</a></sup>, RFC 8705<sup id="fnref:oauth-mtls"><a class="footnote-ref" href="#fn:oauth-mtls">19</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p>Corrections and additions to the post:</p>
+<ul>
+<li><strong>OAuth is <em>authorization</em>, not authentication.</strong> "Sign in with Google" is really <strong>OpenID Connect (OIDC)</strong>, a thin identity layer on OAuth 2.0 that adds an <em>ID token</em> saying <em>who</em> logged in<sup id="fnref:oidc"><a class="footnote-ref" href="#fn:oidc">17</a></sup>. Plain OAuth only says what an app <em>may do</em>. For browser and mobile apps use the <strong>authorization code flow with PKCE</strong><sup id="fnref:pkce"><a class="footnote-ref" href="#fn:pkce">16</a></sup>. The implicit flow is deprecated in OAuth 2.1.</li>
+<li><strong>Common JWT practice:</strong> short-lived access token (5–15 min) plus a long-lived, <em>revocable</em> refresh token stored server-side. This keeps most of the "stateless" benefit and bounds the revocation problem the post mentions.</li>
+<li><strong>Session cookies are not obsolete.</strong> For a browser-only app on one domain, a server-side session with <code>HttpOnly; Secure; SameSite=Lax</code> cookies is often <em>safer</em> than a JWT in JavaScript-reachable storage.</li>
+<li><strong>API keys:</strong> send them in a header, never in the query string (URLs end up in logs). Scope them, rate-limit them per key, store only a hash, and make rotation easy.</li>
+<li><strong>mTLS in practice</strong> is usually automated by a service mesh (Istio, Linkerd) or SPIFFE/SPIRE workload identities, so applications never handle certificates.</li>
+<li><strong>Missing from the list:</strong> <em>passkeys / WebAuthn</em> (phishing-resistant public-key login, the direction user authentication is heading), and <em>HTTP Basic</em>, which is fine only over TLS for internal tooling.</li>
+</ul>
+<p>AuthN vs. AuthZ, 401 vs. 403, and the OAuth sequence diagram are in <a href="../security/">Security</a>.</p>
+<hr />
+<h2 id="5-how-ssh-works">5. How SSH Works<a class="headerlink" href="#5-how-ssh-works" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Alex Xu (ByteByteGo), <em>"How SSH Works"</em>, LinkedIn, 2026-10-01. <a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-share-7511431696815169537-EaNa">https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-share-7511431696815169537-EaNa</a></p>
+</div>
+<p><img alt="How SSH works: transport setup, key exchange, host key verification, session key derivation, public-key user authentication, encrypted session" src="../../../assets/system-design/how-ssh-works.gif" /></p>
+<p><em>Image: © ByteByteGo, from the post above (animated).</em></p>
+<h3 id="what-the-post-says_4">What the post says<a class="headerlink" href="#what-the-post-says_4" title="Permanent link">&para;</a></h3>
+<p>Secure Shell gives secure access to a remote machine over an unsecured network:</p>
+<ol>
+<li>The client opens a <strong>TCP connection</strong> to the SSH server.</li>
+<li>Both sides <strong>exchange version strings</strong>, <strong>negotiate crypto algorithms</strong>, and <strong>run a key exchange</strong>.</li>
+<li>The server sends its <strong>host public key + a signature</strong>. The client verifies it and checks the host key against <code>~/.ssh/known_hosts</code>.</li>
+<li>Both sides <strong>derive the same symmetric session keys independently</strong>: <em>"Same keys, computed separately, never put on the wire."</em></li>
+<li>The client starts <strong>user authentication</strong> by offering its public key. The server looks it up in <code>~/.ssh/authorized_keys</code>.</li>
+<li>The client <strong>signs</strong> the auth request with its private key. <em>"The private key never leaves your machine."</em> The server verifies the signature with the public key.</li>
+<li>Authentication succeeds, a <strong>session channel</strong> opens, and commands and results flow encrypted.</li>
+</ol>
+<h3 id="going-deeper_4">Going deeper<a class="headerlink" href="#going-deeper_4" title="Permanent link">&para;</a></h3>
+<p>SSH is three protocols stacked on each other, and the diagram's 20 steps map onto them:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>RFC</th>
+<th>Diagram steps</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transport</strong></td>
+<td>RFC 4253<sup id="fnref:ssh-trans"><a class="footnote-ref" href="#fn:ssh-trans">20</a></sup></td>
+<td>1–8</td>
+<td>Server authentication, key exchange, encryption, integrity</td>
+</tr>
+<tr>
+<td><strong>User authentication</strong></td>
+<td>RFC 4252<sup id="fnref:ssh-auth"><a class="footnote-ref" href="#fn:ssh-auth">21</a></sup></td>
+<td>9–15</td>
+<td>Prove <em>who the user is</em> (publickey, password, keyboard-interactive…)</td>
+</tr>
+<tr>
+<td><strong>Connection</strong></td>
+<td>RFC 4254<sup id="fnref:ssh-conn"><a class="footnote-ref" href="#fn:ssh-conn">22</a></sup></td>
+<td>16–20</td>
+<td>Multiplex <em>channels</em> over the one encrypted pipe: shells, <code>exec</code>, port forwarding, SFTP</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>sequenceDiagram
+    participant C as Client
+    participant S as Server
+    Note over C,S: Transport layer (RFC 4253)
+    C-&gt;&gt;S: TCP connect :22
+    C--&gt;&gt;S: SSH-2.0-OpenSSH_x (version)
+    C-&gt;&gt;S: KEXINIT (algorithm lists)
+    S-&gt;&gt;C: KEXINIT
+    C-&gt;&gt;S: ephemeral public key (e.g. X25519 / ML-KEM hybrid)
+    S-&gt;&gt;C: ephemeral key + host key + signature over exchange hash H
+    Note over C: verify signature, check known_hosts
+    Note over C,S: both compute shared secret K → derive keys from (K, H)
+    C-&gt;&gt;S: NEWKEYS
+    S-&gt;&gt;C: NEWKEYS
+    Note over C,S: User auth (RFC 4252) — now encrypted
+    C-&gt;&gt;S: "publickey" method, key blob (no signature yet)
+    S-&gt;&gt;C: PK_OK (key is in authorized_keys)
+    C-&gt;&gt;S: same request + signature by private key
+    S-&gt;&gt;C: USERAUTH_SUCCESS
+    Note over C,S: Connection (RFC 4254)
+    C-&gt;&gt;S: CHANNEL_OPEN "session" → exec / shell</code></pre>
+<p>Details the diagram compresses:</p>
+<ul>
+<li><strong>The key exchange is (EC)Diffie-Hellman with throwaway keys.</strong> Both sides create ephemeral key pairs and combine them into a shared secret <em>K</em> that never crossed the wire. Because these keys are discarded, an attacker who later steals the server's long-term host key still cannot decrypt recorded sessions. This property is <strong>forward secrecy</strong>. OpenSSH 9.0 made a post-quantum hybrid (<code>sntrup761x25519</code>) the default, and OpenSSH 10.0 moved to <code>mlkem768x25519-sha256</code><sup id="fnref:openssh"><a class="footnote-ref" href="#fn:openssh">23</a></sup>.</li>
+<li><strong>The host key signs the <em>exchange hash</em> H</strong>, a hash of everything negotiated so far. That ties the server's identity to <em>this</em> key exchange, which defeats man-in-the-middle attacks, provided the client already trusts the host key.</li>
+<li><strong>Trust on first use (TOFU).</strong> On the first connection <code>known_hosts</code> is empty, so <code>ssh</code> shows a fingerprint and asks. That prompt is the moment a MITM can succeed, so verify the fingerprint out of band, or use SSH certificates or DNS <code>SSHFP</code> records. The later warning <code>REMOTE HOST IDENTIFICATION HAS CHANGED</code> means <em>stop and find out why</em>.</li>
+<li><strong>Session keys are per direction.</strong> Separate encryption and integrity keys are derived for client→server and server→client. Modern ciphers like <code>chacha20-poly1305@openssh.com</code> and AES-GCM provide both at once.</li>
+<li><strong>The "offer then sign" two-step</strong> (steps 10–13) lets the client ask "would you accept this key?" before unlocking a passphrase-protected key or touching a hardware token.</li>
+</ul>
+<p>Practical hardening (see also <a href="../../tool_tip/server_operations/">Running a Server</a>):</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">"you@laptop"</span><span class="w">     </span><span class="c1"># modern key type; add a passphrase</span>
+ssh-copy-id<span class="w"> </span>user@host<span class="w">                      </span><span class="c1"># appends your .pub to authorized_keys</span>
+ssh-keygen<span class="w"> </span>-lf<span class="w"> </span>/etc/ssh/ssh_host_ed25519_key.pub<span class="w">   </span><span class="c1"># on the server: fingerprint to compare on first connect</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># /etc/ssh/sshd_config
+PasswordAuthentication no
+PermitRootLogin no
+KbdInteractiveAuthentication no
+</code></pre></div>
+<hr />
+<h2 id="6-six-deployment-strategies">6. Six Deployment Strategies<a class="headerlink" href="#6-six-deployment-strategies" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Anubhav Sethi, <em>"6 deployment strategies every engineer must know!"</em>, LinkedIn, 2026-09-26. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-devops-activity-7509452041816297474-e7Q9">https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-devops-activity-7509452041816297474-e7Q9</a>. The post credits Neo Kim as its inspiration.</p>
+</div>
+<p><img alt="Six deployment strategies: blue-green, canary, rolling, recreate, A/B testing, shadow" src="../../../assets/system-design/deployment-strategies.gif" /></p>
+<p><em>Image: © Anubhav Sethi (<a href="https://www.linkedin.com/in/anubhavintech">@anubhavintech</a>), from the post above (animated).</em></p>
+<h3 id="what-the-post-says_5">What the post says<a class="headerlink" href="#what-the-post-says_5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Most outages don't come from bad code. They come from how that code was shipped.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>How (from the post)</th>
+<th>Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Blue-green</strong></td>
+<td>Two identical environments; switch all traffic at once; switch back in seconds</td>
+<td>Double the servers</td>
+</tr>
+<tr>
+<td><strong>Canary</strong></td>
+<td>Send ~10% of users to the new version, watch errors and latency, increase slowly</td>
+<td>Catches bugs before everyone sees them</td>
+</tr>
+<tr>
+<td><strong>Rolling</strong></td>
+<td>Update servers one by one while the rest keep serving</td>
+<td>Old and new versions run side by side, so they must be <strong>backward compatible</strong></td>
+</tr>
+<tr>
+<td><strong>Recreate</strong></td>
+<td>Stop old fully, then start new</td>
+<td>Simple, but causes downtime. Fine for internal tools.</td>
+</tr>
+<tr>
+<td><strong>A/B testing</strong></td>
+<td>Split users between versions and compare clicks or sign-ups</td>
+<td>About <strong>product decisions</strong>, not release safety</td>
+</tr>
+<tr>
+<td><strong>Shadow</strong></td>
+<td>Copy real traffic to the new version and discard its responses</td>
+<td>Tests under real load with zero user risk</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interview tip from the post:</strong> don't name a single strategy. Discuss the trade-off between <strong>speed, cost, and risk</strong>.</p>
+<h3 id="going-deeper_5">Going deeper<a class="headerlink" href="#going-deeper_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Downtime</th>
+<th>Extra capacity</th>
+<th>Rollback speed</th>
+<th>Users exposed to a bad release</th>
+<th>Versions live at once</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recreate</strong></td>
+<td>Yes</td>
+<td>None</td>
+<td>Slow (redeploy)</td>
+<td>All, after the gap</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Rolling</strong></td>
+<td>No</td>
+<td>~1 extra instance (surge)</td>
+<td>Medium (roll back)</td>
+<td>Growing fraction</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Blue-green</strong></td>
+<td>No</td>
+<td>2×</td>
+<td><strong>Instant</strong> (flip router)</td>
+<td>All at once</td>
+<td>1 (2 deployed)</td>
+</tr>
+<tr>
+<td><strong>Canary</strong></td>
+<td>No</td>
+<td>Small</td>
+<td>Fast (route 0%)</td>
+<td>Small slice first</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>A/B</strong></td>
+<td>No</td>
+<td>Small</td>
+<td>Fast</td>
+<td>Chosen cohort</td>
+<td>2+</td>
+</tr>
+<tr>
+<td><strong>Shadow</strong></td>
+<td>No</td>
+<td>Up to 2×</td>
+<td>Nothing to roll back</td>
+<td><strong>None</strong></td>
+<td>2 (one invisible)</td>
+</tr>
+</tbody>
+</table>
+<p>Things that decide whether these work in practice:</p>
+<ul>
+<li><strong>The database is the hard part.</strong> Blue-green and rolling both mean two app versions share <em>one</em> database, so schema changes must work with both. Use <strong>expand → migrate → contract</strong> (Fowler's <em>parallel change</em><sup id="fnref:parallel"><a class="footnote-ref" href="#fn:parallel">24</a></sup>): add the new column, write to both, backfill, switch reads, and only then drop the old column in a <em>later</em> release. This is the backward-compatibility rule from the post, applied to data.</li>
+<li><strong>Canary needs automatic judgment.</strong> A canary is only as good as the signals it watches. Define the error rate, p99 latency, and saturation thresholds up front, and let the tool promote or abort on its own. Argo Rollouts and Flagger do this on Kubernetes<sup id="fnref:argo"><a class="footnote-ref" href="#fn:argo">25</a></sup>. Sticky routing (by user ID) keeps one person from bouncing between versions.</li>
+<li><strong>Shadow traffic must have no side effects.</strong> If the shadow version sends emails, charges cards, or writes to the real database, it isn't a test any more. Stub or sandbox the outbound calls. Mirroring is supported natively by Istio (<code>mirror:</code>) and Envoy.</li>
+<li><strong>A/B testing is an experiment, not a deploy strategy.</strong> It needs a hypothesis, a primary metric, a sample size fixed in advance, and statistical significance. It is usually done with <strong>feature flags</strong> inside <em>one</em> deployed build, not with two deployments.</li>
+<li><strong>Feature flags separate <em>deploy</em> from <em>release</em>.</strong> Code ships dark and gets turned on per user, percentage, or region. This makes most of the strategies above cheaper and gives you a kill switch. See <a href="../becoming_senior/">Becoming Senior</a> on progressive delivery.</li>
+<li><strong>What Kubernetes gives you natively:</strong> a <code>Deployment</code> supports only <code>RollingUpdate</code> (tuned with <code>maxSurge</code> / <code>maxUnavailable</code>) and <code>Recreate</code><sup id="fnref:k8s"><a class="footnote-ref" href="#fn:k8s">26</a></sup>. Blue-green, canary, and shadow need a service mesh, ingress weights, or a rollout controller.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Kubernetes rolling update: never drop below desired capacity, add one pod at a time</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">strategy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RollingUpdate</span>
+<span class="w">    </span><span class="nt">rollingUpdate</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">maxSurge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">maxUnavailable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</code></pre></div>
+<p><strong>A reasonable default:</strong> rolling for stateless internal services; canary with automated analysis for anything customer-facing; blue-green when you need instant, whole-system rollback (or for infrastructure you can't run two versions of side by side); shadow before a risky rewrite. The pipeline side of this is in <a href="../../tool_tip/cicd/">CI/CD Platforms</a> (§10, <em>How the Deploy Actually Happens</em>).</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="original-posts">Original posts<a class="headerlink" href="#original-posts" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Anubhav Sethi. <em>7 design patterns that every engineer must know.</em> LinkedIn, 2026-10-04. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-designpatterns-softwareengineering-activity-7512460719934697472-f1qM">link</a></li>
+<li>Ritik Jain. <em>REST, GraphQL, SOAP… choosing an API isn't just about knowing the names.</em> LinkedIn, 2026-10-11. <a href="https://www.linkedin.com/posts/rjritikjain_apis-backenddevelopment-softwareengineering-activity-7514878700392280064-0r3T">link</a></li>
+<li>Neo Kim (with Svix). <em>If you want to go GOD-level with API design, learn these 7 protocols.</em> LinkedIn, 2026-09-24. <a href="https://www.linkedin.com/posts/nk-systemdesign-one_if-you-want-to-go-god-level-with-api-design-activity-7508871465753034753--hym">link</a></li>
+<li>Anubhav Sethi. <em>6 Auth Methods Every Engineer Should Know.</em> LinkedIn, 2026-10-09. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-authentication-share-7514229617755369472-wjLf">link</a></li>
+<li>Alex Xu / ByteByteGo. <em>How SSH Works.</em> LinkedIn, 2026-10-01. <a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-share-7511431696815169537-EaNa">link</a></li>
+<li>Anubhav Sethi. <em>6 deployment strategies every engineer must know!</em> LinkedIn, 2026-09-26. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-devops-activity-7509452041816297474-e7Q9">link</a></li>
+</ol>
+<h3 id="primary-sources-for-the-added-material">Primary sources for the added material<a class="headerlink" href="#primary-sources-for-the-added-material" title="Permanent link">&para;</a></h3>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:gof">
+<p>E. Gamma, R. Helm, R. Johnson, J. Vlissides. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994. Illustrated catalogue: <a href="https://refactoring.guru/design-patterns">refactoring.guru/design-patterns</a>.&#160;<a class="footnote-backref" href="#fnref:gof" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gof" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:norvig">
+<p>P. Norvig. <em>Design Patterns in Dynamic Languages.</em> 1996. <a href="https://norvig.com/design-patterns/">norvig.com/design-patterns</a>.&#160;<a class="footnote-backref" href="#fnref:norvig" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:kerievsky">
+<p>J. Kerievsky. <em>Refactoring to Patterns.</em> Addison-Wesley, 2004.&#160;<a class="footnote-backref" href="#fnref:kerievsky" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:soap">
+<p>W3C. <em>SOAP Version 1.2 Part 1: Messaging Framework.</em> <a href="https://www.w3.org/TR/soap12-part1/">w3.org/TR/soap12-part1</a>.&#160;<a class="footnote-backref" href="#fnref:soap" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:graphql">
+<p>GraphQL Foundation. <em>GraphQL Specification.</em> <a href="https://spec.graphql.org/">spec.graphql.org</a>. See also <a href="https://graphql.org/learn/performance/">graphql.org/learn/performance</a>.&#160;<a class="footnote-backref" href="#fnref:graphql" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:graphql" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:rest">
+<p>R. T. Fielding. <em>Architectural Styles and the Design of Network-based Software Architectures</em>, ch. 5. PhD dissertation, UC Irvine, 2000. <a href="https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm</a>.&#160;<a class="footnote-backref" href="#fnref:rest" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:grpc">
+<p>gRPC Authors. <em>Core concepts, architecture and lifecycle.</em> <a href="https://grpc.io/docs/what-is-grpc/core-concepts/">grpc.io/docs/what-is-grpc/core-concepts</a>.&#160;<a class="footnote-backref" href="#fnref:grpc" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ws">
+<p>I. Fette, A. Melnikov. <em>RFC 6455: The WebSocket Protocol.</em> IETF, 2011. <a href="https://www.rfc-editor.org/rfc/rfc6455">rfc-editor.org/rfc/rfc6455</a>.&#160;<a class="footnote-backref" href="#fnref:ws" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sse">
+<p>WHATWG. <em>HTML Living Standard §9.2 Server-sent events.</em> <a href="https://html.spec.whatwg.org/multipage/server-sent-events.html">html.spec.whatwg.org/multipage/server-sent-events.html</a>.&#160;<a class="footnote-backref" href="#fnref:sse" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:webhooks">
+<p><em>Standard Webhooks specification.</em> <a href="https://www.standardwebhooks.com/">standardwebhooks.com</a> · <a href="https://github.com/standard-webhooks/standard-webhooks">github.com/standard-webhooks/standard-webhooks</a>.&#160;<a class="footnote-backref" href="#fnref:webhooks" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:mqtt">
+<p>OASIS. <em>MQTT Version 5.0.</em> OASIS Standard, 2019. <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html">docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html</a>.&#160;<a class="footnote-backref" href="#fnref:mqtt" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:mqtt" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:owasp-sess">
+<p>OWASP. <em>Session Management Cheat Sheet.</em> <a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">cheatsheetseries.owasp.org</a>.&#160;<a class="footnote-backref" href="#fnref:owasp-sess" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:jwt">
+<p>M. Jones, J. Bradley, N. Sakimura. <em>RFC 7519: JSON Web Token (JWT).</em> IETF, 2015. <a href="https://www.rfc-editor.org/rfc/rfc7519">rfc-editor.org/rfc/rfc7519</a>. See also <em>RFC 8725: JWT Best Current Practices</em>.&#160;<a class="footnote-backref" href="#fnref:jwt" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:owasp-jwt">
+<p>OWASP. <em>JSON Web Token for Java Cheat Sheet</em> (language-agnostic pitfalls). <a href="https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html">cheatsheetseries.owasp.org</a>.&#160;<a class="footnote-backref" href="#fnref:owasp-jwt" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:oauth">
+<p>D. Hardt (ed.). <em>RFC 6749: The OAuth 2.0 Authorization Framework.</em> IETF, 2012. <a href="https://www.rfc-editor.org/rfc/rfc6749">rfc-editor.org/rfc/rfc6749</a>. OAuth 2.1 draft: <a href="https://oauth.net/2.1/">oauth.net/2.1</a>.&#160;<a class="footnote-backref" href="#fnref:oauth" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pkce">
+<p>N. Sakimura et al. <em>RFC 7636: Proof Key for Code Exchange (PKCE).</em> IETF, 2015. <a href="https://www.rfc-editor.org/rfc/rfc7636">rfc-editor.org/rfc/rfc7636</a>.&#160;<a class="footnote-backref" href="#fnref:pkce" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pkce" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:oidc">
+<p>OpenID Foundation. <em>OpenID Connect Core 1.0.</em> <a href="https://openid.net/specs/openid-connect-core-1_0.html">openid.net/specs/openid-connect-core-1_0.html</a>.&#160;<a class="footnote-backref" href="#fnref:oidc" title="Jump back to footnote 17 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:oidc" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:tls">
+<p>E. Rescorla. <em>RFC 8446: The Transport Layer Security (TLS) Protocol Version 1.3.</em> IETF, 2018. <a href="https://www.rfc-editor.org/rfc/rfc8446">rfc-editor.org/rfc/rfc8446</a>.&#160;<a class="footnote-backref" href="#fnref:tls" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:oauth-mtls">
+<p>B. Campbell et al. <em>RFC 8705: OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens.</em> IETF, 2020. <a href="https://www.rfc-editor.org/rfc/rfc8705">rfc-editor.org/rfc/rfc8705</a>.&#160;<a class="footnote-backref" href="#fnref:oauth-mtls" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ssh-trans">
+<p>T. Ylonen, C. Lonvick. <em>RFC 4253: The Secure Shell (SSH) Transport Layer Protocol.</em> IETF, 2006. <a href="https://www.rfc-editor.org/rfc/rfc4253">rfc-editor.org/rfc/rfc4253</a>.&#160;<a class="footnote-backref" href="#fnref:ssh-trans" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ssh-auth">
+<p>T. Ylonen, C. Lonvick. <em>RFC 4252: The SSH Authentication Protocol.</em> IETF, 2006. <a href="https://www.rfc-editor.org/rfc/rfc4252">rfc-editor.org/rfc/rfc4252</a>.&#160;<a class="footnote-backref" href="#fnref:ssh-auth" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ssh-conn">
+<p>T. Ylonen, C. Lonvick. <em>RFC 4254: The SSH Connection Protocol.</em> IETF, 2006. <a href="https://www.rfc-editor.org/rfc/rfc4254">rfc-editor.org/rfc/rfc4254</a>.&#160;<a class="footnote-backref" href="#fnref:ssh-conn" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:openssh">
+<p>OpenSSH. <em>Release notes</em> (9.0, 10.0). <a href="https://www.openssh.com/releasenotes.html">openssh.com/releasenotes.html</a>.&#160;<a class="footnote-backref" href="#fnref:openssh" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:parallel">
+<p>D. Sato. <em>ParallelChange.</em> martinfowler.com, 2014. <a href="https://martinfowler.com/bliki/ParallelChange.html">martinfowler.com/bliki/ParallelChange.html</a>. See also M. Fowler, <a href="https://martinfowler.com/bliki/BlueGreenDeployment.html"><em>BlueGreenDeployment</em></a> (2010) and D. Sato, <a href="https://martinfowler.com/bliki/CanaryRelease.html"><em>CanaryRelease</em></a> (2014).&#160;<a class="footnote-backref" href="#fnref:parallel" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:argo">
+<p>Argo Project. <em>Argo Rollouts: Progressive Delivery for Kubernetes.</em> <a href="https://argoproj.github.io/argo-rollouts/">argoproj.github.io/argo-rollouts</a>.&#160;<a class="footnote-backref" href="#fnref:argo" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:k8s">
+<p>Kubernetes. <em>Deployments: Strategy.</em> <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy">kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy</a>.&#160;<a class="footnote-backref" href="#fnref:k8s" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax-init.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
