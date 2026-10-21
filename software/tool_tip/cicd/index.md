@@ -34,7 +34,7 @@ Everything left of "Build artifact" is **CI**. Everything right of it is **CD**.
 
 Vercel is Continuous Deployment out of the box. GitLab, GitHub, Azure Pipelines, and Jenkins give you the gate and let you choose.
 
-For where this sits in the wider delivery process, see [Lifecycle → CI/CD](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#cicd).
+For where this sits in the wider delivery process, see [Lifecycle → CI/CD](https://locchh.github.io/handbook/software/basics/lifecycle/#cicd).
 
 ______________________________________________________________________
 
@@ -799,7 +799,7 @@ df -h && df -i                     # always check both
 docker system prune -af --volumes  # on a schedule, not after the outage
 ```
 
-Full diagnosis in [Running a Server §6](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/#6-disk-the-three-ways-it-fills-up). **Ephemeral runners** — a fresh VM or pod per job — make this class of problem disappear; prefer them when you can.
+Full diagnosis in [Running a Server §6](https://locchh.github.io/handbook/software/tool_tip/server_operations/#6-disk-the-three-ways-it-fills-up). **Ephemeral runners** — a fresh VM or pod per job — make this class of problem disappear; prefer them when you can.
 
 ______________________________________________________________________
 
@@ -831,7 +831,7 @@ ______________________________________________________________________
 - **Cancel superseded runs.** GitHub `concurrency`, GitLab `interruptible`, Azure `trigger: batch` and `pr: autoCancel`, Jenkins `disableConcurrentBuilds()`.
 - **Serialise deploys.** GitLab `resource_group`, GitHub `environment`, Azure environment Exclusive Lock + `lockBehavior`, Jenkins `disableConcurrentBuilds()`.
 - **Make it runnable locally.** If CI runs `make test`, you can run `make test`. Debugging by pushing commits is the slowest loop in software.
-- **Protect the production branch** — required reviews and status checks, no direct pushes. See [Lifecycle → Version Control](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#version-control).
+- **Protect the production branch** — required reviews and status checks, no direct pushes. See [Lifecycle → Version Control](https://locchh.github.io/handbook/software/basics/lifecycle/#version-control).
 - **Least privilege on tokens.** GitHub `permissions`, GitLab `CI_JOB_TOKEN` allowlists, Azure per-pipeline service connection authorization, Jenkins per-folder credentials.
 - **Make deploys idempotent and reversible.** Re-running should be safe; rolling back should not require a rebuild.
 

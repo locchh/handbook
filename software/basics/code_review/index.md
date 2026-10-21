@@ -2,7 +2,7 @@
 
 Every day, developers read diffs and review pull requests. It looks simple — lines in red and green — but reading a diff fluently, and reviewing code well, are two different skills. This guide covers both: how to decode what `git diff` is actually telling you, and what a thorough code review really requires beyond just reading the lines that changed.
 
-This page owns **reading diffs and reviewing PRs**. For the branch mechanics underneath — merge vs. rebase, conflicts, the daily branch workflow — see [Git: Merge vs Rebase](https://locchh.github.io/sw-handbook/software/basics/git/index.md); for where review sits in the delivery process, see [Lifecycle](https://locchh.github.io/sw-handbook/software/basics/lifecycle/index.md).
+This page owns **reading diffs and reviewing PRs**. For the branch mechanics underneath — merge vs. rebase, conflicts, the daily branch workflow — see [Git: Merge vs Rebase](https://locchh.github.io/handbook/software/basics/git/index.md); for where review sits in the delivery process, see [Lifecycle](https://locchh.github.io/handbook/software/basics/lifecycle/index.md).
 
 ## Part 1 — Reading Git Diff
 
@@ -392,4 +392,4 @@ Hunk body:
   +       added line    → only in new branch
 ```
 
-**Further reading:** [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) — Vincent Driessen. The branching model this workflow assumes is summarized in [Lifecycle → Version Control](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#version-control).
+**Further reading:** [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) — Vincent Driessen. The branching model this workflow assumes is summarized in [Lifecycle → Version Control](https://locchh.github.io/handbook/software/basics/lifecycle/#version-control).

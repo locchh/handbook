@@ -1,6 +1,6 @@
 # Data Engineering
 
-Getting data from where it's produced to where it's useful — reliably and repeatably. [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md) covered what importing is and the simple→complex strategy ladder; this page covers the patterns and tools you build pipelines from.
+Getting data from where it's produced to where it's useful — reliably and repeatably. [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md) covered what importing is and the simple→complex strategy ladder; this page covers the patterns and tools you build pipelines from.
 
 ## ETL vs ELT
 
@@ -33,7 +33,7 @@ Examples: Snowflake / BigQuery / Redshift (warehouse), S3 / HDFS (lake), Delta /
 ## Batch vs Streaming
 
 - **Batch** — process scheduled chunks (nightly, hourly). Simple, cheap, the right default.
-- **Streaming** — process events continuously as they arrive, for low latency. Built on message queues and stream processors — see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md).
+- **Streaming** — process events continuously as they arrive, for low latency. Built on message queues and stream processors — see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md).
 
 Start with batch; add streaming only when latency genuinely demands it.
 
@@ -53,4 +53,4 @@ A pipeline is a **DAG** (directed acyclic graph) of tasks with dependencies, sch
 
 - **Make loads idempotent and incremental** — rerunning a pipeline must not duplicate or corrupt data.
 - **Validate at ingestion** — catch bad data at the door, not three dashboards downstream.
-- **Track lineage** — know where every table came from. Garbage in, garbage out (see [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md)).
+- **Track lineage** — know where every table came from. Garbage in, garbage out (see [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md)).

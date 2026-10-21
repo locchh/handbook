@@ -1,6 +1,6 @@
 # Codex
 
-[The AI Engineering Skills Map](https://locchh.github.io/sw-handbook/ai/basics/skills_map/index.md) lists *using coding agents* as one of the four skills worth growing, and [Claude Code](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/index.md) shows what its six habits look like in one tool. This page does the same for the other major CLI agent: OpenAI's Codex.
+[The AI Engineering Skills Map](https://locchh.github.io/handbook/ai/basics/skills_map/index.md) lists *using coding agents* as one of the four skills worth growing, and [Claude Code](https://locchh.github.io/handbook/ai/tool_tip/claude_code/index.md) shows what its six habits look like in one tool. This page does the same for the other major CLI agent: OpenAI's Codex.
 
 Reading the two pages side by side is the point. The habits — manage context, trade planning against execution, close loops, work with a spec, orchestrate agents, avoid the sharp edges — transfer completely. What changes is the vocabulary and the mechanism: where Claude Code has one permission mode dial, Codex has two (sandbox × approvals); where Claude Code's rules are guidance, Codex's rules are enforcement; where Claude Code loops with a stop hook, Codex ships the same trick as a first-class hook contract.
 
@@ -428,7 +428,7 @@ Return `permissionDecision: "allow"` with `updatedInput` to rewrite a Bash comma
 { "decision": "block", "reason": "Run one more pass over the failing tests." }
 ```
 
-…doesn't reject the turn — it **continues** it, with `reason` becoming a new continuation prompt. `stop_hook_active` in the input tells you whether the turn was already continued, so you can avoid infinite loops. This is exactly the mechanism behind Claude Code's Ralph-loop plugin, shipped as a documented contract: a Stop hook that checks completion criteria and blocks until they hold is the Ralph loop in [claude_code.md → The Ralph Loop](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/#the-ralph-loop), portably.
+…doesn't reject the turn — it **continues** it, with `reason` becoming a new continuation prompt. `stop_hook_active` in the input tells you whether the turn was already continued, so you can avoid infinite loops. This is exactly the mechanism behind Claude Code's Ralph-loop plugin, shipped as a documented contract: a Stop hook that checks completion criteria and blocks until they hold is the Ralph loop in [claude_code.md → The Ralph Loop](https://locchh.github.io/handbook/ai/tool_tip/claude_code/#the-ralph-loop), portably.
 
 `PreCompact` / `PostCompact` can return `continue: false` to halt around compaction. Schemas are generated in the [Codex repo](https://github.com/openai/codex/tree/main/codex-rs/hooks/schema/generated).
 
@@ -506,7 +506,7 @@ A goal doesn't widen access — the same sandbox and approval policy hold, and a
 
 Non-interactive mode is the backpressure delivery vehicle: run Codex from scripts and pipelines with pre-set permissions and machine-readable output.
 
-For the surrounding workflow syntax, runner model, secrets, and deployment mechanics, see [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md).
+For the surrounding workflow syntax, runner model, secrets, and deployment mechanics, see [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md).
 
 ```
 codex exec "summarize the repository structure and list the top 5 risky areas"
@@ -532,7 +532,7 @@ ______________________________________________________________________
 
 ## 4. Work With a Spec
 
-Codex's ladder of durable artifacts: a skill for a workflow you repeat, a plugin for one you distribute, `AGENTS.md` review rules for standards, and — since the format is an open standard — the specs and Ralph-style loops from the [Claude Code page](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/#spec-driven-development) port over nearly verbatim.
+Codex's ladder of durable artifacts: a skill for a workflow you repeat, a plugin for one you distribute, `AGENTS.md` review rules for standards, and — since the format is an open standard — the specs and Ralph-style loops from the [Claude Code page](https://locchh.github.io/handbook/ai/tool_tip/claude_code/#spec-driven-development) port over nearly verbatim.
 
 ### Skills
 
@@ -669,7 +669,7 @@ Global knobs under `[agents]`: `enabled`, `max_concurrent_threads_per_session`, 
 
 ### Worktrees
 
-Codex's worktree support lives in the **ChatGPT desktop app**, built on plain [git worktrees](https://git-scm.com/docs/git-worktree) — see [claude_code.md → Worktrees](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/#worktrees) for the underlying git mechanics, which are identical. What Codex adds:
+Codex's worktree support lives in the **ChatGPT desktop app**, built on plain [git worktrees](https://git-scm.com/docs/git-worktree) — see [claude_code.md → Worktrees](https://locchh.github.io/handbook/ai/tool_tip/claude_code/#worktrees) for the underlying git mechanics, which are identical. What Codex adds:
 
 - **Start a chat in a worktree:** pick **Worktree** under the composer, choose the base branch (including your current branch with uncommitted changes — they're applied to the worktree), and Codex creates a checkout under `$CODEX_HOME/worktrees` in **detached HEAD** state, so parallel chats never pollute your branches.
 - **Handoff** moves a chat — *and its code* — between Local and Worktree in either direction. Git only allows a branch checked out in one place at a time; Handoff does the safe surgery for you. Each chat keeps the same associated worktree over time.
@@ -862,7 +862,7 @@ ______________________________________________________________________
 - **Release tracking:** check the official [ChatGPT & Codex changelog](https://learn.chatgpt.com/docs/changelog), [CLI releases](https://github.com/openai/codex/releases), and [Security releases](https://github.com/openai/codex-security/releases). Feature maturity and availability can differ across surfaces.
 - **Migration is two-way:** `/import` pulls a Claude Code or Cursor setup in, and because skills, `AGENTS.md`, and the hook event schema are shared or compatible standards, most of what you build here travels back out.
 
-**In this handbook:** [Claude Code](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/index.md), [AI Tools](https://locchh.github.io/sw-handbook/ai/tool_tip/tools/index.md), [The LLM Landscape](https://locchh.github.io/sw-handbook/ai/basics/landscape/index.md).
+**In this handbook:** [Claude Code](https://locchh.github.io/handbook/ai/tool_tip/claude_code/index.md), [AI Tools](https://locchh.github.io/handbook/ai/tool_tip/tools/index.md), [The LLM Landscape](https://locchh.github.io/handbook/ai/basics/landscape/index.md).
 
 ______________________________________________________________________
 
@@ -1028,8 +1028,8 @@ The same two questions govern this page as the last one: *what can the agent see
 
 So spend your setup effort the same way — a short, accurate `AGENTS.md` plus real verification commands — and add the one Codex-specific habit: **tune the boundary, not the exceptions**. When prompts get noisy, the fix is a narrower writable root, a precise prefix rule, or auto-review — not a broader sandbox.
 
-And notice what just happened across two pages: every mechanism here slotted into the same six habits. That's the evidence for the claim in [The AI Engineering Skills Map](https://locchh.github.io/sw-handbook/ai/basics/skills_map/index.md) — the skill is the habits, not the tool.
+And notice what just happened across two pages: every mechanism here slotted into the same six habits. That's the evidence for the claim in [The AI Engineering Skills Map](https://locchh.github.io/handbook/ai/basics/skills_map/index.md) — the skill is the habits, not the tool.
 
 ______________________________________________________________________
 
-**Sources:** official documentation discovered through the [OpenAI developer index](https://developers.openai.com/llms.txt), [Codex index](https://developers.openai.com/codex/llms.txt), and [ChatGPT Learn index](https://learn.chatgpt.com/llms.txt), plus [openai/codex-security](https://github.com/openai/codex-security). Commands, migrations, models, hooks, cloud environments, and Security workflows were checked on **22 October 2026**; section links above point to the supporting references. The habits in [The AI Engineering Skills Map](https://locchh.github.io/sw-handbook/ai/basics/skills_map/index.md) are what stay put.
+**Sources:** official documentation discovered through the [OpenAI developer index](https://developers.openai.com/llms.txt), [Codex index](https://developers.openai.com/codex/llms.txt), and [ChatGPT Learn index](https://learn.chatgpt.com/llms.txt), plus [openai/codex-security](https://github.com/openai/codex-security). Commands, migrations, models, hooks, cloud environments, and Security workflows were checked on **22 October 2026**; section links above point to the supporting references. The habits in [The AI Engineering Skills Map](https://locchh.github.io/handbook/ai/basics/skills_map/index.md) are what stay put.

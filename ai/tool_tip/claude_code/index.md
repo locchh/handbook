@@ -1,8 +1,8 @@
 # Claude Code
 
-[The AI Engineering Skills Map](https://locchh.github.io/sw-handbook/ai/basics/skills_map/index.md) lists *using coding agents* as one of the four skills worth growing, and breaks it into six habits: manage context, trade planning against execution, let the agent close its own loops, work with a spec, orchestrate multiple agents, and avoid the sharp edges.
+[The AI Engineering Skills Map](https://locchh.github.io/handbook/ai/basics/skills_map/index.md) lists *using coding agents* as one of the four skills worth growing, and breaks it into six habits: manage context, trade planning against execution, let the agent close its own loops, work with a spec, orchestrate multiple agents, and avoid the sharp edges.
 
-Those six are tool-independent. This page is what they look like in one tool. Claude Code is a CLI agent with an unusually large surface — memory files, rules, skills, subagents, teams, hooks, plugins, MCP servers, worktrees, workflows — and the surface is only worth learning because each piece maps onto one of those habits. A companion page, [Codex](https://locchh.github.io/sw-handbook/ai/tool_tip/codex/index.md), maps the same six habits onto OpenAI's agent; reading the two side by side is the fastest way to see which knowledge transfers and which is tool-shaped.
+Those six are tool-independent. This page is what they look like in one tool. Claude Code is a CLI agent with an unusually large surface — memory files, rules, skills, subagents, teams, hooks, plugins, MCP servers, worktrees, workflows — and the surface is only worth learning because each piece maps onto one of those habits. A companion page, [Codex](https://locchh.github.io/handbook/ai/tool_tip/codex/index.md), maps the same six habits onto OpenAI's agent; reading the two side by side is the fastest way to see which knowledge transfers and which is tool-shaped.
 
 ```
 flowchart TB
@@ -801,7 +801,7 @@ The framing worth keeping is *backpressure*: downstream checks that reject inval
 | [Coverity](https://www.blackduck.com/static-analysis-tools-sast/coverity.html) | Static analysis for defects and security issues  |
 | [Black Duck](https://www.blackduck.com/)                                       | Open-source composition and licence analysis     |
 
-**In this handbook:** [Tools → Code Quality](https://locchh.github.io/sw-handbook/software/tool_tip/tools/index.md) and [Code Review](https://locchh.github.io/sw-handbook/software/basics/code_review/index.md).
+**In this handbook:** [Tools → Code Quality](https://locchh.github.io/handbook/software/tool_tip/tools/index.md) and [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md).
 
 ### `/goal`
 
@@ -1093,7 +1093,7 @@ Remove the originals from `.claude/` afterwards to avoid duplicates.
 
 When the hard part is *what to build* rather than how, the artifact you want is a specification: outcome, scope, constraints, behaviour, interfaces, verification, open questions. A useful spec is proportional to the risk and uncertainty of the change — "write a large document first" is not the point.
 
-**In this handbook:** [Spec-Driven Development](https://locchh.github.io/sw-handbook/ai/tool_tip/spec_driven_development/index.md) covers the four tooling approaches (GSD Core, BMad Method, Spec Kit, Agent OS), a tool-independent loop, and the failure modes.
+**In this handbook:** [Spec-Driven Development](https://locchh.github.io/handbook/ai/tool_tip/spec_driven_development/index.md) covers the four tooling approaches (GSD Core, BMad Method, Spec Kit, Agent OS), a tool-independent loop, and the failure modes.
 
 ### The Ralph Loop
 
@@ -1518,7 +1518,7 @@ tmux kill-session -t <session-name>
 
 Agent teams are experimental and disabled by default. Two lighter alternatives: **subagents** for parallel work that doesn't need inter-agent coordination, and **manual parallel sessions** in git worktrees when you'd rather coordinate yourself.
 
-**In this handbook:** [tmux](https://locchh.github.io/sw-handbook/software/tool_tip/tmux/index.md).
+**In this handbook:** [tmux](https://locchh.github.io/handbook/software/tool_tip/tmux/index.md).
 
 ### Dynamic Workflows and `ultracode`
 
@@ -1630,7 +1630,7 @@ cd ../myapp
 git merge feature-x
 ```
 
-**In this handbook:** [Git](https://locchh.github.io/sw-handbook/software/basics/git/index.md).
+**In this handbook:** [Git](https://locchh.github.io/handbook/software/basics/git/index.md).
 
 ______________________________________________________________________
 
@@ -1733,7 +1733,7 @@ Three GitHub-related commands:
 - **`/pr-comments`** — pull comments from a GitHub pull request.
 - **`/review`** — review a pull request. `/security-review` covers pending changes on the current branch.
 
-For the surrounding GitHub Actions workflow, runner, secrets, and deployment model, see [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md).
+For the surrounding GitHub Actions workflow, runner, secrets, and deployment model, see [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md).
 
 ### IDE and Browser
 
@@ -1848,7 +1848,7 @@ Six component types:
 | **Hooks**    | 45+   | Pre-commit validation, post-completion actions, error handling, custom notifications                                                                                                                                      |
 | **Skills**   | 2700+ | PDF processing and generation, Excel automation, scientific computing, custom workflow templates                                                                                                                          |
 
-**In this handbook:** [AI Tools](https://locchh.github.io/sw-handbook/ai/tool_tip/tools/index.md) and [The LLM Landscape](https://locchh.github.io/sw-handbook/ai/basics/landscape/index.md).
+**In this handbook:** [AI Tools](https://locchh.github.io/handbook/ai/tool_tip/tools/index.md) and [The LLM Landscape](https://locchh.github.io/handbook/ai/basics/landscape/index.md).
 
 ### Codebase Exploration: Understand-Anything vs. Graphify
 
@@ -2310,7 +2310,7 @@ Spend your setup effort accordingly. The highest-return investments are a short,
 
 ______________________________________________________________________
 
-**Sources:** the [official Claude Code documentation](https://code.claude.com/docs/en/overview), Geoffrey Huntley's [Ralph technique](https://ghuntley.com/ralph/), and the linked projects. Specific flags, paths, and defaults reflect the tool as of **30 May 2026** and will drift; the habits in [The AI Engineering Skills Map](https://locchh.github.io/sw-handbook/ai/basics/skills_map/index.md) are what stay put.
+**Sources:** the [official Claude Code documentation](https://code.claude.com/docs/en/overview), Geoffrey Huntley's [Ralph technique](https://ghuntley.com/ralph/), and the linked projects. Specific flags, paths, and defaults reflect the tool as of **30 May 2026** and will drift; the habits in [The AI Engineering Skills Map](https://locchh.github.io/handbook/ai/basics/skills_map/index.md) are what stay put.
 
 ______________________________________________________________________
 

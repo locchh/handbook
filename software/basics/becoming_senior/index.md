@@ -69,7 +69,7 @@ Code that works is only the beginning; **a system that fails well is the job**. 
 
 Notice these are **business categories wearing technical clothes**. "Is this retryable?" is a policy question. A generic `"Operation failed"` is a senior-level sin because it erases the business meaning of the failure.
 
-The supporting mechanics — see [Error Handling](https://locchh.github.io/sw-handbook/software/basics/error_handling/index.md) for details:
+The supporting mechanics — see [Error Handling](https://locchh.github.io/handbook/software/basics/error_handling/index.md) for details:
 
 - **Fail fast** on violated invariants; **idempotency** on anything involving money.
 - **Timeout budgets** end-to-end, not per-call.
@@ -115,7 +115,7 @@ Escalation is not an exception — it is a feature with its own design.
 
 ## Deployment and Scale Are Part of the Design
 
-The implementation details live in [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) for delivery automation and [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md) for capacity, monitoring, and incident triage.
+The implementation details live in [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) for delivery automation and [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md) for capacity, monitoring, and incident triage.
 
 - **Progressive delivery** — feature flags, canary, blue-green. Rollback is a first-class requirement, not an apology.
 - **Capacity is planned**, not discovered during the traffic spike.
@@ -124,7 +124,7 @@ The implementation details live in [CI/CD Platforms](https://locchh.github.io/sw
 
 ## Data Is Where the Risk Lives
 
-In insurance, healthcare, and banking, most of the business risk is in the data, not the code: **ownership** (who may change it), **lineage** (where it came from), **quality** (see [Data Quality](https://locchh.github.io/sw-handbook/data/basics/data_quality/index.md)), **privacy and classification** (see [Data Security](https://locchh.github.io/sw-handbook/data/basics/data_security/index.md)), and **retention** (what must be kept, what must be deleted). A senior treats a schema change with the same care as a payment code change.
+In insurance, healthcare, and banking, most of the business risk is in the data, not the code: **ownership** (who may change it), **lineage** (where it came from), **quality** (see [Data Quality](https://locchh.github.io/handbook/data/basics/data_quality/index.md)), **privacy and classification** (see [Data Security](https://locchh.github.io/handbook/data/basics/data_security/index.md)), and **retention** (what must be kept, what must be deleted). A senior treats a schema change with the same care as a payment code change.
 
 ## Communication Is Part of the System
 
@@ -166,7 +166,7 @@ Ask these by reflex about any design — your own first:
 
 ## Further Reading
 
-The full self-study path — books, courses, blogs, postmortems, papers, and practice drills with links — lives in [The Senior Curriculum](https://locchh.github.io/sw-handbook/software/basics/senior_curriculum/index.md). The short version:
+The full self-study path — books, courses, blogs, postmortems, papers, and practice drills with links — lives in [The Senior Curriculum](https://locchh.github.io/handbook/software/basics/senior_curriculum/index.md). The short version:
 
 - *Designing Data-Intensive Applications* — Martin Kleppmann
 - *Release It!* — Michael Nygard

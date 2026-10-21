@@ -56,7 +56,7 @@ Provider-agnostic orchestration. Worth the abstraction when you need multi-provi
 
 ## CLI Coding Agents
 
-Agents that live in your terminal and edit your repository. See [AI Tools](https://locchh.github.io/sw-handbook/ai/tool_tip/tools/index.md) and [Spec-Driven Development](https://locchh.github.io/sw-handbook/ai/tool_tip/spec_driven_development/index.md) for the workflows built on top of them.
+Agents that live in your terminal and edit your repository. See [AI Tools](https://locchh.github.io/handbook/ai/tool_tip/tools/index.md) and [Spec-Driven Development](https://locchh.github.io/handbook/ai/tool_tip/spec_driven_development/index.md) for the workflows built on top of them.
 
 - [Claude Code](https://github.com/anthropics/claude-code)
 - [OpenCode](https://github.com/anomalyco/opencode)

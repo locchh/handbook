@@ -1,6 +1,6 @@
 # Philosophies, Methodologies & Practices
 
-Where the ideas came from, and who to read. This page traces the *lineage* of how the industry builds software — each entry gives the origin story and a primary source. For the day-to-day application of these ideas, see [Design Principles](https://locchh.github.io/sw-handbook/software/basics/principles/index.md) and [Lifecycle](https://locchh.github.io/sw-handbook/software/basics/lifecycle/index.md).
+Where the ideas came from, and who to read. This page traces the *lineage* of how the industry builds software — each entry gives the origin story and a primary source. For the day-to-day application of these ideas, see [Design Principles](https://locchh.github.io/handbook/software/basics/principles/index.md) and [Lifecycle](https://locchh.github.io/handbook/software/basics/lifecycle/index.md).
 
 ```
 Philosophy   — mindset & values
@@ -51,7 +51,7 @@ For decades, developers wrote code and handed it to a separate operations team t
 
 **Ref:** [*The Phoenix Project*](https://itrevolution.com/product/the-phoenix-project/) — Gene Kim (2013); [*Accelerate*](https://itrevolution.com/product/accelerate/) — Nicole Forsgren (2018)
 
-**Practical detail:** [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) · [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md)
+**Practical detail:** [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) · [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md)
 
 ______________________________________________________________________
 
@@ -73,7 +73,7 @@ A system becomes hard to understand the moment different kinds of work start ble
 
 **Ref:** Edsger Dijkstra, [*On the role of scientific thought*](https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html) (1974)
 
-**Practical detail:** [Design Principles → Other Principles](https://locchh.github.io/sw-handbook/software/basics/principles/#other-principles-worth-knowing) · [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md)
+**Practical detail:** [Design Principles → Other Principles](https://locchh.github.io/handbook/software/basics/principles/#other-principles-worth-knowing) · [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md)
 
 ______________________________________________________________________
 
@@ -85,7 +85,7 @@ When David Heinemeier Hansson released Ruby on Rails in 2004, he noticed that de
 
 **Ref:** David Heinemeier Hansson, [Ruby on Rails](https://rubyonrails.org/) (2004)
 
-**Practical detail:** [Design Principles → Other Principles](https://locchh.github.io/sw-handbook/software/basics/principles/#other-principles-worth-knowing)
+**Practical detail:** [Design Principles → Other Principles](https://locchh.github.io/handbook/software/basics/principles/#other-principles-worth-knowing)
 
 ______________________________________________________________________
 
@@ -105,7 +105,7 @@ Robert C. Martin distilled decades of painful object-oriented lessons into five 
 
 **Ref:** Robert C. Martin, [*Clean Architecture*](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164) (2017)
 
-**Practical detail:** [Design Principles → SOLID](https://locchh.github.io/sw-handbook/software/basics/principles/#solid)
+**Practical detail:** [Design Principles → SOLID](https://locchh.github.io/handbook/software/basics/principles/#solid)
 
 ______________________________________________________________________
 
@@ -117,7 +117,7 @@ A null slipping through five layers of code before causing a cryptic crash is on
 
 **Ref:** Jim Shore, [*Fail Fast*](https://www.martinfowler.com/ieeeSoftware/failFast.pdf) — IEEE Software (2004)
 
-**Practical detail:** [Error Handling → Fail Fast](https://locchh.github.io/sw-handbook/software/basics/error_handling/#fail-fast)
+**Practical detail:** [Error Handling → Fail Fast](https://locchh.github.io/handbook/software/basics/error_handling/#fail-fast)
 
 ______________________________________________________________________
 
@@ -129,7 +129,7 @@ When the same logic lives in two places, you've created a silent promise that bo
 
 **Ref:** Andrew Hunt & David Thomas, [*The Pragmatic Programmer*](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) (1999)
 
-**Practical detail:** [Design Principles → The Core Three](https://locchh.github.io/sw-handbook/software/basics/principles/#the-core-three-dry-kiss-yagni)
+**Practical detail:** [Design Principles → The Core Three](https://locchh.github.io/handbook/software/basics/principles/#the-core-three-dry-kiss-yagni)
 
 ______________________________________________________________________
 
@@ -141,7 +141,7 @@ Every layer of cleverness you add is a layer the next person — or future you �
 
 **Ref:** Kelly Johnson, Lockheed Skunk Works (1960s); [*The Pragmatic Programmer*](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) — Hunt & Thomas (1999)
 
-**Practical detail:** [Design Principles → The Core Three](https://locchh.github.io/sw-handbook/software/basics/principles/#the-core-three-dry-kiss-yagni)
+**Practical detail:** [Design Principles → The Core Three](https://locchh.github.io/handbook/software/basics/principles/#the-core-three-dry-kiss-yagni)
 
 ______________________________________________________________________
 
@@ -153,7 +153,7 @@ Developers are optimists by nature — they build for futures that rarely arrive
 
 **Ref:** Ron Jeffries, Extreme Programming (1999); [*The Pragmatic Programmer*](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) — Hunt & Thomas
 
-**Practical detail:** [Design Principles → The Core Three](https://locchh.github.io/sw-handbook/software/basics/principles/#the-core-three-dry-kiss-yagni)
+**Practical detail:** [Design Principles → The Core Three](https://locchh.github.io/handbook/software/basics/principles/#the-core-three-dry-kiss-yagni)
 
 ______________________________________________________________________
 
@@ -202,7 +202,7 @@ Scrum broke the long planning horizon into short, repeatable sprints of one to t
 
 **Ref:** [*The Scrum Guide*](https://scrumguides.org/) — Ken Schwaber & Jeff Sutherland (free)
 
-**Practical detail:** [Lifecycle → Agile, Scrum, Kanban](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#agile-scrum-kanban)
+**Practical detail:** [Lifecycle → Agile, Scrum, Kanban](https://locchh.github.io/handbook/software/basics/lifecycle/#agile-scrum-kanban)
 
 ______________________________________________________________________
 
@@ -216,7 +216,7 @@ Where Scrum organizes work into time-boxed sprints, Kanban lets work flow contin
 
 **Ref:** David Anderson, [*Kanban: Successful Evolutionary Change*](https://www.amazon.com/Kanban-David-J-Anderson/dp/0984521402) (2010)
 
-**Practical detail:** [Lifecycle → Agile, Scrum, Kanban](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#agile-scrum-kanban)
+**Practical detail:** [Lifecycle → Agile, Scrum, Kanban](https://locchh.github.io/handbook/software/basics/lifecycle/#agile-scrum-kanban)
 
 ______________________________________________________________________
 
@@ -278,7 +278,7 @@ You write the test before you write the code — which means you define exactly 
 
 **Ref:** Kent Beck, [*Test-Driven Development: By Example*](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530) (2002)
 
-**Practical detail:** [Lifecycle → TDD and BDD](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#tdd-and-bdd)
+**Practical detail:** [Lifecycle → TDD and BDD](https://locchh.github.io/handbook/software/basics/lifecycle/#tdd-and-bdd)
 
 ______________________________________________________________________
 
@@ -296,7 +296,7 @@ Then: their account is removed and they receive a confirmation email
 
 **Ref:** Dan North, [*Introducing BDD*](https://dannorth.net/introducing-bdd/) (2006); [Cucumber](https://cucumber.io/docs/bdd/)
 
-**Practical detail:** [Lifecycle → TDD and BDD](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#tdd-and-bdd)
+**Practical detail:** [Lifecycle → TDD and BDD](https://locchh.github.io/handbook/software/basics/lifecycle/#tdd-and-bdd)
 
 ______________________________________________________________________
 
@@ -308,7 +308,7 @@ In a complex business, the hardest part of building software is understanding th
 
 **Ref:** Eric Evans, [*Domain-Driven Design*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215) (2003)
 
-**Further reading:** [The Architecture Bookshelf → Domain-Driven Design](https://locchh.github.io/sw-handbook/software/advanced/books/#domain-driven-design)
+**Further reading:** [The Architecture Bookshelf → Domain-Driven Design](https://locchh.github.io/handbook/software/advanced/books/#domain-driven-design)
 
 ______________________________________________________________________
 

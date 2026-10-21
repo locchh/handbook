@@ -8,10 +8,10 @@ The value of that survey is not any single recommendation; it is the **shape of 
 
 This handbook now has two reading lists. They are not competing:
 
-| List                                                                                                     | What it is                                                                                                          | Use it when                                                                                                    |
-| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [The Senior Curriculum](https://locchh.github.io/sw-handbook/software/basics/senior_curriculum/index.md) | An opinionated **path** — a small number of books plus courses, postmortems, and drills, in an order, on a cadence. | You want to know what to read *next*.                                                                          |
-| **This page**                                                                                            | A comprehensive **map** — what exists per subfield and roughly why it exists.                                       | You have a specific problem (splitting a monolith, designing an event pipeline) and want the literature on it. |
+| List                                                                                                  | What it is                                                                                                          | Use it when                                                                                                    |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| [The Senior Curriculum](https://locchh.github.io/handbook/software/basics/senior_curriculum/index.md) | An opinionated **path** — a small number of books plus courses, postmortems, and drills, in an order, on a cadence. | You want to know what to read *next*.                                                                          |
+| **This page**                                                                                         | A comprehensive **map** — what exists per subfield and roughly why it exists.                                       | You have a specific problem (splitting a monolith, designing an event pipeline) and want the literature on it. |
 
 Overlap is expected: *Designing Data-Intensive Applications*, *Release It!*, *A Philosophy of Software Design*, *SRE*, and *Fundamentals of Software Architecture* appear in both. When a book shows up on the curated path *and* near the top of the popularity survey, that is the strongest signal either list can give you.
 
@@ -59,7 +59,7 @@ The core of the field: how to structure a system and how to talk about that stru
 | [Software Architecture for Developers, Vol. 1–2](https://www.goodreads.com/book/show/33221518) — Brown   | 2016 | Vol. 1: technical leadership. Vol. 2: [visualising and documenting](https://www.goodreads.com/book/show/33221619) — the origin of the [C4 model](https://c4model.com/). |
 | [Documenting Software Architectures](https://www.goodreads.com/book/show/223911) — Clements et al.       | 2010 | Views and beyond. Heavy, but the reference when documentation is a contractual deliverable.                                                                             |
 
-Pairs with [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md) and [Design Principles](https://locchh.github.io/sw-handbook/software/basics/principles/index.md).
+Pairs with [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md) and [Design Principles](https://locchh.github.io/handbook/software/basics/principles/index.md).
 
 ## Design Patterns
 
@@ -107,7 +107,7 @@ Where architecture meets storage. Listed as "Data Engineering" in the source; th
 | [Big Data](https://www.goodreads.com/book/show/13421400) — Marz & Warren                          | 2015 | The Lambda architecture, from its author. Historically important; largely superseded by unified stream processing — read it for the reasoning, not the blueprint.                                                                                                                                             |
 | [Data Modeling Made Simple](https://www.goodreads.com/book/show/7846548) — Hoberman               | 2015 | Conceptual, logical, and physical modelling for people who never took a database course.                                                                                                                                                                                                                      |
 
-Pairs with [Databases](https://locchh.github.io/sw-handbook/data/basics/databases/index.md), [Data Modelling](https://locchh.github.io/sw-handbook/data/basics/data_modeling/index.md), and [Data Engineering](https://locchh.github.io/sw-handbook/data/basics/data_engineering/index.md).
+Pairs with [Databases](https://locchh.github.io/handbook/data/basics/databases/index.md), [Data Modelling](https://locchh.github.io/handbook/data/basics/data_modeling/index.md), and [Data Engineering](https://locchh.github.io/handbook/data/basics/data_engineering/index.md).
 
 ## Streaming & Messaging
 
@@ -132,7 +132,7 @@ The physics underneath everything above: partial failure, no shared clock, no gl
 | [Distributed Systems: Principles and Paradigms](https://www.goodreads.com/book/show/405614) — Tanenbaum & van Steen | 2016 | The university textbook; [free PDF from the authors](https://www.distributed-systems.net/index.php/books/ds3/). Use it to fill theory gaps.                                                            |
 | [Security Engineering](https://www.goodreads.com/book/show/3268675) — Anderson                                      | 2020 | 3rd edition, [chapters free on the author's page](https://www.cl.cam.ac.uk/~rja14/book.html). Not really a distributed-systems book — it is the book on how systems fail when someone *wants* them to. |
 
-Pairs with [Concurrency](https://locchh.github.io/sw-handbook/software/basics/concurrency/index.md) and [Networking](https://locchh.github.io/sw-handbook/software/basics/networking/index.md).
+Pairs with [Concurrency](https://locchh.github.io/handbook/software/basics/concurrency/index.md) and [Networking](https://locchh.github.io/handbook/software/basics/networking/index.md).
 
 ## Cloud & Infrastructure
 
@@ -168,7 +168,7 @@ How the work gets organized. Architecture decisions are constrained by delivery 
 | [The Art of Agile Development](https://www.goodreads.com/book/show/1654215) — Shore & Warden                      | 2007 | The most practice-level of the agile books (a 2021 second edition exists).             |
 | [Planning Extreme Programming](https://www.goodreads.com/book/show/67839) — Beck & Fowler                         | 2000 | Short, and the clearest thinking on estimation and slack that the field has produced.  |
 
-Pairs with [Lifecycle](https://locchh.github.io/sw-handbook/software/basics/lifecycle/index.md).
+Pairs with [Lifecycle](https://locchh.github.io/handbook/software/basics/lifecycle/index.md).
 
 ## DevOps
 
@@ -179,7 +179,7 @@ Pairs with [Lifecycle](https://locchh.github.io/sw-handbook/software/basics/life
 | [Continuous Integration](https://www.goodreads.com/book/show/1311542) — Duvall, Matyas, Glover                | 2007 | Older and narrower; useful if CI is genuinely new to the team.                               |
 | [DevOps: A Software Architect's Perspective](https://www.goodreads.com/book/show/23363016) — Bass, Weber, Zhu | 2015 | The bridge: which architectural properties make continuous deployment possible at all.       |
 
-Pairs with [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) and [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md).
+Pairs with [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) and [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md).
 
 ## General & Craft
 
@@ -226,13 +226,13 @@ The source stopped updating in **October 2021**. Everything below post-dates it 
 - *Refactoring*, 2nd ed. (2018) — the mechanics of changing structure safely.
 - *Building Secure and Reliable Systems* (2020) — Google, [free online](https://sre.google/books/building-secure-reliable-systems/); security and reliability as one design problem.
 
-**Whole topics with no representation**: platform engineering, cost and FinOps as architectural inputs, and sustainability. For these, current conference talks and engineering blogs are ahead of the books — see the blog and postmortem sections of [The Senior Curriculum](https://locchh.github.io/sw-handbook/software/basics/senior_curriculum/index.md).
+**Whole topics with no representation**: platform engineering, cost and FinOps as architectural inputs, and sustainability. For these, current conference talks and engineering blogs are ahead of the books — see the blog and postmortem sections of [The Senior Curriculum](https://locchh.github.io/handbook/software/basics/senior_curriculum/index.md).
 
 ## How to Actually Get Through Them
 
 A list this size is a way to feel behind. It isn't a queue.
 
-1. **One book per quarter, chosen by current problem.** Four a year beats a stalled stack of twelve. The [cadence table](https://locchh.github.io/sw-handbook/software/basics/senior_curriculum/#suggested-cadence) puts this next to the weekly and monthly habits.
+1. **One book per quarter, chosen by current problem.** Four a year beats a stalled stack of twelve. The [cadence table](https://locchh.github.io/handbook/software/basics/senior_curriculum/#suggested-cadence) puts this next to the weekly and monthly habits.
 1. **Read the table of contents and two Goodreads reviews first** — the source author's own selection method, and it takes ten minutes.
 1. **Prefer the book that argues with the one you just read.** *Clean Architecture* then *A Philosophy of Software Design*; any microservices book then *Microservices AntiPatterns*. Disagreement between two experienced authors is where the trade-off actually lives.
 1. **Convert reading into an artifact.** One [ADR](https://adr.github.io/), design-doc section, or review comment per book. A book you cannot cite in a real decision was entertainment.

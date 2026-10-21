@@ -48,8 +48,8 @@ flowchart LR
     O --> DB[(Database)]
 ```
 
-- **DTO** — use at real boundaries to avoid leaking internal fields and to decouple your schema from your public [API](https://locchh.github.io/sw-handbook/software/basics/apis/index.md) contract. Don't mirror every entity with a DTO in a small app.
-- **DAO / Repository** — keeps SQL out of business logic, so you can test with fakes and swap stores ([Dependency Inversion](https://locchh.github.io/sw-handbook/software/basics/principles/index.md)). *Repository* is the more domain-oriented sibling; the terms are often used interchangeably.
+- **DTO** — use at real boundaries to avoid leaking internal fields and to decouple your schema from your public [API](https://locchh.github.io/handbook/software/basics/apis/index.md) contract. Don't mirror every entity with a DTO in a small app.
+- **DAO / Repository** — keeps SQL out of business logic, so you can test with fakes and swap stores ([Dependency Inversion](https://locchh.github.io/handbook/software/basics/principles/index.md)). *Repository* is the more domain-oriented sibling; the terms are often used interchangeably.
 - **ORM** — a big win for CRUD, but watch the **N+1 query** trap and leaky abstractions. Use it for the 90%; drop to raw SQL for the complex 10%.
 - **Anti-pattern:** returning ORM entities straight from your API welds your database schema to your public contract — exactly what DTOs prevent.
 
@@ -225,7 +225,7 @@ All-in-One → Split DB → Extract Services → Full Microservices
 
 Start simple. Move to the next stage only when a real constraint (scale, team size, release coupling) forces the change — not because the next step sounds more modern.
 
-Once the topology is chosen, [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) covers how changes reach it, while [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md) covers sizing, monitoring, and troubleshooting the machines underneath it.
+Once the topology is chosen, [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers how changes reach it, while [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md) covers sizing, monitoring, and troubleshooting the machines underneath it.
 
 ______________________________________________________________________
 
@@ -354,4 +354,4 @@ ______________________________________________________________________
 
 ## Going Deeper
 
-The literature behind each of the concerns above — system architecture, DDD, microservices, streaming, distributed systems, scalability — is mapped by subfield in [The Architecture Bookshelf](https://locchh.github.io/sw-handbook/software/advanced/books/index.md).
+The literature behind each of the concerns above — system architecture, DDD, microservices, streaming, distributed systems, scalability — is mapped by subfield in [The Architecture Bookshelf](https://locchh.github.io/handbook/software/advanced/books/index.md).

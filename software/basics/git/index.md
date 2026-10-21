@@ -2,7 +2,7 @@
 
 The two commands every branch workflow runs on, and the mental model that keeps them straight.
 
-This page owns the **branch mechanics** — fetch vs. pull, `origin/main`, merge, rebase, conflicts, and the daily loop. For reading the resulting diff and reviewing a PR, see [Code Review](https://locchh.github.io/sw-handbook/software/basics/code_review/index.md); for the branching model these commands serve, see [Lifecycle → Version Control](https://locchh.github.io/sw-handbook/software/basics/lifecycle/#version-control); for the commands themselves as a quick lookup, see [Linux Commands → Git Essentials](https://locchh.github.io/sw-handbook/software/tool_tip/linux_commands/#git-essentials).
+This page owns the **branch mechanics** — fetch vs. pull, `origin/main`, merge, rebase, conflicts, and the daily loop. For reading the resulting diff and reviewing a PR, see [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md); for the branching model these commands serve, see [Lifecycle → Version Control](https://locchh.github.io/handbook/software/basics/lifecycle/#version-control); for the commands themselves as a quick lookup, see [Linux Commands → Git Essentials](https://locchh.github.io/handbook/software/tool_tip/linux_commands/#git-essentials).
 
 ## 1. The Core Concept
 

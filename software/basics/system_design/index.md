@@ -2,7 +2,7 @@
 
 Seven short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, deployment strategies, and retry and resilience. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.
 
-For the building blocks these notes sit on, see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md), [APIs](https://locchh.github.io/sw-handbook/software/basics/apis/index.md), [Security](https://locchh.github.io/sw-handbook/software/basics/security/index.md), and [Networking](https://locchh.github.io/sw-handbook/software/basics/networking/index.md).
+For the building blocks these notes sit on, see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md), [APIs](https://locchh.github.io/handbook/software/basics/apis/index.md), [Security](https://locchh.github.io/handbook/software/basics/security/index.md), and [Networking](https://locchh.github.io/handbook/software/basics/networking/index.md).
 
 About the images
 
@@ -57,7 +57,7 @@ All seven come from the "Gang of Four" (GoF) catalogue[1](#fn:gof). GoF sorts it
 Points the post leaves out:
 
 - **"Factory" is several patterns.** GoF has *Factory Method* (a subclass decides which class to create) and *Abstract Factory* (creates a whole family of related objects). The post describes the everyday **simple factory**, a function with a `switch`/`dict` lookup. That one is not in GoF, but it is the most common form in practice.
-- **Singleton is mostly a warning.** It is global mutable state, it hides dependencies, and it makes tests share state. The modern habit is to build *one* instance at the composition root and pass it in with dependency injection. You still get a single instance, without the global access. See [Design Principles](https://locchh.github.io/sw-handbook/software/basics/principles/index.md) (Dependency Inversion).
+- **Singleton is mostly a warning.** It is global mutable state, it hides dependencies, and it makes tests share state. The modern habit is to build *one* instance at the composition root and pass it in with dependency injection. You still get a single instance, without the global access. See [Design Principles](https://locchh.github.io/handbook/software/basics/principles/index.md) (Dependency Inversion).
 - **Strategy and Decorator are composition over inheritance.** Both swap or stack behaviour at runtime instead of growing a class tree. This is GoF's own central advice: *"Favor object composition over class inheritance."*[1](#fn:gof)
 - **Adapter and Decorator look alike but differ in intent.** An Adapter *changes* the interface to match one the caller expects. A Decorator *keeps* the interface and adds behaviour. A *Proxy* keeps the interface and controls access.
 - **Observer at system scale is pub/sub.** In-process Observer calls subscribers directly and synchronously. Across services, the same idea becomes a message broker (Kafka, RabbitMQ, MQTT, see [§3](#3-seven-api-protocols)) that decouples the publisher in time and in failure. One common bug: forgetting to unsubscribe, so the subject keeps dead listeners alive (a memory leak).
@@ -106,7 +106,7 @@ req = (RequestBuilder("GET", "/users")
        .build())
 ```
 
-**When *not* to use a pattern:** when no change is expected yet. Applying a pattern ahead of need is a classic YAGNI violation (see [Design Principles](https://locchh.github.io/sw-handbook/software/basics/principles/index.md)). Refactor *towards* a pattern once the second or third variant actually shows up[3](#fn:kerievsky).
+**When *not* to use a pattern:** when no change is expected yet. Applying a pattern ahead of need is a classic YAGNI violation (see [Design Principles](https://locchh.github.io/handbook/software/basics/principles/index.md)). Refactor *towards* a pattern once the second or third variant actually shows up[3](#fn:kerievsky).
 
 ______________________________________________________________________
 
@@ -172,7 +172,7 @@ A Stripe payment API is *public + REST*. A Netflix internal call is *internal + 
 
 **On GraphQL.** It fixes over-fetching and under-fetching for varied clients. The cost moves to the server: HTTP caching gets harder (one `POST /graphql` endpoint), you need query depth and cost limits to stop expensive queries, and per-field resolvers can cause the *N+1* query problem, which tools like DataLoader batch away[5](#fn:graphql).
 
-The style comparison table and the contract rules (status codes, idempotency, versioning, pagination) are in [APIs](https://locchh.github.io/sw-handbook/software/basics/apis/index.md).
+The style comparison table and the contract rules (status codes, idempotency, versioning, pagination) are in [APIs](https://locchh.github.io/handbook/software/basics/apis/index.md).
 
 ______________________________________________________________________
 
@@ -296,7 +296,7 @@ Corrections and additions to the post:
 - **mTLS in practice** is usually automated by a service mesh (Istio, Linkerd) or SPIFFE/SPIRE workload identities, so applications never handle certificates.
 - **Missing from the list:** *passkeys / WebAuthn* (phishing-resistant public-key login, the direction user authentication is heading), and *HTTP Basic*, which is fine only over TLS for internal tooling.
 
-AuthN vs. AuthZ, 401 vs. 403, and the OAuth sequence diagram are in [Security](https://locchh.github.io/sw-handbook/software/basics/security/index.md).
+AuthN vs. AuthZ, 401 vs. 403, and the OAuth sequence diagram are in [Security](https://locchh.github.io/handbook/software/basics/security/index.md).
 
 ______________________________________________________________________
 
@@ -362,7 +362,7 @@ Details the diagram compresses:
 - **Session keys are per direction.** Separate encryption and integrity keys are derived for client→server and server→client. Modern ciphers like `chacha20-poly1305@openssh.com` and AES-GCM provide both at once.
 - **The "offer then sign" two-step** (steps 10–13) lets the client ask "would you accept this key?" before unlocking a passphrase-protected key or touching a hardware token.
 
-Practical hardening (see also [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md)):
+Practical hardening (see also [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md)):
 
 ```
 ssh-keygen -t ed25519 -C "you@laptop"     # modern key type; add a passphrase
@@ -419,7 +419,7 @@ Things that decide whether these work in practice:
 - **Canary needs automatic judgment.** A canary is only as good as the signals it watches. Define the error rate, p99 latency, and saturation thresholds up front, and let the tool promote or abort on its own. Argo Rollouts and Flagger do this on Kubernetes[25](#fn:argo). Sticky routing (by user ID) keeps one person from bouncing between versions.
 - **Shadow traffic must have no side effects.** If the shadow version sends emails, charges cards, or writes to the real database, it isn't a test any more. Stub or sandbox the outbound calls. Mirroring is supported natively by Istio (`mirror:`) and Envoy.
 - **A/B testing is an experiment, not a deploy strategy.** It needs a hypothesis, a primary metric, a sample size fixed in advance, and statistical significance. It is usually done with **feature flags** inside *one* deployed build, not with two deployments.
-- **Feature flags separate *deploy* from *release*.** Code ships dark and gets turned on per user, percentage, or region. This makes most of the strategies above cheaper and gives you a kill switch. See [Becoming Senior](https://locchh.github.io/sw-handbook/software/basics/becoming_senior/index.md) on progressive delivery.
+- **Feature flags separate *deploy* from *release*.** Code ships dark and gets turned on per user, percentage, or region. This makes most of the strategies above cheaper and gives you a kill switch. See [Becoming Senior](https://locchh.github.io/handbook/software/basics/becoming_senior/index.md) on progressive delivery.
 - **What Kubernetes gives you natively:** a `Deployment` supports only `RollingUpdate` (tuned with `maxSurge` / `maxUnavailable`) and `Recreate`[26](#fn:k8s). Blue-green, canary, and shadow need a service mesh, ingress weights, or a rollout controller.
 
 ```
@@ -433,7 +433,7 @@ spec:
       maxUnavailable: 0
 ```
 
-**A reasonable default:** rolling for stateless internal services; canary with automated analysis for anything customer-facing; blue-green when you need instant, whole-system rollback (or for infrastructure you can't run two versions of side by side); shadow before a risky rewrite. The pipeline side of this is in [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) (§10, *How the Deploy Actually Happens*).
+**A reasonable default:** rolling for stateless internal services; canary with automated analysis for anything customer-facing; blue-green when you need instant, whole-system rollback (or for infrastructure you can't run two versions of side by side); shadow before a risky rewrite. The pipeline side of this is in [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) (§10, *How the Deploy Actually Happens*).
 
 ______________________________________________________________________
 
@@ -486,7 +486,7 @@ flowchart LR
 **Retry**
 
 - **Only retry what can succeed next time:** connection errors, `503`, `429` (respect `Retry-After`), timeouts. Never retry `400`, `401`, `403`, or `404`: the answer won't change.
-- **Only retry idempotent operations,** or make them idempotent with an idempotency key (see [APIs](https://locchh.github.io/sw-handbook/software/basics/apis/#idempotency)). Otherwise a retried payment can charge twice.
+- **Only retry idempotent operations,** or make them idempotent with an idempotency key (see [APIs](https://locchh.github.io/handbook/software/basics/apis/#idempotency)). Otherwise a retried payment can charge twice.
 - **Retry at one layer only.** If five layers each retry 3 times, one failing call at the bottom becomes 3⁵ = 243 calls. The Google SRE book calls this retry amplification and recommends a per-client **retry budget**: stop retrying once retries exceed about 10% of requests[29](#fn:sre).
 
 **Exponential backoff + jitter**
@@ -543,7 +543,7 @@ stateDiagram-v2
 | **Hedged requests**               | Send a second copy of a slow request to another replica and take whichever answers first. Cuts tail latency, from Google's *The Tail at Scale*[34](#fn:tail) |
 | **Idempotency keys**              | What makes retrying writes safe at all                                                                                                                       |
 
-The code-level view (exception handling, fail fast, graceful degradation) is in [Error Handling](https://locchh.github.io/sw-handbook/software/basics/error_handling/index.md).
+The code-level view (exception handling, fail fast, graceful degradation) is in [Error Handling](https://locchh.github.io/handbook/software/basics/error_handling/index.md).
 
 ______________________________________________________________________
 

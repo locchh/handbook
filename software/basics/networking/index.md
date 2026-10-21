@@ -2,7 +2,7 @@
 
 How bytes get from one machine to another — and what actually happens between typing a URL and seeing the page.
 
-> Load balancers, CDNs, and rate limiting build on these basics — see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md). For the contract layer on top of HTTP, see [APIs](https://locchh.github.io/sw-handbook/software/basics/apis/index.md).
+> Load balancers, CDNs, and rate limiting build on these basics — see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md). For the contract layer on top of HTTP, see [APIs](https://locchh.github.io/handbook/software/basics/apis/index.md).
 
 ## The TCP/IP Model
 
@@ -54,7 +54,7 @@ sequenceDiagram
 | **PATCH**  | partial update  | ✗    | ✗          |
 | **DELETE** | remove          | ✗    | ✓          |
 
-*Safe* = no side effects; *idempotent* = repeating it has the same effect as doing it once (this is what makes retries safe — see [APIs](https://locchh.github.io/sw-handbook/software/basics/apis/index.md)). HTTP/2 and /3 add multiplexing so many requests share one connection; status codes live in [APIs](https://locchh.github.io/sw-handbook/software/basics/apis/index.md).
+*Safe* = no side effects; *idempotent* = repeating it has the same effect as doing it once (this is what makes retries safe — see [APIs](https://locchh.github.io/handbook/software/basics/apis/index.md)). HTTP/2 and /3 add multiplexing so many requests share one connection; status codes live in [APIs](https://locchh.github.io/handbook/software/basics/apis/index.md).
 
 ## Rule of Thumb
 

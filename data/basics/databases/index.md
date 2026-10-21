@@ -1,6 +1,6 @@
 # Databases
 
-Where state lives. [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md) covered data types and normalization (1NF→BCNF); this page goes deeper into how a database stores, finds, and protects data. For the full menu of database *types* (document, key-value, wide-column, graph), see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md) under *Databases* — here we focus on the relational core and when to leave it.
+Where state lives. [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md) covered data types and normalization (1NF→BCNF); this page goes deeper into how a database stores, finds, and protects data. For the full menu of database *types* (document, key-value, wide-column, graph), see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md) under *Databases* — here we focus on the relational core and when to leave it.
 
 ## Relational vs NoSQL
 
@@ -27,7 +27,7 @@ GROUP BY u.name;
 
 ## Indexing
 
-An index is a sorted lookup structure (usually a B-tree — a balanced tree, see [Algorithms](https://locchh.github.io/sw-handbook/software/basics/algorithms/index.md)) that turns an O(n) table scan into an O(log n) lookup.
+An index is a sorted lookup structure (usually a B-tree — a balanced tree, see [Algorithms](https://locchh.github.io/handbook/software/basics/algorithms/index.md)) that turns an O(n) table scan into an O(log n) lookup.
 
 - **Index the columns you filter, join, and sort on.**
 - Every index **speeds reads but slows writes** and costs space — don't index everything.
@@ -55,7 +55,7 @@ Stronger isolation prevents more anomalies but allows less concurrency:
 
 ## Consistency at Scale
 
-ACID describes guarantees **within one database**. Spread data across machines and you hit the **CAP trade-off** (see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md)) — many distributed stores relax strict consistency for availability. This looser model is called **BASE**: *Basically Available, Soft state, Eventually consistent*.
+ACID describes guarantees **within one database**. Spread data across machines and you hit the **CAP trade-off** (see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md)) — many distributed stores relax strict consistency for availability. This looser model is called **BASE**: *Basically Available, Soft state, Eventually consistent*.
 
 ## Rule of Thumb
 

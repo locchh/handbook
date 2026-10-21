@@ -2,20 +2,20 @@
 
 Choose AI tools by the part of the workflow that needs help: changing code, running a model, evaluating its answers, or operating a deployed system. A coding assistant and an inference server solve different problems; an evaluation suite tells you whether either change helped your application.
 
-See [The LLM Landscape](https://locchh.github.io/sw-handbook/ai/basics/landscape/index.md) for the broader architecture and [Software Tools](https://locchh.github.io/sw-handbook/software/tool_tip/tools/index.md) for environments, checks, and local services.
+See [The LLM Landscape](https://locchh.github.io/handbook/ai/basics/landscape/index.md) for the broader architecture and [Software Tools](https://locchh.github.io/handbook/software/tool_tip/tools/index.md) for environments, checks, and local services.
 
 ## Choose by task
 
-| Task                                       | Starting point                                                                                                                                                 | Decision to make                                                                 |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Work on a codebase                         | [Claude Code](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/index.md), [Codex](https://locchh.github.io/sw-handbook/ai/tool_tip/codex/index.md) | Which tool fits your editor, repository instructions, and permission boundaries? |
-| Understand unfamiliar code                 | [DeepWiki](https://deepwiki.com/)                                                                                                                              | Can you verify its explanation against the relevant source and revision?         |
-| Supply library documentation               | [Context7](https://github.com/upstash/context7)                                                                                                                | Does the retrieved documentation match the project's dependency version?         |
-| Explore models and datasets                | [Hugging Face](https://huggingface.co/docs)                                                                                                                    | Does the model's license, size, and intended use fit the task?                   |
-| Experiment with local inference            | [Ollama](https://docs.ollama.com/)                                                                                                                             | Does the model fit your hardware and produce acceptable answers?                 |
-| Serve models on shared infrastructure      | [vLLM](https://docs.vllm.ai/en/latest/)                                                                                                                        | Can the server meet concurrency, latency, and memory requirements?               |
-| Compare prompts and models                 | [Promptfoo](https://www.promptfoo.dev/docs/intro/)                                                                                                             | Which examples and assertions define success?                                    |
-| Track experiments and application behavior | [MLflow](https://mlflow.org/docs/latest/)                                                                                                                      | What parameters, artifacts, metrics, and traces explain each result?             |
+| Task                                       | Starting point                                                                                                                                           | Decision to make                                                                 |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Work on a codebase                         | [Claude Code](https://locchh.github.io/handbook/ai/tool_tip/claude_code/index.md), [Codex](https://locchh.github.io/handbook/ai/tool_tip/codex/index.md) | Which tool fits your editor, repository instructions, and permission boundaries? |
+| Understand unfamiliar code                 | [DeepWiki](https://deepwiki.com/)                                                                                                                        | Can you verify its explanation against the relevant source and revision?         |
+| Supply library documentation               | [Context7](https://github.com/upstash/context7)                                                                                                          | Does the retrieved documentation match the project's dependency version?         |
+| Explore models and datasets                | [Hugging Face](https://huggingface.co/docs)                                                                                                              | Does the model's license, size, and intended use fit the task?                   |
+| Experiment with local inference            | [Ollama](https://docs.ollama.com/)                                                                                                                       | Does the model fit your hardware and produce acceptable answers?                 |
+| Serve models on shared infrastructure      | [vLLM](https://docs.vllm.ai/en/latest/)                                                                                                                  | Can the server meet concurrency, latency, and memory requirements?               |
+| Compare prompts and models                 | [Promptfoo](https://www.promptfoo.dev/docs/intro/)                                                                                                       | Which examples and assertions define success?                                    |
+| Track experiments and application behavior | [MLflow](https://mlflow.org/docs/latest/)                                                                                                                | What parameters, artifacts, metrics, and traces explain each result?             |
 
 ## Coding assistants
 
@@ -30,7 +30,7 @@ then run the project's lint and build commands.
 Report: summarize the behavior change and anything not verified.
 ```
 
-The detailed [Claude Code](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/index.md) and [Codex](https://locchh.github.io/sw-handbook/ai/tool_tip/codex/index.md) guides cover their repository context and execution controls. Use [Spec-Driven Development](https://locchh.github.io/sw-handbook/ai/tool_tip/spec_driven_development/index.md) when a change needs explicit acceptance criteria across several steps.
+The detailed [Claude Code](https://locchh.github.io/handbook/ai/tool_tip/claude_code/index.md) and [Codex](https://locchh.github.io/handbook/ai/tool_tip/codex/index.md) guides cover their repository context and execution controls. Use [Spec-Driven Development](https://locchh.github.io/handbook/ai/tool_tip/spec_driven_development/index.md) when a change needs explicit acceptance criteria across several steps.
 
 Community collections such as [AITmpl](https://www.aitmpl.com/agents) and [Playbooks](https://playbooks.com/) can provide starting points for configuration and reusable instructions. Read the commands, hooks, and integration requirements before importing them; keep only the parts that match your workflow.
 
@@ -47,7 +47,7 @@ Before downloading or deploying a model, record:
 
 Model weights are only part of memory usage; context and concurrent requests also consume capacity. Compare candidates using the same workload. A smaller model that meets the task's criteria can be more useful than a larger model that exceeds the deployment budget.
 
-Use [Hugging Face model cards](https://huggingface.co/docs/hub/model-cards) to inspect intended uses and limitations. For a shared service, add authentication, request limits, monitoring, and a recovery procedure; [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md) covers the operational groundwork.
+Use [Hugging Face model cards](https://huggingface.co/docs/hub/model-cards) to inspect intended uses and limitations. For a shared service, add authentication, request limits, monitoring, and a recovery procedure; [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md) covers the operational groundwork.
 
 ## Evaluate before expanding
 
@@ -78,7 +78,7 @@ A practical release loop:
 1. Deploy a known version with a rollback path.
 1. Inspect failures and add representative cases to the evaluation set.
 
-[CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) covers build and deployment automation. Keep credentials in environment variables or the deployment platform's secret store. Document variable names and placeholder values without committing keys.
+[CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers build and deployment automation. Keep credentials in environment variables or the deployment platform's secret store. Document variable names and placeholder values without committing keys.
 
 ## A minimal starting setup
 

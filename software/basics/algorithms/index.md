@@ -51,4 +51,4 @@ Most problems reduce to a handful of patterns:
 
 - **Pick the structure first.** The right one (a hash map, a heap) often makes the algorithm trivial.
 - **Big-O dominates at scale; constants dominate when `n` is small.** A linear scan can beat a hash map for ten items.
-- **Measure before micro-optimizing.** Profile, don't guess — see [Architecture § Performance Bottlenecks](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md).
+- **Measure before micro-optimizing.** Profile, don't guess — see [Architecture § Performance Bottlenecks](https://locchh.github.io/handbook/software/basics/architecture/index.md).

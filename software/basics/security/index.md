@@ -1,6 +1,6 @@
 # Security
 
-Security is a cross-cutting concern, not a feature bolted on at the end. The goal is the **CIA triad**: **Confidentiality** (only the right people read it), **Integrity** (no one tampers with it), **Availability** (it stays up). This page is the application view; for the security *layer* in a system see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md).
+Security is a cross-cutting concern, not a feature bolted on at the end. The goal is the **CIA triad**: **Confidentiality** (only the right people read it), **Integrity** (no one tampers with it), **Availability** (it stays up). This page is the application view; for the security *layer* in a system see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md).
 
 ## Authentication vs Authorization
 
@@ -10,7 +10,7 @@ Security is a cross-cutting concern, not a feature bolted on at the end. The goa
 | Mechanism    | passwords, MFA, tokens, SSO | roles, permissions, ACLs  |
 | HTTP failure | 401                         | 403                       |
 
-Modern web auth usually means a token (a [JWT](https://locchh.github.io/sw-handbook/software/basics/abbreviations/index.md)) or session issued after login, often via **OAuth 2.0 / OIDC** for delegated access:
+Modern web auth usually means a token (a [JWT](https://locchh.github.io/handbook/software/basics/abbreviations/index.md)) or session issued after login, often via **OAuth 2.0 / OIDC** for delegated access:
 
 ```
 sequenceDiagram

@@ -1,6 +1,6 @@
 # API Design
 
-An API is a **contract**. Good ones are predictable, hard to misuse, and safe to evolve. This page covers the contract details; for where APIs sit in a system see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md), and for the styles in context see [Tech Stacks](https://locchh.github.io/sw-handbook/software/basics/tech_stacks/index.md).
+An API is a **contract**. Good ones are predictable, hard to misuse, and safe to evolve. This page covers the contract details; for where APIs sit in a system see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md), and for the styles in context see [Tech Stacks](https://locchh.github.io/handbook/software/basics/tech_stacks/index.md).
 
 ## Styles
 
@@ -19,7 +19,7 @@ An API is a **contract**. Good ones are predictable, hard to misuse, and safe to
 | **4xx** | client error | 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict, 422 Unprocessable, 429 Too Many Requests |
 | **5xx** | server error | 500 Internal Error, 503 Unavailable                                                                                     |
 
-> **401 vs 403:** 401 = not authenticated (who are you?); 403 = authenticated but not allowed. See [Security](https://locchh.github.io/sw-handbook/software/basics/security/index.md).
+> **401 vs 403:** 401 = not authenticated (who are you?); 403 = authenticated but not allowed. See [Security](https://locchh.github.io/handbook/software/basics/security/index.md).
 
 ## Idempotency
 
@@ -42,5 +42,5 @@ Treat a published API as immutable:
 ## Rule of Thumb
 
 - **Design for the caller, not the database.** Consistent naming, predictable shapes.
-- **Return structured errors** (`{code, message}`), never HTML or stack traces — see [Error Handling](https://locchh.github.io/sw-handbook/software/basics/error_handling/index.md).
+- **Return structured errors** (`{code, message}`), never HTML or stack traces — see [Error Handling](https://locchh.github.io/handbook/software/basics/error_handling/index.md).
 - **Paginate from day one**, and make the wrong call hard to make.

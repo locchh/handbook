@@ -1,6 +1,6 @@
 # Data Modelling & Architecture
 
-Two related disciplines: **modelling** designs the *structure* of data — entities, attributes, and relationships. **Architecture** is the org-wide *blueprint* — how data flows, where it lands, and who serves it. [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md) covered normalization (1NF→BCNF); [Databases](https://locchh.github.io/sw-handbook/data/basics/databases/index.md) and [Data Engineering](https://locchh.github.io/sw-handbook/data/basics/data_engineering/index.md) covered where data lives and how it moves. This page ties them together.
+Two related disciplines: **modelling** designs the *structure* of data — entities, attributes, and relationships. **Architecture** is the org-wide *blueprint* — how data flows, where it lands, and who serves it. [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md) covered normalization (1NF→BCNF); [Databases](https://locchh.github.io/handbook/data/basics/databases/index.md) and [Data Engineering](https://locchh.github.io/handbook/data/basics/data_engineering/index.md) covered where data lives and how it moves. This page ties them together.
 
 ## What It Is
 
@@ -12,7 +12,7 @@ Modelling proceeds through three levels of increasing detail:
 | **Logical**    | *Which* attributes, keys, and normal form  | analyst / architect | normalized schema, DB-agnostic |
 | **Physical**   | *How* it's stored — tables, types, indexes | engineer            | DDL for a specific engine      |
 
-**Architecture** then decides the macro shape: OLTP vs OLAP separation, [warehouse / lake / lakehouse](https://locchh.github.io/sw-handbook/data/basics/data_engineering/index.md) storage, and how curated data is served to consumers.
+**Architecture** then decides the macro shape: OLTP vs OLAP separation, [warehouse / lake / lakehouse](https://locchh.github.io/handbook/data/basics/data_engineering/index.md) storage, and how curated data is served to consumers.
 
 ## Modelling Styles
 

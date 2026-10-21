@@ -1,6 +1,6 @@
 # Data Classification & Security
 
-**Classification** labels data by how sensitive it is; **security** applies controls proportional to that label. The two are inseparable — the label is what tells you how hard to protect something. Sits under [governance](https://locchh.github.io/sw-handbook/data/basics/data_governance/index.md), which sets the policy this page enforces. For app-level security see [Security](https://locchh.github.io/sw-handbook/software/basics/security/index.md).
+**Classification** labels data by how sensitive it is; **security** applies controls proportional to that label. The two are inseparable — the label is what tells you how hard to protect something. Sits under [governance](https://locchh.github.io/handbook/data/basics/data_governance/index.md), which sets the policy this page enforces. For app-level security see [Security](https://locchh.github.io/handbook/software/basics/security/index.md).
 
 ## What It Is
 

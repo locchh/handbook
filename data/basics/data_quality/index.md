@@ -1,6 +1,6 @@
 # Data Quality & Cleansing
 
-**Quality** measures whether data is fit for its intended use; **cleansing** is the corrective work that raises it. [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md) listed five quality dimensions and "garbage in, garbage out"; this page turns that into something you can measure and act on. Related: [Data Engineering](https://locchh.github.io/sw-handbook/data/basics/data_engineering/index.md) on validating at ingestion.
+**Quality** measures whether data is fit for its intended use; **cleansing** is the corrective work that raises it. [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md) listed five quality dimensions and "garbage in, garbage out"; this page turns that into something you can measure and act on. Related: [Data Engineering](https://locchh.github.io/handbook/data/basics/data_engineering/index.md) on validating at ingestion.
 
 ## What It Is
 

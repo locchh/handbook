@@ -1,6 +1,6 @@
 # Data Governance & Management
 
-**Data management** is the whole practice of handling data as an asset across its [lifecycle](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md). **Governance** is the layer above it: the policies, roles, and decision rights that say *who* owns data, *who* may use it, and *how* those calls get made. [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md) named governance as a core concept; this page is the operating model.
+**Data management** is the whole practice of handling data as an asset across its [lifecycle](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md). **Governance** is the layer above it: the policies, roles, and decision rights that say *who* owns data, *who* may use it, and *how* those calls get made. [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md) named governance as a core concept; this page is the operating model.
 
 ## What It Is
 

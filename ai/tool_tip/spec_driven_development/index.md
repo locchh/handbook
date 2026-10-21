@@ -8,7 +8,7 @@ Problem → Constraints → Specification → Plan → Tasks → Implementation 
 
 SDD is not “write a large document first.” A useful spec is proportional to the risk and uncertainty of the change.
 
-For the agents these tools run on top of, see [The LLM Landscape → CLI Coding Agents](https://locchh.github.io/sw-handbook/ai/basics/landscape/#cli-coding-agents); for day-to-day habits when pairing with an AI, see [Tips](https://locchh.github.io/sw-handbook/software/tool_tip/tips/index.md).
+For the agents these tools run on top of, see [The LLM Landscape → CLI Coding Agents](https://locchh.github.io/handbook/ai/basics/landscape/#cli-coding-agents); for day-to-day habits when pairing with an AI, see [Tips](https://locchh.github.io/handbook/software/tool_tip/tips/index.md).
 
 ## What the Spec Should Contain
 

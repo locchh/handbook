@@ -1,6 +1,6 @@
 # Machine Setup
 
-A checklist for getting a fresh Ubuntu/Debian machine ready for development. Run top to bottom on a new box; cherry-pick when adding one tool. For the commands themselves, see [Linux Commands](https://locchh.github.io/sw-handbook/software/tool_tip/linux_commands/index.md); for the tools worth installing beyond the essentials here, see [Tools](https://locchh.github.io/sw-handbook/software/tool_tip/tools/index.md); for keeping a *server* healthy once it is running, see [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md).
+A checklist for getting a fresh Ubuntu/Debian machine ready for development. Run top to bottom on a new box; cherry-pick when adding one tool. For the commands themselves, see [Linux Commands](https://locchh.github.io/handbook/software/tool_tip/linux_commands/index.md); for the tools worth installing beyond the essentials here, see [Tools](https://locchh.github.io/handbook/software/tool_tip/tools/index.md); for keeping a *server* healthy once it is running, see [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md).
 
 ## Login
 

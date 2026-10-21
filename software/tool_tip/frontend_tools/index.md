@@ -2,7 +2,7 @@
 
 A 2026 frontend stack: what one experienced developer dropped, what replaced each tool, and the 16 tools that stayed. The post is the starting point; the sections after it explain *why* each swap happened and when it would be the wrong choice for you.
 
-For the wider picture of languages and stacks, see [Tech Stacks](https://locchh.github.io/sw-handbook/software/basics/tech_stacks/index.md). For general tool habits, see [Tools](https://locchh.github.io/sw-handbook/software/tool_tip/tools/index.md).
+For the wider picture of languages and stacks, see [Tech Stacks](https://locchh.github.io/handbook/software/basics/tech_stacks/index.md). For general tool habits, see [Tools](https://locchh.github.io/handbook/software/tool_tip/tools/index.md).
 
 Source
 

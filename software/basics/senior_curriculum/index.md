@@ -1,12 +1,12 @@
 # The Senior Curriculum
 
-Universities and course platforms teach fundamentals and frameworks — what can be graded at scale. Seniority is judgment under real constraints, and judgment is learned from artifacts of real decisions and real failures: books by practitioners, postmortems, papers, design reviews — plus deliberate practice. This page is the self-study path. Companion to [Becoming Senior](https://locchh.github.io/sw-handbook/software/basics/becoming_senior/index.md).
+Universities and course platforms teach fundamentals and frameworks — what can be graded at scale. Seniority is judgment under real constraints, and judgment is learned from artifacts of real decisions and real failures: books by practitioners, postmortems, papers, design reviews — plus deliberate practice. This page is the self-study path. Companion to [Becoming Senior](https://locchh.github.io/handbook/software/basics/becoming_senior/index.md).
 
 ## How to Use This Page
 
 Do **not** try to read everything. Start with the core three books and the weekly habits, then pull from the tables by whichever skill is currently weakest. The [cadence table](#suggested-cadence) at the bottom turns this into a routine.
 
-This page is a **path** — a short list in an order, on a cadence. When you need the **map** instead — what literature exists on a specific subfield such as DDD, streaming, or scalability — see [The Architecture Bookshelf](https://locchh.github.io/sw-handbook/software/advanced/books/index.md).
+This page is a **path** — a short list in an order, on a cadence. When you need the **map** instead — what literature exists on a specific subfield such as DDD, streaming, or scalability — see [The Architecture Bookshelf](https://locchh.github.io/handbook/software/advanced/books/index.md).
 
 ## The Core Three
 
@@ -78,7 +78,7 @@ The highest-yield practice no course offers. Twenty postmortems teach more judgm
 
 - **The list:** [github.com/danluu/post-mortems](https://github.com/danluu/post-mortems) — hundreds of public incident reports, categorized.
 - **The culture:** [Postmortem Culture chapter, Google SRE book](https://sre.google/sre-book/postmortem-culture/) — how to write and run blameless postmortems.
-- **The protocol:** read one per week and interrogate it with the [senior reflex questions](https://locchh.github.io/sw-handbook/software/basics/becoming_senior/#the-senior-reflex-questions): what category of failure was this, what code-level guarantee was missing, who got paged and what did they see, what did the business lose?
+- **The protocol:** read one per week and interrogate it with the [senior reflex questions](https://locchh.github.io/handbook/software/basics/becoming_senior/#the-senior-reflex-questions): what category of failure was this, what code-level guarantee was missing, who got paged and what did they see, what did the business lose?
 
 ## Papers That Built the Industry
 
@@ -114,7 +114,7 @@ Reading builds vocabulary; only practice builds judgment.
 1. **Back-of-envelope drills.** QPS, storage per year, cost per month — from the [latency numbers](https://gist.github.com/jboner/2841832) up. Seniors kill bad architectures in thirty seconds of arithmetic.
 1. **One design doc per quarter** — for real work, even retroactively for a system that already exists. Get it torn apart by someone senior; record decisions as [ADRs](https://adr.github.io/).
 1. **Own a service end to end** — its on-call, its dashboard, its cost line. Nothing teaches the failure path like being paged for it.
-1. **Learn one industry deeply** — its capabilities, regulators, and vocabulary — until the capability map unrolls by itself ([Becoming Senior](https://locchh.github.io/sw-handbook/software/basics/becoming_senior/#think-in-business-capabilities-not-frameworks)).
+1. **Learn one industry deeply** — its capabilities, regulators, and vocabulary — until the capability map unrolls by itself ([Becoming Senior](https://locchh.github.io/handbook/software/basics/becoming_senior/#think-in-business-capabilities-not-frameworks)).
 1. **Write publicly.** Explaining a design or an incident to strangers is the cheapest design review available — and it trains the communication half of seniority.
 
 ## Suggested Cadence

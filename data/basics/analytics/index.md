@@ -1,6 +1,6 @@
 # Data Analytics
 
-Turning data into answers. Where the [DIKW pyramid](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md) explained *why* data becomes insight, this page is the *how* — the questions you ask and the statistics behind them.
+Turning data into answers. Where the [DIKW pyramid](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md) explained *why* data becomes insight, this page is the *how* — the questions you ask and the statistics behind them.
 
 ## Four Kinds of Analytics
 
@@ -40,6 +40,6 @@ The first pass over any new dataset, before modeling:
 
 ## Rule of Thumb
 
-- **Start with the question.** Most data projects fail from a fuzzy goal, not a bad model (see [Introduction to Data](https://locchh.github.io/sw-handbook/data/basics/introduction_to_data/index.md)).
+- **Start with the question.** Most data projects fail from a fuzzy goal, not a bad model (see [Introduction to Data](https://locchh.github.io/handbook/data/basics/introduction_to_data/index.md)).
 - **Look at the distribution before computing summaries** — a single number hides more than it shows.
 - **A metric is only useful if it changes a decision.**

@@ -2,7 +2,7 @@
 
 A practical command-line reference for Linux development and operations. Read `command --help` or `man command` before using an unfamiliar option, especially with elevated privileges.
 
-For *when* to reach for these — sizing a machine, diagnosing a full disk, triaging a slow box — see [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md).
+For *when* to reach for these — sizing a machine, diagnosing a full disk, triaging a slow box — see [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md).
 
 ## Navigation and Files
 
@@ -238,7 +238,7 @@ exit                     # leave shell (Ctrl+D)
 
 Do not type secrets into command arguments. History files are persistent, and process arguments may be visible to other users.
 
-For persistent remote work, see the [tmux Cheatsheet](https://locchh.github.io/sw-handbook/software/tool_tip/tmux/index.md).
+For persistent remote work, see the [tmux Cheatsheet](https://locchh.github.io/handbook/software/tool_tip/tmux/index.md).
 
 ## Git Essentials
 
@@ -254,7 +254,7 @@ git switch -c feature/name origin/main
 git push -u origin feature/name
 ```
 
-For branch integration and history rewriting, see [Git: Merge vs Rebase](https://locchh.github.io/sw-handbook/software/basics/git/index.md). For reviewing branch changes, see [Code Review](https://locchh.github.io/sw-handbook/software/basics/code_review/index.md).
+For branch integration and history rewriting, see [Git: Merge vs Rebase](https://locchh.github.io/handbook/software/basics/git/index.md). For reviewing branch changes, see [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md).
 
 ## Docker Essentials
 
@@ -297,7 +297,7 @@ kubectl config current-context
 kubectl config view --minify --output 'jsonpath={..namespace}'
 ```
 
-Production clusters should use reviewable manifests or deployment automation. Interactive `kubectl` changes are difficult to reproduce and audit. See [CI/CD Platforms §10](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/#10-how-the-deploy-actually-happens) for push-based and pull-based deployment mechanics.
+Production clusters should use reviewable manifests or deployment automation. Interactive `kubectl` changes are difficult to reproduce and audit. See [CI/CD Platforms §10](https://locchh.github.io/handbook/software/tool_tip/cicd/#10-how-the-deploy-actually-happens) for push-based and pull-based deployment mechanics.
 
 ## Rule of Thumb
 

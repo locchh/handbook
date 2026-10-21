@@ -1,6 +1,6 @@
 # Tech Stacks
 
-A tech stack is the set of languages, frameworks, databases, and infrastructure used to build a system. This page is a compact reference — for architectural patterns and layering, see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md).
+A tech stack is the set of languages, frameworks, databases, and infrastructure used to build a system. This page is a compact reference — for architectural patterns and layering, see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md).
 
 ## The Layered View
 
@@ -32,7 +32,7 @@ A modern web system is usually composed of these layers. Each layer has many via
 
 ## Databases at a Glance
 
-See [Architecture § Databases](https://locchh.github.io/sw-handbook/software/basics/architecture/#databases) for the full breakdown. Quick picks:
+See [Architecture § Databases](https://locchh.github.io/handbook/software/basics/architecture/#databases) for the full breakdown. Quick picks:
 
 - **Default choice:** PostgreSQL. Relational, ACID, JSON support, mature.
 - **Document store:** MongoDB for flexible schemas; DynamoDB for serverless AWS.
@@ -65,6 +65,6 @@ Order of considerations, roughly in this priority:
 
 ## Further Reading
 
-- The [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md) page covers the patterns these stacks implement.
-- The [Lifecycle](https://locchh.github.io/sw-handbook/software/basics/lifecycle/index.md) page covers how teams ship software built on any stack, including version control practices.
-- [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) covers the concrete pipeline and deployment mechanics.
+- The [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md) page covers the patterns these stacks implement.
+- The [Lifecycle](https://locchh.github.io/handbook/software/basics/lifecycle/index.md) page covers how teams ship software built on any stack, including version control practices.
+- [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers the concrete pipeline and deployment mechanics.

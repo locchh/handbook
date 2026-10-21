@@ -2,4 +2,4 @@
 
 [Some thoughts about coding](https://locchh.github.io/blogs/blog/some_idea_for_coding/)
 
-[🔁 Retry and resilience: 6 patterns for failing services (repost)](https://www.linkedin.com/posts/chuong-loc_httpslnkdinpgp98zxw4-activity-7518557474858319874-NhkO) — notes in [System Design Notes](https://locchh.github.io/sw-handbook/software/basics/system_design/#7-retry-and-resilience)
+[🔁 Retry and resilience: 6 patterns for failing services (repost)](https://www.linkedin.com/posts/chuong-loc_httpslnkdinpgp98zxw4-activity-7518557474858319874-NhkO) — notes in [System Design Notes](https://locchh.github.io/handbook/software/basics/system_design/#7-retry-and-resilience)

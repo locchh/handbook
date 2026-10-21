@@ -1,6 +1,6 @@
 # Study Guide
 
-How to learn a new technology efficiently. For tips on working with AI coding assistants, see [Tips](https://locchh.github.io/sw-handbook/software/tool_tip/tips/index.md).
+How to learn a new technology efficiently. For tips on working with AI coding assistants, see [Tips](https://locchh.github.io/handbook/software/tool_tip/tips/index.md).
 
 ## The Three Resources
 

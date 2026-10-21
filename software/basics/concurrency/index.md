@@ -62,4 +62,4 @@ flowchart LR
 - **Don't share mutable state.** Prefer immutability and message passing.
 - **If you must share, protect every access with the same lock** — and always acquire multiple locks in the **same order** to avoid the cycle above.
 - **Keep critical sections tiny.** Hold locks for as short a time as possible.
-- At the system level this becomes message queues and stateless services — see [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md); for failures across services, see [Error Handling](https://locchh.github.io/sw-handbook/software/basics/error_handling/index.md).
+- At the system level this becomes message queues and stateless services — see [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md); for failures across services, see [Error Handling](https://locchh.github.io/handbook/software/basics/error_handling/index.md).

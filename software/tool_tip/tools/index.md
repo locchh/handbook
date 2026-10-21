@@ -2,7 +2,7 @@
 
 Choose tools around a repeatable workflow: find the code, reproduce the environment, make a change, check it, and ship it. Start with the tools your project already uses; add another when it solves a specific problem.
 
-For installation, see [Machine Setup](https://locchh.github.io/sw-handbook/software/tool_tip/machine_setup/index.md). For command syntax beyond the examples here, use [Linux Commands](https://locchh.github.io/sw-handbook/software/tool_tip/linux_commands/index.md).
+For installation, see [Machine Setup](https://locchh.github.io/handbook/software/tool_tip/machine_setup/index.md). For command syntax beyond the examples here, use [Linux Commands](https://locchh.github.io/handbook/software/tool_tip/linux_commands/index.md).
 
 ## Choose by task
 
@@ -55,7 +55,7 @@ test:
     uv run pytest
 ```
 
-Replace `main.py` with your application's source path. `make check` checks lint, formatting, and types; `make test` checks behavior. A formatter is not a type checker, and neither replaces tests. Keep the same commands in [CI/CD](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) so local success means something before a merge.
+Replace `main.py` with your application's source path. `make check` checks lint, formatting, and types; `make test` checks behavior. A formatter is not a type checker, and neither replaces tests. Keep the same commands in [CI/CD](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) so local success means something before a merge.
 
 ## Inspect before changing
 
@@ -75,7 +75,7 @@ git diff --check
 git diff
 ```
 
-Use [Git](https://locchh.github.io/sw-handbook/software/basics/git/index.md) for branch and history mechanics, and [Code Review](https://locchh.github.io/sw-handbook/software/basics/code_review/index.md) for evaluating the resulting change.
+Use [Git](https://locchh.github.io/handbook/software/basics/git/index.md) for branch and history mechanics, and [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md) for evaluating the resulting change.
 
 ## Run services locally
 
@@ -91,7 +91,7 @@ docker compose down
 
 Keep application dependencies in the language lockfile and service configuration in Compose. Document required environment variables with placeholder values in `.env.example`; keep actual credentials out of Git. Named volumes retain data when running `docker compose down`; adding `--volumes` removes those volumes, so use it only when you intend to discard their data.
 
-A local stack is a development environment. Deployment still needs resource sizing, backups, health checks, and a recovery path; see [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md).
+A local stack is a development environment. Deployment still needs resource sizing, backups, health checks, and a recovery path; see [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md).
 
 ## Documentation and design
 
@@ -103,4 +103,4 @@ A local stack is a development environment. Deployment still needs resource sizi
 
 ## Build a toolchain gradually
 
-Start with Git, an editor, the project's package manager, and its test command. Add formatting and linting for consistent feedback, a task runner when commands repeat, and containers when service dependencies become difficult to reproduce. Introduce AI assistance through the [AI Tools](https://locchh.github.io/sw-handbook/ai/tool_tip/tools/index.md) guide while keeping the same verification steps.
+Start with Git, an editor, the project's package manager, and its test command. Add formatting and linting for consistent feedback, a task runner when commands repeat, and containers when service dependencies become difficult to reproduce. Introduce AI assistance through the [AI Tools](https://locchh.github.io/handbook/ai/tool_tip/tools/index.md) guide while keeping the same verification steps.

@@ -32,7 +32,7 @@ So the skill has two halves:
 
 The second half is the one people skip. The core practice is a **disciplined evals and error-analysis loop**: define what good looks like, measure it, look at the failures individually, and let what you find drive the next change. Without it you are guessing, and an AI app you can't evaluate is an AI app you can't safely change.
 
-**In this handbook:** [AI Concepts](https://locchh.github.io/sw-handbook/ai/basics/concepts/index.md) covers the building blocks; [The LLM Landscape](https://locchh.github.io/sw-handbook/ai/basics/landscape/index.md) covers the layers you assemble them from, including the observability and evaluation tools this loop depends on. For delivery, [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) covers pipeline mechanics, while [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md) covers capacity and operations when you self-host.
+**In this handbook:** [AI Concepts](https://locchh.github.io/handbook/ai/basics/concepts/index.md) covers the building blocks; [The LLM Landscape](https://locchh.github.io/handbook/ai/basics/landscape/index.md) covers the layers you assemble them from, including the observability and evaluation tools this loop depends on. For delivery, [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers pipeline mechanics, while [Running a Server](https://locchh.github.io/handbook/software/tool_tip/server_operations/index.md) covers capacity and operations when you self-host.
 
 ## 2. Software Engineering Fundamentals
 
@@ -42,7 +42,7 @@ This is the argument against vibe coding as a terminal skill. An inexperienced d
 
 Fundamentals turn that around. They give you the precise vocabulary of software engineering — coupling, idempotency, cache invalidation, backpressure, consistency — which is exactly the language you steer a coding agent with. The clearer the language, the better the steering.
 
-**In this handbook:** [Fundamentals](https://locchh.github.io/sw-handbook/software/basics/fundamentals/index.md), [Design Principles](https://locchh.github.io/sw-handbook/software/basics/principles/index.md), [Architecture](https://locchh.github.io/sw-handbook/software/basics/architecture/index.md), and [Tech Stacks](https://locchh.github.io/sw-handbook/software/basics/tech_stacks/index.md).
+**In this handbook:** [Fundamentals](https://locchh.github.io/handbook/software/basics/fundamentals/index.md), [Design Principles](https://locchh.github.io/handbook/software/basics/principles/index.md), [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md), and [Tech Stacks](https://locchh.github.io/handbook/software/basics/tech_stacks/index.md).
 
 ## 3. Using Coding Agents
 
@@ -59,7 +59,7 @@ Concretely, that means knowing how to:
 
 There's a meta-skill layered on top: agentic coding is moving fast, so being good at it means not only knowing today's practices but having a **routine for trying new tools and revising your workflow** as best practice shifts.
 
-**In this handbook:** [Claude Code](https://locchh.github.io/sw-handbook/ai/tool_tip/claude_code/index.md) and [Codex](https://locchh.github.io/sw-handbook/ai/tool_tip/codex/index.md) each work through all six of these in one tool — reading them side by side shows which knowledge transfers and which is tool-shaped; [Spec-Driven Development](https://locchh.github.io/sw-handbook/ai/tool_tip/spec_driven_development/index.md), [AI Tools](https://locchh.github.io/sw-handbook/ai/tool_tip/tools/index.md), and [Tips → Pair-Coding with AI](https://locchh.github.io/sw-handbook/software/tool_tip/tips/index.md) cover the rest.
+**In this handbook:** [Claude Code](https://locchh.github.io/handbook/ai/tool_tip/claude_code/index.md) and [Codex](https://locchh.github.io/handbook/ai/tool_tip/codex/index.md) each work through all six of these in one tool — reading them side by side shows which knowledge transfers and which is tool-shaped; [Spec-Driven Development](https://locchh.github.io/handbook/ai/tool_tip/spec_driven_development/index.md), [AI Tools](https://locchh.github.io/handbook/ai/tool_tip/tools/index.md), and [Tips → Pair-Coding with AI](https://locchh.github.io/handbook/software/tool_tip/tips/index.md) cover the rest.
 
 ## 4. Shaping the Build
 
@@ -69,13 +69,13 @@ The expectation that you'll be handed a pixel-perfect design and asked only to i
 
 Ng frames this as an opportunity rather than a loss. AI lets you take on more ownership and agency than before — spotting a problem worth solving and executing on it responsibly. That requires knowing how to drive a project: when to build a quick MVP and put it in front of users, and when to slow down and build carefully instead.
 
-**In this handbook:** [Becoming Senior](https://locchh.github.io/sw-handbook/software/basics/becoming_senior/index.md) covers thinking in business capabilities rather than frameworks; [Lifecycle](https://locchh.github.io/sw-handbook/software/basics/lifecycle/index.md) covers the delivery process; [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md) covers the concrete automation machinery.
+**In this handbook:** [Becoming Senior](https://locchh.github.io/handbook/software/basics/becoming_senior/index.md) covers thinking in business capabilities rather than frameworks; [Lifecycle](https://locchh.github.io/handbook/software/basics/lifecycle/index.md) covers the delivery process; [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers the concrete automation machinery.
 
 ## The Skill Underneath
 
 All four rest on **continuous learning**. AI keeps changing, so the practices above have a shelf life; the habit of revising them doesn't.
 
-**In this handbook:** [Study Guide](https://locchh.github.io/sw-handbook/software/basics/study_guide/index.md) and [The Senior Curriculum](https://locchh.github.io/sw-handbook/software/basics/senior_curriculum/index.md).
+**In this handbook:** [Study Guide](https://locchh.github.io/handbook/software/basics/study_guide/index.md) and [The Senior Curriculum](https://locchh.github.io/handbook/software/basics/senior_curriculum/index.md).
 
 ## Rule of Thumb
 

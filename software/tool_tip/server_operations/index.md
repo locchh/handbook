@@ -2,7 +2,7 @@
 
 Choosing a machine, then keeping it healthy. This page covers the layers you are responsible for, how to size CPU / memory / disk / network, the diagnostic commands worth memorising, and runbooks for the failures that actually happen.
 
-It assumes a Linux VPS or bare-metal box. For setting up a *development* machine see [Machine Setup](https://locchh.github.io/sw-handbook/software/tool_tip/machine_setup/index.md); for the commands themselves as a flat lookup see [Linux Commands](https://locchh.github.io/sw-handbook/software/tool_tip/linux_commands/index.md).
+It assumes a Linux VPS or bare-metal box. For setting up a *development* machine see [Machine Setup](https://locchh.github.io/handbook/software/tool_tip/machine_setup/index.md); for the commands themselves as a flat lookup see [Linux Commands](https://locchh.github.io/handbook/software/tool_tip/linux_commands/index.md).
 
 ______________________________________________________________________
 
@@ -312,7 +312,7 @@ Three rules that prevent most incidents:
 - **Terminate TLS at the proxy.** Use [certbot](https://certbot.eff.org/) for certificates and generate the TLS config from [Mozilla's SSL Configuration Generator](https://ssl-config.mozilla.org/) rather than copying a blog post.
 - **Never `systemctl reload nginx` without `nginx -t` first.** A syntax error takes the site down until you notice.
 
-See [Networking & the Web](https://locchh.github.io/sw-handbook/software/basics/networking/index.md) for the protocol layer beneath this, and [Security](https://locchh.github.io/sw-handbook/software/basics/security/index.md) for the threat model.
+See [Networking & the Web](https://locchh.github.io/handbook/software/basics/networking/index.md) for the protocol layer beneath this, and [Security](https://locchh.github.io/handbook/software/basics/security/index.md) for the threat model.
 
 ______________________________________________________________________
 
