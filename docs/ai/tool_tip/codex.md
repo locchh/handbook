@@ -15,9 +15,20 @@ flowchart TB
     CX --> F[Avoid the<br/>sharp edges]
 ```
 
-Codex moves as fast as its competitor, so treat specific flags, paths, and defaults here as accurate **as of 15 August 2026** rather than permanent. Several pieces are explicitly marked experimental (rules, memories) or beta (permission profiles) in the official docs.
+Specific flags, paths, and defaults were checked against official documentation on **22 October 2026**. Availability depends on your client, sign-in method, plan, and workspace policy. Several pieces remain experimental (rules, memories) or beta (permission profiles).
 
 **Official docs:** [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) → [Commands reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli) → [Configuration](https://learn.chatgpt.com/docs/config-file/config-basic) → [Customization](https://learn.chatgpt.com/docs/customization/overview). The docs serve an `llms.txt` index at [learn.chatgpt.com/llms.txt](https://learn.chatgpt.com/llms.txt), and every page has a Markdown twin — append `.md` to the URL.
+
+---
+
+## Changes Since the August Edition
+
+- **Models:** current guidance recommends `gpt-6.1-sol` for complex coding when available, with `gpt-6-luna` for focused tasks and Astra for the most demanding work. GPT-5.5 retired from Codex with ChatGPT sign-in on 14 October; API-key sessions are unaffected. [Models](https://learn.chatgpt.com/docs/models)
+- **Removed interfaces:** migrate `codex mcp-server` integrations to the app-server protocol or an SDK. Replace `--full-auto` with explicit sandbox settings; `approval_policy = "untrusted"` is also retired. See [programmatic control](#programmatic-control-sdks-and-app-server) and [permissions](#two-dials-not-one).
+- **Hooks:** `mcp_tool` handlers and the `Interrupt` event extend the existing command-hook framework. [Hooks](#hooks)
+- **Cloud:** publish reusable environments with prepared dependencies and per-task isolation. The older setup-script/container-cache experience is now documented as legacy. [Codex Cloud](#codex-cloud)
+- **Security:** the public [openai/codex-security](https://github.com/openai/codex-security) project provides a dedicated CLI, TypeScript SDK, and CI integration alongside the local and cloud plugins. [Setup and scan workflow](#codex-security)
+- **Speed:** Ultrafast now supports GPT-6 Astra and GPT-6.1 Sol on eligible plans. [Models and speed](#models-fast-mode-and-ultrafast)
 
 ---
 
@@ -44,7 +55,7 @@ The fastest way in. Same concepts, different names — plus a few places where t
 | `claude -p` | `codex exec` | Yes |
 | `--dangerously-skip-permissions` | `--dangerously-bypass-approvals-and-sandbox` (`--yolo`) | Yes |
 | `claude --worktree` | Worktree chats (desktop app only) | Partially — Codex worktrees live in the ChatGPT desktop app, not the CLI |
-| Agent teams | — | No direct equivalent; the [Agents SDK + `codex mcp-server`](#codex-as-an-mcp-server-multi-agent-workflows) fills the role |
+| Agent teams | Subagents + SDK orchestration | Different workflow; use [SDKs or app-server](#programmatic-control-sdks-and-app-server) for custom coordination |
 | Checkpoints + `/rewind` | — | **No** — Codex has no code rewind; `Esc Esc` edits a previous message and forks the *conversation*, but git is the only undo for files |
 
 Codex will do the migration for you: run `/import`, choose **Claude Code** (or **Cursor**), and it converts `CLAUDE.md` → `AGENTS.md`, `settings.json` → `config.toml`, slash commands → skills, plus MCP config, hooks, subagents, project memories, and up to 50 chats from the last 30 days. Importing doesn't change the original setup. [Docs](https://learn.chatgpt.com/docs/import)
@@ -104,7 +115,7 @@ Untrusted projects skip *all* project-scoped layers — config, hooks, and rules
 A starter `config.toml`:
 
 ```toml
-model = "gpt-5.6"
+model = "gpt-6.1-sol"             # choose a model available to your account
 model_reasoning_effort = "high"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
@@ -225,15 +236,16 @@ Claude Code folds "what can it do" and "when does it ask" into one permission mo
 
 | `sandbox_mode` | What commands can do |
 |---|---|
-| `read-only` | Inspect files only; edits and commands need approval |
+| `read-only` | Read files and run commands within the read-only boundary; writes require approval |
 | `workspace-write` | Read everywhere, write inside the workspace, run routine local commands. The default low-friction mode |
 | `danger-full-access` | No filesystem or network boundary at all |
 
 | `approval_policy` | When Codex asks |
 |---|---|
-| `untrusted` | Before any command not in its trusted set — only known-safe reads run automatically |
 | `on-request` | Works inside the sandbox freely; asks only to go beyond it |
 | `never` | Never asks; makes a best effort within the sandbox you set |
+
+`approval_policy = "untrusted"` is retired. For cautious interactive use, choose `read-only` with `on-request`; to mark a repository untrusted, use its separate `projects.<path>.trust_level` setting. Granular approval policies can keep selected prompt categories interactive and reject others automatically. [Migration guide](https://learn.chatgpt.com/docs/agent-approvals-security#migrate-from-the-retired-untrusted-approval-policy)
 
 ```mermaid
 flowchart TD
@@ -241,7 +253,7 @@ flowchart TD
     B -- yes --> C[Runs immediately<br/>no prompt]
     B -- no --> D{approval_policy}
     D -- never --> E[Fails inside the sandbox<br/>Codex tries another way]
-    D -- "untrusted / on-request" --> F{approvals_reviewer}
+    D -- "on-request" --> F{approvals_reviewer}
     F -- user --> G[You approve or deny]
     F -- auto_review --> H[Reviewer agent decides<br/>see Auto-Review]
 ```
@@ -251,9 +263,8 @@ The common combinations:
 | Intent | Flags / config | Effect |
 |---|---|---|
 | **Auto** (the preset) | no flags, or `--sandbox workspace-write --ask-for-approval on-request` | Read, edit, and run in the workspace; ask to go outside it or touch the network |
-| Safe read-only browsing | `--sandbox read-only --ask-for-approval on-request` | Read and answer; ask before any edit, command, or network use |
+| Safe read-only browsing | `--sandbox read-only --ask-for-approval on-request` | Read and run commands within the read-only boundary; ask to cross it |
 | Read-only CI | `--sandbox read-only --ask-for-approval never` | Read-only, never prompts |
-| Edit freely, gate commands | `--sandbox workspace-write --ask-for-approval untrusted` | Edits fine; untrusted commands prompt |
 | Auto-review mode | add `-c approvals_reviewer=auto_review` | Same boundary; a reviewer agent handles eligible prompts |
 | Dangerous full access | `--dangerously-bypass-approvals-and-sandbox` (alias `--yolo`) | No sandbox, no approvals — not recommended |
 
@@ -261,7 +272,7 @@ On launch, Codex recommends **Auto** for version-controlled folders and `read-on
 
 Save recurring postures as profiles — `~/.codex/full_auto.config.toml` with `approval_policy = "on-request"` and `sandbox_mode = "workspace-write"`, selected via `codex --profile full_auto`.
 
-Two hard-earned defaults hide in the sandbox policy: within writable roots, **`.git`, `.codex`, and `.agents` stay read-only** — the agent can't rewrite its own instructions, config, or your git metadata.
+Within writable roots, **`.git`, `.codex`, `.agents`, and `.aws` stay read-only** when present. This protects Git metadata, agent configuration, skills, and local AWS settings; it doesn't protect every instruction file elsewhere in the repository.
 
 Test what the sandbox would do to any command without involving the agent:
 
@@ -340,9 +351,10 @@ Turn hooks off entirely with `[features] hooks = false`.
 |---|---|
 | During a turn | `PreToolUse`, `PermissionRequest`, `PostToolUse`, `PreCompact`, `PostCompact`, `UserPromptSubmit`, `SubagentStop`, `Stop` |
 | Session/subagent start | `SessionStart`, `SubagentStart` |
+| Main thread interrupted | `Interrupt` — never for subagents |
 | Main thread ends | `SessionEnd` — never for subagents |
 
-One sharp difference from Claude Code: **only `type: "command"` handlers run today** — `prompt` and `agent` hook types are parsed but skipped. Judgment-based gating goes through [auto-review](#auto-review) instead.
+Handlers support **`type: "command"` and `type: "mcp_tool"`**. The `prompt` and `agent` types are still parsed but skipped. An MCP hook calls a named tool on an already-connected server with structured arguments; it runs synchronously and uses the same trust and output contract. Missing servers or tool errors don't block the action, so use explicit blocking decisions for a gate. `SessionEnd` doesn't support MCP hooks. [MCP hook configuration](https://learn.chatgpt.com/docs/hooks#mcp-tool-hooks)
 
 #### Config Shape
 
@@ -378,7 +390,7 @@ command = '/usr/bin/python3 "$(git rev-parse --show-toplevel)/.codex/hooks/pre_t
 timeout = 30
 ```
 
-- `timeout` is in seconds; default 600 (`SessionEnd`: 1 second default, 3 max).
+- `timeout` is in seconds; default 600 (`SessionEnd` and `Interrupt`: 1 second default, 3 max).
 - Commands run with the session `cwd` — resolve repo-local scripts from the git root, since Codex may be started from a subdirectory.
 - `command_windows` / `commandWindows` overrides the command on Windows.
 - `async: true` runs the hook in the background (up to 8 concurrent); output is delivered at the next safe point. **Background hooks can't block or rewrite anything** — use synchronous hooks for policy.
@@ -508,7 +520,7 @@ npm test 2>&1 \
   | tee test-summary.md
 ```
 
-- Defaults to a **read-only** sandbox. Grant the least needed: `--sandbox workspace-write`, or `danger-full-access` only inside an isolated runner. (`--full-auto` survives as a deprecated alias that warns.)
+- Defaults to a **read-only** sandbox. Grant the least needed: `--sandbox workspace-write`, or `danger-full-access` only inside an isolated runner. **`--full-auto` is no longer supported**; replace it with explicit sandbox settings. `--approve-for-me` selects workspace-write with automatic approval review. [Non-interactive permissions](https://learn.chatgpt.com/docs/non-interactive-mode#permissions-and-safety)
 - If stdin is piped *and* a prompt argument is given, the prompt is the instruction and stdin is context. `codex exec -` makes stdin the entire prompt.
 - `--json` turns stdout into a JSONL event stream — `thread.started`, `turn.started`, `item.*` (agent messages, reasoning, command executions, file changes, MCP calls, web searches, plan updates), `turn.completed` with token usage.
 - `--output-schema schema.json` forces the final response to conform to a JSON Schema; `-o file` writes the final message to disk.
@@ -604,7 +616,7 @@ meeting-follow-up/
 
 - **Distribute:** `codex plugin marketplace add owner/repo` (also `owner/repo@ref`, git URLs, or local directories) registers a marketplace source; `codex plugin add/list/remove` manage installs, all with `--json` for automation. Start with a skill while iterating; make it a plugin when you want to share, bundle, or attach connectors. [Builder docs](https://developers.openai.com/plugins)
 
-Notable first-party plugin: **Codex Security** — an application-security agent for scanning authorized repositories, validating findings to cut false positives, and preparing reviewed fixes; also available as a CLI (`npx @openai/codex-security`), TypeScript SDK, and cloud scanning on connected GitHub repos. [Docs](https://learn.chatgpt.com/docs/security)
+Notable first-party plugin: **[Codex Security](#codex-security)** adds repository scans, evidence-backed findings, and fix verification. Its standalone CLI and SDK support repeatable scans outside a chat.
 
 ---
 
@@ -632,7 +644,7 @@ Each subagent does its own model and tool work, so parallel runs multiply token 
 # .codex/agents/reviewer.toml
 name = "reviewer"
 description = "PR reviewer focused on correctness, security, and missing tests."
-model = "gpt-5.6-terra"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 developer_instructions = """
@@ -653,7 +665,7 @@ the patch relies on.
 
 Global knobs under `[agents]`: `enabled`, `max_concurrent_threads_per_session`, `default_subagent_model`, `default_subagent_reasoning_effort`.
 
-**Model selection for workers:** `gpt-5.6` for demanding, ambiguous multi-step work; `gpt-5.6-terra` for fast, read-heavy parallel workers; `gpt-5.6-luna` for narrow, high-volume tasks. Reasoning effort runs `low → medium → high → xhigh → max` (plus `ultra` where supported). Leave model and effort unpinned and Codex picks a balance per task.
+**Model selection for workers:** use `gpt-6.1-sol` for demanding reasoning and `gpt-6-luna` for focused scans or repeatable tasks. Unconfigured workers **inherit the parent's model and reasoning effort**. An explicit spawn request or `[agents]` default can override them; selecting a model that way without an effort uses that model's default effort. Supported reasoning levels depend on the model and client. [Subagent configuration](https://learn.chatgpt.com/docs/agent-configuration/subagents#choosing-models-and-reasoning)
 
 ### Worktrees
 
@@ -670,32 +682,31 @@ Scheduled tasks on git repos run on dedicated background worktrees, so recurring
 
 ### Codex Cloud
 
-Cloud chats run in isolated OpenAI-managed containers — delegate longer tasks, run attempts in parallel, and start work from the web, GitHub, Linear, or Slack. [Setup](https://chatgpt.com/codex): connect GitHub, create an environment per repository, prompt.
+Cloud tasks keep running while your computer sleeps. On web or desktop, choose **Work in > Cloud**, create an environment, connect the repositories, and ask Codex to prepare and test the dependencies and tools. Review the setup, then **Publish** it so new tasks can reuse the prepared filesystem. Mobile can start tasks from a published environment. [Cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environments)
 
 ```mermaid
 flowchart TD
-    A[Submit prompt] --> B["Container created<br/>repo checked out at branch/SHA"]
-    B --> C["Setup script runs<br/>WITH internet access<br/>secrets available"]
-    C --> D["Agent phase<br/>internet OFF by default<br/>secrets removed"]
-    D --> E["Agent loops: edit code,<br/>run checks, validate<br/>(uses AGENTS.md for lint/test cmds)"]
-    E --> F["Summary + diff"]
-    F --> G{Review}
-    G --> H[Open a PR]
-    G --> I[Ask a follow-up]
-    G --> J["codex apply<br/>pull diff into local repo"]
+    A[Create environment] --> B[Prepare and test setup]
+    B --> C[Review and publish filesystem]
+    C --> D[New task gets an isolated workspace]
+    D --> E[Edit, run checks, validate]
+    E --> F[Review result and diff]
+    F --> G[Continue with saved task state]
 ```
 
-The two-phase runtime is the security story: **setup scripts run with internet access and secrets; the agent phase runs offline by default, with secrets removed**. Environment *variables* persist across both phases; *secrets* are setup-only. Agent-phase internet can be enabled per environment — full or domain-allowlisted — and all outbound traffic passes through a proxy.
+New tasks use the published setup; existing tasks keep their own files and installed tools. Edit and **Republish** an environment to update future tasks. Environment variables reach programs directly; **network secrets** use placeholders that a proxy replaces for allowed HTTPS destinations, during setup and tasks. Review internet access and sharing before publishing. [State and credentials](https://learn.chatgpt.com/docs/environments/cloud-environments#configure-environment-variables-and-network-secrets)
 
-- The default `universal` container image ([openai/codex-universal](https://github.com/openai/codex-universal)) pre-installs common languages; pin runtime versions in environment settings, or add a custom setup script. Common package managers (`npm`, `pnpm`, `pip`, `poetry`, …) are auto-detected.
-- Containers are **cached up to 12 hours**; a resumed cache checks out your branch and runs an optional maintenance script. Changing setup, variables, or secrets invalidates the cache.
-- From the terminal: `codex cloud` opens an interactive picker over active and completed chats, `codex cloud exec` submits work directly, `codex cloud list --json` scripts over recent chats, and **`codex apply`** pulls a cloud chat's diff into your local repo (non-zero exit if `git apply` conflicts).
+**Legacy cloud environments** still serve Code Review and the Linear/GitHub integrations. Their setup-only secrets, offline-by-default agent phase, `universal` image, and up-to-12-hour container cache describe that older runtime. Check which environment experience a workflow uses before applying those assumptions. [Legacy guide](https://learn.chatgpt.com/docs/environments/cloud-environment)
 
-### Codex as an MCP Server: Multi-Agent Workflows
+From the terminal, `codex cloud`, `codex cloud exec`, and `codex cloud list --json` browse or submit cloud chats; `codex apply` applies a cloud diff locally. [Command reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
 
-Codex has no agent-teams feature; its answer to orchestration is composition. `codex mcp-server` runs Codex itself as an MCP server exposing two tools — `codex` (start a session: prompt plus overrides for model, sandbox, approval policy, cwd, base/developer instructions) and `codex-reply` (continue by `threadId`). Any MCP client can drive it; the documented pattern uses the OpenAI Agents SDK to build a project-manager agent that gates handoffs between designer, frontend, backend, and tester agents, each calling Codex MCP to do the actual file work, with full traces. [Guide](https://learn.chatgpt.com/docs/mcp-server)
+### Programmatic Control: SDKs and App Server
 
-For direct programmatic control there's the **Codex SDK** — TypeScript (`npm install @openai/codex-sdk`: `codex.startThread()`, `thread.run(prompt)`, `codex.resumeThread(id)`) and Python (`pip install openai-codex`: `codex.thread_start(model=..., sandbox=Sandbox.workspace_write)`, with per-turn sandbox switching — run a change in `workspace_write`, then review the diff in `read_only`). Use the SDK when Codex is the centerpiece; use `mcp-server` + Agents SDK when Codex is one specialist in a larger workflow. The **app-server** protocol (`codex app-server`) sits underneath both for embedding Codex in your own product, over stdio or WebSocket — the TUI itself can attach to a remote one with `codex --remote ws://host:port`.
+**`codex mcp-server` and the standalone `codex-mcp-server` binary have been removed.** Old Agents SDK examples calling the `codex`/`codex-reply` MCP tools are unsupported. Migrate integrations to the app-server JSON-RPC protocol; it requires client changes and isn't a drop-in MCP replacement. Connecting Codex to external MCP servers with `codex mcp` remains supported. [Removal and migration notice](https://learn.chatgpt.com/docs/mcp-server)
+
+Use the **Codex SDK** for coding automation: TypeScript (`npm install @openai/codex-sdk`) provides `startThread()`, `thread.run()`, and `resumeThread()`. The stable Python SDK (`pip install openai-codex`, Python 3.10+) controls app-server and includes a pinned Codex runtime. It supports synchronous and asynchronous clients and per-turn sandbox changes. [SDK guide](https://learn.chatgpt.com/docs/codex-sdk)
+
+For a custom client handling authentication, history, approvals, and streamed events, use **`codex app-server`** over stdio or WebSocket. The command is experimental and the official migration notice says it isn't supported for production workloads. The TUI can attach with `codex --remote ws://host:port` (or a Unix socket); apply the documented authentication settings for remote connections. [Protocol reference](https://learn.chatgpt.com/docs/app-server)
 
 ---
 
@@ -772,11 +783,55 @@ Privilege management is the point of the action: `safety-strategy: drop-sudo` (t
 - **Linear:** assign an issue to Codex like a teammate, or mention `@Codex` in a comment; progress lands in the issue's Activity feed. Triage rules can auto-delegate new issues to Codex.
 - **Codex Remote:** drive tasks on your own connected computer from the ChatGPT mobile app — start tasks, follow progress, approve commands, review diffs. Pair via **Settings > Connections > Control this Mac or PC** plus a QR scan; `codex remote-control start`/`stop`/`pair` manage the local daemon.
 
-### Fast Mode and Spark
+### Codex Security
 
-- **`/fast`** (`/fast on|off|status`) buys ~1.5× model speed at a higher credit burn — 2.5× the standard rate on GPT-5.6/5.5, 2× on GPT-5.4. Persist with `service_tier = "fast"` plus `[features] fast_mode = true`. It's a ChatGPT-credit feature; on an API key you get API pricing instead.
-- **GPT-5.3-Codex-Spark** is different: a separate, less-capable model optimized for near-instant iteration, with its own limits (research preview, Pro plans).
-- Switch models with `/model`, `--model`/`-m`, or per-run `codex exec -m gpt-5.6 "..."`.
+[Codex Security](https://learn.chatgpt.com/docs/security) investigates vulnerabilities, records evidence and coverage, and supports remediation. Choose the entry point that fits your workflow:
+
+| Entry point | Use |
+|---|---|
+| Local **Codex Security** plugin | Scan and investigate interactively in CLI or the desktop Security workbench |
+| **Codex Security Cloud** plugin | Scan connected GitHub repositories and monitor commits; separate plugin, research preview |
+| **CLI** from [openai/codex-security](https://github.com/openai/codex-security) | Repeatable repository, path, and diff scans from a terminal or CI |
+| **TypeScript SDK** | Integrate structured scans and findings into an application |
+
+For interactive use, open `/plugins`, install **Codex Security**, then start `/new` and ask:
+
+```text
+Run a Codex Security scan on this repository, focusing on authentication and
+authorization. Return the saved report, source evidence, and coverage limits.
+```
+
+The initial scan keeps source unchanged. Review a finding before requesting a patch and fix verification. [Plugin quickstart](https://learn.chatgpt.com/docs/security/plugin)
+
+For standalone scans, use Node.js 24 or 26, or 22.13.0+ within 22.x, plus Python 3.10+ (`tomli` is also needed on Python 3.10). Scans using OpenAI inference require Codex Security access; some work also requires Trusted Access for Cyber. The CLI uses your OS permissions without interactive approvals. [CLI prerequisites](https://learn.chatgpt.com/docs/security/cli)
+
+```bash
+npx @openai/codex-security --version
+npx @openai/codex-security login
+
+# Save the report outside the repository. Dry-run checks local inputs only.
+npx @openai/codex-security scan . --auth chatgpt \
+  --output-dir ../codex-security-results --dry-run
+npx @openai/codex-security scan . --auth chatgpt \
+  --output-dir ../codex-security-results
+
+# Alternatives: selected paths, committed changes, or a deeper investigation.
+npx @openai/codex-security scan . --path src/auth --path src/api
+npx @openai/codex-security scan . --diff origin/main
+npx @openai/codex-security scan . --mode deep
+```
+
+Global installation (`npm install --global @openai/codex-security`) provides both `codex-security` and `cs`; use the full name if `cs` conflicts with another tool. The repository also documents policy drafts, validation, patching, SARIF export, and SDK examples. [Project README](https://github.com/openai/codex-security#quick-start)
+
+Read `report.md`, confirm completion in `scan-manifest.json`, and inspect `coverage.json` alongside `findings.json`. Exit `0` doesn't imply complete coverage or no vulnerabilities. Findings fail a scan only when they meet a configured severity threshold; input and execution failures use a separate exit code. [Results and exit codes](https://learn.chatgpt.com/docs/security/cli#review-the-results)
+
+For CI, the dedicated **Codex Security Action** in `openai/codex-security` supports repository and pull-request scans, reports, and SARIF. Begin with advisory findings, then set `fail-on-severity` after assessing quality and coverage. Pin the Action release and follow its runner and authentication setup. This is a separate integration from the general-purpose `openai/codex-action`. [GitHub Actions guide](https://learn.chatgpt.com/docs/security/cli/ci/github), [CI/CD overview](https://learn.chatgpt.com/docs/security/cli/ci)
+
+### Models, Fast Mode, and Ultrafast
+
+- **Models:** use `/model`, `--model`/`-m`, or `codex exec -m gpt-6.1-sol "..."`. Current guidance favors GPT-6.1 Sol for complex coding when available, Luna for focused work, and Astra for demanding tasks. Model access and reasoning levels vary by plan, client, and workspace settings. [Selection guide](https://learn.chatgpt.com/docs/model-selection)
+- **Fast:** `/fast` changes the service tier for a supported model. Persist it with `service_tier = "fast"` and `[features] fast_mode = true`. Included subscription usage runs at 2.5× Standard; purchased credits and Enterprise pay-as-you-go usage run at 2×.
+- **Ultrafast:** supports GPT-6 Astra and GPT-6.1 Sol on Pro $500 and eligible Enterprise/Edu plans. Included usage runs at 8× Standard; purchased credits and Enterprise pay-as-you-go usage run at 6×. Availability and residency rules differ by model. With an API key, API token pricing applies instead of ChatGPT credit multipliers. [Speed and billing](https://learn.chatgpt.com/docs/agent-configuration/speed)
 
 ---
 
@@ -786,11 +841,11 @@ Privilege management is the point of the action: `safety-strategy: drop-sudo` (t
 
 **`--yolo` is for containers you can burn.** `--dangerously-bypass-approvals-and-sandbox` removes both dials at once. If your host can't run the Linux sandbox (Docker often blocks the needed namespaces), let the container be the boundary — the [secure devcontainer reference](https://github.com/openai/codex/tree/main/.devcontainer) ships an allowlist firewall — and remember that inside a full-access container, a malicious repo can exfiltrate anything present, *including your Codex credentials*.
 
-**Protected paths are load-bearing.** `.git`, `.codex`, and `.agents` stay read-only inside writable roots — the agent can't edit its own instructions, config, rules, or hooks. Keep it that way; don't hand out full access to "fix" a write into `.codex/`.
+**Protected paths are load-bearing.** `.git`, `.codex`, `.agents`, and `.aws` stay read-only inside writable roots. These protections cover configuration and metadata under those paths; a root `AGENTS.md` is outside them. Keep the protections in place when changing access.
 
 **Prompt injection rides on network access.** Cached web search exists precisely to reduce exposure to live hostile pages; treat all web results as untrusted, prefer domain allowlists over blanket `network_access = true`, and remember the local/private-network guard and DNS-rebinding checks are best-effort — hostile-DNS scenarios need egress control at a lower layer.
 
-**Secrets discipline.** Cloud secrets exist only during setup, never the agent phase — that's the design, use it. In CI, `CODEX_API_KEY` goes inline on the single invocation, never job-level where checked-out code runs. `~/.codex/auth.json` is a password. Locally, `shell_environment_policy` filters which env vars spawned commands inherit (automatic `KEY`/`SECRET`/`TOKEN` filtering is available but off by default — `ignore_default_excludes = false` turns it on). Don't return secrets in hook output either; oversized output spills to disk.
+**Secrets discipline.** In current cloud environments, network secrets are substituted by a proxy for allowed HTTPS destinations; setup-only secrets describe the legacy runtime. In CI, scope API keys to the invocation or Action step that needs them. `~/.codex/auth.json` is a password. Locally, `shell_environment_policy` filters which env vars spawned commands inherit (automatic `KEY`/`SECRET`/`TOKEN` filtering is available but off by default — `ignore_default_excludes = false` turns it on). Don't return secrets in hook output either; oversized output spills to disk.
 
 **Hooks and rules are guardrails, not guarantees.** Some tool paths bypass hooks (hosted tools like WebSearch), untrusted projects skip project hooks/rules, and broad prefix rules erase the boundary auto-review guards. Enforcement you must have belongs in the sandbox, permission profiles, and managed `requirements.toml`.
 
@@ -804,7 +859,7 @@ Privilege management is the point of the action: `safety-strategy: drop-sudo` (t
 
 - **Open source:** the [openai/codex](https://github.com/openai/codex) repo is the primary home — CLI, SDK sources, app-server, hook schemas, the auto-review policy. Skills live in [openai/skills](https://github.com/openai/skills), plugins in [openai/plugins](https://github.com/openai/plugins), the security CLI in [openai/codex-security](https://github.com/openai/codex-security), the cloud base image in [openai/codex-universal](https://github.com/openai/codex-universal). The IDE extension and Codex cloud are not open source. Issues → `openai/codex/issues`; discussions → `openai/codex/discussions`.
 - **Docs as data:** `llms.txt` at [learn.chatgpt.com/llms.txt](https://learn.chatgpt.com/llms.txt), every page with a `.md` twin, plus a condensed machine-oriented [codex-manual.md](https://learn.chatgpt.com/docs/codex-manual.md) — the docs are built to be read by the agent itself.
-- **Feature maturity labels** (Experimental / Beta / Stable) are attached throughout the docs; the experimental pieces on this page (rules, memories, permission profiles, Security Review) are the likeliest to have drifted by the time you read this.
+- **Release tracking:** check the official [ChatGPT & Codex changelog](https://learn.chatgpt.com/docs/changelog), [CLI releases](https://github.com/openai/codex/releases), and [Security releases](https://github.com/openai/codex-security/releases). Feature maturity and availability can differ across surfaces.
 - **Migration is two-way:** `/import` pulls a Claude Code or Cursor setup in, and because skills, `AGENTS.md`, and the hook event schema are shared or compatible standards, most of what you build here travels back out.
 
 **In this handbook:** [Claude Code](claude_code.md), [AI Tools](tools.md), [The LLM Landscape](../basics/landscape.md).
@@ -854,7 +909,7 @@ Run `codex` in a project directory and sign in with ChatGPT (or an API key / acc
 | `codex review [--uncommitted\|--base <branch>\|--commit <sha>]` | Non-interactive code review |
 | `codex cloud` / `codex cloud exec` / `codex cloud list` | Browse, submit, and list cloud chats |
 | `codex mcp add\|list\|get\|remove\|login\|logout` | Manage MCP servers |
-| `codex mcp-server` | Run Codex *as* an MCP server (stdio) |
+| `codex mcp-server` | Removed; migrate integrations to app-server or an SDK |
 | `codex app-server [--listen ws://IP:PORT]` | Run the app-server protocol for embedding |
 | `codex plugin add\|list\|remove` | Manage plugins |
 | `codex plugin marketplace add\|list\|upgrade\|remove` | Manage marketplace sources |
@@ -874,7 +929,8 @@ Run `codex` in a project directory and sign in with ChatGPT (or an API key / acc
 |---|---|
 | `-m`, `--model <model>` | Model for this run |
 | `--sandbox <mode>` | `read-only`, `workspace-write`, `danger-full-access` |
-| `-a`, `--ask-for-approval <policy>` | `untrusted`, `on-request`, `never` |
+| `-a`, `--ask-for-approval <policy>` | `on-request` or `never`; `untrusted` is retired |
+| `--approve-for-me` | Workspace-write sandbox with automatic approval review |
 | `--dangerously-bypass-approvals-and-sandbox` / `--yolo` | No sandbox, no approvals |
 | `-C`, `--cd <dir>` | Run as if launched from `<dir>` |
 | `--profile <name>` | Load `~/.codex/<name>.config.toml` |
@@ -892,7 +948,7 @@ Run `codex` in a project directory and sign in with ChatGPT (or an API key / acc
 | `codex exec --ephemeral` | Don't persist session files |
 | `codex exec --ignore-user-config` / `--ignore-rules` | Isolate automation from local setup |
 | `codex exec --skip-git-repo-check` | Allow running outside a git repository |
-| `codex exec --full-auto` | Deprecated alias for `--sandbox workspace-write` (warns) |
+| `codex exec --full-auto` | Removed; use `--sandbox workspace-write` or `--approve-for-me` |
 
 ### Slash Commands
 
@@ -976,4 +1032,4 @@ And notice what just happened across two pages: every mechanism here slotted int
 
 ---
 
-**Sources:** the official Codex documentation at [learn.chatgpt.com](https://learn.chatgpt.com/llms.txt) (fetched via its `llms.txt` index) and the [openai/codex](https://github.com/openai/codex) repository. Specific flags, paths, and defaults reflect the docs as of **15 August 2026** and will drift; the habits in [The AI Engineering Skills Map](../basics/skills_map.md) are what stay put.
+**Sources:** official documentation discovered through the [OpenAI developer index](https://developers.openai.com/llms.txt), [Codex index](https://developers.openai.com/codex/llms.txt), and [ChatGPT Learn index](https://learn.chatgpt.com/llms.txt), plus [openai/codex-security](https://github.com/openai/codex-security). Commands, migrations, models, hooks, cloud environments, and Security workflows were checked on **22 October 2026**; section links above point to the supporting references. The habits in [The AI Engineering Skills Map](../basics/skills_map.md) are what stay put.
