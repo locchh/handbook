@@ -2,11 +2,11 @@
 site_name: Software Handbook
 site_description: A handbook about Software Engineering, Data and AI
 site_author: locch
-site_url: https://locchh.github.io/sw-handbook/
+site_url: https://locchh.github.io/handbook/
 
 # Repository
-repo_url: https://github.com/locchh/sw-handbook
-repo_name: locchh/sw-handbook
+repo_url: https://github.com/locchh/handbook
+repo_name: locchh/handbook
 edit_uri: edit/main/docs/
 
 # Theme

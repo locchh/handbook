@@ -27,8 +27,8 @@ This repository contains a web-based handbook with my notes and insights about S
 
 ```bash
 # Clone the repository
-git clone https://github.com/locchh/sw-handbook.git
-cd sw-handbook
+git clone https://github.com/locchh/handbook.git
+cd handbook
 
 # Create a virtual environment
 python3 -m venv .venv
@@ -73,7 +73,7 @@ mkdocs build --strict
 mkdocs gh-deploy --strict
 ```
 
-The generated site is published to the `gh-pages` branch at [locchh.github.io/sw-handbook](https://locchh.github.io/sw-handbook/). GitHub Pages must use **Deploy from a branch → gh-pages → / (root)**. The remote must be writable through your Git credentials.
+The generated site is published to the `gh-pages` branch at [locchh.github.io/handbook](https://locchh.github.io/handbook/). GitHub Pages must use **Deploy from a branch → gh-pages → / (root)**. The remote must be writable through your Git credentials.
 
 Build and review locally before deploying. `gh-deploy` publishes the current working tree, including uncommitted documentation edits; it does not commit or push source changes on `main`. Commit source changes separately when ready. See the [MkDocs deployment guide](https://www.mkdocs.org/user-guide/deploying-your-docs/).
 
