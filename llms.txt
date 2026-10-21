@@ -31,6 +31,7 @@ A comprehensive collection of notes about Software Engineering, Data Science, an
 - [Tech Stacks](https://locchh.github.io/sw-handbook/software/basics/tech_stacks/index.md)
 - [Architecture Books](https://locchh.github.io/sw-handbook/software/advanced/books/index.md)
 - [CI/CD Platforms](https://locchh.github.io/sw-handbook/software/tool_tip/cicd/index.md)
+- [Frontend Toolchain](https://locchh.github.io/sw-handbook/software/tool_tip/frontend_tools/index.md)
 - [Linux Commands](https://locchh.github.io/sw-handbook/software/tool_tip/linux_commands/index.md)
 - [Machine Setup](https://locchh.github.io/sw-handbook/software/tool_tip/machine_setup/index.md)
 - [Running a Server](https://locchh.github.io/sw-handbook/software/tool_tip/server_operations/index.md)

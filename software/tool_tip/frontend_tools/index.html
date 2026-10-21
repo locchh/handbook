@@ -1,0 +1,3108 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A handbook about Software Engineering, Data and AI">
+      
+      
+        <meta name="author" content="locch">
+      
+      
+        <link rel="canonical" href="https://locchh.github.io/sw-handbook/software/tool_tip/frontend_tools/">
+      
+      
+        <link rel="prev" href="../cicd/">
+      
+      
+        <link rel="next" href="../linux_commands/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Frontend Toolchain - Software Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#frontend-toolchain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Software Handbook" class="md-header__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frontend Toolchain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/locchh/sw-handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/sw-handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Software Handbook" class="md-nav__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/locchh/sw-handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/sw-handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures & Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/system_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git: Merge vs Rebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/code_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/tech_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/becoming_senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/senior_curriculum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/abbreviations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abbreviations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/study_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machine_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-post-says" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the post says">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dropped-and-what-replaced-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dropped, and what replaced them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-16-kept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 16 kept
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-deeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Going deeper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-idea-behind-every-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea behind every swap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-state-vs-client-state-redux-query-zustand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server state vs. client state (Redux → Query + Zustand)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bundlers-webpack-vite-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundlers (Webpack → Vite 8)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling-styled-components-tailwind-shadcnui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Styling (styled-components → Tailwind + shadcn/ui)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-cypress-playwright-plus-vitest-and-msw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing (Cypress → Playwright, plus Vitest and MSW)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-managers-npmyarn-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package managers (npm/yarn → pnpm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linting-eslint-oxlint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linting (ESLint → Oxlint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-6-strict-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript 6: strict by default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zod-validate-at-trust-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zod: validate at trust boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use this list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/introduction_to_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modelling & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality & Cleansing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance & Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Classification & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/big_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/skills_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The AI Engineering Skills Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The LLM Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/spec_driven_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/claude_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-post-says" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the post says">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dropped-and-what-replaced-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dropped, and what replaced them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-16-kept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 16 kept
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-deeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Going deeper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-idea-behind-every-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea behind every swap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-state-vs-client-state-redux-query-zustand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server state vs. client state (Redux → Query + Zustand)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bundlers-webpack-vite-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundlers (Webpack → Vite 8)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling-styled-components-tailwind-shadcnui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Styling (styled-components → Tailwind + shadcn/ui)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-cypress-playwright-plus-vitest-and-msw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing (Cypress → Playwright, plus Vitest and MSW)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-managers-npmyarn-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package managers (npm/yarn → pnpm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linting-eslint-oxlint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linting (ESLint → Oxlint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-6-strict-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript 6: strict by default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zod-validate-at-trust-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zod: validate at trust boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use this list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="frontend-toolchain">Frontend Toolchain<a class="headerlink" href="#frontend-toolchain" title="Permanent link">&para;</a></h1>
+<p>A 2026 frontend stack: what one experienced developer dropped, what replaced each tool, and the 16 tools that stayed. The post is the starting point; the sections after it explain <em>why</em> each swap happened and when it would be the wrong choice for you.</p>
+<p>For the wider picture of languages and stacks, see <a href="../../basics/tech_stacks/">Tech Stacks</a>. For general tool habits, see <a href="../tools/">Tools</a>.</p>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Petar Ivanov, <em>"6 frontend tools I dropped this year (and the 16 I kept)"</em>, LinkedIn, 2026-10-20. <a href="https://www.linkedin.com/posts/petarivanovv9_6-frontend-tools-i-dropped-this-year-and-activity-7518280845837918208-IrXx">https://www.linkedin.com/posts/petarivanovv9_6-frontend-tools-i-dropped-this-year-and-activity-7518280845837918208-IrXx</a>. Read on 2026-10-22.</p>
+</div>
+<p><img alt="My frontend stack 2026: 6 frontend tools I dropped, the 16 I kept" src="../../../assets/frontend/frontend-stack-2026.jpg" /></p>
+<p><em>Image: © Petar Ivanov (<a href="https://www.linkedin.com/in/petarivanovv9">@petarivanovv9</a>, <a href="https://petarivanov.tech">petarivanov.tech</a>), from the post above.</em></p>
+<h2 id="what-the-post-says">What the post says<a class="headerlink" href="#what-the-post-says" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Every tool on the card does one job and doesn't try to be a platform. That's why I can swap one out without touching the rest.</p>
+</blockquote>
+<h3 id="dropped-and-what-replaced-them">Dropped, and what replaced them<a class="headerlink" href="#dropped-and-what-replaced-them" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dropped</th>
+<th>Replaced by</th>
+<th>Reason given in the post</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Redux</strong></td>
+<td>TanStack Query + Zustand</td>
+<td>Server data moved to TanStack Query, shared client state to Zustand. "Two small tools with one job each beat one store that tries to do both."</td>
+</tr>
+<tr>
+<td><strong>Webpack</strong></td>
+<td>Vite 8</td>
+<td>Vite 8 builds with Rolldown, a Rust bundler. SPA builds went from 30+ seconds to under 10, with no separate Babel setup.</td>
+</tr>
+<tr>
+<td><strong>styled-components</strong></td>
+<td>Tailwind CSS + shadcn/ui</td>
+<td>shadcn/ui copies component source into the repo, so you own it. styled-components went into maintenance mode in March 2025.</td>
+</tr>
+<tr>
+<td><strong>Cypress</strong></td>
+<td>Playwright</td>
+<td>Playwright waits for elements by itself (no <code>setTimeout</code> hacks), and its trace viewer replays a failed run click by click.</td>
+</tr>
+<tr>
+<td><strong>npm</strong> and <strong>yarn</strong></td>
+<td>pnpm</td>
+<td>pnpm keeps one copy of each package version on the machine. Duplicate <code>node_modules</code> went from 40 GB to under 5 GB.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-16-kept">The 16 kept<a class="headerlink" href="#the-16-kept" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Tool</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Build</strong></td>
+<td>Next.js</td>
+<td>Content sites and SSR</td>
+</tr>
+<tr>
+<td></td>
+<td>Vite 8</td>
+<td>SPAs, built by Rolldown</td>
+</tr>
+<tr>
+<td></td>
+<td>TypeScript</td>
+<td><code>strict</code> is now the default</td>
+</tr>
+<tr>
+<td></td>
+<td>pnpm</td>
+<td>Each package version stored once</td>
+</tr>
+<tr>
+<td><strong>UI</strong></td>
+<td>Tailwind CSS</td>
+<td>Styling without CSS-in-JS</td>
+</tr>
+<tr>
+<td></td>
+<td>shadcn/ui</td>
+<td>Component source you own</td>
+</tr>
+<tr>
+<td></td>
+<td>Storybook</td>
+<td>Every variant on one screen</td>
+</tr>
+<tr>
+<td><strong>Production</strong></td>
+<td>Sentry</td>
+<td>Errors + session replay</td>
+</tr>
+<tr>
+<td><strong>Data &amp; state</strong></td>
+<td>TanStack Query</td>
+<td>Server state and caching</td>
+</tr>
+<tr>
+<td></td>
+<td>TanStack Router</td>
+<td>Typed params and search</td>
+</tr>
+<tr>
+<td></td>
+<td>Zustand</td>
+<td>Shared client state</td>
+</tr>
+<tr>
+<td></td>
+<td>Zod</td>
+<td>Check every trust boundary</td>
+</tr>
+<tr>
+<td><strong>Quality</strong></td>
+<td>Oxlint</td>
+<td>Lint on every save</td>
+</tr>
+<tr>
+<td></td>
+<td>Vitest</td>
+<td>Jest-compatible unit tests</td>
+</tr>
+<tr>
+<td></td>
+<td>Playwright</td>
+<td>E2E that waits for you</td>
+</tr>
+<tr>
+<td></td>
+<td>MSW</td>
+<td>One mock for tests and stories</td>
+</tr>
+</tbody>
+</table>
+<p>Four picks the post singles out:</p>
+<ul>
+<li><strong>TypeScript 6</strong> turned strict mode on by default. <em>"Don't turn it off."</em></li>
+<li><strong>Oxlint</strong> finishes in under a second where ESLint took 15, so lint runs on every save.</li>
+<li><strong>MSW</strong> lets one mock handler serve Vitest, Playwright, and Storybook, so each mock is written once.</li>
+<li><strong>Sentry</strong> links every production error to a replay of the session. A bug the author had stared at for two hours took 5 minutes to close.</li>
+</ul>
+<p><strong>Next.js <em>and</em> TanStack Router?</strong> They never share an app. Next.js runs content sites, and Vite + TanStack runs SPAs.</p>
+<h2 id="going-deeper">Going deeper<a class="headerlink" href="#going-deeper" title="Permanent link">&para;</a></h2>
+<h3 id="the-idea-behind-every-swap">The idea behind every swap<a class="headerlink" href="#the-idea-behind-every-swap" title="Permanent link">&para;</a></h3>
+<p>Most of the six swaps share one of three reasons:</p>
+<table>
+<thead>
+<tr>
+<th>Reason</th>
+<th>Swaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Split one tool that did two jobs</strong></td>
+<td>Redux → Query (server state) + Zustand (client state)</td>
+</tr>
+<tr>
+<td><strong>A native-speed rewrite of the same job</strong></td>
+<td>Webpack → Vite 8 / Rolldown (Rust); ESLint → Oxlint (Rust)</td>
+</tr>
+<tr>
+<td><strong>Move work from runtime to build time</strong></td>
+<td>styled-components → Tailwind (CSS generated at build, no runtime style injection)</td>
+</tr>
+</tbody>
+</table>
+<p>The Cypress → Playwright and npm → pnpm swaps are simply better tools for the same job.</p>
+<h3 id="server-state-vs-client-state-redux-query-zustand">Server state vs. client state (Redux → Query + Zustand)<a class="headerlink" href="#server-state-vs-client-state-redux-query-zustand" title="Permanent link">&para;</a></h3>
+<p>The real lesson isn't "Redux is bad". It's that <strong>data you fetched from a server is a cache, not state you own</strong>. A cache needs things a general store doesn't give you for free: deduplicating identical requests, refetching when stale, retrying, invalidating after a mutation, and pagination. TanStack Query does all of that<sup id="fnref:tanstack-query"><a class="footnote-ref" href="#fn:tanstack-query">1</a></sup>. What's left over (a modal being open, a theme, a cart draft) is usually small enough for Zustand, React context, or the URL.</p>
+<p><strong>When Redux still fits:</strong> a large app with complex client-side state transitions (editors, offline-first apps), or a team that values Redux DevTools' time-travel debugging. Modern Redux Toolkit with RTK Query also covers the server-cache half<sup id="fnref:rtk"><a class="footnote-ref" href="#fn:rtk">2</a></sup>.</p>
+<h3 id="bundlers-webpack-vite-8">Bundlers (Webpack → Vite 8)<a class="headerlink" href="#bundlers-webpack-vite-8" title="Permanent link">&para;</a></h3>
+<p>Vite 8 went stable on <strong>2026-03-12</strong>. It replaced its two previous bundlers (esbuild for development, Rollup for production) with <strong>Rolldown</strong>, one Rust bundler that keeps Rollup's plugin API. The Vite team reports "10–30× faster" than Rollup in benchmarks; Linear's production build went from 46s to 6s<sup id="fnref:vite8"><a class="footnote-ref" href="#fn:vite8">3</a></sup>. <code>@vitejs/plugin-react</code> v6 also dropped Babel as a dependency, which matches the post's "no separate Babel setup".</p>
+<p><strong>When Webpack still fits:</strong> large existing apps that depend on Webpack-only plugins or Module Federation setups that are expensive to migrate. Vite 8 now supports Module Federation too, so check before assuming you're stuck.</p>
+<h3 id="styling-styled-components-tailwind-shadcnui">Styling (styled-components → Tailwind + shadcn/ui)<a class="headerlink" href="#styling-styled-components-tailwind-shadcnui" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Why CSS-in-JS fell out of favour:</strong> runtime libraries like styled-components inject styles while the page renders, which costs time on every render and doesn't fit React Server Components, which render on the server without a client runtime. Tailwind generates plain CSS at build time.</li>
+<li><strong>styled-components' status:</strong> its maintainer put it into maintenance mode on 2025-03-17 and advised against adopting CSS-in-JS for new projects<sup id="fnref:sc-2025"><a class="footnote-ref" href="#fn:sc-2025">4</a></sup>. A March 2026 update reports a working React Server Components setup in a 6.4 release candidate<sup id="fnref:sc-2026"><a class="footnote-ref" href="#fn:sc-2026">5</a></sup>, so existing users have a way forward. It is still not a choice for a new project.</li>
+<li><strong>shadcn/ui is not a package you install.</strong> Its CLI copies each component's source into your repo<sup id="fnref:shadcn"><a class="footnote-ref" href="#fn:shadcn">6</a></sup>. You can edit anything, but you also maintain it: upstream fixes don't arrive with <code>npm update</code>.</li>
+</ul>
+<h3 id="testing-cypress-playwright-plus-vitest-and-msw">Testing (Cypress → Playwright, plus Vitest and MSW)<a class="headerlink" href="#testing-cypress-playwright-plus-vitest-and-msw" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Auto-waiting:</strong> Playwright checks an element is visible, stable, enabled, and receiving events before acting, so tests don't need manual sleeps<sup id="fnref:pw-wait"><a class="footnote-ref" href="#fn:pw-wait">7</a></sup>.</li>
+<li><strong>Trace viewer:</strong> a failed CI run produces a trace with DOM snapshots, network, and console for every step<sup id="fnref:pw-trace"><a class="footnote-ref" href="#fn:pw-trace">8</a></sup>. Turn it on with <code>trace: 'on-first-retry'</code> so it only costs time when something fails.</li>
+<li><strong>More browsers:</strong> Playwright drives Chromium, Firefox, and WebKit (Safari's engine) from one API.</li>
+<li><strong>MSW</strong> intercepts at the network level: a Service Worker in the browser, request interception in Node<sup id="fnref:msw"><a class="footnote-ref" href="#fn:msw">9</a></sup>. So the <em>same</em> handler works in unit tests, E2E tests, Storybook, and local development without a fake server.</li>
+</ul>
+<h3 id="package-managers-npmyarn-pnpm">Package managers (npm/yarn → pnpm)<a class="headerlink" href="#package-managers-npmyarn-pnpm" title="Permanent link">&para;</a></h3>
+<p>pnpm stores every package version once in a <strong>content-addressable store</strong> and hard-links it into each project's <code>node_modules</code><sup id="fnref:pnpm"><a class="footnote-ref" href="#fn:pnpm">10</a></sup>. That's where the 40 GB → 5 GB saving comes from. Its stricter layout also blocks <strong>phantom dependencies</strong>: code can only import packages listed in its own <code>package.json</code>, not something a dependency happened to pull in.</p>
+<h3 id="linting-eslint-oxlint">Linting (ESLint → Oxlint)<a class="headerlink" href="#linting-eslint-oxlint" title="Permanent link">&para;</a></h3>
+<p>Oxlint is part of the Oxc toolchain (the same team as Rolldown) and implements hundreds of ESLint rules natively in Rust<sup id="fnref:oxlint"><a class="footnote-ref" href="#fn:oxlint">11</a></sup>. It doesn't yet cover every ESLint plugin. A common setup runs Oxlint on every save and keeps ESLint in CI for the rules Oxlint lacks, with <code>eslint-plugin-oxlint</code> turning off the rules that would run twice.</p>
+<h3 id="typescript-6-strict-by-default">TypeScript 6: strict by default<a class="headerlink" href="#typescript-6-strict-by-default" title="Permanent link">&para;</a></h3>
+<p>TypeScript 6.0 changed the default of <code>strict</code> to <code>true</code><sup id="fnref:ts6"><a class="footnote-ref" href="#fn:ts6">12</a></sup>. If you already set <code>"strict": true</code>, nothing changes. If an older project relied on the loose default, upgrading surfaces new errors. Fix them, or set <code>"strict": false</code> explicitly and turn the strict flags on one at a time.</p>
+<h3 id="zod-validate-at-trust-boundaries">Zod: validate at trust boundaries<a class="headerlink" href="#zod-validate-at-trust-boundaries" title="Permanent link">&para;</a></h3>
+<p>TypeScript types disappear at runtime, so they can't protect you from data you didn't write: API responses, form input, URL params, <code>localStorage</code>, environment variables. Zod parses unknown data into a typed value or fails loudly<sup id="fnref:zod"><a class="footnote-ref" href="#fn:zod">13</a></sup>, and its schema can be the single source for both the runtime check and the static type (<code>z.infer</code>).</p>
+<h2 id="how-to-use-this-list">How to use this list<a class="headerlink" href="#how-to-use-this-list" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Don't migrate because a post did.</strong> Each swap here fixed a specific pain for the author. Measure your own: build time, lint time, flaky test count, disk usage.</li>
+<li><strong>Swap one tool at a time</strong> and keep the old one until the new one has run in CI for a while.</li>
+<li><strong>Cheapest wins first:</strong> pnpm and Playwright are usually low-risk swaps. Redux and styling migrations touch the most code, so do them last and in steps.</li>
+<li><strong>Check the dates.</strong> Frontend tooling changes fast; this card is a snapshot of October 2026.</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:tanstack-query">
+<p>TanStack. <em>TanStack Query: Overview.</em> <a href="https://tanstack.com/query/latest/docs/framework/react/overview">tanstack.com/query/latest/docs/framework/react/overview</a>.&#160;<a class="footnote-backref" href="#fnref:tanstack-query" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:rtk">
+<p>Redux. <em>RTK Query Overview.</em> <a href="https://redux-toolkit.js.org/rtk-query/overview">redux-toolkit.js.org/rtk-query/overview</a>.&#160;<a class="footnote-backref" href="#fnref:rtk" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:vite8">
+<p>Vite Team. <em>Vite 8.0 is out!</em> 2026-03-12. <a href="https://vite.dev/blog/announcing-vite8">vite.dev/blog/announcing-vite8</a>.&#160;<a class="footnote-backref" href="#fnref:vite8" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sc-2025">
+<p>E. Jacobs. <em>Thank you.</em> styled-components on Open Collective, 2025-03-17. <a href="https://opencollective.com/styled-components/updates/thank-you">opencollective.com/styled-components/updates/thank-you</a>.&#160;<a class="footnote-backref" href="#fnref:sc-2025" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sc-2026">
+<p>E. Jacobs. <em>A Whole New World.</em> styled-components on Open Collective, 2026-03-27. <a href="https://opencollective.com/styled-components/updates/a-whole-new-world">opencollective.com/styled-components/updates/a-whole-new-world</a>.&#160;<a class="footnote-backref" href="#fnref:sc-2026" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:shadcn">
+<p>shadcn. <em>Introduction.</em> <a href="https://ui.shadcn.com/docs">ui.shadcn.com/docs</a>.&#160;<a class="footnote-backref" href="#fnref:shadcn" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pw-wait">
+<p>Playwright. <em>Auto-waiting.</em> <a href="https://playwright.dev/docs/actionability">playwright.dev/docs/actionability</a>.&#160;<a class="footnote-backref" href="#fnref:pw-wait" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pw-trace">
+<p>Playwright. <em>Trace viewer.</em> <a href="https://playwright.dev/docs/trace-viewer">playwright.dev/docs/trace-viewer</a>.&#160;<a class="footnote-backref" href="#fnref:pw-trace" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:msw">
+<p>Mock Service Worker. <em>Philosophy.</em> <a href="https://mswjs.io/docs/philosophy">mswjs.io/docs/philosophy</a>.&#160;<a class="footnote-backref" href="#fnref:msw" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pnpm">
+<p>pnpm. <em>Motivation.</em> <a href="https://pnpm.io/motivation">pnpm.io/motivation</a>.&#160;<a class="footnote-backref" href="#fnref:pnpm" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:oxlint">
+<p>Oxc. <em>Oxlint.</em> <a href="https://oxc.rs/docs/guide/usage/linter">oxc.rs/docs/guide/usage/linter</a>.&#160;<a class="footnote-backref" href="#fnref:oxlint" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ts6">
+<p>Microsoft. <em>Announcing TypeScript 6.0.</em> TypeScript Blog. <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/">devblogs.microsoft.com/typescript/announcing-typescript-6-0</a>.&#160;<a class="footnote-backref" href="#fnref:ts6" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:zod">
+<p>Zod. <em>Intro.</em> <a href="https://zod.dev/">zod.dev</a>.&#160;<a class="footnote-backref" href="#fnref:zod" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax-init.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

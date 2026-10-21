@@ -1005,6 +1005,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#7-retry-and-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Retry and Resilience
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Retry and Resilience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1452,6 +1491,8 @@
       
         
       
+        
+      
     
     
     
@@ -1621,6 +1662,34 @@
     
   
     CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/frontend_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
   
 
     
@@ -2894,6 +2963,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#7-retry-and-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Retry and Resilience
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Retry and Resilience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-post-says_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the post says
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#going-deeper_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Going deeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2953,11 +3061,11 @@
 
 
 <h1 id="system-design-notes">System Design Notes<a class="headerlink" href="#system-design-notes" title="Permanent link">&para;</a></h1>
-<p>Six short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, and deployment strategies. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.</p>
+<p>Seven short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, deployment strategies, and retry and resilience. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.</p>
 <p>For the building blocks these notes sit on, see <a href="../architecture/">Architecture</a>, <a href="../apis/">APIs</a>, <a href="../security/">Security</a>, and <a href="../networking/">Networking</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">About the images</p>
-<p>The infographics are copied from the original posts and remain the work of their authors. Each one is credited in its caption and linked back to the post. All posts were read on 2026-10-15.</p>
+<p>The infographics are copied from the original posts and remain the work of their authors. Each one is credited in its caption and linked back to the post. Posts 1–6 were read on 2026-10-15, post 7 on 2026-10-22.</p>
 </div>
 <table>
 <thead>
@@ -3004,6 +3112,12 @@
 <td><a href="#6-six-deployment-strategies">Deployment Strategies</a></td>
 <td>Anubhav Sethi</td>
 <td>2026-09-26</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="#7-retry-and-resilience">Retry and Resilience</a></td>
+<td>Anubhav Sethi</td>
+<td>2026-10-20</td>
 </tr>
 </tbody>
 </table>
@@ -3772,6 +3886,147 @@ KbdInteractiveAuthentication no
 </code></pre></div>
 <p><strong>A reasonable default:</strong> rolling for stateless internal services; canary with automated analysis for anything customer-facing; blue-green when you need instant, whole-system rollback (or for infrastructure you can't run two versions of side by side); shadow before a risky rewrite. The pipeline side of this is in <a href="../../tool_tip/cicd/">CI/CD Platforms</a> (§10, <em>How the Deploy Actually Happens</em>).</p>
 <hr />
+<h2 id="7-retry-and-resilience">7. Retry and Resilience<a class="headerlink" href="#7-retry-and-resilience" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Source</p>
+<p>Anubhav Sethi, <em>"6 Retry and Resilience Mechanism every software engineer must know"</em>, LinkedIn, 2026-10-20. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-distributedsystems-softwareengineering-activity-7518159253979860992-wuQ0">https://www.linkedin.com/posts/anubhavintech_systemdesign-distributedsystems-softwareengineering-activity-7518159253979860992-wuQ0</a></p>
+<p>Shared to this handbook via <a href="https://www.linkedin.com/posts/chuong-loc_httpslnkdinpgp98zxw4-activity-7518557474858319874-NhkO">Chuong Loc's repost</a> (2026-10-21).</p>
+</div>
+<p><img alt="Retry and resilience: timeout, retry, exponential backoff, jitter, circuit breaker, fallback" src="../../../assets/system-design/retry-resilience.gif" /></p>
+<p><em>Image: © Anubhav Sethi (<a href="https://www.linkedin.com/in/anubhavintech">@anubhavintech</a>), from the post above (animated).</em></p>
+<h3 id="what-the-post-says_6">What the post says<a class="headerlink" href="#what-the-post-says_6" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Every service fails at some point. What matters is how our system handles it.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Pattern</th>
+<th>What it does (from the post)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Timeout</strong></td>
+<td>Don't wait forever. If a call takes too long, give up and move on.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Retry</strong></td>
+<td>Many failures are temporary, so try again.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Exponential backoff</strong></td>
+<td>Wait 1s, then 2s, 4s, 8s, giving the service time to recover.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Jitter</strong></td>
+<td>Add a small random delay, otherwise thousands of clients retry at the same moment and knock the service down again.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Circuit breaker</strong></td>
+<td>If a service keeps failing, stop calling it for a while. Fail fast, then test it again later.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Fallback</strong></td>
+<td>When all else fails, return something useful, like cached data or a default response.</td>
+</tr>
+</tbody>
+</table>
+<p>The post's key line: <strong>"Retries without backoff and jitter can turn a small outage into a big one."</strong></p>
+<h3 id="going-deeper_6">Going deeper<a class="headerlink" href="#going-deeper_6" title="Permanent link">&para;</a></h3>
+<p>The six are layers around a single remote call, and the order you stack them matters. Resilience4j, the common Java library, wraps them by default as <code>Retry(CircuitBreaker(RateLimiter(TimeLimiter(Bulkhead(call)))))</code><sup id="fnref:r4j"><a class="footnote-ref" href="#fn:r4j">27</a></sup>: every attempt gets its own timeout, every attempt counts toward the breaker, and an open breaker makes the retry fail fast instead of waiting.</p>
+<pre class="mermaid"><code>flowchart LR
+    App --&gt; FB[Fallback]
+    FB --&gt; R["Retry&lt;br/&gt;backoff + jitter"]
+    R --&gt; CB[Circuit breaker]
+    CB --&gt; T[Timeout]
+    T --&gt; Svc[(Remote service)]
+    CB -. open .-&gt; FB
+    R -. gave up .-&gt; FB</code></pre>
+<p><strong>Timeout</strong></p>
+<ul>
+<li><strong>Set it from data.</strong> Use a little above the dependency's observed p99.9 latency, not a round number. Separate the <em>connect</em> timeout (short) from the <em>read</em> timeout.</li>
+<li><strong>Use deadlines, not just timeouts.</strong> If the user request has 2s total, a call three services deep should get what's <em>left</em>, not a fresh 2s. gRPC propagates deadlines across calls for exactly this reason<sup id="fnref:grpc-deadline"><a class="footnote-ref" href="#fn:grpc-deadline">28</a></sup>.</li>
+<li><strong>No timeout is the most common bug here.</strong> Many HTTP clients default to waiting forever (Python <code>requests</code> among them), so one slow dependency ties up every worker thread.</li>
+</ul>
+<p><strong>Retry</strong></p>
+<ul>
+<li><strong>Only retry what can succeed next time:</strong> connection errors, <code>503</code>, <code>429</code> (respect <code>Retry-After</code>), timeouts. Never retry <code>400</code>, <code>401</code>, <code>403</code>, or <code>404</code>: the answer won't change.</li>
+<li><strong>Only retry idempotent operations,</strong> or make them idempotent with an idempotency key (see <a href="../apis/#idempotency">APIs</a>). Otherwise a retried payment can charge twice.</li>
+<li><strong>Retry at one layer only.</strong> If five layers each retry 3 times, one failing call at the bottom becomes 3⁵ = 243 calls. The Google SRE book calls this retry amplification and recommends a per-client <strong>retry budget</strong>: stop retrying once retries exceed about 10% of requests<sup id="fnref:sre"><a class="footnote-ref" href="#fn:sre">29</a></sup>.</li>
+</ul>
+<p><strong>Exponential backoff + jitter</strong></p>
+<p>Plain backoff still makes clients that failed together retry together. AWS's analysis<sup id="fnref:aws-jitter"><a class="footnote-ref" href="#fn:aws-jitter">30</a></sup> found <strong>"full jitter"</strong> (pick a random wait between 0 and the backoff ceiling) does the least total work and finishes soonest:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">RETRYABLE</span> <span class="o">=</span> <span class="p">{</span><span class="mi">429</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">call_with_retry</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">max_attempts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">cap</span><span class="o">=</span><span class="mf">10.0</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_attempts</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">fn</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">HttpError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">RETRYABLE</span> <span class="ow">or</span> <span class="n">attempt</span> <span class="o">==</span> <span class="n">max_attempts</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span>
+            <span class="n">ceiling</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cap</span><span class="p">,</span> <span class="n">base</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">attempt</span><span class="p">)</span>   <span class="c1"># 0.1, 0.2, 0.4, ... capped</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ceiling</span><span class="p">))</span>    <span class="c1"># full jitter</span>
+</code></pre></div>
+<p>In practice use a library instead of hand-rolling: <code>tenacity</code> (Python), Resilience4j (Java), Polly (.NET), <code>cockatiel</code> (TypeScript), or your service mesh's retry policy.</p>
+<p><strong>Circuit breaker</strong></p>
+<p>Described by Michael Nygard in <em>Release It!</em><sup id="fnref:nygard"><a class="footnote-ref" href="#fn:nygard">31</a></sup> and popularised by Martin Fowler<sup id="fnref:fowler-cb"><a class="footnote-ref" href="#fn:fowler-cb">32</a></sup>:</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Closed
+    Closed --&gt; Open: failure rate over threshold
+    Open --&gt; HalfOpen: cool-down elapsed
+    HalfOpen --&gt; Closed: trial calls succeed
+    HalfOpen --&gt; Open: trial call fails</code></pre>
+<ul>
+<li><strong>Trip on failure <em>rate</em> over a sliding window</strong> (for example ≥50% of the last 100 calls, with a minimum call count), not on N failures in a row. Count slow calls as failures too.</li>
+<li><strong>One breaker per dependency,</strong> and ideally per endpoint, so one bad endpoint doesn't block healthy ones.</li>
+<li><strong>Watch it.</strong> Breaker state changes are some of the most useful alerts you can have: they tell you <em>which</em> dependency is unhealthy.</li>
+</ul>
+<p><strong>Fallback</strong></p>
+<ul>
+<li><strong>Good fallbacks are simpler than the main path:</strong> stale cached data, a static default, hiding a non-essential widget, queueing a write for later.</li>
+<li><strong>Be careful with fallbacks that call another system.</strong> That path rarely runs, so it's rarely tested, and it often fails exactly when load is highest. Amazon's guidance is to prefer making the primary path more reliable over adding fallbacks<sup id="fnref:aws-fallback"><a class="footnote-ref" href="#fn:aws-fallback">33</a></sup>.</li>
+<li><strong>Never silently fall back on writes.</strong> Pretending a payment or an order succeeded is worse than an honest error.</li>
+</ul>
+<p><strong>Missing from the list:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bulkhead</strong></td>
+<td>Separate thread or connection pools per dependency, so one slow service can't use up every worker</td>
+</tr>
+<tr>
+<td><strong>Rate limiting / load shedding</strong></td>
+<td>The <em>server</em> rejects excess work early (<code>429</code> / <code>503</code>) instead of slowing down for everyone</td>
+</tr>
+<tr>
+<td><strong>Hedged requests</strong></td>
+<td>Send a second copy of a slow request to another replica and take whichever answers first. Cuts tail latency, from Google's <em>The Tail at Scale</em><sup id="fnref:tail"><a class="footnote-ref" href="#fn:tail">34</a></sup></td>
+</tr>
+<tr>
+<td><strong>Idempotency keys</strong></td>
+<td>What makes retrying writes safe at all</td>
+</tr>
+</tbody>
+</table>
+<p>The code-level view (exception handling, fail fast, graceful degradation) is in <a href="../error_handling/">Error Handling</a>.</p>
+<hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <h3 id="original-posts">Original posts<a class="headerlink" href="#original-posts" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3781,6 +4036,7 @@ KbdInteractiveAuthentication no
 <li>Anubhav Sethi. <em>6 Auth Methods Every Engineer Should Know.</em> LinkedIn, 2026-10-09. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-authentication-share-7514229617755369472-wjLf">link</a></li>
 <li>Alex Xu / ByteByteGo. <em>How SSH Works.</em> LinkedIn, 2026-10-01. <a href="https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-share-7511431696815169537-EaNa">link</a></li>
 <li>Anubhav Sethi. <em>6 deployment strategies every engineer must know!</em> LinkedIn, 2026-09-26. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-devops-activity-7509452041816297474-e7Q9">link</a></li>
+<li>Anubhav Sethi. <em>6 Retry and Resilience Mechanism every software engineer must know.</em> LinkedIn, 2026-10-20. <a href="https://www.linkedin.com/posts/anubhavintech_systemdesign-distributedsystems-softwareengineering-activity-7518159253979860992-wuQ0">link</a>. Reposted by Chuong Loc, 2026-10-21: <a href="https://www.linkedin.com/posts/chuong-loc_httpslnkdinpgp98zxw4-activity-7518557474858319874-NhkO">link</a></li>
 </ol>
 <h3 id="primary-sources-for-the-added-material">Primary sources for the added material<a class="headerlink" href="#primary-sources-for-the-added-material" title="Permanent link">&para;</a></h3>
 <div class="footnote">
@@ -3863,6 +4119,30 @@ KbdInteractiveAuthentication no
 </li>
 <li id="fn:k8s">
 <p>Kubernetes. <em>Deployments: Strategy.</em> <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy">kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy</a>.&#160;<a class="footnote-backref" href="#fnref:k8s" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r4j">
+<p>Resilience4j. <em>Getting Started: Aspect order.</em> <a href="https://resilience4j.readme.io/docs/getting-started-3">resilience4j.readme.io/docs/getting-started-3</a>.&#160;<a class="footnote-backref" href="#fnref:r4j" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:grpc-deadline">
+<p>gRPC Authors. <em>Deadlines.</em> <a href="https://grpc.io/docs/guides/deadlines/">grpc.io/docs/guides/deadlines</a>.&#160;<a class="footnote-backref" href="#fnref:grpc-deadline" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sre">
+<p>B. Beyer et al. (eds.). <em>Site Reliability Engineering</em>. O'Reilly, 2016. Ch. 21 "Handling Overload" (per-client retry budget of 10%): <a href="https://sre.google/sre-book/handling-overload/">sre.google/sre-book/handling-overload</a>. Ch. 22 "Addressing Cascading Failures" (retry amplification across layers): <a href="https://sre.google/sre-book/addressing-cascading-failures/">sre.google/sre-book/addressing-cascading-failures</a>.&#160;<a class="footnote-backref" href="#fnref:sre" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:aws-jitter">
+<p>M. Brooker. <em>Exponential Backoff And Jitter.</em> AWS Architecture Blog, 2015. <a href="https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/">aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter</a>. See also <em>Timeouts, retries, and backoff with jitter</em>, Amazon Builders' Library.&#160;<a class="footnote-backref" href="#fnref:aws-jitter" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:nygard">
+<p>M. T. Nygard. <em>Release It! Design and Deploy Production-Ready Software</em>, 2nd ed. Pragmatic Bookshelf, 2018.&#160;<a class="footnote-backref" href="#fnref:nygard" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:fowler-cb">
+<p>M. Fowler. <em>CircuitBreaker.</em> martinfowler.com, 2014. <a href="https://martinfowler.com/bliki/CircuitBreaker.html">martinfowler.com/bliki/CircuitBreaker.html</a>.&#160;<a class="footnote-backref" href="#fnref:fowler-cb" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:aws-fallback">
+<p>J. Gabrielson. <em>Avoiding fallback in distributed systems.</em> Amazon Builders' Library. <a href="https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/">aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems</a>.&#160;<a class="footnote-backref" href="#fnref:aws-fallback" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:tail">
+<p>J. Dean, L. A. Barroso. <em>The Tail at Scale.</em> Communications of the ACM 56(2), 2013. <a href="https://research.google/pubs/the-tail-at-scale/">research.google/pubs/the-tail-at-scale</a>.&#160;<a class="footnote-backref" href="#fnref:tail" title="Jump back to footnote 34 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
