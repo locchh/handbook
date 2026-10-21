@@ -1,11 +1,11 @@
 # System Design Notes
 
-Six short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, and deployment strategies. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.
+Seven short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, deployment strategies, and retry and resilience. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.
 
 For the building blocks these notes sit on, see [Architecture](architecture.md), [APIs](apis.md), [Security](security.md), and [Networking](networking.md).
 
 !!! note "About the images"
-    The infographics are copied from the original posts and remain the work of their authors. Each one is credited in its caption and linked back to the post. All posts were read on 2026-10-15.
+    The infographics are copied from the original posts and remain the work of their authors. Each one is credited in its caption and linked back to the post. Posts 1–6 were read on 2026-10-15, post 7 on 2026-10-22.
 
 | # | Topic | Post author | Posted |
 |---|---|---|---|
@@ -15,6 +15,7 @@ For the building blocks these notes sit on, see [Architecture](architecture.md),
 | 4 | [Auth Methods](#4-six-auth-methods) | Anubhav Sethi | 2026-10-09 |
 | 5 | [How SSH Works](#5-how-ssh-works) | Alex Xu (ByteByteGo) | 2026-10-01 |
 | 6 | [Deployment Strategies](#6-six-deployment-strategies) | Anubhav Sethi | 2026-09-26 |
+| 7 | [Retry and Resilience](#7-retry-and-resilience) | Anubhav Sethi | 2026-10-20 |
 
 ---
 
@@ -443,6 +444,117 @@ spec:
 
 ---
 
+## 7. Retry and Resilience
+
+!!! quote "Source"
+    Anubhav Sethi, *"6 Retry and Resilience Mechanism every software engineer must know"*, LinkedIn, 2026-10-20. <https://www.linkedin.com/posts/anubhavintech_systemdesign-distributedsystems-softwareengineering-activity-7518159253979860992-wuQ0>
+
+    Shared to this handbook via [Chuong Loc's repost](https://www.linkedin.com/posts/chuong-loc_httpslnkdinpgp98zxw4-activity-7518557474858319874-NhkO) (2026-10-21).
+
+![Retry and resilience: timeout, retry, exponential backoff, jitter, circuit breaker, fallback](../../assets/system-design/retry-resilience.gif)
+
+*Image: © Anubhav Sethi ([@anubhavintech](https://www.linkedin.com/in/anubhavintech)), from the post above (animated).*
+
+### What the post says
+
+> Every service fails at some point. What matters is how our system handles it.
+
+| # | Pattern | What it does (from the post) |
+|---|---|---|
+| 1 | **Timeout** | Don't wait forever. If a call takes too long, give up and move on. |
+| 2 | **Retry** | Many failures are temporary, so try again. |
+| 3 | **Exponential backoff** | Wait 1s, then 2s, 4s, 8s, giving the service time to recover. |
+| 4 | **Jitter** | Add a small random delay, otherwise thousands of clients retry at the same moment and knock the service down again. |
+| 5 | **Circuit breaker** | If a service keeps failing, stop calling it for a while. Fail fast, then test it again later. |
+| 6 | **Fallback** | When all else fails, return something useful, like cached data or a default response. |
+
+The post's key line: **"Retries without backoff and jitter can turn a small outage into a big one."**
+
+### Going deeper
+
+The six are layers around a single remote call, and the order you stack them matters. Resilience4j, the common Java library, wraps them by default as `Retry(CircuitBreaker(RateLimiter(TimeLimiter(Bulkhead(call)))))`[^r4j]: every attempt gets its own timeout, every attempt counts toward the breaker, and an open breaker makes the retry fail fast instead of waiting.
+
+```mermaid
+flowchart LR
+    App --> FB[Fallback]
+    FB --> R["Retry<br/>backoff + jitter"]
+    R --> CB[Circuit breaker]
+    CB --> T[Timeout]
+    T --> Svc[(Remote service)]
+    CB -. open .-> FB
+    R -. gave up .-> FB
+```
+
+**Timeout**
+
+- **Set it from data.** Use a little above the dependency's observed p99.9 latency, not a round number. Separate the *connect* timeout (short) from the *read* timeout.
+- **Use deadlines, not just timeouts.** If the user request has 2s total, a call three services deep should get what's *left*, not a fresh 2s. gRPC propagates deadlines across calls for exactly this reason[^grpc-deadline].
+- **No timeout is the most common bug here.** Many HTTP clients default to waiting forever (Python `requests` among them), so one slow dependency ties up every worker thread.
+
+**Retry**
+
+- **Only retry what can succeed next time:** connection errors, `503`, `429` (respect `Retry-After`), timeouts. Never retry `400`, `401`, `403`, or `404`: the answer won't change.
+- **Only retry idempotent operations,** or make them idempotent with an idempotency key (see [APIs](apis.md#idempotency)). Otherwise a retried payment can charge twice.
+- **Retry at one layer only.** If five layers each retry 3 times, one failing call at the bottom becomes 3⁵ = 243 calls. The Google SRE book calls this retry amplification and recommends a per-client **retry budget**: stop retrying once retries exceed about 10% of requests[^sre].
+
+**Exponential backoff + jitter**
+
+Plain backoff still makes clients that failed together retry together. AWS's analysis[^aws-jitter] found **"full jitter"** (pick a random wait between 0 and the backoff ceiling) does the least total work and finishes soonest:
+
+```python
+import random, time
+
+RETRYABLE = {429, 502, 503, 504}
+
+def call_with_retry(fn, max_attempts=5, base=0.1, cap=10.0):
+    for attempt in range(max_attempts):
+        try:
+            return fn()
+        except HttpError as e:
+            if e.status not in RETRYABLE or attempt == max_attempts - 1:
+                raise
+            ceiling = min(cap, base * 2 ** attempt)   # 0.1, 0.2, 0.4, ... capped
+            time.sleep(random.uniform(0, ceiling))    # full jitter
+```
+
+In practice use a library instead of hand-rolling: `tenacity` (Python), Resilience4j (Java), Polly (.NET), `cockatiel` (TypeScript), or your service mesh's retry policy.
+
+**Circuit breaker**
+
+Described by Michael Nygard in *Release It!*[^nygard] and popularised by Martin Fowler[^fowler-cb]:
+
+```mermaid
+stateDiagram-v2
+    [*] --> Closed
+    Closed --> Open: failure rate over threshold
+    Open --> HalfOpen: cool-down elapsed
+    HalfOpen --> Closed: trial calls succeed
+    HalfOpen --> Open: trial call fails
+```
+
+- **Trip on failure *rate* over a sliding window** (for example ≥50% of the last 100 calls, with a minimum call count), not on N failures in a row. Count slow calls as failures too.
+- **One breaker per dependency,** and ideally per endpoint, so one bad endpoint doesn't block healthy ones.
+- **Watch it.** Breaker state changes are some of the most useful alerts you can have: they tell you *which* dependency is unhealthy.
+
+**Fallback**
+
+- **Good fallbacks are simpler than the main path:** stale cached data, a static default, hiding a non-essential widget, queueing a write for later.
+- **Be careful with fallbacks that call another system.** That path rarely runs, so it's rarely tested, and it often fails exactly when load is highest. Amazon's guidance is to prefer making the primary path more reliable over adding fallbacks[^aws-fallback].
+- **Never silently fall back on writes.** Pretending a payment or an order succeeded is worse than an honest error.
+
+**Missing from the list:**
+
+| Pattern | What it does |
+|---|---|
+| **Bulkhead** | Separate thread or connection pools per dependency, so one slow service can't use up every worker |
+| **Rate limiting / load shedding** | The *server* rejects excess work early (`429` / `503`) instead of slowing down for everyone |
+| **Hedged requests** | Send a second copy of a slow request to another replica and take whichever answers first. Cuts tail latency, from Google's *The Tail at Scale*[^tail] |
+| **Idempotency keys** | What makes retrying writes safe at all |
+
+The code-level view (exception handling, fail fast, graceful degradation) is in [Error Handling](error_handling.md).
+
+---
+
 ## References
 
 ### Original posts
@@ -453,6 +565,7 @@ spec:
 4. Anubhav Sethi. *6 Auth Methods Every Engineer Should Know.* LinkedIn, 2026-10-09. [link](https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-authentication-share-7514229617755369472-wjLf)
 5. Alex Xu / ByteByteGo. *How SSH Works.* LinkedIn, 2026-10-01. [link](https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-share-7511431696815169537-EaNa)
 6. Anubhav Sethi. *6 deployment strategies every engineer must know!* LinkedIn, 2026-09-26. [link](https://www.linkedin.com/posts/anubhavintech_systemdesign-softwareengineering-devops-activity-7509452041816297474-e7Q9)
+7. Anubhav Sethi. *6 Retry and Resilience Mechanism every software engineer must know.* LinkedIn, 2026-10-20. [link](https://www.linkedin.com/posts/anubhavintech_systemdesign-distributedsystems-softwareengineering-activity-7518159253979860992-wuQ0). Reposted by Chuong Loc, 2026-10-21: [link](https://www.linkedin.com/posts/chuong-loc_httpslnkdinpgp98zxw4-activity-7518557474858319874-NhkO)
 
 ### Primary sources for the added material
 
@@ -482,3 +595,11 @@ spec:
 [^parallel]: D. Sato. *ParallelChange.* martinfowler.com, 2014. [martinfowler.com/bliki/ParallelChange.html](https://martinfowler.com/bliki/ParallelChange.html). See also M. Fowler, [*BlueGreenDeployment*](https://martinfowler.com/bliki/BlueGreenDeployment.html) (2010) and D. Sato, [*CanaryRelease*](https://martinfowler.com/bliki/CanaryRelease.html) (2014).
 [^argo]: Argo Project. *Argo Rollouts: Progressive Delivery for Kubernetes.* [argoproj.github.io/argo-rollouts](https://argoproj.github.io/argo-rollouts/).
 [^k8s]: Kubernetes. *Deployments: Strategy.* [kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy).
+[^r4j]: Resilience4j. *Getting Started: Aspect order.* [resilience4j.readme.io/docs/getting-started-3](https://resilience4j.readme.io/docs/getting-started-3).
+[^grpc-deadline]: gRPC Authors. *Deadlines.* [grpc.io/docs/guides/deadlines](https://grpc.io/docs/guides/deadlines/).
+[^sre]: B. Beyer et al. (eds.). *Site Reliability Engineering*. O'Reilly, 2016. Ch. 21 "Handling Overload" (per-client retry budget of 10%): [sre.google/sre-book/handling-overload](https://sre.google/sre-book/handling-overload/). Ch. 22 "Addressing Cascading Failures" (retry amplification across layers): [sre.google/sre-book/addressing-cascading-failures](https://sre.google/sre-book/addressing-cascading-failures/).
+[^aws-jitter]: M. Brooker. *Exponential Backoff And Jitter.* AWS Architecture Blog, 2015. [aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/). See also *Timeouts, retries, and backoff with jitter*, Amazon Builders' Library.
+[^nygard]: M. T. Nygard. *Release It! Design and Deploy Production-Ready Software*, 2nd ed. Pragmatic Bookshelf, 2018.
+[^fowler-cb]: M. Fowler. *CircuitBreaker.* martinfowler.com, 2014. [martinfowler.com/bliki/CircuitBreaker.html](https://martinfowler.com/bliki/CircuitBreaker.html).
+[^aws-fallback]: J. Gabrielson. *Avoiding fallback in distributed systems.* Amazon Builders' Library. [aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems](https://aws.amazon.com/builders-library/avoiding-fallback-in-distributed-systems/).
+[^tail]: J. Dean, L. A. Barroso. *The Tail at Scale.* Communications of the ACM 56(2), 2013. [research.google/pubs/the-tail-at-scale](https://research.google/pubs/the-tail-at-scale/).

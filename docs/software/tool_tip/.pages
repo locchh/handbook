@@ -4,5 +4,6 @@ nav:
   - Machine Setup: machine_setup.md
   - Running a Server: server_operations.md
   - "CI/CD Platforms": cicd.md
+  - Frontend Toolchain: frontend_tools.md
   - Linux Commands: linux_commands.md
   - tmux Cheatsheet: tmux.md
