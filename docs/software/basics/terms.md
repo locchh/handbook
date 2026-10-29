@@ -306,7 +306,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Chaos Test** | Deliberately inject failures in production-like systems to prove resilience | [Wikipedia: Chaos engineering ↗](https://en.wikipedia.org/wiki/Chaos_engineering) |
 | **TDD** | Test-Driven Development: Red → Green → Refactor | [Lifecycle → TDD and BDD](lifecycle.md#tdd-and-bdd), [Methodologies → TDD](methodologies.md#tdd-test-driven-development) |
 | **BDD** | Behavior-Driven Development: Given / When / Then | [Methodologies → BDD](methodologies.md#bdd-behavior-driven-development) |
-| **Mock / Stub** | Test doubles. A stub returns canned answers so the code under test can run; a mock also verifies it was called with the expected arguments | [Frontend Toolchain → Testing](../tool_tip/frontend_tools.md#testing-cypress-playwright-plus-vitest-and-msw), [Fowler: Mocks Aren't Stubs ↗](https://martinfowler.com/articles/mocksArentStubs.html) |
+| **Mock / Stub** | Test doubles. A stub returns canned answers so the code under test can run; a mock also verifies it was called with the expected arguments | [Fowler: Mocks Aren't Stubs ↗](https://martinfowler.com/articles/mocksArentStubs.html) |
 | **Fixture** | Fixed setup state or data a test runs against | [Wikipedia: Test fixture ↗](https://en.wikipedia.org/wiki/Test_fixture) |
 | **Flaky Test** | Passes and fails on the same code; usually caused by timing, ordering, or shared state | [Fowler: Non-Determinism ↗](https://martinfowler.com/articles/nonDeterminism.html) |
 | **Code Coverage** | Share of code executed by tests | [Wikipedia: Code coverage ↗](https://en.wikipedia.org/wiki/Code_coverage) |
