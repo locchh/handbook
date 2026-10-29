@@ -330,3 +330,5 @@ ______________________________________________________________________
 | WIP   | Work In Progress              | Tasks currently being worked (Kanban limits this)      |
 | XP    | Extreme Programming           | Agile methodology focused on rigorous coding practices |
 | YAGNI | You Aren't Gonna Need It      | Build only what you need right now                     |
+
+For the full list of software, SDLC, and operations terms across the handbook, see [Terms](https://locchh.github.io/handbook/software/basics/terms/index.md).

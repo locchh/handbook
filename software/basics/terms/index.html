@@ -1,0 +1,5037 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A handbook about Software Engineering, Data and AI">
+      
+      
+        <meta name="author" content="locch">
+      
+      
+        <link rel="canonical" href="https://locchh.github.io/handbook/software/basics/terms/">
+      
+      
+        <link rel="prev" href="../senior_curriculum/">
+      
+      
+        <link rel="next" href="../study_guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Terms - Software Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#terms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Software Handbook" class="md-header__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Terms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Software Handbook" class="md-nav__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures & Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git: Merge vs Rebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../becoming_senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senior_curriculum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdlc-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDLC &amp; Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#management-work-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management &amp; Work Items
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements &amp; Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control &amp; Review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing &amp; QA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-sre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps &amp; SRE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-privacy-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security, Privacy &amp; Compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Engineering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI &amp; LLM
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../study_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/machine_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/server_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/frontend_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/linux_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/introduction_to_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modelling & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality & Cleansing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance & Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Classification & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/big_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/skills_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The AI Engineering Skills Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The LLM Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/spec_driven_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/claude_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdlc-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDLC &amp; Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#management-work-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Management &amp; Work Items
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements &amp; Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control &amp; Review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing &amp; QA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops-sre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps &amp; SRE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-privacy-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security, Privacy &amp; Compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Engineering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI &amp; LLM
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="terms">Terms<a class="headerlink" href="#terms" title="Permanent link">&para;</a></h1>
+<p>Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by domain. Each term links to the section of this handbook that defines or discusses it. Terms the handbook doesn't cover yet link to an external reference, marked ↗.</p>
+<p><strong>Domains:</strong> <a href="#sdlc-process">SDLC &amp; Process</a> · <a href="#management-work-items">Management &amp; Work Items</a> · <a href="#requirements-design">Requirements &amp; Design</a> · <a href="#coding">Coding</a> · <a href="#version-control-review">Version Control &amp; Review</a> · <a href="#testing-qa">Testing &amp; QA</a> · <a href="#system-design">System Design</a> · <a href="#backend">Backend</a> · <a href="#frontend">Frontend</a> · <a href="#networking">Networking</a> · <a href="#devops-sre">DevOps &amp; SRE</a> · <a href="#security-privacy-compliance">Security, Privacy &amp; Compliance</a> · <a href="#data-engineering">Data Engineering</a> · <a href="#data-analysis">Data Analysis</a> · <a href="#ai-llm">AI &amp; LLM</a></p>
+<h2 id="sdlc-process">SDLC &amp; Process<a class="headerlink" href="#sdlc-process" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SDLC</strong></td>
+<td>Software Development Life Cycle: Analysis → Design → Development → Testing → Deployment → Maintenance</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>Waterfall</strong></td>
+<td>Sequential phases, each finished before the next starts</td>
+<td><a href="../methodologies/#1-waterfall-do-it-in-order-no-going-back">Methodologies → Waterfall</a></td>
+</tr>
+<tr>
+<td><strong>V-Model</strong></td>
+<td>Waterfall where every phase has a matching test level</td>
+<td><a href="../methodologies/#2-v-model-for-every-step-define-how-youll-prove-it-worked">Methodologies → V-Model</a></td>
+</tr>
+<tr>
+<td><strong>Agile</strong></td>
+<td>Mindset of short iterations, working software, and responding to change</td>
+<td><a href="../methodologies/#3-agile-able-to-move-quickly-and-change-direction-without-losing-balance">Methodologies → Agile</a>, <a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a></td>
+</tr>
+<tr>
+<td><strong>Lean</strong></td>
+<td>Eliminate waste, optimize the whole flow of value</td>
+<td><a href="../methodologies/#2-lean">Methodologies → Lean</a></td>
+</tr>
+<tr>
+<td><strong>Scrum</strong></td>
+<td>Agile framework of fixed-length sprints with defined roles, events, and artifacts</td>
+<td><a href="../methodologies/#3-scrum-build-a-little-show-it-improve">Methodologies → Scrum</a></td>
+</tr>
+<tr>
+<td><strong>Kanban</strong></td>
+<td>Continuous flow on a visual board with WIP limits</td>
+<td><a href="../methodologies/#4-kanban-finish-before-you-start-something-new">Methodologies → Kanban</a></td>
+</tr>
+<tr>
+<td><strong>SAFe</strong></td>
+<td>Scaled Agile Framework: Agile coordinated across many teams</td>
+<td><a href="../methodologies/#5-safe-scrum-but-for-50-teams">Methodologies → SAFe</a></td>
+</tr>
+<tr>
+<td><strong>PI</strong></td>
+<td>Program Increment: a SAFe timebox of about 10 weeks (several sprints) that all teams plan and deliver together, kicked off by <em>PI Planning</em></td>
+<td><a href="../methodologies/#5-safe-scrum-but-for-50-teams">Methodologies → SAFe</a>, <a href="https://en.wikipedia.org/wiki/Scaled_agile_framework">Wikipedia: SAFe ↗</a></td>
+</tr>
+<tr>
+<td><strong>XP</strong></td>
+<td>Extreme Programming: pairing, TDD, continuous integration, small releases</td>
+<td><a href="../methodologies/#6-xp-extreme-programming">Methodologies → XP</a></td>
+</tr>
+<tr>
+<td><strong>Shape Up</strong></td>
+<td>Basecamp's fixed-appetite, six-week cycles with no backlog</td>
+<td><a href="../methodologies/#7-shape-up-decide-how-much-time-its-worth-not-how-long-it-takes">Methodologies → Shape Up</a></td>
+</tr>
+<tr>
+<td><strong>RUP</strong></td>
+<td>Rational Unified Process: iterative phases with formal milestones</td>
+<td><a href="../methodologies/#8-rup-waterfall-iteration-formal-governance">Methodologies → RUP</a></td>
+</tr>
+<tr>
+<td><strong>Sprint</strong></td>
+<td>Fixed timebox (usually 1–4 weeks) that produces a usable increment</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a></td>
+</tr>
+<tr>
+<td><strong>Backlog</strong></td>
+<td>Ordered list of work. The <em>Product Backlog</em> holds everything wanted; the <em>Sprint Backlog</em> holds what this sprint commits to</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>, <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a></td>
+</tr>
+<tr>
+<td><strong>Increment</strong></td>
+<td>The usable, done work produced in a sprint</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a></td>
+</tr>
+<tr>
+<td><strong>Sprint Planning</strong></td>
+<td>Scrum event at the start of a sprint: pick backlog items and agree the sprint goal</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>, <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a></td>
+</tr>
+<tr>
+<td><strong>Daily Standup / Daily Scrum</strong></td>
+<td>15-minute daily sync: progress toward the sprint goal and blockers</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>, <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a></td>
+</tr>
+<tr>
+<td><strong>Sprint Review / Demo</strong></td>
+<td>Show the increment to stakeholders and adapt the backlog from their feedback</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>, <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a></td>
+</tr>
+<tr>
+<td><strong>Retrospective (Retro)</strong></td>
+<td>End-of-sprint meeting where the team inspects <em>how</em> it worked (what went well, what didn't) and commits to improvements</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>, <a href="../methodologies/#3-scrum-build-a-little-show-it-improve">Methodologies → Scrum</a>, <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a></td>
+</tr>
+<tr>
+<td><strong>Backlog Refinement (Grooming)</strong></td>
+<td>Ongoing work to split, clarify, and estimate upcoming backlog items</td>
+<td><a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a></td>
+</tr>
+<tr>
+<td><strong>Burndown / Burnup Chart</strong></td>
+<td>Work remaining / work completed plotted over time in a sprint or release</td>
+<td><a href="https://en.wikipedia.org/wiki/Burndown_chart">Wikipedia: Burndown chart ↗</a></td>
+</tr>
+<tr>
+<td><strong>Lead Time / Cycle Time</strong></td>
+<td>Request → delivered / work started → delivered: the Kanban flow metrics</td>
+<td><a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>, <a href="https://en.wikipedia.org/wiki/Lead_time">Wikipedia: Lead time ↗</a></td>
+</tr>
+<tr>
+<td><strong>DORA Metrics</strong></td>
+<td>Deployment frequency, lead time for changes, change failure rate, time to restore: the four keys of delivery performance</td>
+<td><a href="https://dora.dev/guides/dora-metrics-four-keys/">DORA: Four keys ↗</a></td>
+</tr>
+<tr>
+<td><strong>DoD</strong></td>
+<td>Definition of Done: the shared quality bar every increment must meet</td>
+<td><a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a>, <a href="https://www.atlassian.com/agile/project-management/definition-of-done">Atlassian: DoD ↗</a></td>
+</tr>
+<tr>
+<td><strong>DoR</strong></td>
+<td>Definition of Ready: what a backlog item needs before a sprint can take it</td>
+<td><a href="https://www.atlassian.com/agile/project-management/definition-of-ready">Atlassian: DoR ↗</a></td>
+</tr>
+<tr>
+<td><strong>WIP</strong></td>
+<td>Work In Progress, which Kanban limits</td>
+<td><a href="../methodologies/#4-kanban-finish-before-you-start-something-new">Methodologies → Kanban</a></td>
+</tr>
+<tr>
+<td><strong>DevOps</strong></td>
+<td>Dev and Ops share ownership of building and running software</td>
+<td><a href="../methodologies/#4-devops">Methodologies → DevOps</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="management-work-items">Management &amp; Work Items<a class="headerlink" href="#management-work-items" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PO</strong></td>
+<td>Product Owner: owns the backlog and its priorities</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a></td>
+</tr>
+<tr>
+<td><strong>SM</strong></td>
+<td>Scrum Master: facilitates the process and removes blockers</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a></td>
+</tr>
+<tr>
+<td><strong>PM</strong></td>
+<td>Product Manager (sometimes Project Manager)</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a></td>
+</tr>
+<tr>
+<td><strong>BA</strong></td>
+<td>Business Analyst: turns business needs into specs</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a></td>
+</tr>
+<tr>
+<td><strong>Tech Lead / Architect</strong></td>
+<td>Owns technical direction and system design</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a>, <a href="../becoming_senior/#the-ladder">Becoming Senior → The Ladder</a></td>
+</tr>
+<tr>
+<td><strong>Epic</strong></td>
+<td>Large body of work split into stories, often spanning several sprints</td>
+<td><a href="https://www.atlassian.com/agile/project-management/epics-stories-themes">Atlassian: Epics, stories, initiatives ↗</a></td>
+</tr>
+<tr>
+<td><strong>User Story</strong></td>
+<td>Small requirement from the user's view: <em>As a <role>, I want <goal>, so that <benefit></em>, with acceptance criteria</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a>, <a href="https://www.atlassian.com/agile/project-management/user-stories">Atlassian: User stories ↗</a></td>
+</tr>
+<tr>
+<td><strong>Task / Sub-task</strong></td>
+<td>Concrete unit of work that is not a story or a bug, such as a chore, config change, or story breakdown</td>
+<td><a href="https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/">Jira: Issue types ↗</a></td>
+</tr>
+<tr>
+<td><strong>Bug / Defect</strong></td>
+<td>Behavior that deviates from the spec or from what users expect, filed as a bug report</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a>, <a href="https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/">Jira: Issue types ↗</a></td>
+</tr>
+<tr>
+<td><strong>Ticket / Issue</strong></td>
+<td>A tracked work item (story, task, bug, …) in a tool like Jira or GitHub Issues</td>
+<td><a href="../lifecycle/#development-workflow-example">Lifecycle → Development Workflow</a></td>
+</tr>
+<tr>
+<td><strong>CR</strong></td>
+<td>Change Request: a formal request to change agreed scope, requirements, or a production system, assessed for impact before approval. Also short for <em>Code Review</em> (see <a href="#version-control-review">Version Control &amp; Review</a>)</td>
+<td><a href="https://en.wikipedia.org/wiki/Change_request">Wikipedia: Change request ↗</a></td>
+</tr>
+<tr>
+<td><strong>Spike</strong></td>
+<td>Time-boxed research task to reduce uncertainty before estimating</td>
+<td><a href="https://en.wikipedia.org/wiki/Spike_(software_development)">Wikipedia: Spike ↗</a></td>
+</tr>
+<tr>
+<td><strong>Story Point</strong></td>
+<td>Relative estimate of effort, complexity, and uncertainty</td>
+<td><a href="https://www.atlassian.com/agile/project-management/estimation">Atlassian: Estimation ↗</a></td>
+</tr>
+<tr>
+<td><strong>Velocity</strong></td>
+<td>Story points a team completes per sprint, used for forecasting rather than as a target</td>
+<td><a href="https://en.wikipedia.org/wiki/Velocity_(software_development)">Wikipedia: Velocity ↗</a></td>
+</tr>
+<tr>
+<td><strong>Milestone</strong></td>
+<td>A checkpoint marking the end of a phase or a key deliverable</td>
+<td><a href="../methodologies/#8-rup-waterfall-iteration-formal-governance">Methodologies → RUP</a></td>
+</tr>
+<tr>
+<td><strong>MoSCoW</strong></td>
+<td>Must / Should / Could / Won't prioritization</td>
+<td><a href="https://en.wikipedia.org/wiki/MoSCoW_method">Wikipedia: MoSCoW ↗</a></td>
+</tr>
+<tr>
+<td><strong>OKR</strong></td>
+<td>Objectives and Key Results: goal-setting framework</td>
+<td><a href="https://en.wikipedia.org/wiki/Objectives_and_key_results">Wikipedia: OKR ↗</a></td>
+</tr>
+<tr>
+<td><strong>KPI</strong></td>
+<td>Key Performance Indicator</td>
+<td><a href="https://en.wikipedia.org/wiki/Performance_indicator">Wikipedia: KPI ↗</a></td>
+</tr>
+<tr>
+<td><strong>RACI</strong></td>
+<td>Responsible, Accountable, Consulted, Informed: who does what on a task</td>
+<td><a href="https://en.wikipedia.org/wiki/Responsibility_assignment_matrix">Wikipedia: RACI ↗</a></td>
+</tr>
+<tr>
+<td><strong>PMO</strong></td>
+<td>Project (or Program / Portfolio) Management Office: the group that sets project-management standards, tracks status, budget, and resources across projects, and reports to leadership</td>
+<td><a href="https://en.wikipedia.org/wiki/Project_management_office">Wikipedia: PMO ↗</a></td>
+</tr>
+<tr>
+<td><strong>PMP</strong></td>
+<td>Project Management Professional, the PMI certification</td>
+<td><a href="https://en.wikipedia.org/wiki/Project_Management_Professional">Wikipedia: PMP ↗</a></td>
+</tr>
+<tr>
+<td><strong>Steering Committee</strong></td>
+<td>Senior stakeholders who set direction, approve scope and budget, and resolve escalations</td>
+<td><a href="https://en.wikipedia.org/wiki/Steering_committee">Wikipedia: Steering committee ↗</a></td>
+</tr>
+<tr>
+<td><strong>Stakeholder</strong></td>
+<td>Anyone affected by or with influence over the project</td>
+<td><a href="https://en.wikipedia.org/wiki/Stakeholder_(corporate)">Wikipedia: Stakeholder ↗</a></td>
+</tr>
+<tr>
+<td><strong>Project Charter / Kickoff</strong></td>
+<td>Document that authorizes the project and its goals / the meeting that starts it</td>
+<td><a href="https://en.wikipedia.org/wiki/Project_charter">Wikipedia: Project charter ↗</a></td>
+</tr>
+<tr>
+<td><strong>RFP / SOW</strong></td>
+<td>Request for Proposal (a client asks vendors to bid) / Statement of Work (agreed scope, deliverables, timeline)</td>
+<td><a href="https://en.wikipedia.org/wiki/Request_for_proposal">Wikipedia: RFP ↗</a>, <a href="https://en.wikipedia.org/wiki/Statement_of_work">Wikipedia: SOW ↗</a></td>
+</tr>
+<tr>
+<td><strong>NDA</strong></td>
+<td>Non-Disclosure Agreement</td>
+<td><a href="https://en.wikipedia.org/wiki/Non-disclosure_agreement">Wikipedia: NDA ↗</a></td>
+</tr>
+<tr>
+<td><strong>T&amp;M / Fixed Price</strong></td>
+<td>Contract models: pay for time spent / pay an agreed amount for agreed scope</td>
+<td><a href="https://en.wikipedia.org/wiki/Time_and_materials">Wikipedia: T&amp;M ↗</a>, <a href="https://en.wikipedia.org/wiki/Fixed-price_contract">Wikipedia: Fixed-price ↗</a></td>
+</tr>
+<tr>
+<td><strong>WBS</strong></td>
+<td>Work Breakdown Structure: scope decomposed into deliverables and work packages</td>
+<td><a href="https://en.wikipedia.org/wiki/Work_breakdown_structure">Wikipedia: WBS ↗</a></td>
+</tr>
+<tr>
+<td><strong>Gantt Chart / Critical Path</strong></td>
+<td>Timeline bars of tasks and dependencies / the longest dependent chain, which sets the end date</td>
+<td><a href="https://en.wikipedia.org/wiki/Gantt_chart">Wikipedia: Gantt chart ↗</a>, <a href="https://en.wikipedia.org/wiki/Critical_path_method">Wikipedia: Critical path ↗</a></td>
+</tr>
+<tr>
+<td><strong>RAID Log</strong></td>
+<td>Risks, Assumptions, Issues, Dependencies tracked in one register</td>
+<td><a href="https://en.wikipedia.org/wiki/Risk_register">Wikipedia: Risk register ↗</a></td>
+</tr>
+<tr>
+<td><strong>Scope Creep</strong></td>
+<td>Uncontrolled growth of scope without matching time or budget; controlled through CRs</td>
+<td><a href="https://en.wikipedia.org/wiki/Scope_creep">Wikipedia: Scope creep ↗</a></td>
+</tr>
+<tr>
+<td><strong>Go-live / Sign-off</strong></td>
+<td>The moment the system goes to production users / formal acceptance of a deliverable</td>
+<td><a href="../lifecycle/#environments">Lifecycle → Environments</a>, <a href="../lifecycle/#testing">Lifecycle → Testing (UAT)</a></td>
+</tr>
+<tr>
+<td><strong>ROI / TCO</strong></td>
+<td>Return on Investment / Total Cost of Ownership (build + run + maintain)</td>
+<td><a href="https://en.wikipedia.org/wiki/Return_on_investment">Wikipedia: ROI ↗</a>, <a href="https://en.wikipedia.org/wiki/Total_cost_of_ownership">Wikipedia: TCO ↗</a></td>
+</tr>
+<tr>
+<td><strong>CapEx / OpEx</strong></td>
+<td>Capital Expenditure (buy assets up front) / Operating Expenditure (pay as you go, e.g. cloud)</td>
+<td><a href="https://en.wikipedia.org/wiki/Capital_expenditure">Wikipedia: CapEx ↗</a></td>
+</tr>
+<tr>
+<td><strong>POC</strong></td>
+<td>Proof of Concept: a throwaway build that shows an idea is feasible</td>
+<td><a href="https://en.wikipedia.org/wiki/Proof_of_concept">Wikipedia: Proof of concept ↗</a></td>
+</tr>
+<tr>
+<td><strong>MVP</strong></td>
+<td>Minimum Viable Product: smallest product that tests the core hypothesis with real users (also <em>Model-View-Presenter</em>, see <a href="#frontend">Frontend</a>)</td>
+<td><a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Wikipedia: MVP ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="requirements-design">Requirements &amp; Design<a class="headerlink" href="#requirements-design" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BRD</strong></td>
+<td>Business Requirements Document: what the business needs and why</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>PRD</strong></td>
+<td>Product Requirements Document: what the product must do, for whom</td>
+<td><a href="https://en.wikipedia.org/wiki/Product_requirements_document">Wikipedia: PRD ↗</a></td>
+</tr>
+<tr>
+<td><strong>FR</strong></td>
+<td>Functional Requirement: <em>what</em> the system does, e.g. "a user can reset their password by email"</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://en.wikipedia.org/wiki/Functional_requirement">Wikipedia: Functional requirement ↗</a></td>
+</tr>
+<tr>
+<td><strong>NFR</strong></td>
+<td>Non-Functional Requirement: <em>how well</em> it does it: performance, security, availability, usability, scalability</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="../system_design/#going-deeper_1">System Design Notes → Types of APIs</a>, <a href="https://en.wikipedia.org/wiki/Non-functional_requirement">Wikipedia: NFR ↗</a></td>
+</tr>
+<tr>
+<td><strong>FRS</strong></td>
+<td>Functional Requirements Specification</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>SRS</strong></td>
+<td>Software Requirements Specification: functional plus non-functional requirements</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>A user goal described as a sequence of interactions with the system</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>AC</strong></td>
+<td>Acceptance Criteria: testable conditions that make a story "done"</td>
+<td><a href="../../../ai/tool_tip/spec_driven_development/#what-the-spec-should-contain">Spec-Driven Development → What the Spec Should Contain</a></td>
+</tr>
+<tr>
+<td><strong>BD / HLD</strong></td>
+<td>Basic Design / High-Level Design: components, interfaces, data flow</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>DD / LLD</strong></td>
+<td>Detailed Design / Low-Level Design: classes, schemas, algorithms</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a>, <a href="../system_design/#what-the-post-says">System Design Notes → Design Patterns</a></td>
+</tr>
+<tr>
+<td><strong>SD</strong></td>
+<td>System Design: how components, data, and infrastructure fit together at scale</td>
+<td><a href="../architecture/#5-system-design-building-blocks">Architecture → Building Blocks</a>, <a href="../system_design/">System Design Notes</a></td>
+</tr>
+<tr>
+<td><strong>Design Doc</strong></td>
+<td>Written proposal for a change: context, options, decision, risks</td>
+<td><a href="../becoming_senior/#communication-is-part-of-the-system">Becoming Senior → Communication</a></td>
+</tr>
+<tr>
+<td><strong>ADR</strong></td>
+<td>Architecture Decision Record: a short, immutable note of one decision, its context, and its consequences</td>
+<td><a href="../becoming_senior/#communication-is-part-of-the-system">Becoming Senior → Communication</a>, <a href="https://adr.github.io/">adr.github.io ↗</a></td>
+</tr>
+<tr>
+<td><strong>RFC</strong></td>
+<td>Request for Comments: a proposal circulated for feedback, either an internal design RFC or an IETF standard such as the SSH RFCs</td>
+<td><a href="../system_design/#going-deeper_4">System Design Notes → How SSH Works</a>, <a href="https://en.wikipedia.org/wiki/Request_for_Comments">Wikipedia: RFC ↗</a></td>
+</tr>
+<tr>
+<td><strong>Spec / SDD</strong></td>
+<td>Specification / Spec-Driven Development: write the spec first, then generate and verify code against it</td>
+<td><a href="../../../ai/tool_tip/spec_driven_development/">Spec-Driven Development</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="coding">Coding<a class="headerlink" href="#coding" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OOP</strong></td>
+<td>Object-Oriented Programming</td>
+<td><a href="../fundamentals/#programming-paradigms">Fundamentals → Programming Paradigms</a></td>
+</tr>
+<tr>
+<td><strong>FP</strong></td>
+<td>Functional Programming: pure functions, immutability, composition</td>
+<td><a href="../fundamentals/#programming-paradigms">Fundamentals → Programming Paradigms</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">Wikipedia: FP ↗</a></td>
+</tr>
+<tr>
+<td><strong>SOLID</strong></td>
+<td>Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion</td>
+<td><a href="../principles/#solid">Design Principles → SOLID</a></td>
+</tr>
+<tr>
+<td><strong>DRY / KISS / YAGNI</strong></td>
+<td>Don't Repeat Yourself / Keep It Simple, Stupid / You Aren't Gonna Need It</td>
+<td><a href="../principles/#the-core-three-dry-kiss-yagni">Design Principles → The Core Three</a></td>
+</tr>
+<tr>
+<td><strong>SoC</strong></td>
+<td>Separation of Concerns</td>
+<td><a href="../methodologies/#6-separation-of-concerns-soc">Methodologies → SoC</a></td>
+</tr>
+<tr>
+<td><strong>CoC</strong></td>
+<td>Convention over Configuration</td>
+<td><a href="../methodologies/#7-convention-over-configuration-coc">Methodologies → CoC</a></td>
+</tr>
+<tr>
+<td><strong>Clean Code</strong></td>
+<td>Readable code: clear names, small functions, no surprises</td>
+<td><a href="../principles/#clean-code-habits">Design Principles → Clean Code Habits</a></td>
+</tr>
+<tr>
+<td><strong>Design Pattern</strong></td>
+<td>Reusable solution to a recurring design problem (Singleton, Factory, Observer, …)</td>
+<td><a href="../system_design/#1-seven-design-patterns">System Design Notes → Seven Design Patterns</a></td>
+</tr>
+<tr>
+<td><strong>DDD</strong></td>
+<td>Domain-Driven Design: model code around the business domain, its language, and its boundaries (bounded contexts)</td>
+<td><a href="../methodologies/#ddd-domain-driven-design">Methodologies → DDD</a></td>
+</tr>
+<tr>
+<td><strong>DI</strong></td>
+<td>Dependency Injection: pass dependencies in instead of creating them inside</td>
+<td><a href="../system_design/#going-deeper">System Design Notes → Design Patterns</a>, <a href="https://martinfowler.com/articles/injection.html">Fowler ↗</a></td>
+</tr>
+<tr>
+<td><strong>Refactoring</strong></td>
+<td>Changing structure without changing behavior</td>
+<td><a href="../lifecycle/#tdd-and-bdd">Lifecycle → TDD and BDD</a>, <a href="https://refactoring.com/">refactoring.com ↗</a></td>
+</tr>
+<tr>
+<td><strong>Tech Debt</strong></td>
+<td>The future cost of a shortcut taken now</td>
+<td><a href="https://martinfowler.com/bliki/TechnicalDebt.html">Fowler: Technical Debt ↗</a></td>
+</tr>
+<tr>
+<td><strong>Code Smell</strong></td>
+<td>A surface sign of a deeper design problem</td>
+<td><a href="https://martinfowler.com/bliki/CodeSmell.html">Fowler: Code Smell ↗</a></td>
+</tr>
+<tr>
+<td><strong>Linter</strong></td>
+<td>Static checker for style and common mistakes</td>
+<td><a href="../lifecycle/#code-review">Lifecycle → Code Review</a>, <a href="../../tool_tip/frontend_tools/#linting-eslint-oxlint">Frontend Toolchain → Linting</a></td>
+</tr>
+<tr>
+<td><strong>Big-O</strong></td>
+<td>How cost grows with input size</td>
+<td><a href="../algorithms/#big-o-measuring-growth">Algorithms → Big-O</a></td>
+</tr>
+<tr>
+<td><strong>Data Structures</strong></td>
+<td>Array, linked list, hash map, stack, queue, tree, heap, graph</td>
+<td><a href="../algorithms/#core-data-structures">Algorithms → Core Data Structures</a></td>
+</tr>
+<tr>
+<td><strong>Algorithmic Patterns</strong></td>
+<td>Two pointers, sliding window, BFS/DFS, binary search, dynamic programming</td>
+<td><a href="../algorithms/#algorithmic-patterns">Algorithms → Algorithmic Patterns</a></td>
+</tr>
+<tr>
+<td><strong>Fail Fast</strong></td>
+<td>Detect and report errors at the earliest point</td>
+<td><a href="../error_handling/#fail-fast">Error Handling → Fail Fast</a></td>
+</tr>
+<tr>
+<td><strong>EAFP / LBYL</strong></td>
+<td>Easier to Ask Forgiveness than Permission / Look Before You Leap</td>
+<td><a href="../error_handling/#eafp-vs-lbyl">Error Handling → EAFP vs LBYL</a></td>
+</tr>
+<tr>
+<td><strong>Exception / Context Manager</strong></td>
+<td>Error object that unwinds the stack / <code>with</code> block that guarantees cleanup</td>
+<td><a href="../error_handling/#python-specifics">Error Handling → Python Specifics</a>, <a href="../error_handling/#context-managers">Error Handling → Context Managers</a></td>
+</tr>
+<tr>
+<td><strong>Race Condition / Deadlock</strong></td>
+<td>Concurrency hazards: outcome depends on timing / threads wait on each other forever</td>
+<td><a href="../concurrency/#hazards">Concurrency → Hazards</a></td>
+</tr>
+<tr>
+<td><strong>Process / Thread / Coroutine</strong></td>
+<td>Isolated memory / shared memory in one process / cooperative task on one thread</td>
+<td><a href="../concurrency/#units-of-execution">Concurrency → Units of Execution</a></td>
+</tr>
+<tr>
+<td><strong>Concurrency vs Parallelism</strong></td>
+<td>Dealing with many things at once / doing many things at the same instant</td>
+<td><a href="../concurrency/">Concurrency &amp; Parallelism</a></td>
+</tr>
+<tr>
+<td><strong>I/O-bound / CPU-bound</strong></td>
+<td>Limited by waiting on network or disk (use async) / by computation (use more cores)</td>
+<td><a href="../concurrency/#units-of-execution">Concurrency → Units of Execution</a></td>
+</tr>
+<tr>
+<td><strong>Async / Event Loop</strong></td>
+<td>Non-blocking I/O where one thread interleaves many tasks</td>
+<td><a href="../concurrency/#primitives-models">Concurrency → Primitives &amp; Models</a></td>
+</tr>
+<tr>
+<td><strong>Mutex / Lock / Semaphore / Atomic</strong></td>
+<td>One holder at a time / at most N holders / an uninterruptible operation</td>
+<td><a href="../concurrency/#primitives-models">Concurrency → Primitives &amp; Models</a></td>
+</tr>
+<tr>
+<td><strong>GIL</strong></td>
+<td>Python's Global Interpreter Lock: one thread runs bytecode at a time</td>
+<td><a href="../concurrency/#units-of-execution">Concurrency → Units of Execution</a></td>
+</tr>
+<tr>
+<td><strong>Pair / Mob Programming</strong></td>
+<td>Two people / the whole team working on one change at one screen</td>
+<td><a href="../methodologies/#6-xp-extreme-programming">Methodologies → XP</a>, <a href="https://en.wikipedia.org/wiki/Pair_programming">Wikipedia: Pair programming ↗</a></td>
+</tr>
+<tr>
+<td><strong>CLI</strong></td>
+<td>Command Line Interface</td>
+<td><a href="https://en.wikipedia.org/wiki/Command-line_interface">Wikipedia: CLI ↗</a>, <a href="../../../ai/basics/landscape/#cli-coding-agents">LLM Landscape → CLI Coding Agents</a></td>
+</tr>
+<tr>
+<td><strong>GUI</strong></td>
+<td>Graphical User Interface</td>
+<td><a href="https://en.wikipedia.org/wiki/Graphical_user_interface">Wikipedia: GUI ↗</a></td>
+</tr>
+<tr>
+<td><strong>IDE</strong></td>
+<td>Integrated Development Environment</td>
+<td><a href="https://en.wikipedia.org/wiki/Integrated_development_environment">Wikipedia: IDE ↗</a></td>
+</tr>
+<tr>
+<td><strong>JIT</strong></td>
+<td>Just-in-time compilation: compile code at runtime</td>
+<td><a href="https://en.wikipedia.org/wiki/Just-in-time_compilation">Wikipedia: JIT ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="version-control-review">Version Control &amp; Review<a class="headerlink" href="#version-control-review" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VCS</strong></td>
+<td>Version Control System (Git is the standard)</td>
+<td><a href="../lifecycle/#version-control">Lifecycle → Version Control</a></td>
+</tr>
+<tr>
+<td><strong>Repository / Clone / Fork</strong></td>
+<td>A project's tracked history / a local copy of it / your own server-side copy of someone else's repo</td>
+<td><a href="../git/#7-professional-daily-workflow">Git → Daily Workflow</a>, <a href="https://git-scm.com/docs/git-clone">git clone ↗</a></td>
+</tr>
+<tr>
+<td><strong>Commit / Branch / HEAD</strong></td>
+<td>A snapshot with a message / a movable pointer to a line of commits / the commit you have checked out</td>
+<td><a href="../lifecycle/#version-control">Lifecycle → Version Control</a>, <a href="https://git-scm.com/docs/git-commit">git commit ↗</a></td>
+</tr>
+<tr>
+<td><strong>Working Tree / Staging Area (Index)</strong></td>
+<td>Your files on disk / the changes selected for the next commit (<code>git add</code>)</td>
+<td><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Pro Git: What is Git? ↗</a></td>
+</tr>
+<tr>
+<td><strong>Remote / origin / upstream</strong></td>
+<td>A hosted copy of the repo / the default remote you cloned from / the original repo a fork tracks</td>
+<td><a href="../git/#originmain-is-a-local-cache-not-github-itself">Git → Three Layers</a></td>
+</tr>
+<tr>
+<td><strong>Fetch / Pull / Push</strong></td>
+<td>Download remote changes only / fetch and merge into your branch / upload your commits</td>
+<td><a href="../git/#what-git-fetch-does-and-does-not-do">Git → What git fetch does</a>, <a href="https://git-scm.com/docs/git-push">git push ↗</a></td>
+</tr>
+<tr>
+<td><strong>Merge / Rebase</strong></td>
+<td>Combine branches with a merge commit / replay commits on a new base</td>
+<td><a href="../git/#3-git-merge">Git → Merge</a>, <a href="../git/#4-git-rebase">Git → Rebase</a></td>
+</tr>
+<tr>
+<td><strong>Fast-Forward</strong></td>
+<td>Merge that just moves the branch pointer because there is no divergence</td>
+<td><a href="https://git-scm.com/docs/git-merge">git merge ↗</a></td>
+</tr>
+<tr>
+<td><strong>Squash</strong></td>
+<td>Fold several commits into one</td>
+<td><a href="../git/#5-interactive-rebase-cleaning-up-history">Git → Interactive Rebase</a></td>
+</tr>
+<tr>
+<td><strong>Interactive Rebase</strong></td>
+<td><code>git rebase -i</code>: reorder, squash, edit, or drop commits before sharing them</td>
+<td><a href="../git/#5-interactive-rebase-cleaning-up-history">Git → Interactive Rebase</a></td>
+</tr>
+<tr>
+<td><strong>Cherry-pick</strong></td>
+<td>Copy one specific commit from another branch onto the current one, e.g. backport a fix to a release branch</td>
+<td><a href="https://git-scm.com/docs/git-cherry-pick">git cherry-pick ↗</a></td>
+</tr>
+<tr>
+<td><strong>Revert</strong></td>
+<td>New commit that undoes an earlier one; safe on shared branches</td>
+<td><a href="https://git-scm.com/docs/git-revert">git revert ↗</a></td>
+</tr>
+<tr>
+<td><strong>Reset</strong></td>
+<td>Move the branch pointer back (<code>--soft</code> / <code>--mixed</code> / <code>--hard</code>); rewrites history, so use only locally</td>
+<td><a href="https://git-scm.com/docs/git-reset">git reset ↗</a></td>
+</tr>
+<tr>
+<td><strong>Amend</strong></td>
+<td><code>git commit --amend</code>: replace the last commit with a fixed version</td>
+<td><a href="https://git-scm.com/docs/git-commit">git commit ↗</a></td>
+</tr>
+<tr>
+<td><strong>Stash</strong></td>
+<td>Shelve uncommitted changes and restore them later</td>
+<td><a href="https://git-scm.com/docs/git-stash">git stash ↗</a></td>
+</tr>
+<tr>
+<td><strong>Force Push</strong></td>
+<td>Overwrite the remote branch; prefer <code>--force-with-lease</code>, and never on shared branches</td>
+<td><a href="https://git-scm.com/docs/git-push">git push ↗</a></td>
+</tr>
+<tr>
+<td><strong>Bisect</strong></td>
+<td>Binary-search history to find the commit that introduced a bug</td>
+<td><a href="https://git-scm.com/docs/git-bisect">git bisect ↗</a></td>
+</tr>
+<tr>
+<td><strong>Blame</strong></td>
+<td>Show which commit last changed each line</td>
+<td><a href="https://git-scm.com/docs/git-blame">git blame ↗</a></td>
+</tr>
+<tr>
+<td><strong>.gitignore</strong></td>
+<td>Patterns for files Git should never track</td>
+<td><a href="https://git-scm.com/docs/gitignore">gitignore ↗</a></td>
+</tr>
+<tr>
+<td><strong>Submodule</strong></td>
+<td>A repo embedded inside another at a pinned commit</td>
+<td><a href="https://git-scm.com/docs/git-submodule">git submodule ↗</a></td>
+</tr>
+<tr>
+<td><strong>Conflict</strong></td>
+<td>Two changes touch the same lines; a human must choose</td>
+<td><a href="../git/#6-resolving-conflicts">Git → Resolving Conflicts</a></td>
+</tr>
+<tr>
+<td><strong>Git Flow / GitHub Flow / Trunk-Based</strong></td>
+<td>Branching models, from heavy to light</td>
+<td><a href="../lifecycle/#branching-models">Lifecycle → Branching Models</a></td>
+</tr>
+<tr>
+<td><strong>PR / MR</strong></td>
+<td>Pull Request / Merge Request: a reviewed request to merge one branch into another</td>
+<td><a href="../code_review/#6-beyond-the-diff-understanding-a-prmr">Code Review → Understanding a PR/MR</a></td>
+</tr>
+<tr>
+<td><strong>CR</strong></td>
+<td>Code Review: a second engineer checks a change before merge (also <em>Change Request</em>, see <a href="#management-work-items">Management &amp; Work Items</a>)</td>
+<td><a href="../lifecycle/#code-review">Lifecycle → Code Review</a>, <a href="../code_review/">How to Review Code</a></td>
+</tr>
+<tr>
+<td><strong>Diff / Hunk</strong></td>
+<td>The changes between two versions / one contiguous block of them</td>
+<td><a href="../code_review/#what-is-a-git-diff">Code Review → What is a Git Diff?</a></td>
+</tr>
+<tr>
+<td><strong>Conventional Commits</strong></td>
+<td><code>type(scope): subject</code> commit message convention</td>
+<td><a href="../lifecycle/#conventional-commits">Lifecycle → Conventional Commits</a></td>
+</tr>
+<tr>
+<td><strong>SemVer</strong></td>
+<td>Semantic Versioning: <code>MAJOR.MINOR.PATCH</code></td>
+<td><a href="../lifecycle/#semantic-versioning">Lifecycle → Semantic Versioning</a></td>
+</tr>
+<tr>
+<td><strong>Release / Tag</strong></td>
+<td>A versioned, shippable snapshot, marked by a Git tag</td>
+<td><a href="../lifecycle/#development-workflow-example">Lifecycle → Development Workflow</a></td>
+</tr>
+<tr>
+<td><strong>Changelog</strong></td>
+<td>Human-readable list of notable changes per version</td>
+<td><a href="https://keepachangelog.com/">keepachangelog.com ↗</a></td>
+</tr>
+<tr>
+<td><strong>Monorepo</strong></td>
+<td>Many projects in one repository</td>
+<td><a href="../architecture/#by-kind-anti-pattern">Architecture → Code Organization</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing-qa">Testing &amp; QA<a class="headerlink" href="#testing-qa" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QA</strong></td>
+<td>Quality Assurance: test strategy and verification</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a></td>
+</tr>
+<tr>
+<td><strong>Test Plan / Test Case / Test Suite</strong></td>
+<td>The testing strategy and scope / one scenario with steps and an expected result / a group of related cases</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a>, <a href="https://en.wikipedia.org/wiki/Test_case_(software)">Wikipedia: Test case ↗</a></td>
+</tr>
+<tr>
+<td><strong>Testing Pyramid</strong></td>
+<td>Many unit tests, fewer integration tests, very few E2E tests</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://martinfowler.com/articles/practical-test-pyramid.html">Fowler: Practical Test Pyramid ↗</a></td>
+</tr>
+<tr>
+<td><strong>Unit Test</strong></td>
+<td>Tests one function or class in isolation; fast, run on every commit</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://en.wikipedia.org/wiki/Unit_testing">Wikipedia: Unit testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Integration Test</strong></td>
+<td>Tests components working together, e.g. a service and its real database</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://en.wikipedia.org/wiki/Integration_testing">Wikipedia: Integration testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>SIT</strong></td>
+<td>System Integration Testing: the integrated system tested against its external interfaces</td>
+<td><a href="https://en.wikipedia.org/wiki/System_integration_testing">Wikipedia: System integration testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>System Test</strong></td>
+<td>Tests the complete, integrated system against the requirements</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://en.wikipedia.org/wiki/System_testing">Wikipedia: System testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>E2E Test</strong></td>
+<td>End-to-End: drives the whole stack as a user would, e.g. a browser through to the database</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="../../tool_tip/frontend_tools/#testing-cypress-playwright-plus-vitest-and-msw">Frontend Toolchain → Testing</a></td>
+</tr>
+<tr>
+<td><strong>Contract Test</strong></td>
+<td>Checks that a provider and its consumers still agree on the API shape</td>
+<td><a href="https://martinfowler.com/bliki/ContractTest.html">Fowler: Contract Test ↗</a></td>
+</tr>
+<tr>
+<td><strong>Functional Test</strong></td>
+<td>Verifies a functional requirement (FR): <em>does it do the right thing?</em></td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a></td>
+</tr>
+<tr>
+<td><strong>Non-Functional Test</strong></td>
+<td>Verifies an NFR: performance, security, usability, reliability</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a></td>
+</tr>
+<tr>
+<td><strong>Smoke Test</strong></td>
+<td>Quick, shallow check that the build starts and its critical paths work, run before deeper testing or right after deploy</td>
+<td><a href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Wikipedia: Smoke testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Sanity Test</strong></td>
+<td>Narrow check that a specific fix or change works, before a full regression run</td>
+<td><a href="https://en.wikipedia.org/wiki/Sanity_check">Wikipedia: Sanity check ↗</a></td>
+</tr>
+<tr>
+<td><strong>Regression Test</strong></td>
+<td>Re-runs existing tests to make sure a change didn't break old behavior; add one for every fixed bug</td>
+<td><a href="https://en.wikipedia.org/wiki/Regression_testing">Wikipedia: Regression testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>UAT</strong></td>
+<td>User Acceptance Testing: the business confirms requirements are met and signs off</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://en.wikipedia.org/wiki/Acceptance_testing">Wikipedia: Acceptance testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Alpha / Beta Test</strong></td>
+<td>Pre-release testing by internal users / by a limited group of real users</td>
+<td><a href="https://en.wikipedia.org/wiki/Software_testing#Alpha_testing">Wikipedia: Alpha and beta testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Performance Test</strong></td>
+<td>Measures speed and resource use (latency, throughput) under a given load</td>
+<td><a href="https://en.wikipedia.org/wiki/Software_performance_testing">Wikipedia: Performance testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Load Test</strong></td>
+<td>Behavior at expected peak load</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a></td>
+</tr>
+<tr>
+<td><strong>Stress Test</strong></td>
+<td>Push past capacity to find the breaking point and how the system fails</td>
+<td><a href="../lifecycle/#testing">Lifecycle → Testing</a>, <a href="https://en.wikipedia.org/wiki/Stress_testing_(software)">Wikipedia: Stress testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Spike Test</strong></td>
+<td>Sudden, sharp jump in load; checks auto-scaling and recovery</td>
+<td><a href="https://en.wikipedia.org/wiki/Software_performance_testing">Wikipedia: Performance testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Soak / Endurance Test</strong></td>
+<td>Normal load held for hours or days to expose leaks and slow degradation</td>
+<td><a href="https://en.wikipedia.org/wiki/Soak_testing">Wikipedia: Soak testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Security Test / Pentest</strong></td>
+<td>Probe for vulnerabilities; a penetration test is an authorized simulated attack</td>
+<td><a href="../security/#common-risks-owasp-condensed">Security → Common Risks</a>, <a href="https://en.wikipedia.org/wiki/Penetration_test">Wikipedia: Penetration test ↗</a></td>
+</tr>
+<tr>
+<td><strong>SAST / DAST</strong></td>
+<td>Static (source code) / Dynamic (running app) Application Security Testing</td>
+<td><a href="https://en.wikipedia.org/wiki/Static_application_security_testing">Wikipedia: SAST ↗</a>, <a href="https://en.wikipedia.org/wiki/Dynamic_application_security_testing">Wikipedia: DAST ↗</a></td>
+</tr>
+<tr>
+<td><strong>Fuzz Test</strong></td>
+<td>Feed random or malformed input to find crashes and unhandled cases</td>
+<td><a href="https://en.wikipedia.org/wiki/Fuzzing">Wikipedia: Fuzzing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Adversarial Test</strong></td>
+<td>For LLM and ML systems: deliberately crafted hostile inputs (prompt injection, jailbreaks, perturbed data) that try to make the model misbehave, leak data, or bypass guardrails</td>
+<td><a href="#ai-llm">AI &amp; LLM</a>, <a href="https://en.wikipedia.org/wiki/Adversarial_machine_learning">Wikipedia: Adversarial ML ↗</a></td>
+</tr>
+<tr>
+<td><strong>Accessibility Test</strong></td>
+<td>Checks the UI against WCAG: keyboard use, screen-reader names, contrast</td>
+<td><a href="#frontend">Frontend → a11y</a>, <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">W3C: WCAG ↗</a></td>
+</tr>
+<tr>
+<td><strong>Usability Test</strong></td>
+<td>Watch real users attempt tasks to find friction</td>
+<td><a href="https://en.wikipedia.org/wiki/Usability_testing">Wikipedia: Usability testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Compatibility / Cross-Browser Test</strong></td>
+<td>Same behavior across browsers, devices, and OS versions</td>
+<td><a href="../../tool_tip/frontend_tools/#testing-cypress-playwright-plus-vitest-and-msw">Frontend Toolchain → Testing</a>, <a href="https://en.wikipedia.org/wiki/Compatibility_testing">Wikipedia: Compatibility testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Snapshot Test</strong></td>
+<td>Compare output (rendered UI, serialized data) with a stored snapshot</td>
+<td><a href="https://jestjs.io/docs/snapshot-testing">Jest: Snapshot testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Mutation Test</strong></td>
+<td>Inject small bugs into the code; good tests should fail (kill the mutant)</td>
+<td><a href="https://en.wikipedia.org/wiki/Mutation_testing">Wikipedia: Mutation testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Property-Based Test</strong></td>
+<td>Generate many inputs and assert a property that must always hold</td>
+<td><a href="https://en.wikipedia.org/wiki/Software_testing#Property_testing">Wikipedia: Property testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Exploratory Test</strong></td>
+<td>Unscripted testing where a tester learns and designs tests on the fly</td>
+<td><a href="https://en.wikipedia.org/wiki/Exploratory_testing">Wikipedia: Exploratory testing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Black-Box / White-Box Test</strong></td>
+<td>Tests from the outside, without seeing the code / tests designed from the code's internals</td>
+<td><a href="https://en.wikipedia.org/wiki/Black-box_testing">Wikipedia: Black-box ↗</a>, <a href="https://en.wikipedia.org/wiki/White-box_testing">Wikipedia: White-box ↗</a></td>
+</tr>
+<tr>
+<td><strong>Chaos Test</strong></td>
+<td>Deliberately inject failures in production-like systems to prove resilience</td>
+<td><a href="https://en.wikipedia.org/wiki/Chaos_engineering">Wikipedia: Chaos engineering ↗</a></td>
+</tr>
+<tr>
+<td><strong>TDD</strong></td>
+<td>Test-Driven Development: Red → Green → Refactor</td>
+<td><a href="../lifecycle/#tdd-and-bdd">Lifecycle → TDD and BDD</a>, <a href="../methodologies/#tdd-test-driven-development">Methodologies → TDD</a></td>
+</tr>
+<tr>
+<td><strong>BDD</strong></td>
+<td>Behavior-Driven Development: Given / When / Then</td>
+<td><a href="../methodologies/#bdd-behavior-driven-development">Methodologies → BDD</a></td>
+</tr>
+<tr>
+<td><strong>Mock / Stub</strong></td>
+<td>Test doubles that stand in for real dependencies</td>
+<td><a href="../../tool_tip/frontend_tools/#testing-cypress-playwright-plus-vitest-and-msw">Frontend Toolchain → Testing</a>, <a href="https://martinfowler.com/articles/mocksArentStubs.html">Fowler: Mocks Aren't Stubs ↗</a></td>
+</tr>
+<tr>
+<td><strong>Fixture</strong></td>
+<td>Fixed setup state or data a test runs against</td>
+<td><a href="https://en.wikipedia.org/wiki/Test_fixture">Wikipedia: Test fixture ↗</a></td>
+</tr>
+<tr>
+<td><strong>Flaky Test</strong></td>
+<td>Passes and fails on the same code; usually caused by timing, ordering, or shared state</td>
+<td><a href="https://martinfowler.com/articles/nonDeterminism.html">Fowler: Non-Determinism ↗</a></td>
+</tr>
+<tr>
+<td><strong>Code Coverage</strong></td>
+<td>Share of code executed by tests</td>
+<td><a href="https://en.wikipedia.org/wiki/Code_coverage">Wikipedia: Code coverage ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-design">System Design<a class="headerlink" href="#system-design" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Latency</strong></td>
+<td>Time for one request to complete, usually reported as percentiles (p50/p95/p99)</td>
+<td><a href="../architecture/#performance-bottlenecks">Architecture → Performance Bottlenecks</a>, <a href="#devops-sre">DevOps &amp; SRE → p95/p99</a></td>
+</tr>
+<tr>
+<td><strong>Throughput</strong></td>
+<td>Work completed per unit of time (requests/s, MB/s); can rise while latency worsens</td>
+<td><a href="../architecture/#performance-bottlenecks">Architecture → Performance Bottlenecks</a></td>
+</tr>
+<tr>
+<td><strong>Bandwidth</strong></td>
+<td>Maximum data rate of a link; throughput is what you actually achieve</td>
+<td><a href="https://en.wikipedia.org/wiki/Bandwidth_(computing)">Wikipedia: Bandwidth ↗</a></td>
+</tr>
+<tr>
+<td><strong>RPS / QPS / TPS</strong></td>
+<td>Requests / Queries / Transactions Per Second</td>
+<td><a href="https://en.wikipedia.org/wiki/Queries_per_second">Wikipedia: Queries per second ↗</a></td>
+</tr>
+<tr>
+<td><strong>Back-of-the-Envelope Estimation</strong></td>
+<td>Rough numbers (users → RPS → storage → bandwidth) to size a design before drawing it</td>
+<td><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">Wikipedia: Back-of-the-envelope ↗</a></td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Handle more load by adding resources without a redesign</td>
+<td><a href="../architecture/#scalability">Architecture → Scalability</a></td>
+</tr>
+<tr>
+<td><strong>Vertical / Horizontal Scaling</strong></td>
+<td>Scale up (bigger machine) / scale out (more machines behind a load balancer)</td>
+<td><a href="../architecture/#scalability">Architecture → Scalability</a>, <a href="../../../data/basics/big_data/#scale-up-vs-scale-out">Big Data → Scale Up vs Scale Out</a></td>
+</tr>
+<tr>
+<td><strong>Elasticity / Auto-scaling</strong></td>
+<td>Add and remove capacity automatically as load changes</td>
+<td><a href="https://en.wikipedia.org/wiki/Autoscaling">Wikipedia: Autoscaling ↗</a></td>
+</tr>
+<tr>
+<td><strong>Stateless / Stateful</strong></td>
+<td>Service keeps no per-client state between requests (easy to scale out) / it does (needs sticky sessions or shared storage)</td>
+<td><a href="../architecture/#scalability">Architecture → Scalability</a></td>
+</tr>
+<tr>
+<td><strong>Availability</strong></td>
+<td>Share of time the system serves requests successfully, measured in nines</td>
+<td><a href="#devops-sre">DevOps &amp; SRE → Nines</a>, <a href="../architecture/#cap-theorem">Architecture → CAP Theorem</a></td>
+</tr>
+<tr>
+<td><strong>Reliability</strong></td>
+<td>The system keeps doing the right thing over time, despite faults</td>
+<td><a href="../becoming_senior/#reliability-is-measured-not-felt">Becoming Senior → Reliability</a></td>
+</tr>
+<tr>
+<td><strong>Durability</strong></td>
+<td>Once written and acknowledged, data survives crashes</td>
+<td><a href="../../../data/basics/databases/#transactions-acid">Databases → Transactions &amp; ACID</a>, <a href="https://en.wikipedia.org/wiki/Durability_(database_systems)">Wikipedia: Durability ↗</a></td>
+</tr>
+<tr>
+<td><strong>HA</strong></td>
+<td>High Availability: redundancy plus automatic failover so one failure doesn't cause an outage</td>
+<td><a href="https://en.wikipedia.org/wiki/High_availability">Wikipedia: High availability ↗</a></td>
+</tr>
+<tr>
+<td><strong>Fault Tolerance / Redundancy</strong></td>
+<td>Keep working when parts fail / spare copies of components that make it possible</td>
+<td><a href="https://en.wikipedia.org/wiki/Fault_tolerance">Wikipedia: Fault tolerance ↗</a></td>
+</tr>
+<tr>
+<td><strong>Failover</strong></td>
+<td>Switch traffic to a standby when the primary fails</td>
+<td><a href="https://en.wikipedia.org/wiki/Failover">Wikipedia: Failover ↗</a></td>
+</tr>
+<tr>
+<td><strong>SPOF</strong></td>
+<td>Single Point of Failure: one component whose failure takes the whole system down</td>
+<td><a href="../architecture/#peer-to-peer-p2p">Architecture → Peer-to-Peer</a>, <a href="https://en.wikipedia.org/wiki/Single_point_of_failure">Wikipedia: SPOF ↗</a></td>
+</tr>
+<tr>
+<td><strong>DR</strong></td>
+<td>Disaster Recovery: restore service after losing a site or region, sized by RPO / RTO</td>
+<td><a href="../becoming_senior/#deployment-and-scale-are-part-of-the-design">Becoming Senior → Deployment and Scale</a>, <a href="https://en.wikipedia.org/wiki/Disaster_recovery">Wikipedia: DR ↗</a></td>
+</tr>
+<tr>
+<td><strong>LB</strong></td>
+<td>Load Balancer: spreads traffic across instances (round robin, least connections; L4 or L7)</td>
+<td><a href="../architecture/#load-balancers">Architecture → Load Balancers</a></td>
+</tr>
+<tr>
+<td><strong>Reverse Proxy</strong></td>
+<td>Server in front of your apps that terminates TLS, routes, caches, and hides internals (NGINX, Caddy)</td>
+<td><a href="../../tool_tip/server_operations/#the-exposure-chain">Running a Server → The Exposure Chain</a>, <a href="https://en.wikipedia.org/wiki/Reverse_proxy">Wikipedia: Reverse proxy ↗</a></td>
+</tr>
+<tr>
+<td><strong>API Gateway</strong></td>
+<td>Single entry point for clients that handles routing, auth, and rate limiting for many services</td>
+<td><a href="../architecture/#microservices">Architecture → Microservices</a>, <a href="https://microservices.io/patterns/apigateway.html">microservices.io ↗</a></td>
+</tr>
+<tr>
+<td><strong>Service Discovery / Service Mesh</strong></td>
+<td>How services find each other / an infrastructure layer that handles service-to-service traffic, retries, and mTLS</td>
+<td><a href="https://microservices.io/patterns/server-side-discovery.html">microservices.io: Discovery ↗</a>, <a href="https://en.wikipedia.org/wiki/Service_mesh">Wikipedia: Service mesh ↗</a></td>
+</tr>
+<tr>
+<td><strong>Cache</strong></td>
+<td>Fast copy of data closer to the reader</td>
+<td><a href="../architecture/#caching">Architecture → Caching</a></td>
+</tr>
+<tr>
+<td><strong>Cache-Aside / Write-Through / Write-Behind</strong></td>
+<td>Caching strategies: app loads on miss / write cache and DB together / write cache now, DB later</td>
+<td><a href="../architecture/#caching">Architecture → Caching</a></td>
+</tr>
+<tr>
+<td><strong>TTL / Eviction (LRU)</strong></td>
+<td>Time To Live before an entry expires / which entry to drop when full (Least Recently Used)</td>
+<td><a href="../architecture/#caching">Architecture → Caching</a>, <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies">Wikipedia: Cache replacement ↗</a></td>
+</tr>
+<tr>
+<td><strong>CDN</strong></td>
+<td>Content Delivery Network: edge caches near users</td>
+<td><a href="../architecture/#cdn-content-delivery-network">Architecture → CDN</a></td>
+</tr>
+<tr>
+<td><strong>Partitioning / Sharding</strong></td>
+<td>Split data across nodes by range, hash, or directory</td>
+<td><a href="../architecture/#partitioning-sharding">Architecture → Partitioning</a></td>
+</tr>
+<tr>
+<td><strong>Consistent Hashing</strong></td>
+<td>Hash scheme where adding or removing a node moves only a small share of keys</td>
+<td><a href="https://en.wikipedia.org/wiki/Consistent_hashing">Wikipedia: Consistent hashing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Hot Spot / Hot Key</strong></td>
+<td>One shard or key that gets far more traffic than the rest</td>
+<td><a href="https://en.wikipedia.org/wiki/Shard_(database_architecture)">Wikipedia: Shard ↗</a></td>
+</tr>
+<tr>
+<td><strong>Replication / Read Replica</strong></td>
+<td>Copies of data on several nodes (leader–follower, multi-leader) / a copy that serves reads</td>
+<td><a href="https://en.wikipedia.org/wiki/Replication_(computing)">Wikipedia: Replication ↗</a></td>
+</tr>
+<tr>
+<td><strong>Quorum / Leader Election</strong></td>
+<td>Majority agreement needed for a read or write / choosing one node to coordinate</td>
+<td><a href="https://en.wikipedia.org/wiki/Quorum_(distributed_computing)">Wikipedia: Quorum ↗</a>, <a href="https://en.wikipedia.org/wiki/Leader_election">Wikipedia: Leader election ↗</a></td>
+</tr>
+<tr>
+<td><strong>CAP</strong></td>
+<td>Consistency, Availability, Partition tolerance: pick two under partition</td>
+<td><a href="../architecture/#cap-theorem">Architecture → CAP Theorem</a></td>
+</tr>
+<tr>
+<td><strong>PACELC</strong></td>
+<td>CAP extended: if Partitioned choose A or C, Else choose Latency or Consistency</td>
+<td><a href="https://en.wikipedia.org/wiki/PACELC_design_principle">Wikipedia: PACELC ↗</a></td>
+</tr>
+<tr>
+<td><strong>Strong / Eventual Consistency</strong></td>
+<td>Every read sees the latest write / replicas converge eventually</td>
+<td><a href="../../../data/basics/databases/#consistency-at-scale">Databases → Consistency at Scale</a>, <a href="https://en.wikipedia.org/wiki/Eventual_consistency">Wikipedia: Eventual consistency ↗</a></td>
+</tr>
+<tr>
+<td><strong>BASE</strong></td>
+<td>Basically Available, Soft state, Eventually consistent: the opposite trade-off to ACID</td>
+<td><a href="../../../data/basics/databases/#consistency-at-scale">Databases → Consistency at Scale</a></td>
+</tr>
+<tr>
+<td><strong>MQ</strong></td>
+<td>Message Queue: buffers work between producers and consumers (Kafka, RabbitMQ, SQS)</td>
+<td><a href="../architecture/#message-queues">Architecture → Message Queues</a></td>
+</tr>
+<tr>
+<td><strong>Pub/Sub</strong></td>
+<td>Publishers emit events; every subscriber gets a copy</td>
+<td><a href="../architecture/#message-queues">Architecture → Message Queues</a>, <a href="../system_design/#going-deeper">System Design Notes → Design Patterns</a></td>
+</tr>
+<tr>
+<td><strong>Stream Processing</strong></td>
+<td>Continuous processing of event streams (Kafka Streams, Flink)</td>
+<td><a href="../architecture/#stream-processing">Architecture → Stream Processing</a></td>
+</tr>
+<tr>
+<td><strong>Backpressure</strong></td>
+<td>A slow consumer signals producers to slow down instead of being overwhelmed</td>
+<td><a href="https://en.wikipedia.org/wiki/Back_pressure">Wikipedia: Back pressure ↗</a></td>
+</tr>
+<tr>
+<td><strong>2PC / Saga</strong></td>
+<td>Two-Phase Commit (atomic commit across nodes) / a chain of local transactions with compensating steps</td>
+<td><a href="https://en.wikipedia.org/wiki/Two-phase_commit_protocol">Wikipedia: 2PC ↗</a>, <a href="https://microservices.io/patterns/data/saga.html">microservices.io: Saga ↗</a></td>
+</tr>
+<tr>
+<td><strong>CQRS / Event Sourcing</strong></td>
+<td>Separate write and read models / store state as an append-only log of events</td>
+<td><a href="https://martinfowler.com/bliki/CQRS.html">Fowler: CQRS ↗</a>, <a href="https://martinfowler.com/eaaDev/EventSourcing.html">Fowler: Event Sourcing ↗</a></td>
+</tr>
+<tr>
+<td><strong>Rate Limiting</strong></td>
+<td>Cap requests per client or key (token bucket, leaky bucket, sliding window)</td>
+<td><a href="../architecture/#rate-limiting">Architecture → Rate Limiting</a></td>
+</tr>
+<tr>
+<td><strong>Retry / Backoff / Jitter</strong></td>
+<td>Re-try transient failures with growing, randomized delays</td>
+<td><a href="../error_handling/#retry-with-backoff">Error Handling → Retry with Backoff</a>, <a href="../system_design/#7-retry-and-resilience">System Design Notes → Retry and Resilience</a></td>
+</tr>
+<tr>
+<td><strong>Circuit Breaker</strong></td>
+<td>Stop calling a failing dependency for a while</td>
+<td><a href="../error_handling/#circuit-breaker">Error Handling → Circuit Breaker</a></td>
+</tr>
+<tr>
+<td><strong>Graceful Degradation</strong></td>
+<td>Serve a reduced result instead of failing outright</td>
+<td><a href="../error_handling/#graceful-degradation">Error Handling → Graceful Degradation</a></td>
+</tr>
+<tr>
+<td><strong>Bottleneck</strong></td>
+<td>The resource (CPU, memory, I/O, network) that limits the whole system</td>
+<td><a href="../architecture/#performance-bottlenecks">Architecture → Performance Bottlenecks</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API</strong></td>
+<td>Application Programming Interface</td>
+<td><a href="../apis/">API Design</a></td>
+</tr>
+<tr>
+<td><strong>REST / SOAP / GraphQL</strong></td>
+<td>Resource-oriented HTTP style / XML messaging protocol / client-shaped query language</td>
+<td><a href="../apis/#styles">APIs → Styles</a>, <a href="../system_design/#2-types-of-apis">System Design Notes → Types of APIs</a></td>
+</tr>
+<tr>
+<td><strong>RPC / gRPC</strong></td>
+<td>Remote Procedure Call / Google's binary RPC over HTTP/2</td>
+<td><a href="../apis/#styles">APIs → Styles</a>, <a href="../system_design/#3-seven-api-protocols">System Design Notes → API Protocols</a></td>
+</tr>
+<tr>
+<td><strong>WebSocket</strong></td>
+<td>Full-duplex connection upgraded from HTTP</td>
+<td><a href="../system_design/#going-deeper_2">System Design Notes → API Protocols</a></td>
+</tr>
+<tr>
+<td><strong>Idempotency</strong></td>
+<td>Doing an operation twice has the same effect as doing it once</td>
+<td><a href="../apis/#idempotency">APIs → Idempotency</a></td>
+</tr>
+<tr>
+<td><strong>HTTP Methods</strong></td>
+<td>GET (read), POST (create), PUT (replace), PATCH (modify), DELETE (remove)</td>
+<td><a href="../networking/#http-methods">Networking → HTTP Methods</a></td>
+</tr>
+<tr>
+<td><strong>Status Codes</strong></td>
+<td>2xx success, 3xx redirect, 4xx client error, 5xx server error</td>
+<td><a href="../apis/#status-codes">APIs → Status Codes</a></td>
+</tr>
+<tr>
+<td><strong>API Versioning / Pagination</strong></td>
+<td>Evolve an API without breaking clients / return large lists page by page (cursor or offset)</td>
+<td><a href="../apis/#versioning">APIs → Versioning</a>, <a href="../apis/#pagination">APIs → Pagination</a></td>
+</tr>
+<tr>
+<td><strong>Webhook / SSE / MQTT</strong></td>
+<td>Server calls your URL when an event happens / one-way server push over HTTP / lightweight pub/sub for IoT</td>
+<td><a href="../system_design/#3-seven-api-protocols">System Design Notes → API Protocols</a></td>
+</tr>
+<tr>
+<td><strong>OpenAPI (Swagger)</strong></td>
+<td>Machine-readable REST API description used for docs, clients, and tests</td>
+<td><a href="../system_design/#going-deeper_1">System Design Notes → Types of APIs</a>, <a href="https://www.openapis.org/">openapis.org ↗</a></td>
+</tr>
+<tr>
+<td><strong>SDK</strong></td>
+<td>Software Development Kit: client libraries and tools for a platform or API</td>
+<td><a href="../../../ai/basics/landscape/#official-provider-sdks">LLM Landscape → Provider SDKs</a>, <a href="https://en.wikipedia.org/wiki/Software_development_kit">Wikipedia: SDK ↗</a></td>
+</tr>
+<tr>
+<td><strong>Client-Server / P2P / Pipe and Filter</strong></td>
+<td>Architecture styles: central server / equal peers / a chain of processing steps</td>
+<td><a href="../architecture/#client-server">Architecture → Client-Server</a>, <a href="../architecture/#peer-to-peer-p2p">Architecture → P2P</a>, <a href="../architecture/#pipe-and-filter">Architecture → Pipe and Filter</a></td>
+</tr>
+<tr>
+<td><strong>Serverless / FaaS</strong></td>
+<td>Stateless functions run on demand; no servers to manage</td>
+<td><a href="../architecture/#serverless-faas">Architecture → Serverless / FaaS</a></td>
+</tr>
+<tr>
+<td><strong>ORM / DTO / DAO</strong></td>
+<td>Object–Relational Mapping (work with DB rows as objects) / Data Transfer Object / Data Access Object</td>
+<td><a href="../architecture/#talking-to-the-data-layer-dto-dao-orm">Architecture → DTO, DAO, ORM</a></td>
+</tr>
+<tr>
+<td><strong>Monolith / Microservices / SOA</strong></td>
+<td>One deployable unit / many small independent services / Service-Oriented Architecture</td>
+<td><a href="../architecture/#3-system-level-patterns">Architecture → System-Level Patterns</a></td>
+</tr>
+<tr>
+<td><strong>Event-Driven</strong></td>
+<td>Components react to published events instead of calling each other</td>
+<td><a href="../architecture/#event-driven">Architecture → Event-Driven</a></td>
+</tr>
+<tr>
+<td><strong>UUID</strong></td>
+<td>Universally Unique Identifier (128-bit)</td>
+<td><a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wikipedia: UUID ↗</a></td>
+</tr>
+<tr>
+<td><strong>UTC</strong></td>
+<td>Coordinated Universal Time: store timestamps in it</td>
+<td><a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Wikipedia: UTC ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTML / CSS / JS</strong></td>
+<td>Page structure / styling / behavior</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web">MDN: Web docs ↗</a></td>
+</tr>
+<tr>
+<td><strong>DOM</strong></td>
+<td>Document Object Model: the browser's tree of the page</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">MDN: DOM ↗</a></td>
+</tr>
+<tr>
+<td><strong>Accessibility Tree</strong></td>
+<td>The browser's parallel tree of the DOM exposing role, name, and state to assistive tech such as screen readers. Playwright and AI browser agents read it too</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree">MDN: Accessibility tree ↗</a></td>
+</tr>
+<tr>
+<td><strong>a11y</strong></td>
+<td>Accessibility ("a" + 11 letters + "y"): usable by people with disabilities</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">MDN: Accessibility ↗</a></td>
+</tr>
+<tr>
+<td><strong>WCAG</strong></td>
+<td>Web Content Accessibility Guidelines: the W3C standard, levels A / AA / AAA</td>
+<td><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">W3C: WCAG ↗</a></td>
+</tr>
+<tr>
+<td><strong>ARIA</strong></td>
+<td>Accessible Rich Internet Applications: <code>role</code> and <code>aria-*</code> attributes that fill gaps in native HTML semantics</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN: ARIA ↗</a></td>
+</tr>
+<tr>
+<td><strong>UI / UX</strong></td>
+<td>User Interface / User Experience</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a></td>
+</tr>
+<tr>
+<td><strong>SPA / MPA / SSR / PWA</strong></td>
+<td>Single-Page App / Multi-Page App / Server-Side Rendering / Progressive Web App</td>
+<td><a href="../../tool_tip/frontend_tools/">Frontend Toolchain</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/SPA">MDN: SPA ↗</a></td>
+</tr>
+<tr>
+<td><strong>MVC / MVP / MVVM</strong></td>
+<td>Model-View-Controller / Model-View-Presenter / Model-View-ViewModel</td>
+<td><a href="../architecture/#6-ui-architecture-patterns">Architecture → UI Patterns</a></td>
+</tr>
+<tr>
+<td><strong>Server State / Client State</strong></td>
+<td>Data owned by the backend and cached / data that lives only in the UI</td>
+<td><a href="../../tool_tip/frontend_tools/#server-state-vs-client-state-redux-query-zustand">Frontend Toolchain → Server vs Client State</a></td>
+</tr>
+<tr>
+<td><strong>Bundler</strong></td>
+<td>Combines modules and assets into files the browser loads</td>
+<td><a href="../../tool_tip/frontend_tools/#bundlers-webpack-vite-8">Frontend Toolchain → Bundlers</a></td>
+</tr>
+<tr>
+<td><strong>CORS</strong></td>
+<td>Cross-Origin Resource Sharing: browser rules for cross-origin requests</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS">MDN: CORS ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="networking">Networking<a class="headerlink" href="#networking" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP / TCP / UDP</strong></td>
+<td>Internet Protocol / Transmission Control Protocol / User Datagram Protocol</td>
+<td><a href="../networking/#the-tcpip-model">Networking → TCP/IP Model</a>, <a href="../networking/#tcp-vs-udp">Networking → TCP vs UDP</a></td>
+</tr>
+<tr>
+<td><strong>OSI Model</strong></td>
+<td>7-layer reference model (physical → application); TCP/IP is the practical 4-layer version</td>
+<td><a href="https://en.wikipedia.org/wiki/OSI_model">Wikipedia: OSI ↗</a></td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>Number that identifies a service on a host (22 SSH, 80 HTTP, 443 HTTPS)</td>
+<td><a href="../../tool_tip/server_operations/#7-network-ports-and-exposure">Running a Server → Network, Ports</a></td>
+</tr>
+<tr>
+<td><strong>Firewall</strong></td>
+<td>Allows or blocks traffic by rule</td>
+<td><a href="../../tool_tip/server_operations/#the-exposure-chain">Running a Server → The Exposure Chain</a></td>
+</tr>
+<tr>
+<td><strong>HTTP / HTTPS</strong></td>
+<td>HyperText Transfer Protocol / HTTP over TLS</td>
+<td><a href="../networking/#http-methods">Networking → HTTP Methods</a>, <a href="../networking/#what-happens-when-you-open-a-url">Networking → Opening a URL</a></td>
+</tr>
+<tr>
+<td><strong>DNS</strong></td>
+<td>Domain Name System: names → IP addresses</td>
+<td><a href="../networking/#what-happens-when-you-open-a-url">Networking → Opening a URL</a></td>
+</tr>
+<tr>
+<td><strong>TLS / SSL</strong></td>
+<td>Transport Layer Security / its deprecated predecessor, Secure Sockets Layer</td>
+<td><a href="../networking/#what-happens-when-you-open-a-url">Networking → Opening a URL</a>, <a href="../security/#crypto-basics">Security → Crypto Basics</a></td>
+</tr>
+<tr>
+<td><strong>SSH</strong></td>
+<td>Secure Shell</td>
+<td><a href="../system_design/#5-how-ssh-works">System Design Notes → How SSH Works</a></td>
+</tr>
+<tr>
+<td><strong>FTP / FTPS / SFTP</strong></td>
+<td>File Transfer Protocol / FTP over TLS / SSH File Transfer Protocol (runs over SSH, not "Secure FTP")</td>
+<td><a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">Wikipedia: SFTP ↗</a></td>
+</tr>
+<tr>
+<td><strong>SMTP / IMAP / POP3</strong></td>
+<td>Send mail / read mail on the server / download mail</td>
+<td><a href="../networking/#the-tcpip-model">Networking → TCP/IP Model</a>, <a href="https://en.wikipedia.org/wiki/Email#Protocols">Wikipedia: Email protocols ↗</a></td>
+</tr>
+<tr>
+<td><strong>NAT</strong></td>
+<td>Network Address Translation</td>
+<td><a href="../../tool_tip/cicd/#2-how-the-platform-reaches-your-code">CI/CD → How the Platform Reaches Your Code</a></td>
+</tr>
+<tr>
+<td><strong>ISP</strong></td>
+<td>Internet Service Provider</td>
+<td><a href="https://en.wikipedia.org/wiki/Internet_service_provider">Wikipedia: ISP ↗</a></td>
+</tr>
+<tr>
+<td><strong>URL / URI</strong></td>
+<td>Uniform Resource Locator / Identifier</td>
+<td><a href="../networking/#what-happens-when-you-open-a-url">Networking → Opening a URL</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/URI">MDN: URI ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="devops-sre">DevOps &amp; SRE<a class="headerlink" href="#devops-sre" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>Continuous Integration / Continuous Delivery or Deployment</td>
+<td><a href="../lifecycle/#cicd">Lifecycle → CI/CD</a>, <a href="../../tool_tip/cicd/#0-cicd-is-three-things">CI/CD Platforms</a></td>
+</tr>
+<tr>
+<td><strong>Pipeline</strong></td>
+<td>Automated stages from commit to deploy: lint → test → build → deploy</td>
+<td><a href="../lifecycle/#cicd">Lifecycle → CI/CD</a>, <a href="../../tool_tip/cicd/">CI/CD Platforms</a></td>
+</tr>
+<tr>
+<td><strong>SRE</strong></td>
+<td>Site Reliability Engineering: operations run as a software problem</td>
+<td><a href="../lifecycle/#roles">Lifecycle → Roles</a>, <a href="https://sre.google/sre-book/table-of-contents/">Google SRE Book ↗</a></td>
+</tr>
+<tr>
+<td><strong>Environments</strong></td>
+<td>Local → Dev → Staging → Production</td>
+<td><a href="../lifecycle/#environments">Lifecycle → Environments</a></td>
+</tr>
+<tr>
+<td><strong>Hotfix</strong></td>
+<td>Urgent fix shipped straight to production</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a>, <a href="../lifecycle/#branching-models">Lifecycle → Branching Models</a></td>
+</tr>
+<tr>
+<td><strong>Release Notes</strong></td>
+<td>User-facing summary of what changed in a release</td>
+<td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
+</tr>
+<tr>
+<td><strong>Blue-Green / Canary / Rolling / Shadow / A/B</strong></td>
+<td>Deployment strategies that trade cost, speed, and risk</td>
+<td><a href="../system_design/#6-six-deployment-strategies">System Design Notes → Deployment Strategies</a></td>
+</tr>
+<tr>
+<td><strong>Feature Flag</strong></td>
+<td>Toggle that separates <em>deploy</em> from <em>release</em></td>
+<td><a href="../system_design/#going-deeper_5">System Design Notes → Deployment Strategies</a></td>
+</tr>
+<tr>
+<td><strong>Rollback</strong></td>
+<td>Return to the previous known-good version</td>
+<td><a href="../system_design/#going-deeper_5">System Design Notes → Deployment Strategies</a>, <a href="../becoming_senior/#deployment-and-scale-are-part-of-the-design">Becoming Senior → Deployment</a></td>
+</tr>
+<tr>
+<td><strong>IaC</strong></td>
+<td>Infrastructure as Code: servers and networks defined in versioned files</td>
+<td><a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">Wikipedia: IaC ↗</a></td>
+</tr>
+<tr>
+<td><strong>Container / K8s</strong></td>
+<td>Packaged app plus its dependencies / Kubernetes, the container orchestrator</td>
+<td><a href="../../tool_tip/server_operations/#8-containers-and-orchestration">Running a Server → Containers</a>, <a href="../architecture/#container-orchestration">Architecture → Container Orchestration</a></td>
+</tr>
+<tr>
+<td><strong>Docker</strong></td>
+<td>The standard tool for building and running containers</td>
+<td><a href="../../tool_tip/server_operations/#docker-eats-the-disk">Running a Server → Docker Eats the Disk</a>, <a href="../../tool_tip/linux_commands/#docker-essentials">Linux Commands → Docker</a></td>
+</tr>
+<tr>
+<td><strong>OOM / Memory Leak</strong></td>
+<td>Out Of Memory, when the kernel kills a process / memory that grows and is never freed</td>
+<td><a href="../../tool_tip/server_operations/#out-of-memory">Running a Server → Out of Memory</a>, <a href="../../tool_tip/server_operations/#memory">Running a Server → Memory</a></td>
+</tr>
+<tr>
+<td><strong>Inode</strong></td>
+<td>Filesystem entry per file; a disk can run out of inodes before bytes</td>
+<td><a href="../../tool_tip/server_operations/#cause-2-out-of-inodes">Running a Server → Out of Inodes</a></td>
+</tr>
+<tr>
+<td><strong>Metrics / Logs / Traces</strong></td>
+<td>The three observability signals (Prometheus, Loki, Jaeger; Grafana to view)</td>
+<td><a href="../../tool_tip/server_operations/#the-pipeline">Running a Server → The Pipeline</a></td>
+</tr>
+<tr>
+<td><strong>tmux</strong></td>
+<td>Terminal multiplexer: persistent sessions, windows, panes</td>
+<td><a href="../../tool_tip/tmux/">tmux Cheatsheet</a></td>
+</tr>
+<tr>
+<td><strong>SaaS / PaaS / IaaS / FaaS</strong></td>
+<td>Software / Platform / Infrastructure / Functions as a Service</td>
+<td><a href="../architecture/#serverless-faas">Architecture → Serverless / FaaS</a>, <a href="https://en.wikipedia.org/wiki/Cloud_computing#Service_models">Wikipedia: Cloud service models ↗</a></td>
+</tr>
+<tr>
+<td><strong>Observability</strong></td>
+<td>Understanding a system from its logs, metrics, and traces</td>
+<td><a href="../becoming_senior/#observability-is-a-property-of-the-pipeline">Becoming Senior → Observability</a></td>
+</tr>
+<tr>
+<td><strong>USE Method</strong></td>
+<td>Utilization, Saturation, Errors: check every resource</td>
+<td><a href="../../tool_tip/server_operations/#3-the-use-method">Running a Server → The USE Method</a></td>
+</tr>
+<tr>
+<td><strong>SLA</strong></td>
+<td>Service Level Agreement: a contract with customers, with penalties if missed</td>
+<td><a href="../becoming_senior/#think-in-business-capabilities-not-frameworks">Becoming Senior → Business Capabilities</a>, <a href="https://sre.google/sre-book/service-level-objectives/">Google SRE: SLOs ↗</a></td>
+</tr>
+<tr>
+<td><strong>SLO</strong></td>
+<td>Service Level Objective: the internal target, e.g. 99.5% over 30 days</td>
+<td><a href="../becoming_senior/#reliability-is-measured-not-felt">Becoming Senior → Reliability</a></td>
+</tr>
+<tr>
+<td><strong>SLI</strong></td>
+<td>Service Level Indicator: the measured value, e.g. success rate or p99 latency</td>
+<td><a href="../becoming_senior/#reliability-is-measured-not-felt">Becoming Senior → Reliability</a></td>
+</tr>
+<tr>
+<td><strong>Error Budget</strong></td>
+<td><code>100% − SLO</code>: the failure you may spend on change</td>
+<td><a href="../becoming_senior/#reliability-is-measured-not-felt">Becoming Senior → Reliability</a></td>
+</tr>
+<tr>
+<td><strong>Nines</strong></td>
+<td>Availability as a count of nines: 99.9% ≈ 43 min down per month, 99.99% ≈ 4.3 min</td>
+<td><a href="https://sre.google/sre-book/availability-table/">Google SRE: Availability table ↗</a></td>
+</tr>
+<tr>
+<td><strong>p50 / p90 / p95 / p99</strong></td>
+<td>Latency percentiles: p95 = 95% of requests are faster than this. p50 is the median; p99 and p99.9 show the tail that averages hide</td>
+<td><a href="../becoming_senior/#reliability-is-measured-not-felt">Becoming Senior → Reliability</a>, <a href="../../tool_tip/server_operations/#matching-the-workload">Running a Server → Matching the workload</a>, <a href="../system_design/#going-deeper_6">System Design Notes → Retry and Resilience</a></td>
+</tr>
+<tr>
+<td><strong>MTTR / MTBF / MTTD</strong></td>
+<td>Mean Time To Recovery / Between Failures / To Detect</td>
+<td><a href="https://en.wikipedia.org/wiki/Mean_time_to_recovery">Wikipedia: MTTR ↗</a>, <a href="https://en.wikipedia.org/wiki/Mean_time_between_failures">Wikipedia: MTBF ↗</a></td>
+</tr>
+<tr>
+<td><strong>RPO / RTO</strong></td>
+<td>Recovery Point Objective (data you may lose) / Recovery Time Objective (downtime you may take)</td>
+<td><a href="../becoming_senior/#deployment-and-scale-are-part-of-the-design">Becoming Senior → Deployment</a></td>
+</tr>
+<tr>
+<td><strong>Incident / On-call / SEV</strong></td>
+<td>Unplanned disruption / the engineer paged to respond / severity level</td>
+<td><a href="../becoming_senior/#escalation-is-a-designed-path">Becoming Senior → Escalation</a></td>
+</tr>
+<tr>
+<td><strong>Runbook</strong></td>
+<td>Step-by-step guide for handling a known operational situation</td>
+<td><a href="../../tool_tip/server_operations/#11-runbooks">Running a Server → Runbooks</a></td>
+</tr>
+<tr>
+<td><strong>Postmortem</strong></td>
+<td>Blameless write-up of an incident: impact, timeline, causes, actions</td>
+<td><a href="../becoming_senior/#how-to-practice">Becoming Senior → How to Practice</a>, <a href="https://sre.google/sre-book/postmortem-culture/">Google SRE: Postmortem Culture ↗</a></td>
+</tr>
+<tr>
+<td><strong>RCA</strong></td>
+<td>Root Cause Analysis</td>
+<td><a href="https://en.wikipedia.org/wiki/Root_cause_analysis">Wikipedia: RCA ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="security-privacy-compliance">Security, Privacy &amp; Compliance<a class="headerlink" href="#security-privacy-compliance" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AuthN / AuthZ</strong></td>
+<td>Authentication (who you are) / Authorization (what you may do)</td>
+<td><a href="../security/#authentication-vs-authorization">Security → Authentication vs Authorization</a></td>
+</tr>
+<tr>
+<td><strong>MFA</strong></td>
+<td>Multi-Factor Authentication</td>
+<td><a href="../security/#authentication-vs-authorization">Security → Authentication vs Authorization</a></td>
+</tr>
+<tr>
+<td><strong>SSO</strong></td>
+<td>Single Sign-On</td>
+<td><a href="../security/#authentication-vs-authorization">Security → Authentication vs Authorization</a>, <a href="../system_design/#4-six-auth-methods">System Design Notes → Auth Methods</a></td>
+</tr>
+<tr>
+<td><strong>OAuth 2.0</strong></td>
+<td>Authorization framework for delegated access</td>
+<td><a href="../system_design/#4-six-auth-methods">System Design Notes → Auth Methods</a></td>
+</tr>
+<tr>
+<td><strong>OIDC</strong></td>
+<td>OpenID Connect: authentication on top of OAuth 2.0</td>
+<td><a href="../security/#authentication-vs-authorization">Security → Authentication vs Authorization</a></td>
+</tr>
+<tr>
+<td><strong>JWT</strong></td>
+<td>JSON Web Token: compact, signed claims-based token</td>
+<td><a href="../system_design/#going-deeper_3">System Design Notes → Auth Methods</a></td>
+</tr>
+<tr>
+<td><strong>SAML / mTLS</strong></td>
+<td>XML-based enterprise SSO / mutual TLS, where both sides present certificates</td>
+<td><a href="../system_design/#going-deeper_3">System Design Notes → Auth Methods</a></td>
+</tr>
+<tr>
+<td><strong>RBAC / ABAC</strong></td>
+<td>Role- / Attribute-Based Access Control</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>Least Privilege</strong></td>
+<td>Grant the minimum access needed</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>Hashing / Salt</strong></td>
+<td>One-way fingerprint of data / random value added so equal passwords hash differently (bcrypt, argon2)</td>
+<td><a href="../security/#crypto-basics">Security → Crypto Basics</a></td>
+</tr>
+<tr>
+<td><strong>Symmetric / Asymmetric Encryption</strong></td>
+<td>One shared key (AES) / public–private key pair (RSA, ECC)</td>
+<td><a href="../security/#crypto-basics">Security → Crypto Basics</a></td>
+</tr>
+<tr>
+<td><strong>Digital Signature / HMAC</strong></td>
+<td>Proves who sent data and that it wasn't changed</td>
+<td><a href="../security/#crypto-basics">Security → Crypto Basics</a></td>
+</tr>
+<tr>
+<td><strong>Certificate / CA / PKI</strong></td>
+<td>Signed binding of a public key to a name / the authority that signs it / the whole trust system</td>
+<td><a href="../system_design/#going-deeper_3">System Design Notes → Auth Methods</a>, <a href="https://en.wikipedia.org/wiki/Public_key_infrastructure">Wikipedia: PKI ↗</a></td>
+</tr>
+<tr>
+<td><strong>Encryption at Rest / in Transit</strong></td>
+<td>Protect stored data / data moving over the network (TLS)</td>
+<td><a href="../security/#crypto-basics">Security → Crypto Basics</a>, <a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>Session / Cookie</strong></td>
+<td>Server-side login state / the browser value that points to it</td>
+<td><a href="../system_design/#going-deeper_3">System Design Notes → Auth Methods</a></td>
+</tr>
+<tr>
+<td><strong>Data Classification</strong></td>
+<td>Public / Internal / Confidential / Restricted tiers that decide protection</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>Masking / Tokenization / Anonymization / Pseudonymization</strong></td>
+<td>Ways to de-identify data for non-prod and analytics</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>Audit Log</strong></td>
+<td>Record of who accessed or changed what, and when</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>DDoS / WAF</strong></td>
+<td>Distributed Denial of Service flood / Web Application Firewall that filters malicious HTTP</td>
+<td><a href="../architecture/#cdn-content-delivery-network">Architecture → CDN</a>, <a href="https://en.wikipedia.org/wiki/Web_application_firewall">Wikipedia: WAF ↗</a></td>
+</tr>
+<tr>
+<td><strong>OWASP</strong></td>
+<td>Open Worldwide Application Security Project, known for its Top 10 web risks</td>
+<td><a href="../security/#common-risks-owasp-condensed">Security → Common Risks</a></td>
+</tr>
+<tr>
+<td><strong>XSS / CSRF / SSRF / SQLi</strong></td>
+<td>Cross-Site Scripting / Cross-Site Request Forgery / Server-Side Request Forgery / SQL Injection</td>
+<td><a href="../security/#common-risks-owasp-condensed">Security → Common Risks</a></td>
+</tr>
+<tr>
+<td><strong>Path Traversal</strong></td>
+<td>Using <code>../</code> in a file path to read files outside the allowed directory</td>
+<td><a href="https://owasp.org/www-community/attacks/Path_Traversal">OWASP: Path Traversal ↗</a></td>
+</tr>
+<tr>
+<td><strong>CVE</strong></td>
+<td>Common Vulnerabilities and Exposures: public IDs for known flaws</td>
+<td><a href="../security/#common-risks-owasp-condensed">Security → Common Risks</a></td>
+</tr>
+<tr>
+<td><strong>Secrets</strong></td>
+<td>Credentials and keys, which belong in a secret store and never in code</td>
+<td><a href="../../tool_tip/cicd/#8-environment-variables-and-secrets">CI/CD → Environment Variables and Secrets</a></td>
+</tr>
+<tr>
+<td><strong>PII</strong></td>
+<td>Personally Identifiable Information: data that identifies a person (name, email, ID number)</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>PHI</strong></td>
+<td>Protected Health Information: health data tied to a person (US, HIPAA)</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+<tr>
+<td><strong>PCI DSS</strong></td>
+<td>Payment Card Industry Data Security Standard: rules for card data</td>
+<td><a href="../../../data/basics/data_security/#frameworks-that-apply">Data Security → Frameworks</a></td>
+</tr>
+<tr>
+<td><strong>HIPAA</strong></td>
+<td>US Health Insurance Portability and Accountability Act: protects PHI</td>
+<td><a href="../../../data/basics/data_security/#frameworks-that-apply">Data Security → Frameworks</a>, <a href="https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act">Wikipedia: HIPAA ↗</a></td>
+</tr>
+<tr>
+<td><strong>GDPR</strong></td>
+<td>EU General Data Protection Regulation: protects personal data of people in the EU</td>
+<td><a href="../../../data/basics/data_security/#frameworks-that-apply">Data Security → Frameworks</a></td>
+</tr>
+<tr>
+<td><strong>CCPA</strong></td>
+<td>California Consumer Privacy Act</td>
+<td><a href="../../../data/basics/data_security/#frameworks-that-apply">Data Security → Frameworks</a></td>
+</tr>
+<tr>
+<td><strong>SOC 2</strong></td>
+<td>Audit report on a service provider's security, availability, and confidentiality controls</td>
+<td><a href="https://en.wikipedia.org/wiki/System_and_Organization_Controls">Wikipedia: SOC 2 ↗</a></td>
+</tr>
+<tr>
+<td><strong>ISO/IEC 27001 / NIST CSF</strong></td>
+<td>Information-security management standard / US cybersecurity framework</td>
+<td><a href="../../../data/basics/data_security/#frameworks-that-apply">Data Security → Frameworks</a></td>
+</tr>
+<tr>
+<td><strong>DLP</strong></td>
+<td>Data Loss Prevention</td>
+<td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-engineering">Data Engineering<a class="headerlink" href="#data-engineering" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DB / RDB / RDBMS</strong></td>
+<td>Database / Relational Database / Relational Database Management System</td>
+<td><a href="../../../data/basics/databases/#relational-vs-nosql">Databases → Relational vs NoSQL</a></td>
+</tr>
+<tr>
+<td><strong>SQL / NoSQL</strong></td>
+<td>Structured Query Language / non-relational stores</td>
+<td><a href="../../../data/basics/databases/#sql-in-one-breath">Databases → SQL in One Breath</a>, <a href="../../../data/basics/databases/#relational-vs-nosql">Databases → Relational vs NoSQL</a></td>
+</tr>
+<tr>
+<td><strong>DDL / DML</strong></td>
+<td>Data Definition (CREATE, ALTER) / Data Manipulation (INSERT, UPDATE, DELETE)</td>
+<td><a href="../../../data/basics/databases/#sql-in-one-breath">Databases → SQL in One Breath</a></td>
+</tr>
+<tr>
+<td><strong>PK / FK / JOIN</strong></td>
+<td>Primary Key (unique row id) / Foreign Key (reference to another table) / combine rows across tables</td>
+<td><a href="../../../data/basics/databases/#sql-in-one-breath">Databases → SQL in One Breath</a></td>
+</tr>
+<tr>
+<td><strong>Relational DB</strong></td>
+<td>Tables with fixed schema, joins, ACID transactions (PostgreSQL, MySQL)</td>
+<td><a href="../architecture/#databases">Architecture → Databases</a></td>
+</tr>
+<tr>
+<td><strong>Document DB</strong></td>
+<td>Stores JSON-like documents with flexible schema (MongoDB)</td>
+<td><a href="../architecture/#databases">Architecture → Databases</a>, <a href="https://en.wikipedia.org/wiki/Document-oriented_database">Wikipedia: Document DB ↗</a></td>
+</tr>
+<tr>
+<td><strong>Key-Value Store</strong></td>
+<td>Lookup by key only; fastest and simplest (Redis, DynamoDB)</td>
+<td><a href="../architecture/#databases">Architecture → Databases</a>, <a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">Wikipedia: Key–value DB ↗</a></td>
+</tr>
+<tr>
+<td><strong>Wide-Column Store</strong></td>
+<td>Rows with dynamic columns, partitioned for huge write volume (Cassandra, HBase)</td>
+<td><a href="../architecture/#databases">Architecture → Databases</a>, <a href="https://en.wikipedia.org/wiki/Wide-column_store">Wikipedia: Wide-column ↗</a></td>
+</tr>
+<tr>
+<td><strong>Graph DB</strong></td>
+<td>Nodes and edges as first-class data; fast relationship traversal (Neo4j, Neptune)</td>
+<td><a href="../architecture/#databases">Architecture → Databases</a>, <a href="https://en.wikipedia.org/wiki/Graph_database">Wikipedia: Graph database ↗</a></td>
+</tr>
+<tr>
+<td><strong>Vector DB</strong></td>
+<td>Stores embeddings and finds nearest neighbors by similarity, the retrieval layer for RAG (pgvector, Pinecone, Qdrant)</td>
+<td><a href="https://en.wikipedia.org/wiki/Vector_database">Wikipedia: Vector database ↗</a></td>
+</tr>
+<tr>
+<td><strong>Time-Series DB</strong></td>
+<td>Optimized for timestamped metrics and events (InfluxDB, TimescaleDB, Prometheus)</td>
+<td><a href="https://en.wikipedia.org/wiki/Time_series_database">Wikipedia: Time series DB ↗</a></td>
+</tr>
+<tr>
+<td><strong>Search Engine</strong></td>
+<td>Inverted index for full-text search and ranking (Elasticsearch, OpenSearch)</td>
+<td><a href="https://en.wikipedia.org/wiki/Search_engine_(computing)">Wikipedia: Search engine ↗</a></td>
+</tr>
+<tr>
+<td><strong>In-Memory DB</strong></td>
+<td>Keeps data in RAM for microsecond access (Redis, Memcached)</td>
+<td><a href="../tech_stacks/#databases-at-a-glance">Tech Stacks → Databases</a>, <a href="https://en.wikipedia.org/wiki/In-memory_database">Wikipedia: In-memory DB ↗</a></td>
+</tr>
+<tr>
+<td><strong>NewSQL</strong></td>
+<td>Relational and ACID, but scales out horizontally (CockroachDB, Spanner)</td>
+<td><a href="https://en.wikipedia.org/wiki/NewSQL">Wikipedia: NewSQL ↗</a></td>
+</tr>
+<tr>
+<td><strong>Embedding</strong></td>
+<td>A vector of numbers that represents the meaning of text, images, or other data</td>
+<td><a href="https://en.wikipedia.org/wiki/Embedding_(machine_learning)">Wikipedia: Embedding ↗</a></td>
+</tr>
+<tr>
+<td><strong>Index</strong></td>
+<td>Lookup structure that speeds reads and slows writes</td>
+<td><a href="../../../data/basics/databases/#indexing">Databases → Indexing</a></td>
+</tr>
+<tr>
+<td><strong>ACID</strong></td>
+<td>Atomicity, Consistency, Isolation, Durability</td>
+<td><a href="../../../data/basics/databases/#transactions-acid">Databases → Transactions &amp; ACID</a></td>
+</tr>
+<tr>
+<td><strong>Isolation Levels</strong></td>
+<td>Read Uncommitted → Read Committed → Repeatable Read → Serializable: stronger isolation means fewer anomalies and less concurrency</td>
+<td><a href="../../../data/basics/databases/#isolation-levels">Databases → Isolation Levels</a></td>
+</tr>
+<tr>
+<td><strong>Normalization / 3NF / Denormalization</strong></td>
+<td>Remove redundancy by splitting tables / third normal form / add redundancy back for read speed</td>
+<td><a href="../../../data/basics/data_modeling/#modelling-styles">Data Modelling → Modelling Styles</a>, <a href="https://en.wikipedia.org/wiki/Database_normalization">Wikipedia: Normalization ↗</a></td>
+</tr>
+<tr>
+<td><strong>WAL</strong></td>
+<td>Write-Ahead Log: log changes before applying them, for durability and recovery</td>
+<td><a href="https://en.wikipedia.org/wiki/Write-ahead_logging">Wikipedia: WAL ↗</a></td>
+</tr>
+<tr>
+<td><strong>OLTP / OLAP</strong></td>
+<td>Online Transaction Processing / Online Analytical Processing</td>
+<td><a href="../../../data/basics/data_modeling/#modelling-styles">Data Modelling → Modelling Styles</a></td>
+</tr>
+<tr>
+<td><strong>ETL / ELT</strong></td>
+<td>Extract-Transform-Load / Extract-Load-Transform</td>
+<td><a href="../../../data/basics/data_engineering/#etl-vs-elt">Data Engineering → ETL vs ELT</a></td>
+</tr>
+<tr>
+<td><strong>Warehouse / Lake / Lakehouse</strong></td>
+<td>Where data lands: modeled tables / raw files / both on one store</td>
+<td><a href="../../../data/basics/data_engineering/#where-data-lands">Data Engineering → Where Data Lands</a></td>
+</tr>
+<tr>
+<td><strong>Batch / Streaming</strong></td>
+<td>Process data in scheduled chunks / continuously as it arrives</td>
+<td><a href="../../../data/basics/data_engineering/#batch-vs-streaming">Data Engineering → Batch vs Streaming</a></td>
+</tr>
+<tr>
+<td><strong>DAG</strong></td>
+<td>Directed Acyclic Graph: pipeline tasks and their dependencies</td>
+<td><a href="../../../data/basics/data_engineering/#orchestration">Data Engineering → Orchestration</a></td>
+</tr>
+<tr>
+<td><strong>MapReduce / Spark / HDFS</strong></td>
+<td>Distributed processing and storage across many nodes</td>
+<td><a href="../../../data/basics/big_data/#distributed-processing">Big Data → Distributed Processing</a></td>
+</tr>
+<tr>
+<td><strong>Star / Snowflake Schema</strong></td>
+<td>Fact table surrounded by dimension tables (normalized dimensions in snowflake)</td>
+<td><a href="../../../data/basics/data_modeling/#modelling-styles">Data Modelling → Modelling Styles</a></td>
+</tr>
+<tr>
+<td><strong>OBT</strong></td>
+<td>One Big Table: wide denormalized table for simple BI</td>
+<td><a href="../../../data/basics/data_modeling/#modelling-styles">Data Modelling → Modelling Styles</a></td>
+</tr>
+<tr>
+<td><strong>Structured / Semi-structured / Unstructured</strong></td>
+<td>Tables / self-describing formats like JSON / free text, images, audio</td>
+<td><a href="../../../data/basics/introduction_to_data/#types-of-data">Introduction to Data → Types of Data</a></td>
+</tr>
+<tr>
+<td><strong>Metadata</strong></td>
+<td>Data about data: schema, source, owner, freshness</td>
+<td><a href="../../../data/basics/introduction_to_data/#metadata-the-context-around-data">Introduction to Data → Metadata</a></td>
+</tr>
+<tr>
+<td><strong>Data Lifecycle</strong></td>
+<td>Create → store → use → share → archive → destroy</td>
+<td><a href="../../../data/basics/introduction_to_data/#data-lifecycle">Introduction to Data → Data Lifecycle</a></td>
+</tr>
+<tr>
+<td><strong>5 V's of Big Data</strong></td>
+<td>Volume, Velocity, Variety, Veracity, Value</td>
+<td><a href="../../../data/basics/big_data/#the-vs">Big Data → The V's</a></td>
+</tr>
+<tr>
+<td><strong>JSON / XML / YAML</strong></td>
+<td>JavaScript Object Notation / eXtensible Markup Language / YAML Ain't Markup Language</td>
+<td><a href="../../../data/basics/introduction_to_data/#types-of-data">Introduction to Data → Types of Data</a></td>
+</tr>
+<tr>
+<td><strong>CSV / TSV</strong></td>
+<td>Comma- / Tab-Separated Values</td>
+<td><a href="../../../data/basics/data_engineering/#file-formats">Data Engineering → File Formats</a></td>
+</tr>
+<tr>
+<td><strong>Data Quality</strong></td>
+<td>Accuracy, completeness, consistency, timeliness of data</td>
+<td><a href="../../../data/basics/introduction_to_data/#data-quality-dimensions">Introduction to Data → Quality Dimensions</a>, <a href="../../../data/basics/data_quality/">Data Quality</a></td>
+</tr>
+<tr>
+<td><strong>Data Governance</strong></td>
+<td>Ownership, policies, and stewardship of data</td>
+<td><a href="../../../data/basics/data_governance/#what-it-is">Data Governance</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-analysis">Data Analysis<a class="headerlink" href="#data-analysis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Descriptive / Diagnostic / Predictive / Prescriptive</strong></td>
+<td>What happened / why / what will happen / what to do</td>
+<td><a href="../../../data/basics/analytics/#four-kinds-of-analytics">Analytics → Four Kinds</a></td>
+</tr>
+<tr>
+<td><strong>EDA</strong></td>
+<td>Exploratory Data Analysis</td>
+<td><a href="../../../data/basics/analytics/#exploratory-data-analysis-eda">Analytics → EDA</a></td>
+</tr>
+<tr>
+<td><strong>Mean / Median / Percentile</strong></td>
+<td>Average / middle value / value below which a given share of data falls</td>
+<td><a href="../../../data/basics/analytics/#descriptive-statistics">Analytics → Descriptive Statistics</a></td>
+</tr>
+<tr>
+<td><strong>Variance / Std Dev / IQR / Outlier</strong></td>
+<td>Spread around the mean / its square root / middle 50% range / a point far from the rest</td>
+<td><a href="../../../data/basics/analytics/#descriptive-statistics">Analytics → Descriptive Statistics</a></td>
+</tr>
+<tr>
+<td><strong>Levels of Measurement</strong></td>
+<td>Nominal, ordinal, interval, ratio: which math is valid on a variable</td>
+<td><a href="../../../data/basics/introduction_to_data/#levels-of-measurement">Introduction to Data → Levels of Measurement</a></td>
+</tr>
+<tr>
+<td><strong>p-value / Statistical Significance</strong></td>
+<td>Chance of seeing a result this extreme if there were no real effect / below a chosen threshold (often 0.05)</td>
+<td><a href="https://en.wikipedia.org/wiki/P-value">Wikipedia: p-value ↗</a></td>
+</tr>
+<tr>
+<td><strong>Chart Choice</strong></td>
+<td>Pick the chart by the relationship: comparison, trend, distribution, composition</td>
+<td><a href="../../../data/basics/visualization/#pick-the-chart-by-the-relationship">Visualization → Pick the Chart</a></td>
+</tr>
+<tr>
+<td><strong>Correlation vs Causation</strong></td>
+<td>Moving together is not proof that one causes the other</td>
+<td><a href="../../../data/basics/analytics/#traps-to-avoid">Analytics → Traps to Avoid</a></td>
+</tr>
+<tr>
+<td><strong>BI</strong></td>
+<td>Business Intelligence: reporting and dashboards on modeled data</td>
+<td><a href="../../../data/basics/data_engineering/#where-data-lands">Data Engineering → Where Data Lands</a></td>
+</tr>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>At-a-glance view of key metrics</td>
+<td><a href="../../../data/basics/visualization/#dashboards">Visualization → Dashboards</a></td>
+</tr>
+<tr>
+<td><strong>DIKW</strong></td>
+<td>Data → Information → Knowledge → Wisdom</td>
+<td><a href="../../../data/basics/introduction_to_data/#the-dikw-pyramid">Introduction to Data → DIKW</a></td>
+</tr>
+<tr>
+<td><strong>KPI</strong></td>
+<td>Key Performance Indicator (see <a href="#management-work-items">Management &amp; Work Items</a>)</td>
+<td><a href="https://en.wikipedia.org/wiki/Performance_indicator">Wikipedia: KPI ↗</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ai-llm">AI &amp; LLM<a class="headerlink" href="#ai-llm" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Read more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ML / DL</strong></td>
+<td>Machine Learning (learn patterns from data) / Deep Learning (many-layer neural networks)</td>
+<td><a href="../../../ai/basics/concepts/#machine-learning">AI Concepts → Machine Learning</a>, <a href="../../../ai/basics/concepts/#deep-learning">AI Concepts → Deep Learning</a></td>
+</tr>
+<tr>
+<td><strong>GenAI</strong></td>
+<td>Generative AI: models that produce text, images, code, audio</td>
+<td><a href="../../../ai/basics/concepts/#generative-ai">AI Concepts → Generative AI</a></td>
+</tr>
+<tr>
+<td><strong>LLM</strong></td>
+<td>Large Language Model</td>
+<td><a href="../../../ai/basics/landscape/">The LLM Landscape</a>, <a href="https://en.wikipedia.org/wiki/Large_language_model">Wikipedia: LLM ↗</a></td>
+</tr>
+<tr>
+<td><strong>Token / Context Window</strong></td>
+<td>The unit a model reads and writes (roughly ¾ of a word) / how many tokens it can attend to at once</td>
+<td><a href="../../../ai/tool_tip/claude_code/#1-manage-context">Claude Code → Manage Context</a></td>
+</tr>
+<tr>
+<td><strong>Prompt / Prompt Engineering</strong></td>
+<td>The input given to a model / shaping that input for reliable output</td>
+<td><a href="https://en.wikipedia.org/wiki/Prompt_engineering">Wikipedia: Prompt engineering ↗</a></td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>LLM that plans and calls tools in a loop toward a goal</td>
+<td><a href="../../../ai/basics/concepts/#ai-agents">AI Concepts → AI Agents</a>, <a href="../../../ai/basics/skills_map/#3-using-coding-agents">Skills Map → Coding Agents</a></td>
+</tr>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Model Context Protocol: open standard connecting models to tools and data</td>
+<td><a href="../../../ai/basics/landscape/#protocols">LLM Landscape → Protocols</a>, <a href="https://modelcontextprotocol.io/">modelcontextprotocol.io ↗</a></td>
+</tr>
+<tr>
+<td><strong>A2A / ACP</strong></td>
+<td>Agent-to-Agent protocol / Agent Client Protocol (agents ↔ editors)</td>
+<td><a href="../../../ai/basics/landscape/#protocols">LLM Landscape → Protocols</a></td>
+</tr>
+<tr>
+<td><strong>Agent SDK</strong></td>
+<td>Library for building agents: tool loop, memory, handoffs</td>
+<td><a href="../../../ai/basics/landscape/#official-agent-sdks">LLM Landscape → Agent SDKs</a></td>
+</tr>
+<tr>
+<td><strong>Subagent</strong></td>
+<td>Child agent with its own context window that reports a summary back</td>
+<td><a href="../../../ai/tool_tip/claude_code/#subagent-memory">Claude Code → Subagent Memory</a>, <a href="../../../ai/tool_tip/codex/#subagents">Codex → Subagents</a></td>
+</tr>
+<tr>
+<td><strong>Skill / Hook / Plugin</strong></td>
+<td>Packaged instructions loaded on demand / script run on agent events / bundle of both for sharing</td>
+<td><a href="../../../ai/tool_tip/claude_code/#skills">Claude Code → Skills</a>, <a href="../../../ai/tool_tip/claude_code/#hooks">Claude Code → Hooks</a>, <a href="../../../ai/tool_tip/claude_code/#plugins">Claude Code → Plugins</a></td>
+</tr>
+<tr>
+<td><strong>Ralph Loop</strong></td>
+<td>Run an agent repeatedly against a spec until the work is done</td>
+<td><a href="../../../ai/tool_tip/claude_code/#the-ralph-loop">Claude Code → The Ralph Loop</a></td>
+</tr>
+<tr>
+<td><strong>System Prompt / Few-shot / Temperature</strong></td>
+<td>Standing instructions / examples in the prompt / randomness of sampling</td>
+<td><a href="https://en.wikipedia.org/wiki/Prompt_engineering">Wikipedia: Prompt engineering ↗</a></td>
+</tr>
+<tr>
+<td><strong>Local Inference</strong></td>
+<td>Running models on your own hardware (Ollama, vLLM, llama.cpp)</td>
+<td><a href="../../../ai/tool_tip/tools/#local-inference-and-serving">AI Tools → Local Inference</a></td>
+</tr>
+<tr>
+<td><strong>RAG</strong></td>
+<td>Retrieval-Augmented Generation: fetch relevant documents (often from a vector DB) and put them in the prompt</td>
+<td><a href="../../../ai/basics/skills_map/#1-building-and-deploying-ai-applications">Skills Map → Building AI Apps</a>, <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation">Wikipedia: RAG ↗</a></td>
+</tr>
+<tr>
+<td><strong>Embedding / Vector DB</strong></td>
+<td>Meaning as a vector / a store that searches by vector similarity</td>
+<td><a href="#data-engineering">Data Engineering</a></td>
+</tr>
+<tr>
+<td><strong>Fine-tuning</strong></td>
+<td>Further training a pre-trained model on task-specific data</td>
+<td><a href="https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)">Wikipedia: Fine-tuning ↗</a></td>
+</tr>
+<tr>
+<td><strong>Hallucination</strong></td>
+<td>Fluent output that is false or unsupported</td>
+<td><a href="../../../ai/basics/posts/">AI Posts</a>, <a href="https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)">Wikipedia: Hallucination ↗</a></td>
+</tr>
+<tr>
+<td><strong>Evals</strong></td>
+<td>Repeatable test sets and metrics that score model or agent output</td>
+<td><a href="../../../ai/tool_tip/tools/#evaluate-before-expanding">AI Tools → Evaluate Before Expanding</a>, <a href="../../../ai/basics/landscape/#observability-evaluation">LLM Landscape → Observability &amp; Evaluation</a></td>
+</tr>
+<tr>
+<td><strong>Guardrails</strong></td>
+<td>Checks around a model or agent that block unsafe input, output, or actions</td>
+<td><a href="../../../ai/tool_tip/claude_code/#worked-examples">Claude Code → Hooks</a></td>
+</tr>
+<tr>
+<td><strong>Prompt Injection</strong></td>
+<td>Untrusted content (a web page, file, or email) smuggles instructions the model then follows</td>
+<td><a href="../../../ai/tool_tip/codex/#7-avoid-the-sharp-edges">Codex → Avoid the Sharp Edges</a>, <a href="https://en.wikipedia.org/wiki/Prompt_injection">Wikipedia: Prompt injection ↗</a></td>
+</tr>
+<tr>
+<td><strong>Jailbreak</strong></td>
+<td>A prompt crafted to bypass a model's safety rules</td>
+<td><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP Top 10 for LLM Apps ↗</a></td>
+</tr>
+<tr>
+<td><strong>Adversarial Test / Red Teaming</strong></td>
+<td>Attack your own LLM system with hostile inputs (injection, jailbreaks, data extraction) before real attackers do</td>
+<td><a href="#testing-qa">Testing &amp; QA</a>, <a href="https://en.wikipedia.org/wiki/Adversarial_machine_learning">Wikipedia: Adversarial ML ↗</a>, <a href="https://en.wikipedia.org/wiki/Red_team">Wikipedia: Red team ↗</a></td>
+</tr>
+<tr>
+<td><strong>SDD</strong></td>
+<td>Spec-Driven Development with AI agents</td>
+<td><a href="../../../ai/tool_tip/spec_driven_development/">Spec-Driven Development</a></td>
+</tr>
+<tr>
+<td><strong>GSD / BMad / Spec Kit / Agent OS</strong></td>
+<td>Spec-driven tooling approaches for AI coding</td>
+<td><a href="../../../ai/tool_tip/spec_driven_development/#four-tooling-approaches">Spec-Driven Development → Four Tooling Approaches</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax-init.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

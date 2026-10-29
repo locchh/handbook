@@ -8,7 +8,6 @@ A comprehensive collection of notes about Software Engineering, Data Science, an
 ## Software Engineering
 
 - [Overview](https://locchh.github.io/handbook/software/index.md)
-- [Abbreviations](https://locchh.github.io/handbook/software/basics/abbreviations/index.md)
 - [Data Structures & Algorithms](https://locchh.github.io/handbook/software/basics/algorithms/index.md)
 - [APIs](https://locchh.github.io/handbook/software/basics/apis/index.md)
 - [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md)
@@ -29,6 +28,7 @@ A comprehensive collection of notes about Software Engineering, Data Science, an
 - [Styles](https://locchh.github.io/handbook/software/basics/styles/index.md)
 - [System Design Notes](https://locchh.github.io/handbook/software/basics/system_design/index.md)
 - [Tech Stacks](https://locchh.github.io/handbook/software/basics/tech_stacks/index.md)
+- [Terms](https://locchh.github.io/handbook/software/basics/terms/index.md)
 - [Architecture Books](https://locchh.github.io/handbook/software/advanced/books/index.md)
 - [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md)
 - [Frontend Toolchain](https://locchh.github.io/handbook/software/tool_tip/frontend_tools/index.md)
