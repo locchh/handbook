@@ -330,3 +330,5 @@ In a complex business, the hardest part of building software is understanding th
 | WIP   | Work In Progress              | Tasks currently being worked (Kanban limits this)      |
 | XP    | Extreme Programming           | Agile methodology focused on rigorous coding practices |
 | YAGNI | You Aren't Gonna Need It      | Build only what you need right now                     |
+
+For the full list of software, SDLC, and operations terms across the handbook, see [Terms](terms.md).

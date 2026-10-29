@@ -10,7 +10,7 @@ Security is a cross-cutting concern, not a feature bolted on at the end. The goa
 | Mechanism | passwords, MFA, tokens, SSO | roles, permissions, ACLs |
 | HTTP failure | 401 | 403 |
 
-Modern web auth usually means a token (a [JWT](abbreviations.md)) or session issued after login, often via **OAuth 2.0 / OIDC** for delegated access:
+Modern web auth usually means a token (a [JWT](terms.md#security-privacy-compliance)) or session issued after login, often via **OAuth 2.0 / OIDC** for delegated access:
 
 ```mermaid
 sequenceDiagram
