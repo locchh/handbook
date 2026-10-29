@@ -42,9 +42,9 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Planning Poker / T-shirt Sizing** | Team estimation by simultaneous cards / rough XS–XL sizing | [Wikipedia: Planning poker ↗](https://en.wikipedia.org/wiki/Planning_poker) |
 | **INVEST** | Good user stories are Independent, Negotiable, Valuable, Estimable, Small, Testable | [Wikipedia: INVEST ↗](https://en.wikipedia.org/wiki/INVEST_(mnemonic)) |
 | **Three Amigos** | Business, dev, and QA review a story together before work starts | [Methodologies → BDD](methodologies.md#bdd-behavior-driven-development) |
-| **ART / Release Train** | Agile Release Train: the team of teams in SAFe that plans and ships together each PI | [Methodologies → SAFe](methodologies.md#5-safe-scrum-but-for-50-teams), [Wikipedia: SAFe ↗](https://en.wikipedia.org/wiki/Scaled_agile_framework) |
-| **Kaizen** | Continuous small improvements, the Lean habit behind retrospectives | [Methodologies → Lean](methodologies.md#2-lean), [Wikipedia: Kaizen ↗](https://en.wikipedia.org/wiki/Kaizen) |
-| **Value Stream** | All steps from request to value delivered; mapped to find waste | [Methodologies → Lean](methodologies.md#2-lean), [Wikipedia: Value-stream mapping ↗](https://en.wikipedia.org/wiki/Value-stream_mapping) |
+| **ART / Release Train** | Agile Release Train: the team of teams in SAFe that plans and ships together each PI | [Wikipedia: SAFe ↗](https://en.wikipedia.org/wiki/Scaled_agile_framework) |
+| **Kaizen** | Continuous small improvements, the Lean habit behind retrospectives | [Wikipedia: Kaizen ↗](https://en.wikipedia.org/wiki/Kaizen) |
+| **Value Stream** | All steps from request to value delivered; mapped to find waste | [Wikipedia: Value-stream mapping ↗](https://en.wikipedia.org/wiki/Value-stream_mapping) |
 | **Shift Left** | Move testing, security, and quality checks earlier in the lifecycle | [Wikipedia: Shift-left testing ↗](https://en.wikipedia.org/wiki/Shift-left_testing) |
 | **Code Freeze / Feature Freeze** | No changes except critical fixes / no new features, before a release | [Wikipedia: Freeze ↗](https://en.wikipedia.org/wiki/Freeze_(software_engineering)) |
 | **RC / GA** | Release Candidate (final test build) / General Availability (released to everyone) | [Wikipedia: Software release life cycle ↗](https://en.wikipedia.org/wiki/Software_release_life_cycle) |
@@ -61,7 +61,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **SM** | Scrum Master: facilitates the process and removes blockers | [Lifecycle → Roles](lifecycle.md#roles) |
 | **PM** | Product Manager (sometimes Project Manager) | [Lifecycle → Roles](lifecycle.md#roles) |
 | **BA** | Business Analyst: turns business needs into specs | [Lifecycle → Roles](lifecycle.md#roles) |
-| **Tech Lead / Architect** | Owns technical direction and system design | [Lifecycle → Roles](lifecycle.md#roles), [Becoming Senior → The Ladder](becoming_senior.md#the-ladder) |
+| **Tech Lead / Architect** | Owns technical direction and system design | [Lifecycle → Roles](lifecycle.md#roles) |
 | **Epic** | Large body of work split into stories, often spanning several sprints | [Atlassian: Epics, stories, initiatives ↗](https://www.atlassian.com/agile/project-management/epics-stories-themes) |
 | **User Story** | Small requirement from the user's view: *As a <role>, I want <goal>, so that <benefit>*, with acceptance criteria | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases), [Atlassian: User stories ↗](https://www.atlassian.com/agile/project-management/user-stories) |
 | **Task / Sub-task** | Concrete unit of work that is not a story or a bug, such as a chore, config change, or story breakdown | [Jira: Issue types ↗](https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/) |
@@ -93,9 +93,9 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **CapEx / OpEx** | Capital Expenditure (buy assets up front) / Operating Expenditure (pay as you go, e.g. cloud) | [Wikipedia: CapEx ↗](https://en.wikipedia.org/wiki/Capital_expenditure) |
 | **POC** | Proof of Concept: a throwaway build that shows an idea is feasible | [Wikipedia: Proof of concept ↗](https://en.wikipedia.org/wiki/Proof_of_concept) |
 | **MVP** | Minimum Viable Product: smallest product that tests the core hypothesis with real users (also *Model-View-Presenter*, see [Frontend](#frontend)) | [Wikipedia: MVP ↗](https://en.wikipedia.org/wiki/Minimum_viable_product) |
-| **CTO / EM / IC** | Chief Technology Officer / Engineering Manager (people lead) / Individual Contributor (hands-on track) | [Becoming Senior → The Ladder](becoming_senior.md#the-ladder) |
+| **CTO / EM / IC** | Chief Technology Officer / Engineering Manager (people lead) / Individual Contributor (hands-on track) | [Wikipedia: CTO ↗](https://en.wikipedia.org/wiki/Chief_technology_officer) |
 | **Junior / Mid / Senior / Staff / Principal** | Engineering career levels, from guided work to org-wide technical leadership | [Becoming Senior → The Ladder](becoming_senior.md#the-ladder) |
-| **PL** | Project Leader or Team Leader: leads a dev team day to day, under the PM | [Lifecycle → Roles](lifecycle.md#roles) |
+| **PL** | Project Leader or Team Leader: leads a dev team day to day, under the PM | [Wikipedia: Team leader ↗](https://en.wikipedia.org/wiki/Team_leader) |
 | **SME** | Subject Matter Expert: the go-to person for a domain | [Wikipedia: Subject-matter expert ↗](https://en.wikipedia.org/wiki/Subject-matter_expert) |
 | **BrSE / Comtor** | Bridge System Engineer (links an offshore team with a Japanese client) / Communicator (interpreter on the project) | [Wikipedia: Offshore outsourcing ↗](https://en.wikipedia.org/wiki/Offshore_outsourcing) |
 | **ODC / Onsite / Offshore** | Offshore Development Center (a dedicated remote team) / staff at the client site / staff in the vendor country | [Wikipedia: Offshore outsourcing ↗](https://en.wikipedia.org/wiki/Offshore_outsourcing) |
@@ -106,7 +106,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **RFI / RFQ** | Request for Information / Request for Quotation, early steps of procurement | [Wikipedia: Request for information ↗](https://en.wikipedia.org/wiki/Request_for_information), [Wikipedia: Request for quotation ↗](https://en.wikipedia.org/wiki/Request_for_quotation) |
 | **MSA** | Master Service Agreement: umbrella contract; each SOW adds specific work under it | [Wikipedia: Master service agreement ↗](https://en.wikipedia.org/wiki/Master_service_agreement) |
 | **Priority / Severity** | How soon to fix (business order) / how bad the impact is (technical damage) | [Becoming Senior → Escalation](becoming_senior.md#escalation-is-a-designed-path), [Wikipedia: Bug tracking system ↗](https://en.wikipedia.org/wiki/Bug_tracking_system) |
-| **P0 / P1 / P2** | Priority levels: drop everything / next up / normal queue | [Becoming Senior → Escalation](becoming_senior.md#escalation-is-a-designed-path) |
+| **P0 / P1 / P2** | Priority levels: drop everything / next up / normal queue | [Codex → GitHub Codex Review](../../ai/tool_tip/codex.md#github-codex-review) |
 | **Defect Density** | Defects per size unit (per KLOC or per function point): a quality KPI | [Wikipedia: Software quality ↗](https://en.wikipedia.org/wiki/Software_quality) |
 | **Onboarding / Handover** | Bringing someone up to speed / transferring ownership with docs and knowledge | [Wikipedia: Knowledge transfer ↗](https://en.wikipedia.org/wiki/Knowledge_transfer) |
 | **Capacity Planning** | Matching people or infrastructure to forecast demand | [Becoming Senior → Deployment and Scale](becoming_senior.md#deployment-and-scale-are-part-of-the-design), [Wikipedia: Capacity planning ↗](https://en.wikipedia.org/wiki/Capacity_planning) |
@@ -210,13 +210,13 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **REPL** | Read-Eval-Print Loop: interactive shell for a language | [Wikipedia: REPL ↗](https://en.wikipedia.org/wiki/Read–eval–print_loop) |
 | **CRUD** | Create, Read, Update, Delete: the four basic data operations | [APIs → Styles](apis.md#styles), [Wikipedia: CRUD ↗](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) |
 | **N+1 Query** | One query for a list, then one more per item: a classic ORM performance bug | [Code Review → What Seniors Look For](code_review.md#8-what-seniors-look-for-in-a-pr-review) |
-| **Serialization / Encoding** | Turn objects into bytes or text (JSON, Protobuf) / map characters to bytes (UTF-8) | [Data Engineering → File Formats](../../data/basics/data_engineering.md#file-formats), [Wikipedia: Serialization ↗](https://en.wikipedia.org/wiki/Serialization) |
+| **Serialization / Encoding** | Turn objects into bytes or text (JSON, Protobuf) / map characters to bytes (UTF-8) | [Wikipedia: Serialization ↗](https://en.wikipedia.org/wiki/Serialization) |
 | **Anti-pattern** | A common "solution" that causes more problems than it solves | [Error Handling → Anti-Patterns](error_handling.md#anti-patterns), [Becoming Senior → Anti-Patterns](becoming_senior.md#anti-patterns) |
 | **God Object / Spaghetti Code / Magic Number** | Class that does everything / tangled control flow / unexplained literal in code | [Wikipedia: God object ↗](https://en.wikipedia.org/wiki/God_object), [Wikipedia: Spaghetti code ↗](https://en.wikipedia.org/wiki/Spaghetti_code), [Wikipedia: Magic number ↗](https://en.wikipedia.org/wiki/Magic_number_(programming)) |
 | **Boilerplate / Dead Code** | Repetitive setup code / code that never runs | [Wikipedia: Boilerplate code ↗](https://en.wikipedia.org/wiki/Boilerplate_code), [Wikipedia: Dead code ↗](https://en.wikipedia.org/wiki/Dead_code) |
 | **Off-by-one / Null Pointer** | Loop or index wrong by one / dereferencing a missing value | [Wikipedia: Off-by-one error ↗](https://en.wikipedia.org/wiki/Off-by-one_error), [Wikipedia: Null pointer ↗](https://en.wikipedia.org/wiki/Null_pointer) |
 | **Debounce / Throttle** | Run once after events stop / at most once per interval | [MDN: Debounce ↗](https://developer.mozilla.org/en-US/docs/Glossary/Debounce) |
-| **Hot Reload** | Apply code changes to a running app without restarting it | [Frontend Toolchain → Bundlers](../tool_tip/frontend_tools.md#bundlers-webpack-vite-8) |
+| **Hot Reload** | Apply code changes to a running app without restarting it | [Vite: Features (HMR) ↗](https://vite.dev/guide/features) |
 | **Code Generation / Scaffolding** | Producing boilerplate code from templates or specs | [Wikipedia: Scaffolding ↗](https://en.wikipedia.org/wiki/Scaffold_(programming)) |
 
 ## Version Control & Review
@@ -258,7 +258,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Detached HEAD** | Checked out a commit, not a branch; new commits belong to no branch | [Git → Local main is optional](git.md#local-main-is-optional-senior-devs-delete-it) |
 | **Remote Tracking Branch** | Local read-only cache of a remote branch (`origin/main`) | [Git → origin/main is a local cache](git.md#originmain-is-a-local-cache-not-github-itself) |
 | **Approve / Request Changes / LGTM** | Review outcomes; LGTM = "Looks Good To Me" | [Code Review → What Seniors Look For](code_review.md#8-what-seniors-look-for-in-a-pr-review) |
-| **Nit** | Minor, non-blocking review comment (style, naming) | [Lifecycle → Code Review](lifecycle.md#code-review) |
+| **Nit** | Minor, non-blocking review comment (style, naming) | [Code Review → Claude Code Review](code_review.md#10-claude-code-review), [Google: Writing review comments ↗](https://google.github.io/eng-practices/review/reviewer/comments.html) |
 | **CODEOWNERS** | File that assigns required reviewers per path | [GitHub Docs: CODEOWNERS ↗](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) |
 | **AI Code Review** | Automated PR review by an AI agent (Devin Review, Claude Code Review) | [Code Review → AI-Assisted Code Review](code_review.md#part-3-ai-assisted-code-review) |
 | **Git Hooks / pre-commit** | Scripts Git runs on events / a hook that lints and tests before each commit | [Wikipedia: Git hooks ↗](https://en.wikipedia.org/wiki/Git#Hooks), [pre-commit.com ↗](https://pre-commit.com/) |
@@ -313,22 +313,22 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Boundary Value / Equivalence Partitioning** | Test at the edges of input ranges / one test per class of equivalent inputs | [Wikipedia: Boundary-value analysis ↗](https://en.wikipedia.org/wiki/Boundary-value_analysis), [Wikipedia: Equivalence partitioning ↗](https://en.wikipedia.org/wiki/Equivalence_partitioning) |
 | **AAA / Given-When-Then** | Arrange-Act-Assert test structure / BDD form of the same idea | [Methodologies → BDD](methodologies.md#bdd-behavior-driven-development) |
 | **Test Double / Fake / Spy** | Any stand-in for a real dependency / a working lightweight version / a double that records calls | [Fowler: Test Double ↗](https://martinfowler.com/bliki/TestDouble.html) |
-| **Visual Regression Test** | Compare screenshots to catch unintended UI changes | [Frontend Toolchain → Testing](../tool_tip/frontend_tools.md#testing-cypress-playwright-plus-vitest-and-msw) |
+| **Visual Regression Test** | Compare screenshots to catch unintended UI changes | [Playwright: Visual comparisons ↗](https://playwright.dev/docs/test-snapshots) |
 | **Benchmark** | Repeatable measurement of performance for comparison | [Wikipedia: Benchmark ↗](https://en.wikipedia.org/wiki/Benchmark_(computing)) |
 | **Manual / Automated Testing** | Human-executed / script-executed tests | [Wikipedia: Test automation ↗](https://en.wikipedia.org/wiki/Test_automation) |
 | **Monkey Test** | Random input to see if anything crashes | [Wikipedia: Monkey testing ↗](https://en.wikipedia.org/wiki/Monkey_testing) |
 | **Defect Lifecycle** | New → Assigned → Fixed → Retest → Closed (or Reopened) | [Wikipedia: Bug tracking system ↗](https://en.wikipedia.org/wiki/Bug_tracking_system) |
 | **Test Environment / Test Data** | Where tests run (dev, staging) / the data they use, often masked production data | [Lifecycle → Environments](lifecycle.md#environments), [Data Security → De-identification](../../data/basics/data_security.md#what-it-is) |
 | **Golden Master / Characterization Test** | Lock down existing behavior of legacy code before refactoring it | [Wikipedia: Characterization test ↗](https://en.wikipedia.org/wiki/Characterization_test) |
-| **Verification / Validation** | Did we build it right? / did we build the right thing? | [Methodologies → V-Model](methodologies.md#2-v-model-for-every-step-define-how-youll-prove-it-worked), [Wikipedia: V&V ↗](https://en.wikipedia.org/wiki/Software_verification_and_validation) |
+| **Verification / Validation** | Did we build it right? / did we build the right thing? | [Wikipedia: V&V ↗](https://en.wikipedia.org/wiki/Software_verification_and_validation) |
 | **UT / IT / ST** | Short forms for Unit Test / Integration Test / System Test, common in test plans | [Lifecycle → Testing](lifecycle.md#testing) |
 
 ## System Design
 
 | Term | Meaning | Read more |
 |---|---|---|
-| **Latency** | Time for one request to complete, usually reported as percentiles (p50/p95/p99) | [Architecture → Performance Bottlenecks](architecture.md#performance-bottlenecks), [DevOps & SRE → p95/p99](#devops-sre) |
-| **Throughput** | Work completed per unit of time (requests/s, MB/s); can rise while latency worsens | [Architecture → Performance Bottlenecks](architecture.md#performance-bottlenecks) |
+| **Latency** | Time for one request to complete, usually reported as percentiles (p50/p95/p99) | [DevOps & SRE → p95/p99](#devops-sre), [Running a Server → Network](../tool_tip/server_operations.md#network), [System Design Notes → Retry and Resilience](system_design.md#going-deeper_6) |
+| **Throughput** | Work completed per unit of time (requests/s, MB/s); can rise while latency worsens | [Running a Server → Network](../tool_tip/server_operations.md#network), [Running a Server → Matching the workload](../tool_tip/server_operations.md#matching-the-workload) |
 | **Bandwidth** | Maximum data rate of a link; throughput is what you actually achieve | [Wikipedia: Bandwidth ↗](https://en.wikipedia.org/wiki/Bandwidth_(computing)) |
 | **RPS / QPS / TPS** | Requests / Queries / Transactions Per Second | [Wikipedia: Queries per second ↗](https://en.wikipedia.org/wiki/Queries_per_second) |
 | **Back-of-the-Envelope Estimation** | Rough numbers (users → RPS → storage → bandwidth) to size a design before drawing it | [Wikipedia: Back-of-the-envelope ↗](https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation) |
@@ -429,17 +429,17 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Background Job / Worker / Queue Worker** | Work done outside the request (emails, reports) by processes reading a queue | [Architecture → Message Queues](architecture.md#message-queues) |
 | **Cron / Scheduler** | Run jobs on a time schedule | [Wikipedia: Cron ↗](https://en.wikipedia.org/wiki/Cron) |
 | **Daemon / Service** | Long-running background process (systemd unit) | [Linux Commands → Services and Logs](../tool_tip/linux_commands.md#services-and-logs), [Wikipedia: Daemon ↗](https://en.wikipedia.org/wiki/Daemon_(computing)) |
-| **Health Check / Readiness / Liveness** | Endpoint that reports service health / ready for traffic / still alive (restart if not) | [Running a Server → Kubernetes](../tool_tip/server_operations.md#kubernetes-needs-requests-and-limits), [Kubernetes: Probes ↗](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) |
+| **Health Check / Readiness / Liveness** | Endpoint that reports service health / ready for traffic / still alive (restart if not) | [Kubernetes: Probes ↗](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) |
 | **Graceful Shutdown** | Finish in-flight requests before exiting | [Wikipedia: Graceful exit ↗](https://en.wikipedia.org/wiki/Graceful_exit) |
 | **Correlation ID / Trace ID** | ID attached to a request so logs and spans across services can be joined | [Becoming Senior → Observability](becoming_senior.md#observability-is-a-property-of-the-pipeline) |
-| **Structured Logging** | Logs as key–value JSON instead of free text | [Becoming Senior → Observability](becoming_senior.md#observability-is-a-property-of-the-pipeline) |
+| **Structured Logging** | Logs as key–value JSON instead of free text | [Twelve-Factor: Logs ↗](https://12factor.net/logs) |
 | **Twelve-Factor App** | Methodology for cloud-native services: config in env, stateless processes, logs as streams | [12factor.net ↗](https://12factor.net/) |
-| **Headers / Body / Payload** | Request metadata / the content / the useful data being carried | [Networking → HTTP Methods](networking.md#http-methods), [MDN: HTTP ↗](https://developer.mozilla.org/en-US/docs/Web/HTTP) |
+| **Headers / Body / Payload** | Request metadata / the content / the useful data being carried | [MDN: HTTP ↗](https://developer.mozilla.org/en-US/docs/Web/HTTP) |
 | **MIME Type / Content-Type** | Label for the data format (`application/json`) | [MDN: MIME types ↗](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types) |
-| **Protobuf** | Protocol Buffers: compact binary schema format used by gRPC | [APIs → Styles](apis.md#styles), [protobuf.dev ↗](https://protobuf.dev/) |
+| **Protobuf** | Protocol Buffers: compact binary schema format used by gRPC | [protobuf.dev ↗](https://protobuf.dev/), [System Design Notes → Types of APIs](system_design.md#going-deeper_1) |
 | **API Key** | Static secret identifying the calling app, not the user | [System Design Notes → Auth Methods](system_design.md#what-the-post-says_3) |
 | **B2B / B2C / Partner API** | APIs for businesses / consumers / selected external partners | [System Design Notes → Types of APIs](system_design.md#2-types-of-apis) |
-| **Throttling** | Slowing or rejecting a client that exceeds its quota (often returns 429) | [Architecture → Rate Limiting](architecture.md#rate-limiting) |
+| **Throttling** | Slowing or rejecting a client that exceeds its quota (often returns 429) | [APIs → Status Codes](apis.md#status-codes), [System Design Notes → Retry and Resilience](system_design.md#going-deeper_6) |
 | **LAMP / MEAN / MERN / JAMstack** | Classic stack combinations (Linux-Apache-MySQL-PHP, Mongo-Express-Angular/React-Node, JS-APIs-Markup) | [Tech Stacks → Classic Combinations](tech_stacks.md#classic-stack-combinations) |
 | **Tech Stack** | The set of languages, frameworks, and services a product is built on | [Tech Stacks → The Layered View](tech_stacks.md#the-layered-view) |
 
@@ -466,7 +466,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Responsive Design / Mobile-first / Breakpoint** | Layout adapts to screen size / design for small screens first / width where layout changes | [MDN: Responsive design ↗](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) |
 | **Design System** | Shared components, tokens, and rules for a consistent UI (shadcn/ui, Material) | [Frontend Toolchain → Styling](../tool_tip/frontend_tools.md#styling-styled-components-tailwind-shadcnui) |
 | **Utility-first CSS** | Compose styles from small single-purpose classes (Tailwind) | [Frontend Toolchain → Styling](../tool_tip/frontend_tools.md#styling-styled-components-tailwind-shadcnui) |
-| **Tree Shaking / Code Splitting / Lazy Loading** | Drop unused code / split bundles / load code or images only when needed | [Frontend Toolchain → Bundlers](../tool_tip/frontend_tools.md#bundlers-webpack-vite-8), [MDN: Tree shaking ↗](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) |
+| **Tree Shaking / Code Splitting / Lazy Loading** | Drop unused code / split bundles / load code or images only when needed | [MDN: Tree shaking ↗](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) |
 | **Minification / Polyfill** | Shrink code for delivery / code that adds a missing browser feature | [MDN: Polyfill ↗](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill) |
 | **Core Web Vitals (LCP / INP / CLS)** | Google's UX metrics: Largest Contentful Paint, Interaction to Next Paint, Cumulative Layout Shift | [web.dev: Web Vitals ↗](https://web.dev/articles/vitals) |
 | **TTFB / FCP** | Time To First Byte / First Contentful Paint | [web.dev: TTFB ↗](https://web.dev/articles/ttfb) |
@@ -501,7 +501,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **LAN / WAN** | Local Area Network / Wide Area Network | [Wikipedia: LAN ↗](https://en.wikipedia.org/wiki/Local_area_network) |
 | **Router / Switch / Gateway** | Forwards between networks / within one network / the exit point to another network | [Wikipedia: Router ↗](https://en.wikipedia.org/wiki/Router_(computing)) |
 | **VPC** | Virtual Private Cloud: your isolated network inside a cloud | [Wikipedia: Virtual private cloud ↗](https://en.wikipedia.org/wiki/Virtual_private_cloud) |
-| **VPN** | Virtual Private Network: encrypted tunnel into a private network | [Running a Server → The Exposure Chain](../tool_tip/server_operations.md#the-exposure-chain), [Wikipedia: VPN ↗](https://en.wikipedia.org/wiki/Virtual_private_network) |
+| **VPN** | Virtual Private Network: encrypted tunnel into a private network | [Wikipedia: VPN ↗](https://en.wikipedia.org/wiki/Virtual_private_network) |
 | **Proxy (Forward)** | Server that makes requests on a client's behalf (vs a reverse proxy, which fronts servers) | [Wikipedia: Proxy server ↗](https://en.wikipedia.org/wiki/Proxy_server) |
 | **ICMP / ping** | Internet Control Message Protocol / the tool that uses it to test reachability | [Networking → TCP/IP Model](networking.md#the-tcpip-model), [Linux Commands → Networking](../tool_tip/linux_commands.md#networking) |
 | **DHCP / ARP / MAC Address** | Hands out IP addresses / maps IP to hardware address / a NIC's hardware address | [Wikipedia: DHCP ↗](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol), [Wikipedia: ARP ↗](https://en.wikipedia.org/wiki/Address_Resolution_Protocol) |
@@ -513,8 +513,8 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **MTU** | Maximum Transmission Unit: the largest packet a link carries (usually 1500 bytes) | [Wikipedia: Maximum transmission unit ↗](https://en.wikipedia.org/wiki/Maximum_transmission_unit) |
 | **HTTP/2 / HTTP/3 / QUIC** | Multiplexed binary HTTP / HTTP over QUIC, a UDP-based transport | [APIs → Styles](apis.md#styles), [Wikipedia: HTTP/3 ↗](https://en.wikipedia.org/wiki/HTTP/3) |
 | **Keep-Alive** | Reuse one TCP connection for many HTTP requests | [Wikipedia: HTTP persistent connection ↗](https://en.wikipedia.org/wiki/HTTP_persistent_connection) |
-| **localhost / 127.0.0.1 / 0.0.0.0** | This machine / its loopback address / "listen on all interfaces" | [Running a Server → What is Listening](../tool_tip/server_operations.md#what-is-listening), [Wikipedia: Localhost ↗](https://en.wikipedia.org/wiki/Localhost) |
-| **Ingress / Egress** | Traffic coming in / going out | [Running a Server → Traffic and Reachability](../tool_tip/server_operations.md#traffic-and-reachability) |
+| **localhost / 127.0.0.1 / 0.0.0.0** | This machine / its loopback address / "listen on all interfaces" | [Wikipedia: Localhost ↗](https://en.wikipedia.org/wiki/Localhost), [Running a Server → The Exposure Chain](../tool_tip/server_operations.md#the-exposure-chain) |
+| **Ingress / Egress** | Traffic coming in / going out | [CI/CD → How the Platform Reaches Your Code](../tool_tip/cicd.md#2-how-the-platform-reaches-your-code) |
 | **Anycast** | One IP announced from many locations; routes to the nearest (used by CDNs, DNS) | [Wikipedia: Anycast ↗](https://en.wikipedia.org/wiki/Anycast) |
 
 ## DevOps & SRE
@@ -570,7 +570,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Swap / Page Cache / RSS** | Disk used as slow RAM / idle RAM caching files / memory a process actually holds | [Running a Server → Reading free -h](../tool_tip/server_operations.md#reading-free-h-correctly), [Running a Server → When Memory Runs Out](../tool_tip/server_operations.md#when-memory-runs-out) |
 | **PID / Signal (SIGTERM / SIGKILL)** | Process ID / polite stop request / forced kill | [Linux Commands → Processes](../tool_tip/linux_commands.md#processes) |
 | **systemd / journald** | Linux service manager / its log store | [Linux Commands → Services and Logs](../tool_tip/linux_commands.md#services-and-logs) |
-| **Alert / Alert Fatigue** | Notification on a symptom / too many alerts so people ignore them | [Becoming Senior → Observability](becoming_senior.md#observability-is-a-property-of-the-pipeline), [Wikipedia: Alarm fatigue ↗](https://en.wikipedia.org/wiki/Alarm_fatigue) |
+| **Alert / Alert Fatigue** | Notification on a symptom / too many alerts so people ignore them | [Wikipedia: Alarm fatigue ↗](https://en.wikipedia.org/wiki/Alarm_fatigue), [Running a Server → The Pipeline](../tool_tip/server_operations.md#the-pipeline) |
 | **APM** | Application Performance Monitoring | [Wikipedia: APM ↗](https://en.wikipedia.org/wiki/Application_performance_management) |
 | **Prometheus / Grafana / Loki** | Metrics database / dashboards / log store | [Running a Server → The Pipeline](../tool_tip/server_operations.md#the-pipeline) |
 | **Retention** | How long metrics, logs, or backups are kept | [Running a Server → Monitoring Stack Disk](../tool_tip/server_operations.md#your-monitoring-stack-will-try-to-fill-your-disk) |
@@ -651,7 +651,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **SOX** | Sarbanes-Oxley Act: US financial-reporting controls | [Becoming Senior → Business Capabilities](becoming_senior.md#think-in-business-capabilities-not-frameworks) |
 | **Data Residency** | Laws or contracts requiring data to stay in a given country or region | [Becoming Senior → Business Capabilities](becoming_senior.md#think-in-business-capabilities-not-frameworks) |
 | **ISMS** | Information Security Management System (ISO 27001) | [Data Security → Frameworks](../../data/basics/data_security.md#frameworks-that-apply) |
-| **Consent / Right to be Forgotten** | Lawful basis for processing personal data / the GDPR right to erasure | [Data Security → Frameworks](../../data/basics/data_security.md#frameworks-that-apply) |
+| **Consent / Right to be Forgotten** | Lawful basis for processing personal data / the GDPR right to erasure | [Introduction to Data → Ethics of Data](../../data/basics/introduction_to_data.md#ethics-of-data), [Wikipedia: Right to be forgotten ↗](https://en.wikipedia.org/wiki/Right_to_be_forgotten) |
 
 ## Data Engineering
 
@@ -761,7 +761,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Segmentation** | Split data into meaningful groups before comparing | [Analytics → Traps to Avoid](../../data/basics/analytics.md#traps-to-avoid) |
 | **Dimension / Measure** | Attribute you slice by (region) / number you aggregate (revenue) | [Data Modelling → Modelling Styles](../../data/basics/data_modeling.md#modelling-styles) |
 | **Pivot Table / Drill-down** | Summarize by rows and columns / move from summary to detail | [Wikipedia: Pivot table ↗](https://en.wikipedia.org/wiki/Pivot_table) |
-| **Seasonality / Trend / Forecast** | Repeating patterns / long-run direction / predicted future values | [Introduction to Data → Levels of Measurement](../../data/basics/introduction_to_data.md#levels-of-measurement), [Wikipedia: Time series ↗](https://en.wikipedia.org/wiki/Time_series) |
+| **Seasonality / Trend / Forecast** | Repeating patterns / long-run direction / predicted future values | [Wikipedia: Time series ↗](https://en.wikipedia.org/wiki/Time_series), [Visualization → Pick the Chart](../../data/basics/visualization.md#pick-the-chart-by-the-relationship) |
 | **Data Storytelling** | Present insights as a narrative with one message per chart | [Visualization → Design Principles](../../data/basics/visualization.md#design-principles) |
 | **Chart Distortions** | Truncated axes, dual axes, 3D effects, overloaded pies | [Visualization → Common Distortions](../../data/basics/visualization.md#common-distortions) |
 | **Operational / Strategic Dashboard** | Real-time monitoring / long-term KPI trends | [Visualization → Dashboards](../../data/basics/visualization.md#dashboards) |
@@ -789,8 +789,8 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **RAG** | Retrieval-Augmented Generation: fetch relevant documents (often from a vector DB) and put them in the prompt | [Skills Map → Building AI Apps](../../ai/basics/skills_map.md#1-building-and-deploying-ai-applications), [Wikipedia: RAG ↗](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) |
 | **Embedding / Vector DB** | Meaning as a vector / a store that searches by vector similarity | [Data Engineering](#data-engineering) |
 | **Fine-tuning** | Further training a pre-trained model on task-specific data | [Wikipedia: Fine-tuning ↗](https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)) |
-| **Hallucination** | Fluent output that is false or unsupported | [AI Posts](../../ai/basics/posts.md), [Wikipedia: Hallucination ↗](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)) |
-| **Evals** | Repeatable test sets and metrics that score model or agent output | [AI Tools → Evaluate Before Expanding](../../ai/tool_tip/tools.md#evaluate-before-expanding), [LLM Landscape → Observability & Evaluation](../../ai/basics/landscape.md#observability-evaluation) |
+| **Hallucination** | Fluent output that is false or unsupported | [Wikipedia: Hallucination ↗](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence) |
+| **Evals** | Repeatable test sets and metrics that score model or agent output | [AI Tools → Track and Deploy](../../ai/tool_tip/tools.md#track-and-deploy), [Skills Map → Building AI Apps](../../ai/basics/skills_map.md#1-building-and-deploying-ai-applications) |
 | **Guardrails** | Checks around a model or agent that block unsafe input, output, or actions | [Claude Code → Hooks](../../ai/tool_tip/claude_code.md#worked-examples) |
 | **Prompt Injection** | Untrusted content (a web page, file, or email) smuggles instructions the model then follows | [Codex → Avoid the Sharp Edges](../../ai/tool_tip/codex.md#7-avoid-the-sharp-edges), [Wikipedia: Prompt injection ↗](https://en.wikipedia.org/wiki/Prompt_injection) |
 | **Jailbreak** | A prompt crafted to bypass a model's safety rules | [OWASP Top 10 for LLM Apps ↗](https://owasp.org/www-project-top-10-for-large-language-model-applications/) |
@@ -815,14 +815,14 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Chain-of-Thought / Reasoning Model** | Step-by-step reasoning in the output / models trained to think before answering | [Wikipedia: Prompt engineering ↗](https://en.wikipedia.org/wiki/Prompt_engineering) |
 | **Multimodal** | Handles more than text: images, audio, video | [Wikipedia: Multimodal learning ↗](https://en.wikipedia.org/wiki/Multimodal_learning) |
 | **Context Engineering** | Deciding what goes into the context window: instructions, files, memory, tools | [Skills Map → Building AI Apps](../../ai/basics/skills_map.md#1-building-and-deploying-ai-applications), [Claude Code → Manage Context](../../ai/tool_tip/claude_code.md#1-manage-context) |
-| **Tool Use / Function Calling** | Model emits a structured call that your code executes | [AI Concepts → AI Agents](../../ai/basics/concepts.md#ai-agents) |
+| **Tool Use / Function Calling** | Model emits a structured call that your code executes | [Claude Docs: Tool use ↗](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview) |
 | **Structured Output** | Model output constrained to a JSON schema | [OpenAI: Structured Outputs ↗](https://platform.openai.com/docs/guides/structured-outputs) |
 | **Chunking / Reranking / Semantic Search** | Split docs for retrieval / reorder candidates by relevance / search by meaning, not keywords | [Wikipedia: RAG ↗](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) |
 | **Grounding / Citation** | Tie answers to retrieved sources so they can be checked | [Wikipedia: RAG ↗](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) |
 | **Multi-agent / Orchestration** | Several agents with roles coordinated by a lead agent | [AI Concepts → AI Agents](../../ai/basics/concepts.md#ai-agents), [Codex → Orchestrate Multiple Agents](../../ai/tool_tip/codex.md#5-orchestrate-multiple-agents) |
-| **HITL** | Human-in-the-Loop: a person approves or corrects agent steps | [Claude Code → Permission Modes](../../ai/tool_tip/claude_code.md#permission-modes) |
+| **HITL** | Human-in-the-Loop: a person approves or corrects agent steps | [Codex → Two Dials, Not One](../../ai/tool_tip/codex.md#two-dials-not-one) |
 | **LLM-as-a-Judge** | Use a model to grade another model's output in evals | [AI Tools → Evaluate Before Expanding](../../ai/tool_tip/tools.md#evaluate-before-expanding) |
-| **TTFT / Tokens per Second** | Time To First Token / generation speed | [AI Tools → Local Inference](../../ai/tool_tip/tools.md#local-inference-and-serving) |
+| **TTFT / Tokens per Second** | Time To First Token / generation speed | [NVIDIA: LLM inference metrics ↗](https://docs.nvidia.com/nim/benchmarking/llm/latest/metrics.html) |
 | **Prompt Caching** | Reuse the processed prefix of a prompt to cut cost and latency | [Claude Code → Session Hygiene](../../ai/tool_tip/claude_code.md#session-hygiene) |
 | **Context Compaction** | Summarize old conversation to free the context window | [Claude Code → Session Hygiene](../../ai/tool_tip/claude_code.md#session-hygiene) |
 | **Memory (Agent)** | Facts an agent persists across sessions (CLAUDE.md, AGENTS.md, memory files) | [Claude Code → Auto Memory](../../ai/tool_tip/claude_code.md#auto-memory), [Codex → Memories](../../ai/tool_tip/codex.md#memories) |
