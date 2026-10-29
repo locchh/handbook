@@ -41,7 +41,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **CFD** | Cumulative Flow Diagram: work items per state over time; widening bands show bottlenecks | [Wikipedia: Cumulative flow diagram ↗](https://en.wikipedia.org/wiki/Cumulative_flow_diagram) |
 | **Planning Poker / T-shirt Sizing** | Team estimation by simultaneous cards / rough XS–XL sizing | [Wikipedia: Planning poker ↗](https://en.wikipedia.org/wiki/Planning_poker) |
 | **INVEST** | Good user stories are Independent, Negotiable, Valuable, Estimable, Small, Testable | [Wikipedia: INVEST ↗](https://en.wikipedia.org/wiki/INVEST_(mnemonic)) |
-| **Three Amigos** | Business, dev, and QA review a story together before work starts | [Methodologies → BDD](methodologies.md#bdd-behavior-driven-development) |
+| **Three Amigos** | Business, dev, and QA review a story together before work starts | [Agile Alliance: Three Amigos ↗](https://www.agilealliance.org/glossary/three-amigos/) |
 | **ART / Release Train** | Agile Release Train: the team of teams in SAFe that plans and ships together each PI | [Wikipedia: SAFe ↗](https://en.wikipedia.org/wiki/Scaled_agile_framework) |
 | **Kaizen** | Continuous small improvements, the Lean habit behind retrospectives | [Wikipedia: Kaizen ↗](https://en.wikipedia.org/wiki/Kaizen) |
 | **Value Stream** | All steps from request to value delivered; mapped to find waste | [Wikipedia: Value-stream mapping ↗](https://en.wikipedia.org/wiki/Value-stream_mapping) |
@@ -72,6 +72,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Story Point** | Relative estimate of effort, complexity, and uncertainty | [Atlassian: Estimation ↗](https://www.atlassian.com/agile/project-management/estimation) |
 | **Velocity** | Story points a team completes per sprint, used for forecasting rather than as a target | [Wikipedia: Velocity ↗](https://en.wikipedia.org/wiki/Velocity_(software_development)) |
 | **Milestone** | A checkpoint marking the end of a phase or a key deliverable | [Methodologies → RUP](methodologies.md#8-rup-waterfall-iteration-formal-governance) |
+| **Roadmap** | Time-ordered plan of goals and major deliverables, usually by quarter | [Wikipedia: Technology roadmap ↗](https://en.wikipedia.org/wiki/Technology_roadmap) |
 | **MoSCoW** | Must / Should / Could / Won't prioritization | [Wikipedia: MoSCoW ↗](https://en.wikipedia.org/wiki/MoSCoW_method) |
 | **OKR** | Objectives and Key Results: goal-setting framework | [Wikipedia: OKR ↗](https://en.wikipedia.org/wiki/Objectives_and_key_results) |
 | **KPI** | Key Performance Indicator | [Wikipedia: KPI ↗](https://en.wikipedia.org/wiki/Performance_indicator) |
@@ -119,7 +120,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **PRD** | Product Requirements Document: what the product must do, for whom | [Wikipedia: PRD ↗](https://en.wikipedia.org/wiki/Product_requirements_document) |
 | **FR** | Functional Requirement: *what* the system does, e.g. "a user can reset their password by email" | [Lifecycle → Testing](lifecycle.md#testing), [Wikipedia: Functional requirement ↗](https://en.wikipedia.org/wiki/Functional_requirement) |
 | **NFR** | Non-Functional Requirement: *how well* it does it: performance, security, availability, usability, scalability | [Lifecycle → Testing](lifecycle.md#testing), [System Design Notes → Types of APIs](system_design.md#going-deeper_1), [Wikipedia: NFR ↗](https://en.wikipedia.org/wiki/Non-functional_requirement) |
-| **FRS** | Functional Requirements Specification | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases) |
+| **FRS** | Functional Requirements Specification: document listing what the system must do, feature by feature, with inputs, outputs, business rules, and error cases | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases) |
 | **SRS** | Software Requirements Specification: functional plus non-functional requirements | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases) |
 | **Use Case** | A user goal described as a sequence of interactions with the system | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases) |
 | **AC** | Acceptance Criteria: testable conditions that make a story "done" | [Spec-Driven Development → What the Spec Should Contain](../../ai/tool_tip/spec_driven_development.md#what-the-spec-should-contain) |
@@ -148,7 +149,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 
 | Term | Meaning | Read more |
 |---|---|---|
-| **OOP** | Object-Oriented Programming | [Fundamentals → Programming Paradigms](fundamentals.md#programming-paradigms) |
+| **OOP** | Object-Oriented Programming: organize code as objects that bundle data with the methods that act on it, using classes, encapsulation, inheritance, and polymorphism | [Fundamentals → Programming Paradigms](fundamentals.md#programming-paradigms) |
 | **FP** | Functional Programming: pure functions, immutability, composition | [Fundamentals → Programming Paradigms](fundamentals.md#programming-paradigms), [Wikipedia: FP ↗](https://en.wikipedia.org/wiki/Functional_programming) |
 | **SOLID** | Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion | [Design Principles → SOLID](principles.md#solid) |
 | **DRY / KISS / YAGNI** | Don't Repeat Yourself / Keep It Simple, Stupid / You Aren't Gonna Need It | [Design Principles → The Core Three](principles.md#the-core-three-dry-kiss-yagni) |
@@ -173,7 +174,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Concurrency vs Parallelism** | Dealing with many things at once / doing many things at the same instant | [Concurrency & Parallelism](concurrency.md) |
 | **I/O-bound / CPU-bound** | Limited by waiting on network or disk (use async) / by computation (use more cores) | [Concurrency → Units of Execution](concurrency.md#units-of-execution) |
 | **Async / Event Loop** | Non-blocking I/O where one thread interleaves many tasks | [Concurrency → Primitives & Models](concurrency.md#primitives-models) |
-| **Mutex / Lock / Semaphore / Atomic** | One holder at a time / at most N holders / an uninterruptible operation | [Concurrency → Primitives & Models](concurrency.md#primitives-models) |
+| **Mutex / Lock / Semaphore / Atomic** | Mutex or lock: only one holder at a time. Semaphore: at most N holders. Atomic: an operation other threads can never observe half-done | [Concurrency → Primitives & Models](concurrency.md#primitives-models) |
 | **GIL** | Python's Global Interpreter Lock: one thread runs bytecode at a time | [Concurrency → Units of Execution](concurrency.md#units-of-execution) |
 | **Pair / Mob Programming** | Two people / the whole team working on one change at one screen | [Methodologies → XP](methodologies.md#6-xp-extreme-programming), [Wikipedia: Pair programming ↗](https://en.wikipedia.org/wiki/Pair_programming) |
 | **CLI** | Command Line Interface | [Wikipedia: CLI ↗](https://en.wikipedia.org/wiki/Command-line_interface), [LLM Landscape → CLI Coding Agents](../../ai/basics/landscape.md#cli-coding-agents) |
@@ -193,6 +194,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Recursion / Memoization** | Function that calls itself / caching results of expensive calls | [Algorithms → Algorithmic Patterns](algorithms.md#algorithmic-patterns), [Wikipedia: Memoization ↗](https://en.wikipedia.org/wiki/Memoization) |
 | **Generics** | Code written once for many types (`List<T>`) | [Wikipedia: Generic programming ↗](https://en.wikipedia.org/wiki/Generic_programming) |
 | **Static / Dynamic Typing / Type Hint** | Types checked at compile time / at runtime / optional annotations checked by tools (mypy, TypeScript) | [Frontend Toolchain → TypeScript 6](../tool_tip/frontend_tools.md#typescript-6-strict-by-default), [Wikipedia: Type system ↗](https://en.wikipedia.org/wiki/Type_system) |
+| **Static Analysis** | Checking code without running it: linters, type checkers, security scanners (Semgrep, PMD) | [Claude Code → Verification as Backpressure](../../ai/tool_tip/claude_code.md#verification-as-backpressure), [Wikipedia: Static analysis ↗](https://en.wikipedia.org/wiki/Static_program_analysis) |
 | **Compiler / Interpreter / Transpiler** | Translate to machine code ahead of time / execute source directly / translate to another source language (TS → JS) | [Wikipedia: Compiler ↗](https://en.wikipedia.org/wiki/Compiler), [Wikipedia: Transpiler ↗](https://en.wikipedia.org/wiki/Source-to-source_compiler) |
 | **Runtime / VM / JVM** | Environment that runs the code / Virtual Machine / Java Virtual Machine | [Fundamentals → Code Unit Hierarchy](fundamentals.md#code-unit-hierarchy), [Wikipedia: JVM ↗](https://en.wikipedia.org/wiki/Java_virtual_machine) |
 | **GC** | Garbage Collection: runtime frees memory no longer referenced | [Architecture → Performance Bottlenecks](architecture.md#performance-bottlenecks), [Wikipedia: GC ↗](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) |
@@ -257,7 +259,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Protected Branch** | Branch that only accepts changes through reviewed, passing PRs | [Git → Golden Rules](git.md#8-golden-rules) |
 | **Detached HEAD** | Checked out a commit, not a branch; new commits belong to no branch | [Git → Local main is optional](git.md#local-main-is-optional-senior-devs-delete-it) |
 | **Remote Tracking Branch** | Local read-only cache of a remote branch (`origin/main`) | [Git → origin/main is a local cache](git.md#originmain-is-a-local-cache-not-github-itself) |
-| **Approve / Request Changes / LGTM** | Review outcomes; LGTM = "Looks Good To Me" | [Code Review → What Seniors Look For](code_review.md#8-what-seniors-look-for-in-a-pr-review) |
+| **Approve / Request Changes / LGTM** | Review outcomes; LGTM = "Looks Good To Me" | [GitHub Docs: PR reviews ↗](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews), [Google: Code review guide ↗](https://google.github.io/eng-practices/review/reviewer/) |
 | **Nit** | Minor, non-blocking review comment (style, naming) | [Code Review → Claude Code Review](code_review.md#10-claude-code-review), [Google: Writing review comments ↗](https://google.github.io/eng-practices/review/reviewer/comments.html) |
 | **CODEOWNERS** | File that assigns required reviewers per path | [GitHub Docs: CODEOWNERS ↗](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) |
 | **AI Code Review** | Automated PR review by an AI agent (Devin Review, Claude Code Review) | [Code Review → AI-Assisted Code Review](code_review.md#part-3-ai-assisted-code-review) |
@@ -304,7 +306,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Chaos Test** | Deliberately inject failures in production-like systems to prove resilience | [Wikipedia: Chaos engineering ↗](https://en.wikipedia.org/wiki/Chaos_engineering) |
 | **TDD** | Test-Driven Development: Red → Green → Refactor | [Lifecycle → TDD and BDD](lifecycle.md#tdd-and-bdd), [Methodologies → TDD](methodologies.md#tdd-test-driven-development) |
 | **BDD** | Behavior-Driven Development: Given / When / Then | [Methodologies → BDD](methodologies.md#bdd-behavior-driven-development) |
-| **Mock / Stub** | Test doubles that stand in for real dependencies | [Frontend Toolchain → Testing](../tool_tip/frontend_tools.md#testing-cypress-playwright-plus-vitest-and-msw), [Fowler: Mocks Aren't Stubs ↗](https://martinfowler.com/articles/mocksArentStubs.html) |
+| **Mock / Stub** | Test doubles. A stub returns canned answers so the code under test can run; a mock also verifies it was called with the expected arguments | [Frontend Toolchain → Testing](../tool_tip/frontend_tools.md#testing-cypress-playwright-plus-vitest-and-msw), [Fowler: Mocks Aren't Stubs ↗](https://martinfowler.com/articles/mocksArentStubs.html) |
 | **Fixture** | Fixed setup state or data a test runs against | [Wikipedia: Test fixture ↗](https://en.wikipedia.org/wiki/Test_fixture) |
 | **Flaky Test** | Passes and fails on the same code; usually caused by timing, ordering, or shared state | [Fowler: Non-Determinism ↗](https://martinfowler.com/articles/nonDeterminism.html) |
 | **Code Coverage** | Share of code executed by tests | [Wikipedia: Code coverage ↗](https://en.wikipedia.org/wiki/Code_coverage) |
@@ -357,7 +359,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Hot Spot / Hot Key** | One shard or key that gets far more traffic than the rest | [Wikipedia: Shard ↗](https://en.wikipedia.org/wiki/Shard_(database_architecture)) |
 | **Replication / Read Replica** | Copies of data on several nodes (leader–follower, multi-leader) / a copy that serves reads | [Wikipedia: Replication ↗](https://en.wikipedia.org/wiki/Replication_(computing)) |
 | **Quorum / Leader Election** | Majority agreement needed for a read or write / choosing one node to coordinate | [Wikipedia: Quorum ↗](https://en.wikipedia.org/wiki/Quorum_(distributed_computing)), [Wikipedia: Leader election ↗](https://en.wikipedia.org/wiki/Leader_election) |
-| **CAP** | Consistency, Availability, Partition tolerance: pick two under partition | [Architecture → CAP Theorem](architecture.md#cap-theorem) |
+| **CAP** | Consistency, Availability, Partition tolerance: partitions are unavoidable, so during one a distributed system must choose consistency (CP: refuse some requests) or availability (AP: answer with possibly stale data) | [Architecture → CAP Theorem](architecture.md#cap-theorem) |
 | **PACELC** | CAP extended: if Partitioned choose A or C, Else choose Latency or Consistency | [Wikipedia: PACELC ↗](https://en.wikipedia.org/wiki/PACELC_design_principle) |
 | **Strong / Eventual Consistency** | Every read sees the latest write / replicas converge eventually | [Databases → Consistency at Scale](../../data/basics/databases.md#consistency-at-scale), [Wikipedia: Eventual consistency ↗](https://en.wikipedia.org/wiki/Eventual_consistency) |
 | **BASE** | Basically Available, Soft state, Eventually consistent: the opposite trade-off to ACID | [Databases → Consistency at Scale](../../data/basics/databases.md#consistency-at-scale) |
@@ -384,7 +386,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Cache Stampede / Cache Invalidation** | Many misses rebuilding the same entry at once / keeping cached data in sync with the source | [Architecture → Caching](architecture.md#caching), [Wikipedia: Cache stampede ↗](https://en.wikipedia.org/wiki/Cache_stampede) |
 | **Read-Through / Write-Around** | Cache loads from DB itself on miss / writes skip the cache | [Architecture → Caching](architecture.md#caching) |
 | **DLQ** | Dead Letter Queue: where messages go after repeated processing failures | [Wikipedia: Dead letter queue ↗](https://en.wikipedia.org/wiki/Dead_letter_queue) |
-| **At-most-once / At-least-once / Exactly-once** | Message delivery guarantees: may lose / may duplicate (needs idempotency) / neither (costly) | [APIs → Idempotency](apis.md#idempotency), [Confluent: Delivery semantics ↗](https://docs.confluent.io/kafka/design/delivery-semantics.html) |
+| **At-most-once / At-least-once / Exactly-once** | Message delivery guarantees: may be lost, never duplicated / never lost, may be duplicated (consumers must be idempotent) / processed once with no loss or duplicates (costly, needs coordination) | [APIs → Idempotency](apis.md#idempotency), [Confluent: Delivery semantics ↗](https://docs.confluent.io/kafka/design/delivery-semantics.html) |
 | **Idempotency Key** | Client-supplied ID that lets the server de-duplicate retried requests | [APIs → Idempotency](apis.md#idempotency) |
 | **Fan-out / Fan-in** | One event to many consumers / many results combined into one | [Wikipedia: Fan-out ↗](https://en.wikipedia.org/wiki/Fan-out_(software)) |
 | **Polling / Long Polling / Push** | Client asks repeatedly / server holds the request until data exists / server sends when ready | [System Design Notes → API Protocols](system_design.md#3-seven-api-protocols) |
@@ -397,6 +399,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Object Storage / Blob** | Flat store of files by key (S3, GCS) / a binary large object | [Data Engineering → Where Data Lands](../../data/basics/data_engineering.md#where-data-lands), [Wikipedia: Object storage ↗](https://en.wikipedia.org/wiki/Object_storage) |
 | **Region / AZ / Multi-region** | Geographic cloud location / isolated data center within it / running across several regions | [Wikipedia: Availability zone ↗](https://en.wikipedia.org/wiki/Availability_zone) |
 | **N-tier / Layered Architecture** | Presentation → business → data layers, each calling only the next | [Architecture → Application Layers](architecture.md#1-application-layers) |
+| **Hexagonal / Clean Architecture** | Business logic at the center; databases, UIs, and APIs plug in through ports and adapters, so dependencies point inward | [Wikipedia: Hexagonal architecture ↗](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)), [Uncle Bob: Clean Architecture ↗](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) |
 | **Deployment Topology** | How components map to machines: all-in-one, split DB, microservices, serverless | [Architecture → Deployment Topologies](architecture.md#4-deployment-topologies) |
 | **Edge Computing** | Run logic close to users (CDN workers) to cut latency | [Wikipedia: Edge computing ↗](https://en.wikipedia.org/wiki/Edge_computing) |
 | **Data Locality** | Move compute to where data lives instead of shipping data | [Big Data → Distributed Processing](../../data/basics/big_data.md#distributed-processing) |
@@ -419,6 +422,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **SDK** | Software Development Kit: client libraries and tools for a platform or API | [LLM Landscape → Provider SDKs](../../ai/basics/landscape.md#official-provider-sdks), [Wikipedia: SDK ↗](https://en.wikipedia.org/wiki/Software_development_kit) |
 | **Client-Server / P2P / Pipe and Filter** | Architecture styles: central server / equal peers / a chain of processing steps | [Architecture → Client-Server](architecture.md#client-server), [Architecture → P2P](architecture.md#peer-to-peer-p2p), [Architecture → Pipe and Filter](architecture.md#pipe-and-filter) |
 | **Serverless / FaaS** | Stateless functions run on demand; no servers to manage | [Architecture → Serverless / FaaS](architecture.md#serverless-faas) |
+| **Cold Start** | Extra latency when a serverless function or new instance starts from zero | [Architecture → Serverless / FaaS](architecture.md#serverless-faas), [Wikipedia: Cold start ↗](https://en.wikipedia.org/wiki/Cold_start_(computing)) |
 | **ORM / DTO / DAO** | Object–Relational Mapping (work with DB rows as objects) / Data Transfer Object / Data Access Object | [Architecture → DTO, DAO, ORM](architecture.md#talking-to-the-data-layer-dto-dao-orm) |
 | **Monolith / Microservices / SOA** | One deployable unit / many small independent services / Service-Oriented Architecture | [Architecture → System-Level Patterns](architecture.md#3-system-level-patterns) |
 | **Event-Driven** | Components react to published events instead of calling each other | [Architecture → Event-Driven](architecture.md#event-driven) |
@@ -426,7 +430,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **UTC** | Coordinated Universal Time: store timestamps in it | [Wikipedia: UTC ↗](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) |
 | **Middleware** | Code in the request pipeline that runs before or after handlers (auth, logging, CORS) | [Wikipedia: Middleware ↗](https://en.wikipedia.org/wiki/Middleware) |
 | **Connection Pool** | Reused set of open DB or HTTP connections | [Architecture → Performance Bottlenecks](architecture.md#performance-bottlenecks), [Wikipedia: Connection pool ↗](https://en.wikipedia.org/wiki/Connection_pool) |
-| **Background Job / Worker / Queue Worker** | Work done outside the request (emails, reports) by processes reading a queue | [Architecture → Message Queues](architecture.md#message-queues) |
+| **Background Job / Worker / Queue Worker** | Work done outside the request (emails, reports) by processes reading a queue | [Wikipedia: Job queue ↗](https://en.wikipedia.org/wiki/Job_queue) |
 | **Cron / Scheduler** | Run jobs on a time schedule | [Wikipedia: Cron ↗](https://en.wikipedia.org/wiki/Cron) |
 | **Daemon / Service** | Long-running background process (systemd unit) | [Linux Commands → Services and Logs](../tool_tip/linux_commands.md#services-and-logs), [Wikipedia: Daemon ↗](https://en.wikipedia.org/wiki/Daemon_(computing)) |
 | **Health Check / Readiness / Liveness** | Endpoint that reports service health / ready for traffic / still alive (restart if not) | [Kubernetes: Probes ↗](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) |
@@ -454,8 +458,8 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **WCAG** | Web Content Accessibility Guidelines: the W3C standard, levels A / AA / AAA | [W3C: WCAG ↗](https://www.w3.org/WAI/standards-guidelines/wcag/) |
 | **ARIA** | Accessible Rich Internet Applications: `role` and `aria-*` attributes that fill gaps in native HTML semantics | [MDN: ARIA ↗](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) |
 | **UI / UX** | User Interface / User Experience | [Lifecycle → Roles](lifecycle.md#roles) |
-| **SPA / MPA / SSR / PWA** | Single-Page App / Multi-Page App / Server-Side Rendering / Progressive Web App | [Frontend Toolchain](../tool_tip/frontend_tools.md), [MDN: SPA ↗](https://developer.mozilla.org/en-US/docs/Glossary/SPA) |
-| **MVC / MVP / MVVM** | Model-View-Controller / Model-View-Presenter / Model-View-ViewModel | [Architecture → UI Patterns](architecture.md#6-ui-architecture-patterns) |
+| **SPA / MPA / SSR / PWA** | SPA: one page loaded once; JavaScript swaps views (client-side routing). MPA: the server returns a new page on each navigation. SSR: the server renders HTML per request for a fast first paint and SEO. PWA: a web app that can be installed and works offline via a service worker | [Frontend Toolchain](../tool_tip/frontend_tools.md), [MDN: SPA ↗](https://developer.mozilla.org/en-US/docs/Glossary/SPA) |
+| **MVC / MVP / MVVM** | Patterns that separate UI from logic. MVC: a Controller handles input and updates the Model and View. MVP: a Presenter drives a passive View. MVVM: the View binds to state exposed by a ViewModel | [Architecture → UI Patterns](architecture.md#6-ui-architecture-patterns) |
 | **Server State / Client State** | Data owned by the backend and cached / data that lives only in the UI | [Frontend Toolchain → Server vs Client State](../tool_tip/frontend_tools.md#server-state-vs-client-state-redux-query-zustand) |
 | **Bundler** | Combines modules and assets into files the browser loads | [Frontend Toolchain → Bundlers](../tool_tip/frontend_tools.md#bundlers-webpack-vite-8) |
 | **CORS** | Cross-Origin Resource Sharing: browser rules for cross-origin requests | [MDN: CORS ↗](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS) |
@@ -527,15 +531,17 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Environments** | Local → Dev → Staging → Production | [Lifecycle → Environments](lifecycle.md#environments) |
 | **Hotfix** | Urgent fix shipped straight to production | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases), [Lifecycle → Branching Models](lifecycle.md#branching-models) |
 | **Release Notes** | User-facing summary of what changed in a release | [Lifecycle → SDLC Phases](lifecycle.md#sdlc-phases) |
-| **Blue-Green / Canary / Rolling / Shadow / A/B** | Deployment strategies that trade cost, speed, and risk | [System Design Notes → Deployment Strategies](system_design.md#6-six-deployment-strategies) |
+| **Blue-Green / Canary / Rolling / Shadow / A/B** | Deployment strategies. Blue-green: two full environments, switch traffic at once. Canary: send a small share of users to the new version first. Rolling: replace instances one by one. Shadow: copy live traffic to the new version and discard its responses. A/B: split users to compare variants on a product metric | [System Design Notes → Deployment Strategies](system_design.md#6-six-deployment-strategies) |
 | **Feature Flag** | Toggle that separates *deploy* from *release* | [System Design Notes → Deployment Strategies](system_design.md#going-deeper_5) |
 | **Rollback** | Return to the previous known-good version | [System Design Notes → Deployment Strategies](system_design.md#going-deeper_5), [Becoming Senior → Deployment](becoming_senior.md#deployment-and-scale-are-part-of-the-design) |
 | **IaC** | Infrastructure as Code: servers and networks defined in versioned files | [Wikipedia: IaC ↗](https://en.wikipedia.org/wiki/Infrastructure_as_code) |
 | **Container / K8s** | Packaged app plus its dependencies / Kubernetes, the container orchestrator | [Running a Server → Containers](../tool_tip/server_operations.md#8-containers-and-orchestration), [Architecture → Container Orchestration](architecture.md#container-orchestration) |
 | **Docker** | The standard tool for building and running containers | [Running a Server → Docker Eats the Disk](../tool_tip/server_operations.md#docker-eats-the-disk), [Linux Commands → Docker](../tool_tip/linux_commands.md#docker-essentials) |
-| **OOM / Memory Leak** | Out Of Memory, when the kernel kills a process / memory that grows and is never freed | [Running a Server → Out of Memory](../tool_tip/server_operations.md#out-of-memory), [Running a Server → Memory](../tool_tip/server_operations.md#memory) |
+| **Dockerfile / Docker Compose** | Recipe for building an image / YAML file that runs several containers together for local development | [Docker Docs: Dockerfile ↗](https://docs.docker.com/reference/dockerfile/), [Docker Docs: Compose ↗](https://docs.docker.com/compose/) |
+| **OOM / Memory Leak** | Out Of Memory: the system runs out of RAM, and Linux's OOM killer terminates a process to recover / memory a program keeps allocating and never frees | [Running a Server → Out of Memory](../tool_tip/server_operations.md#out-of-memory), [Running a Server → Memory](../tool_tip/server_operations.md#memory) |
 | **Inode** | Filesystem entry per file; a disk can run out of inodes before bytes | [Running a Server → Out of Inodes](../tool_tip/server_operations.md#cause-2-out-of-inodes) |
 | **Metrics / Logs / Traces** | The three observability signals (Prometheus, Loki, Jaeger; Grafana to view) | [Running a Server → The Pipeline](../tool_tip/server_operations.md#the-pipeline) |
+| **OpenTelemetry (OTel)** | Vendor-neutral standard and SDKs for emitting metrics, logs, and traces | [Running a Server → Tool Status](../tool_tip/server_operations.md#tool-status), [opentelemetry.io ↗](https://opentelemetry.io/docs/what-is-opentelemetry/) |
 | **tmux** | Terminal multiplexer: persistent sessions, windows, panes | [tmux Cheatsheet](../tool_tip/tmux.md) |
 | **SaaS / PaaS / IaaS / FaaS** | Software / Platform / Infrastructure / Functions as a Service | [Architecture → Serverless / FaaS](architecture.md#serverless-faas), [Wikipedia: Cloud service models ↗](https://en.wikipedia.org/wiki/Cloud_computing#Service_models) |
 | **Observability** | Understanding a system from its logs, metrics, and traces | [Becoming Senior → Observability](becoming_senior.md#observability-is-a-property-of-the-pipeline) |
@@ -577,7 +583,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Backup / Restore Test** | Copy of data / proving you can actually restore it | [Running a Server → Operational Baseline](../tool_tip/server_operations.md#10-operational-baseline) |
 | **Toil** | Manual, repetitive operational work that scales with load | [Google SRE: Eliminating Toil ↗](https://sre.google/sre-book/eliminating-toil/) |
 | **Blameless Culture** | Postmortems focus on systems, not on whom to blame | [Google SRE: Postmortem Culture ↗](https://sre.google/sre-book/postmortem-culture/) |
-| **Dark Launch / Roll Forward** | Ship code hidden behind a flag / fix by deploying a new version instead of reverting | [System Design Notes → Deployment Strategies](system_design.md#going-deeper_5) |
+| **Dark Launch / Roll Forward** | Ship code hidden behind a flag / fix by deploying a new version instead of reverting | [System Design Notes → Deployment Strategies](system_design.md#going-deeper_5), [Fowler: Dark Launching ↗](https://martinfowler.com/bliki/DarkLaunching.html) |
 | **Recreate Deployment** | Stop the old version, then start the new one (has downtime) | [System Design Notes → Deployment Strategies](system_design.md#what-the-post-says_5) |
 | **CAB / ITIL** | Change Advisory Board that approves risky changes / IT service management framework | [Wikipedia: CAB ↗](https://en.wikipedia.org/wiki/Change-advisory_board), [Wikipedia: ITIL ↗](https://en.wikipedia.org/wiki/ITIL) |
 | **Status Page** | Public page showing service health during incidents | [Google SRE: Managing Incidents ↗](https://sre.google/sre-book/managing-incidents/) |
@@ -597,15 +603,16 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **JWT** | JSON Web Token: compact, signed claims-based token | [System Design Notes → Auth Methods](system_design.md#going-deeper_3) |
 | **SAML / mTLS** | XML-based enterprise SSO / mutual TLS, where both sides present certificates | [System Design Notes → Auth Methods](system_design.md#going-deeper_3) |
 | **RBAC / ABAC** | Role- / Attribute-Based Access Control | [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
+| **IAM** | Identity and Access Management: users, roles, and policies that control who can do what in a system or cloud account | [Wikipedia: IAM ↗](https://en.wikipedia.org/wiki/Identity_and_access_management) |
 | **Least Privilege** | Grant the minimum access needed | [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
 | **Hashing / Salt** | One-way fingerprint of data / random value added so equal passwords hash differently (bcrypt, argon2) | [Security → Crypto Basics](security.md#crypto-basics) |
 | **Symmetric / Asymmetric Encryption** | One shared key (AES) / public–private key pair (RSA, ECC) | [Security → Crypto Basics](security.md#crypto-basics) |
-| **Digital Signature / HMAC** | Proves who sent data and that it wasn't changed | [Security → Crypto Basics](security.md#crypto-basics) |
+| **Digital Signature / HMAC** | Signature: sign with a private key, anyone verifies with the public key, so it proves who sent the data and that it wasn't changed. HMAC: a hash keyed with a shared secret; it proves integrity, but any key holder could have produced it | [Security → Crypto Basics](security.md#crypto-basics) |
 | **Certificate / CA / PKI** | Signed binding of a public key to a name / the authority that signs it / the whole trust system | [System Design Notes → Auth Methods](system_design.md#going-deeper_3), [Wikipedia: PKI ↗](https://en.wikipedia.org/wiki/Public_key_infrastructure) |
 | **Encryption at Rest / in Transit** | Protect stored data / data moving over the network (TLS) | [Security → Crypto Basics](security.md#crypto-basics), [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
-| **Session / Cookie** | Server-side login state / the browser value that points to it | [System Design Notes → Auth Methods](system_design.md#going-deeper_3) |
+| **Session / Cookie** | Session: login state kept on the server. Cookie: small name–value data the browser stores and sends with every request to that site, often carrying the session ID | [System Design Notes → Auth Methods](system_design.md#going-deeper_3) |
 | **Data Classification** | Public / Internal / Confidential / Restricted tiers that decide protection | [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
-| **Masking / Tokenization / Anonymization / Pseudonymization** | Ways to de-identify data for non-prod and analytics | [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
+| **Masking / Tokenization / Anonymization / Pseudonymization** | Ways to de-identify data. Masking hides part of a value (`****1234`). Tokenization swaps it for a token mapped back in a secure vault. Anonymization removes identity irreversibly. Pseudonymization replaces identifiers with codes that can be re-linked with a key, so it is still personal data under GDPR | [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
 | **Audit Log** | Record of who accessed or changed what, and when | [Data Security → What It Is](../../data/basics/data_security.md#what-it-is) |
 | **DDoS / WAF** | Distributed Denial of Service flood / Web Application Firewall that filters malicious HTTP | [Architecture → CDN](architecture.md#cdn-content-delivery-network), [Wikipedia: WAF ↗](https://en.wikipedia.org/wiki/Web_application_firewall) |
 | **OWASP** | Open Worldwide Application Security Project, known for its Top 10 web risks | [Security → Common Risks](security.md#common-risks-owasp-condensed) |
@@ -661,6 +668,8 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **SQL / NoSQL** | Structured Query Language / non-relational stores | [Databases → SQL in One Breath](../../data/basics/databases.md#sql-in-one-breath), [Databases → Relational vs NoSQL](../../data/basics/databases.md#relational-vs-nosql) |
 | **DDL / DML** | Data Definition (CREATE, ALTER) / Data Manipulation (INSERT, UPDATE, DELETE) | [Databases → SQL in One Breath](../../data/basics/databases.md#sql-in-one-breath) |
 | **PK / FK / JOIN** | Primary Key (unique row id) / Foreign Key (reference to another table) / combine rows across tables | [Databases → SQL in One Breath](../../data/basics/databases.md#sql-in-one-breath) |
+| **Window Function** | SQL function computed over a set of related rows without collapsing them (`ROW_NUMBER() OVER (PARTITION BY …)`) | [Wikipedia: Window function ↗](https://en.wikipedia.org/wiki/Window_function_(SQL)) |
+| **Cardinality** | Number of distinct values in a column (high = user IDs, low = country); drives index choice and observability cost | [Wikipedia: Cardinality ↗](https://en.wikipedia.org/wiki/Cardinality_(SQL_statements)) |
 | **Relational DB** | Tables with fixed schema, joins, ACID transactions (PostgreSQL, MySQL) | [Architecture → Databases](architecture.md#databases) |
 | **Document DB** | Stores JSON-like documents with flexible schema (MongoDB) | [Architecture → Databases](architecture.md#databases), [Wikipedia: Document DB ↗](https://en.wikipedia.org/wiki/Document-oriented_database) |
 | **Key-Value Store** | Lookup by key only; fastest and simplest (Redis, DynamoDB) | [Architecture → Databases](architecture.md#databases), [Wikipedia: Key–value DB ↗](https://en.wikipedia.org/wiki/Key%E2%80%93value_database) |
@@ -674,6 +683,8 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Embedding** | A vector of numbers that represents the meaning of text, images, or other data | [Wikipedia: Embedding ↗](https://en.wikipedia.org/wiki/Embedding_(machine_learning)) |
 | **Index** | Lookup structure that speeds reads and slows writes | [Databases → Indexing](../../data/basics/databases.md#indexing) |
 | **ACID** | Atomicity, Consistency, Isolation, Durability | [Databases → Transactions & ACID](../../data/basics/databases.md#transactions-acid) |
+| **Transaction** | A group of operations that succeed or fail as one unit (`BEGIN … COMMIT` / `ROLLBACK`) | [Databases → Transactions & ACID](../../data/basics/databases.md#transactions-acid), [Wikipedia: Transaction ↗](https://en.wikipedia.org/wiki/Database_transaction) |
+| **Schema Migration** | Versioned, scripted change to a database schema; on live systems done as expand → migrate → contract | [System Design Notes → Deployment Strategies](system_design.md#going-deeper_5), [Wikipedia: Schema migration ↗](https://en.wikipedia.org/wiki/Schema_migration) |
 | **Isolation Levels** | Read Uncommitted → Read Committed → Repeatable Read → Serializable: stronger isolation means fewer anomalies and less concurrency | [Databases → Isolation Levels](../../data/basics/databases.md#isolation-levels) |
 | **Normalization / 3NF / Denormalization** | Remove redundancy by splitting tables / third normal form / add redundancy back for read speed | [Data Modelling → Modelling Styles](../../data/basics/data_modeling.md#modelling-styles), [Wikipedia: Normalization ↗](https://en.wikipedia.org/wiki/Database_normalization) |
 | **WAL** | Write-Ahead Log: log changes before applying them, for durability and recovery | [Wikipedia: WAL ↗](https://en.wikipedia.org/wiki/Write-ahead_logging) |
@@ -682,7 +693,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Warehouse / Lake / Lakehouse** | Where data lands: modeled tables / raw files / both on one store | [Data Engineering → Where Data Lands](../../data/basics/data_engineering.md#where-data-lands) |
 | **Batch / Streaming** | Process data in scheduled chunks / continuously as it arrives | [Data Engineering → Batch vs Streaming](../../data/basics/data_engineering.md#batch-vs-streaming) |
 | **DAG** | Directed Acyclic Graph: pipeline tasks and their dependencies | [Data Engineering → Orchestration](../../data/basics/data_engineering.md#orchestration) |
-| **MapReduce / Spark / HDFS** | Distributed processing and storage across many nodes | [Big Data → Distributed Processing](../../data/basics/big_data.md#distributed-processing) |
+| **MapReduce / Spark / HDFS** | MapReduce: process data in parallel *map* steps, then combine with *reduce* steps. Spark: an in-memory distributed engine that largely replaced it. HDFS: Hadoop's distributed file system that stores the data across nodes | [Big Data → Distributed Processing](../../data/basics/big_data.md#distributed-processing) |
 | **Star / Snowflake Schema** | Fact table surrounded by dimension tables (normalized dimensions in snowflake) | [Data Modelling → Modelling Styles](../../data/basics/data_modeling.md#modelling-styles) |
 | **OBT** | One Big Table: wide denormalized table for simple BI | [Data Modelling → Modelling Styles](../../data/basics/data_modeling.md#modelling-styles) |
 | **Structured / Semi-structured / Unstructured** | Tables / self-describing formats like JSON / free text, images, audio | [Introduction to Data → Types of Data](../../data/basics/introduction_to_data.md#types-of-data) |
@@ -698,7 +709,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Schema-on-Write / Schema-on-Read** | Validate structure when loading (warehouse) / interpret it when querying (lake) | [Data Engineering → Where Data Lands](../../data/basics/data_engineering.md#where-data-lands) |
 | **Data Pipeline** | Automated flow that moves and transforms data | [Data Engineering](../../data/basics/data_engineering.md) |
 | **Orchestrator (Airflow / Dagster / Prefect)** | Schedules and monitors pipeline DAGs | [Data Engineering → Orchestration](../../data/basics/data_engineering.md#orchestration) |
-| **Incremental Load / Full Load / Backfill** | Load only new or changed rows / reload everything / re-run history for past dates | [Data Engineering → Rule of Thumb](../../data/basics/data_engineering.md#rule-of-thumb) |
+| **Incremental Load / Full Load / Backfill** | Load only new or changed rows / reload everything / re-run history for past dates | [Data Engineering → Rule of Thumb](../../data/basics/data_engineering.md#rule-of-thumb), [System Design Notes → Deployment Strategies (backfill)](system_design.md#going-deeper_5) |
 | **CDC** | Change Data Capture: stream row changes from a database log | [Wikipedia: Change data capture ↗](https://en.wikipedia.org/wiki/Change_data_capture) |
 | **Upsert / MERGE** | Insert or update in one operation | [Wikipedia: MERGE ↗](https://en.wikipedia.org/wiki/Merge_(SQL)) |
 | **Reverse ETL** | Push warehouse data back into operational tools (CRM, ads) | [Wikipedia: ETL ↗](https://en.wikipedia.org/wiki/Extract,_transform,_load) |
@@ -785,7 +796,10 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Skill / Hook / Plugin** | Packaged instructions loaded on demand / script run on agent events / bundle of both for sharing | [Claude Code → Skills](../../ai/tool_tip/claude_code.md#skills), [Claude Code → Hooks](../../ai/tool_tip/claude_code.md#hooks), [Claude Code → Plugins](../../ai/tool_tip/claude_code.md#plugins) |
 | **Ralph Loop** | Run an agent repeatedly against a spec until the work is done | [Claude Code → The Ralph Loop](../../ai/tool_tip/claude_code.md#the-ralph-loop) |
 | **System Prompt / Few-shot / Temperature** | Standing instructions / examples in the prompt / randomness of sampling | [Wikipedia: Prompt engineering ↗](https://en.wikipedia.org/wiki/Prompt_engineering) |
+| **Top-p / Top-k Sampling** | Sample the next token only from the smallest set covering probability p / from the k most likely tokens | [Wikipedia: Top-p sampling ↗](https://en.wikipedia.org/wiki/Top-p_sampling) |
+| **Vibe Coding** | Building by prompting an AI and accepting its code without reading it closely | [Skills Map → Software Engineering Fundamentals](../../ai/basics/skills_map.md#2-software-engineering-fundamentals), [Wikipedia: Vibe coding ↗](https://en.wikipedia.org/wiki/Vibe_coding) |
 | **Local Inference** | Running models on your own hardware (Ollama, vLLM, llama.cpp) | [AI Tools → Local Inference](../../ai/tool_tip/tools.md#local-inference-and-serving) |
+| **Jupyter Notebook** | Interactive document mixing code, output, and notes; standard for data analysis and ML experiments | [Wikipedia: Project Jupyter ↗](https://en.wikipedia.org/wiki/Project_Jupyter) |
 | **RAG** | Retrieval-Augmented Generation: fetch relevant documents (often from a vector DB) and put them in the prompt | [Skills Map → Building AI Apps](../../ai/basics/skills_map.md#1-building-and-deploying-ai-applications), [Wikipedia: RAG ↗](https://en.wikipedia.org/wiki/Retrieval-augmented_generation) |
 | **Embedding / Vector DB** | Meaning as a vector / a store that searches by vector similarity | [Data Engineering](#data-engineering) |
 | **Fine-tuning** | Further training a pre-trained model on task-specific data | [Wikipedia: Fine-tuning ↗](https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)) |
@@ -796,9 +810,13 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Jailbreak** | A prompt crafted to bypass a model's safety rules | [OWASP Top 10 for LLM Apps ↗](https://owasp.org/www-project-top-10-for-large-language-model-applications/) |
 | **Adversarial Test / Red Teaming** | Attack your own LLM system with hostile inputs (injection, jailbreaks, data extraction) before real attackers do | [Testing & QA](#testing-qa), [Wikipedia: Adversarial ML ↗](https://en.wikipedia.org/wiki/Adversarial_machine_learning), [Wikipedia: Red team ↗](https://en.wikipedia.org/wiki/Red_team) |
 | **SDD** | Spec-Driven Development with AI agents | [Spec-Driven Development](../../ai/tool_tip/spec_driven_development.md) |
-| **GSD / BMad / Spec Kit / Agent OS** | Spec-driven tooling approaches for AI coding | [Spec-Driven Development → Four Tooling Approaches](../../ai/tool_tip/spec_driven_development.md#four-tooling-approaches) |
+| **GSD / BMad / Spec Kit / Agent OS** | Spec-driven tools for AI coding. GSD: a discuss → plan → execute → verify → ship loop with state files. BMad: multi-role (product, architecture, UX, dev, test) delivery lifecycle. Spec Kit: GitHub's principles → spec → plan → tasks flow. Agent OS: captures codebase conventions to guide specs | [Spec-Driven Development → Four Tooling Approaches](../../ai/tool_tip/spec_driven_development.md#four-tooling-approaches) |
 | **Rule-based / Statistical AI** | Hand-written if-then rules / models fitted to data | [AI Concepts → Rule-based](../../ai/basics/concepts.md#rule-based), [AI Concepts → Statistical](../../ai/basics/concepts.md#statistical) |
 | **Supervised / Unsupervised / Reinforcement Learning** | Learn from labeled examples / find structure without labels / learn by reward | [AI Concepts → Machine Learning](../../ai/basics/concepts.md#machine-learning) |
+| **Neural Network / Backpropagation** | Layers of weighted units that learn by passing errors backward to adjust the weights | [AI Concepts → Deep Learning](../../ai/basics/concepts.md#deep-learning), [Wikipedia: Backpropagation ↗](https://en.wikipedia.org/wiki/Backpropagation) |
+| **Hyperparameter / Cross-validation** | Settings chosen before training (learning rate, depth) / rotating train–validation splits to estimate performance reliably | [AI Concepts → Machine Learning](../../ai/basics/concepts.md#machine-learning), [Wikipedia: Cross-validation ↗](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) |
+| **Feature Engineering / Feature Store** | Turning raw data into model inputs / a shared system that serves the same features to training and production | [AI Concepts → Statistical](../../ai/basics/concepts.md#statistical), [Wikipedia: Feature engineering ↗](https://en.wikipedia.org/wiki/Feature_engineering) |
+| **Data Drift / Model Drift** | Production inputs shift away from the training data / the model's accuracy decays as a result | [Wikipedia: Concept drift ↗](https://en.wikipedia.org/wiki/Concept_drift) |
 | **NLP** | Natural Language Processing | [Wikipedia: NLP ↗](https://en.wikipedia.org/wiki/Natural_language_processing) |
 | **CNN / RNN / Transformer** | Convolutional net (images) / Recurrent net (sequences) / attention-based architecture behind LLMs | [AI Concepts → Deep Learning](../../ai/basics/concepts.md#deep-learning), [Wikipedia: Transformer ↗](https://en.wikipedia.org/wiki/Transformer_(deep_learning)) |
 | **Attention** | Mechanism letting each token weigh every other token | [Wikipedia: Attention ↗](https://en.wikipedia.org/wiki/Attention_(machine_learning)) |
@@ -823,7 +841,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **HITL** | Human-in-the-Loop: a person approves or corrects agent steps | [Codex → Two Dials, Not One](../../ai/tool_tip/codex.md#two-dials-not-one) |
 | **LLM-as-a-Judge** | Use a model to grade another model's output in evals | [AI Tools → Evaluate Before Expanding](../../ai/tool_tip/tools.md#evaluate-before-expanding) |
 | **TTFT / Tokens per Second** | Time To First Token / generation speed | [NVIDIA: LLM inference metrics ↗](https://docs.nvidia.com/nim/benchmarking/llm/latest/metrics.html) |
-| **Prompt Caching** | Reuse the processed prefix of a prompt to cut cost and latency | [Claude Code → Session Hygiene](../../ai/tool_tip/claude_code.md#session-hygiene) |
+| **Prompt Caching** | Reuse the processed prefix of a prompt to cut cost and latency | [Claude Docs: Prompt caching ↗](https://docs.claude.com/en/docs/build-with-claude/prompt-caching) |
 | **Context Compaction** | Summarize old conversation to free the context window | [Claude Code → Session Hygiene](../../ai/tool_tip/claude_code.md#session-hygiene) |
 | **Memory (Agent)** | Facts an agent persists across sessions (CLAUDE.md, AGENTS.md, memory files) | [Claude Code → Auto Memory](../../ai/tool_tip/claude_code.md#auto-memory), [Codex → Memories](../../ai/tool_tip/codex.md#memories) |
 | **CLAUDE.md / AGENTS.md** | Repository instruction files that coding agents load each session | [Claude Code → CLAUDE.md](../../ai/tool_tip/claude_code.md#claudemd), [Codex → AGENTS.md](../../ai/tool_tip/codex.md#agentsmd) |
