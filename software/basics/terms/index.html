@@ -2947,7 +2947,7 @@
 <tr>
 <td><strong>Three Amigos</strong></td>
 <td>Business, dev, and QA review a story together before work starts</td>
-<td><a href="../methodologies/#bdd-behavior-driven-development">Methodologies → BDD</a></td>
+<td><a href="https://www.agilealliance.org/glossary/three-amigos/">Agile Alliance: Three Amigos ↗</a></td>
 </tr>
 <tr>
 <td><strong>ART / Release Train</strong></td>
@@ -3085,6 +3085,11 @@
 <td><strong>Milestone</strong></td>
 <td>A checkpoint marking the end of a phase or a key deliverable</td>
 <td><a href="../methodologies/#8-rup-waterfall-iteration-formal-governance">Methodologies → RUP</a></td>
+</tr>
+<tr>
+<td><strong>Roadmap</strong></td>
+<td>Time-ordered plan of goals and major deliverables, usually by quarter</td>
+<td><a href="https://en.wikipedia.org/wiki/Technology_roadmap">Wikipedia: Technology roadmap ↗</a></td>
 </tr>
 <tr>
 <td><strong>MoSCoW</strong></td>
@@ -3310,7 +3315,7 @@
 </tr>
 <tr>
 <td><strong>FRS</strong></td>
-<td>Functional Requirements Specification</td>
+<td>Functional Requirements Specification: document listing what the system must do, feature by feature, with inputs, outputs, business rules, and error cases</td>
 <td><a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a></td>
 </tr>
 <tr>
@@ -3442,7 +3447,7 @@
 <tbody>
 <tr>
 <td><strong>OOP</strong></td>
-<td>Object-Oriented Programming</td>
+<td>Object-Oriented Programming: organize code as objects that bundle data with the methods that act on it, using classes, encapsulation, inheritance, and polymorphism</td>
 <td><a href="../fundamentals/#programming-paradigms">Fundamentals → Programming Paradigms</a></td>
 </tr>
 <tr>
@@ -3567,7 +3572,7 @@
 </tr>
 <tr>
 <td><strong>Mutex / Lock / Semaphore / Atomic</strong></td>
-<td>One holder at a time / at most N holders / an uninterruptible operation</td>
+<td>Mutex or lock: only one holder at a time. Semaphore: at most N holders. Atomic: an operation other threads can never observe half-done</td>
 <td><a href="../concurrency/#primitives-models">Concurrency → Primitives &amp; Models</a></td>
 </tr>
 <tr>
@@ -3664,6 +3669,11 @@
 <td><strong>Static / Dynamic Typing / Type Hint</strong></td>
 <td>Types checked at compile time / at runtime / optional annotations checked by tools (mypy, TypeScript)</td>
 <td><a href="../../tool_tip/frontend_tools/#typescript-6-strict-by-default">Frontend Toolchain → TypeScript 6</a>, <a href="https://en.wikipedia.org/wiki/Type_system">Wikipedia: Type system ↗</a></td>
+</tr>
+<tr>
+<td><strong>Static Analysis</strong></td>
+<td>Checking code without running it: linters, type checkers, security scanners (Semgrep, PMD)</td>
+<td><a href="../../../ai/tool_tip/claude_code/#verification-as-backpressure">Claude Code → Verification as Backpressure</a>, <a href="https://en.wikipedia.org/wiki/Static_program_analysis">Wikipedia: Static analysis ↗</a></td>
 </tr>
 <tr>
 <td><strong>Compiler / Interpreter / Transpiler</strong></td>
@@ -3975,7 +3985,7 @@
 <tr>
 <td><strong>Approve / Request Changes / LGTM</strong></td>
 <td>Review outcomes; LGTM = "Looks Good To Me"</td>
-<td><a href="../code_review/#8-what-seniors-look-for-in-a-pr-review">Code Review → What Seniors Look For</a></td>
+<td><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews">GitHub Docs: PR reviews ↗</a>, <a href="https://google.github.io/eng-practices/review/reviewer/">Google: Code review guide ↗</a></td>
 </tr>
 <tr>
 <td><strong>Nit</strong></td>
@@ -4196,8 +4206,8 @@
 </tr>
 <tr>
 <td><strong>Mock / Stub</strong></td>
-<td>Test doubles that stand in for real dependencies</td>
-<td><a href="../../tool_tip/frontend_tools/#testing-cypress-playwright-plus-vitest-and-msw">Frontend Toolchain → Testing</a>, <a href="https://martinfowler.com/articles/mocksArentStubs.html">Fowler: Mocks Aren't Stubs ↗</a></td>
+<td>Test doubles. A stub returns canned answers so the code under test can run; a mock also verifies it was called with the expected arguments</td>
+<td><a href="https://martinfowler.com/articles/mocksArentStubs.html">Fowler: Mocks Aren't Stubs ↗</a></td>
 </tr>
 <tr>
 <td><strong>Fixture</strong></td>
@@ -4448,7 +4458,7 @@
 </tr>
 <tr>
 <td><strong>CAP</strong></td>
-<td>Consistency, Availability, Partition tolerance: pick two under partition</td>
+<td>Consistency, Availability, Partition tolerance: partitions are unavoidable, so during one a distributed system must choose consistency (CP: refuse some requests) or availability (AP: answer with possibly stale data)</td>
 <td><a href="../architecture/#cap-theorem">Architecture → CAP Theorem</a></td>
 </tr>
 <tr>
@@ -4583,7 +4593,7 @@
 </tr>
 <tr>
 <td><strong>At-most-once / At-least-once / Exactly-once</strong></td>
-<td>Message delivery guarantees: may lose / may duplicate (needs idempotency) / neither (costly)</td>
+<td>Message delivery guarantees: may be lost, never duplicated / never lost, may be duplicated (consumers must be idempotent) / processed once with no loss or duplicates (costly, needs coordination)</td>
 <td><a href="../apis/#idempotency">APIs → Idempotency</a>, <a href="https://docs.confluent.io/kafka/design/delivery-semantics.html">Confluent: Delivery semantics ↗</a></td>
 </tr>
 <tr>
@@ -4645,6 +4655,11 @@
 <td><strong>N-tier / Layered Architecture</strong></td>
 <td>Presentation → business → data layers, each calling only the next</td>
 <td><a href="../architecture/#1-application-layers">Architecture → Application Layers</a></td>
+</tr>
+<tr>
+<td><strong>Hexagonal / Clean Architecture</strong></td>
+<td>Business logic at the center; databases, UIs, and APIs plug in through ports and adapters, so dependencies point inward</td>
+<td><a href="https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)">Wikipedia: Hexagonal architecture ↗</a>, <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Uncle Bob: Clean Architecture ↗</a></td>
 </tr>
 <tr>
 <td><strong>Deployment Topology</strong></td>
@@ -4744,6 +4759,11 @@
 <td><a href="../architecture/#serverless-faas">Architecture → Serverless / FaaS</a></td>
 </tr>
 <tr>
+<td><strong>Cold Start</strong></td>
+<td>Extra latency when a serverless function or new instance starts from zero</td>
+<td><a href="../architecture/#serverless-faas">Architecture → Serverless / FaaS</a>, <a href="https://en.wikipedia.org/wiki/Cold_start_(computing)">Wikipedia: Cold start ↗</a></td>
+</tr>
+<tr>
 <td><strong>ORM / DTO / DAO</strong></td>
 <td>Object–Relational Mapping (work with DB rows as objects) / Data Transfer Object / Data Access Object</td>
 <td><a href="../architecture/#talking-to-the-data-layer-dto-dao-orm">Architecture → DTO, DAO, ORM</a></td>
@@ -4781,7 +4801,7 @@
 <tr>
 <td><strong>Background Job / Worker / Queue Worker</strong></td>
 <td>Work done outside the request (emails, reports) by processes reading a queue</td>
-<td><a href="../architecture/#message-queues">Architecture → Message Queues</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Job_queue">Wikipedia: Job queue ↗</a></td>
 </tr>
 <tr>
 <td><strong>Cron / Scheduler</strong></td>
@@ -4907,12 +4927,12 @@
 </tr>
 <tr>
 <td><strong>SPA / MPA / SSR / PWA</strong></td>
-<td>Single-Page App / Multi-Page App / Server-Side Rendering / Progressive Web App</td>
+<td>SPA: one page loaded once; JavaScript swaps views (client-side routing). MPA: the server returns a new page on each navigation. SSR: the server renders HTML per request for a fast first paint and SEO. PWA: a web app that can be installed and works offline via a service worker</td>
 <td><a href="../../tool_tip/frontend_tools/">Frontend Toolchain</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/SPA">MDN: SPA ↗</a></td>
 </tr>
 <tr>
 <td><strong>MVC / MVP / MVVM</strong></td>
-<td>Model-View-Controller / Model-View-Presenter / Model-View-ViewModel</td>
+<td>Patterns that separate UI from logic. MVC: a Controller handles input and updates the Model and View. MVP: a Presenter drives a passive View. MVVM: the View binds to state exposed by a ViewModel</td>
 <td><a href="../architecture/#6-ui-architecture-patterns">Architecture → UI Patterns</a></td>
 </tr>
 <tr>
@@ -5246,7 +5266,7 @@
 </tr>
 <tr>
 <td><strong>Blue-Green / Canary / Rolling / Shadow / A/B</strong></td>
-<td>Deployment strategies that trade cost, speed, and risk</td>
+<td>Deployment strategies. Blue-green: two full environments, switch traffic at once. Canary: send a small share of users to the new version first. Rolling: replace instances one by one. Shadow: copy live traffic to the new version and discard its responses. A/B: split users to compare variants on a product metric</td>
 <td><a href="../system_design/#6-six-deployment-strategies">System Design Notes → Deployment Strategies</a></td>
 </tr>
 <tr>
@@ -5275,8 +5295,13 @@
 <td><a href="../../tool_tip/server_operations/#docker-eats-the-disk">Running a Server → Docker Eats the Disk</a>, <a href="../../tool_tip/linux_commands/#docker-essentials">Linux Commands → Docker</a></td>
 </tr>
 <tr>
+<td><strong>Dockerfile / Docker Compose</strong></td>
+<td>Recipe for building an image / YAML file that runs several containers together for local development</td>
+<td><a href="https://docs.docker.com/reference/dockerfile/">Docker Docs: Dockerfile ↗</a>, <a href="https://docs.docker.com/compose/">Docker Docs: Compose ↗</a></td>
+</tr>
+<tr>
 <td><strong>OOM / Memory Leak</strong></td>
-<td>Out Of Memory, when the kernel kills a process / memory that grows and is never freed</td>
+<td>Out Of Memory: the system runs out of RAM, and Linux's OOM killer terminates a process to recover / memory a program keeps allocating and never frees</td>
 <td><a href="../../tool_tip/server_operations/#out-of-memory">Running a Server → Out of Memory</a>, <a href="../../tool_tip/server_operations/#memory">Running a Server → Memory</a></td>
 </tr>
 <tr>
@@ -5288,6 +5313,11 @@
 <td><strong>Metrics / Logs / Traces</strong></td>
 <td>The three observability signals (Prometheus, Loki, Jaeger; Grafana to view)</td>
 <td><a href="../../tool_tip/server_operations/#the-pipeline">Running a Server → The Pipeline</a></td>
+</tr>
+<tr>
+<td><strong>OpenTelemetry (OTel)</strong></td>
+<td>Vendor-neutral standard and SDKs for emitting metrics, logs, and traces</td>
+<td><a href="../../tool_tip/server_operations/#tool-status">Running a Server → Tool Status</a>, <a href="https://opentelemetry.io/docs/what-is-opentelemetry/">opentelemetry.io ↗</a></td>
 </tr>
 <tr>
 <td><strong>tmux</strong></td>
@@ -5497,7 +5527,7 @@
 <tr>
 <td><strong>Dark Launch / Roll Forward</strong></td>
 <td>Ship code hidden behind a flag / fix by deploying a new version instead of reverting</td>
-<td><a href="../system_design/#going-deeper_5">System Design Notes → Deployment Strategies</a></td>
+<td><a href="../system_design/#going-deeper_5">System Design Notes → Deployment Strategies</a>, <a href="https://martinfowler.com/bliki/DarkLaunching.html">Fowler: Dark Launching ↗</a></td>
 </tr>
 <tr>
 <td><strong>Recreate Deployment</strong></td>
@@ -5582,6 +5612,11 @@
 <td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
 </tr>
 <tr>
+<td><strong>IAM</strong></td>
+<td>Identity and Access Management: users, roles, and policies that control who can do what in a system or cloud account</td>
+<td><a href="https://en.wikipedia.org/wiki/Identity_and_access_management">Wikipedia: IAM ↗</a></td>
+</tr>
+<tr>
 <td><strong>Least Privilege</strong></td>
 <td>Grant the minimum access needed</td>
 <td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
@@ -5598,7 +5633,7 @@
 </tr>
 <tr>
 <td><strong>Digital Signature / HMAC</strong></td>
-<td>Proves who sent data and that it wasn't changed</td>
+<td>Signature: sign with a private key, anyone verifies with the public key, so it proves who sent the data and that it wasn't changed. HMAC: a hash keyed with a shared secret; it proves integrity, but any key holder could have produced it</td>
 <td><a href="../security/#crypto-basics">Security → Crypto Basics</a></td>
 </tr>
 <tr>
@@ -5613,7 +5648,7 @@
 </tr>
 <tr>
 <td><strong>Session / Cookie</strong></td>
-<td>Server-side login state / the browser value that points to it</td>
+<td>Session: login state kept on the server. Cookie: small name–value data the browser stores and sends with every request to that site, often carrying the session ID</td>
 <td><a href="../system_design/#going-deeper_3">System Design Notes → Auth Methods</a></td>
 </tr>
 <tr>
@@ -5623,7 +5658,7 @@
 </tr>
 <tr>
 <td><strong>Masking / Tokenization / Anonymization / Pseudonymization</strong></td>
-<td>Ways to de-identify data for non-prod and analytics</td>
+<td>Ways to de-identify data. Masking hides part of a value (<code>****1234</code>). Tokenization swaps it for a token mapped back in a secure vault. Anonymization removes identity irreversibly. Pseudonymization replaces identifiers with codes that can be re-linked with a key, so it is still personal data under GDPR</td>
 <td><a href="../../../data/basics/data_security/#what-it-is">Data Security → What It Is</a></td>
 </tr>
 <tr>
@@ -5889,6 +5924,16 @@
 <td><a href="../../../data/basics/databases/#sql-in-one-breath">Databases → SQL in One Breath</a></td>
 </tr>
 <tr>
+<td><strong>Window Function</strong></td>
+<td>SQL function computed over a set of related rows without collapsing them (<code>ROW_NUMBER() OVER (PARTITION BY …)</code>)</td>
+<td><a href="https://en.wikipedia.org/wiki/Window_function_(SQL)">Wikipedia: Window function ↗</a></td>
+</tr>
+<tr>
+<td><strong>Cardinality</strong></td>
+<td>Number of distinct values in a column (high = user IDs, low = country); drives index choice and observability cost</td>
+<td><a href="https://en.wikipedia.org/wiki/Cardinality_(SQL_statements)">Wikipedia: Cardinality ↗</a></td>
+</tr>
+<tr>
 <td><strong>Relational DB</strong></td>
 <td>Tables with fixed schema, joins, ACID transactions (PostgreSQL, MySQL)</td>
 <td><a href="../architecture/#databases">Architecture → Databases</a></td>
@@ -5954,6 +5999,16 @@
 <td><a href="../../../data/basics/databases/#transactions-acid">Databases → Transactions &amp; ACID</a></td>
 </tr>
 <tr>
+<td><strong>Transaction</strong></td>
+<td>A group of operations that succeed or fail as one unit (<code>BEGIN … COMMIT</code> / <code>ROLLBACK</code>)</td>
+<td><a href="../../../data/basics/databases/#transactions-acid">Databases → Transactions &amp; ACID</a>, <a href="https://en.wikipedia.org/wiki/Database_transaction">Wikipedia: Transaction ↗</a></td>
+</tr>
+<tr>
+<td><strong>Schema Migration</strong></td>
+<td>Versioned, scripted change to a database schema; on live systems done as expand → migrate → contract</td>
+<td><a href="../system_design/#going-deeper_5">System Design Notes → Deployment Strategies</a>, <a href="https://en.wikipedia.org/wiki/Schema_migration">Wikipedia: Schema migration ↗</a></td>
+</tr>
+<tr>
 <td><strong>Isolation Levels</strong></td>
 <td>Read Uncommitted → Read Committed → Repeatable Read → Serializable: stronger isolation means fewer anomalies and less concurrency</td>
 <td><a href="../../../data/basics/databases/#isolation-levels">Databases → Isolation Levels</a></td>
@@ -5995,7 +6050,7 @@
 </tr>
 <tr>
 <td><strong>MapReduce / Spark / HDFS</strong></td>
-<td>Distributed processing and storage across many nodes</td>
+<td>MapReduce: process data in parallel <em>map</em> steps, then combine with <em>reduce</em> steps. Spark: an in-memory distributed engine that largely replaced it. HDFS: Hadoop's distributed file system that stores the data across nodes</td>
 <td><a href="../../../data/basics/big_data/#distributed-processing">Big Data → Distributed Processing</a></td>
 </tr>
 <tr>
@@ -6076,7 +6131,7 @@
 <tr>
 <td><strong>Incremental Load / Full Load / Backfill</strong></td>
 <td>Load only new or changed rows / reload everything / re-run history for past dates</td>
-<td><a href="../../../data/basics/data_engineering/#rule-of-thumb">Data Engineering → Rule of Thumb</a></td>
+<td><a href="../../../data/basics/data_engineering/#rule-of-thumb">Data Engineering → Rule of Thumb</a>, <a href="../system_design/#going-deeper_5">System Design Notes → Deployment Strategies (backfill)</a></td>
 </tr>
 <tr>
 <td><strong>CDC</strong></td>
@@ -6483,9 +6538,24 @@
 <td><a href="https://en.wikipedia.org/wiki/Prompt_engineering">Wikipedia: Prompt engineering ↗</a></td>
 </tr>
 <tr>
+<td><strong>Top-p / Top-k Sampling</strong></td>
+<td>Sample the next token only from the smallest set covering probability p / from the k most likely tokens</td>
+<td><a href="https://en.wikipedia.org/wiki/Top-p_sampling">Wikipedia: Top-p sampling ↗</a></td>
+</tr>
+<tr>
+<td><strong>Vibe Coding</strong></td>
+<td>Building by prompting an AI and accepting its code without reading it closely</td>
+<td><a href="../../../ai/basics/skills_map/#2-software-engineering-fundamentals">Skills Map → Software Engineering Fundamentals</a>, <a href="https://en.wikipedia.org/wiki/Vibe_coding">Wikipedia: Vibe coding ↗</a></td>
+</tr>
+<tr>
 <td><strong>Local Inference</strong></td>
 <td>Running models on your own hardware (Ollama, vLLM, llama.cpp)</td>
 <td><a href="../../../ai/tool_tip/tools/#local-inference-and-serving">AI Tools → Local Inference</a></td>
+</tr>
+<tr>
+<td><strong>Jupyter Notebook</strong></td>
+<td>Interactive document mixing code, output, and notes; standard for data analysis and ML experiments</td>
+<td><a href="https://en.wikipedia.org/wiki/Project_Jupyter">Wikipedia: Project Jupyter ↗</a></td>
 </tr>
 <tr>
 <td><strong>RAG</strong></td>
@@ -6539,7 +6609,7 @@
 </tr>
 <tr>
 <td><strong>GSD / BMad / Spec Kit / Agent OS</strong></td>
-<td>Spec-driven tooling approaches for AI coding</td>
+<td>Spec-driven tools for AI coding. GSD: a discuss → plan → execute → verify → ship loop with state files. BMad: multi-role (product, architecture, UX, dev, test) delivery lifecycle. Spec Kit: GitHub's principles → spec → plan → tasks flow. Agent OS: captures codebase conventions to guide specs</td>
 <td><a href="../../../ai/tool_tip/spec_driven_development/#four-tooling-approaches">Spec-Driven Development → Four Tooling Approaches</a></td>
 </tr>
 <tr>
@@ -6551,6 +6621,26 @@
 <td><strong>Supervised / Unsupervised / Reinforcement Learning</strong></td>
 <td>Learn from labeled examples / find structure without labels / learn by reward</td>
 <td><a href="../../../ai/basics/concepts/#machine-learning">AI Concepts → Machine Learning</a></td>
+</tr>
+<tr>
+<td><strong>Neural Network / Backpropagation</strong></td>
+<td>Layers of weighted units that learn by passing errors backward to adjust the weights</td>
+<td><a href="../../../ai/basics/concepts/#deep-learning">AI Concepts → Deep Learning</a>, <a href="https://en.wikipedia.org/wiki/Backpropagation">Wikipedia: Backpropagation ↗</a></td>
+</tr>
+<tr>
+<td><strong>Hyperparameter / Cross-validation</strong></td>
+<td>Settings chosen before training (learning rate, depth) / rotating train–validation splits to estimate performance reliably</td>
+<td><a href="../../../ai/basics/concepts/#machine-learning">AI Concepts → Machine Learning</a>, <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">Wikipedia: Cross-validation ↗</a></td>
+</tr>
+<tr>
+<td><strong>Feature Engineering / Feature Store</strong></td>
+<td>Turning raw data into model inputs / a shared system that serves the same features to training and production</td>
+<td><a href="../../../ai/basics/concepts/#statistical">AI Concepts → Statistical</a>, <a href="https://en.wikipedia.org/wiki/Feature_engineering">Wikipedia: Feature engineering ↗</a></td>
+</tr>
+<tr>
+<td><strong>Data Drift / Model Drift</strong></td>
+<td>Production inputs shift away from the training data / the model's accuracy decays as a result</td>
+<td><a href="https://en.wikipedia.org/wiki/Concept_drift">Wikipedia: Concept drift ↗</a></td>
 </tr>
 <tr>
 <td><strong>NLP</strong></td>
@@ -6675,7 +6765,7 @@
 <tr>
 <td><strong>Prompt Caching</strong></td>
 <td>Reuse the processed prefix of a prompt to cut cost and latency</td>
-<td><a href="../../../ai/tool_tip/claude_code/#session-hygiene">Claude Code → Session Hygiene</a></td>
+<td><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-caching">Claude Docs: Prompt caching ↗</a></td>
 </tr>
 <tr>
 <td><strong>Context Compaction</strong></td>

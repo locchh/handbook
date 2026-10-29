@@ -288,7 +288,7 @@ Cap how many requests a client can make. Algorithms: token bucket, leaky bucket,
 
 ### CAP Theorem
 
-In a distributed system you can pick two of three: **Consistency, Availability, Partition tolerance**. Since network partitions are a fact of life, real systems are either **CP** (MongoDB, HBase) or **AP** (Cassandra, DynamoDB).
+A distributed system wants **Consistency, Availability, Partition tolerance**, but network partitions are a fact of life, so the real choice is what to give up *during* a partition: consistency or availability. Systems are therefore either **CP** (MongoDB, HBase), which refuse some requests to stay consistent, or **AP** (Cassandra, DynamoDB), which keep answering with possibly stale data.
 
 ### Performance Bottlenecks
 
