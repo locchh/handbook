@@ -41,6 +41,20 @@ In 2001, seventeen developers gathered at a ski lodge in Utah, frustrated by yea
 
 **Ref:** [Agile Manifesto](https://agilemanifesto.org/) (2001)
 
+
+**How the frameworks relate:** Agile is a set of values, not a process. Scrum, Kanban, XP, Shape Up, and SAFe are frameworks that put those values into practice. Kanban also draws directly on Lean.
+
+```mermaid
+flowchart TD
+    AG["Agile: values and principles (Manifesto, 2001)"] --> SC[Scrum]
+    AG --> XP[XP]
+    AG --> SU[Shape Up]
+    AG --> SF["SAFe: Scrum scaled to many teams"]
+    AG --> KB[Kanban]
+    LN[Lean] --> KB
+    SC --> SF
+```
+
 ---
 
 ### 4. DevOps
@@ -169,24 +183,52 @@ Waterfall treats software like construction: lay the foundation before the walls
 
 **Ref:** Winston Royce, [_Managing the Development of Large Software Systems_](http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf) (1970)
 
+
+**How it works:** each phase ends at a milestone where its deliverable is signed off. Only then does the next phase start.
+
+```mermaid
+flowchart TD
+    R[Requirements] -->|"M1: SRS signed off"| D[Design]
+    D -->|"M2: design approved"| I[Implementation]
+    I -->|"M3: code complete"| T[Testing]
+    T -->|"M4: UAT signed off"| DP[Deployment]
+    DP -->|"M5: go-live"| M[Maintenance]
+```
+
+**Where the work items sit:** the plan is a set of [phases, milestones, and deliverables](work_items.md#phase-milestone-and-deliverable), broken into WBS tasks on a Gantt chart. Requirements produce the [BRD and SRS](sdlc_documents.md#analysis-documents). Design produces the [design doc and detailed design](sdlc_documents.md#design-documents). Testing produces the [test plan, test cases, test summary report, and UAT sign-off](sdlc_documents.md#testing-documents). Deployment runs the [rehearsal](sdlc_documents.md#rehearsal), the [go / no-go](sdlc_documents.md#go-no-go-meeting), and the [release checklist](sdlc_documents.md#release-checklist). Any change to signed-off requirements is a [scope change request](work_items.md#scope-change-request) against the baseline. Most [bugs](work_items.md#bug) surface in the Testing phase, which is late and expensive to fix.
+
 ---
 
 ### 2. V-Model - "For every step, define how you'll prove it worked"
 
 > _"For every decision, define how you'll prove it worked."_
 
-```ascii
-Requirements ————————————————————————— Acceptance Test
-  Architecture ——————————————————— Integration Test
-            Design —————————— System Test
-                  Code — Unit Test
+```mermaid
+flowchart TD
+    REQ[Requirements analysis] --> SYS[System design]
+    SYS --> ARC[Architecture design]
+    ARC --> MOD[Module design]
+    MOD --> CODE[Coding]
+    CODE --> UT[Unit testing]
+    UT --> IT[Integration testing]
+    IT --> ST[System testing]
+    ST --> AT[Acceptance testing]
+    REQ -.->|acceptance test plan| AT
+    SYS -.->|system test plan| ST
+    ARC -.->|integration test plan| IT
+    MOD -.->|unit test plan| UT
 ```
+
+The left side goes down from requirements to code, and the right side climbs back up through testing. Each dotted line pairs a design level with the test level that verifies it. That test plan is written *at the same time* as the design, not after the code.
 
 An evolution of Waterfall for high-stakes domains. At every stage of development, you define a corresponding test that will prove the work was done correctly. Requirements get acceptance tests. Architecture gets integration tests. Code gets unit tests. Nothing moves forward without a plan for verifying it — because in aviation or medical devices, "it seemed to work" isn't good enough.
 
 **Use when:** Safety-critical systems where correctness must be formally proven at every level.
 
 **Ref:** Barry Boehm; DO-178C (aviation) and IEC 62304 (medical software) standards
+
+
+**Where the work items sit:** the same phases, milestones, and sign-offs as Waterfall. Each design document (SRS, system design, architecture, [detailed design](sdlc_documents.md#detailed-design)) comes with its own [test plan](sdlc_documents.md#test-plan). An [RTM](sdlc_documents.md#rtm) traces every requirement to the test that proves it. A bug found on the right side is traced back to the left-side level whose specification it breaks.
 
 ---
 
@@ -204,6 +246,23 @@ Scrum broke the long planning horizon into short, repeatable sprints of one to t
 
 **Practical detail:** [Lifecycle → Agile, Scrum, Kanban](lifecycle.md#agile-scrum-kanban)
 
+
+**How it works:**
+
+```mermaid
+flowchart TD
+    PB[(Product Backlog)] --> SP[Sprint Planning]
+    SP --> SB[(Sprint Backlog + Sprint Goal)]
+    SB --> SPR["Sprint, 1–4 weeks, with a Daily Scrum each day"]
+    SPR --> INC[Increment that meets the Definition of Done]
+    INC --> SR[Sprint Review]
+    SR --> RE[Sprint Retrospective]
+    RE -->|next sprint| SP
+    SR -.->|feedback reorders| PB
+```
+
+**Where the work items sit:** [epics, stories, bugs, spikes, and tech debt](work_items.md#how-work-items-fit-together) wait in the ordered [Product Backlog](work_items.md#backlog) and are refined until they meet the Definition of Ready. [Sprint Planning](work_items.md#sprint-planning) sets the Sprint Goal and breaks stories into [tasks](work_items.md#task-and-sub-task). Inside the sprint, each story runs a small SDLC of its own: design, code, [pull request](work_items.md#pull-request-merge-request) and review, test. The [Sprint Review](work_items.md#sprint-review) turns feedback into backlog changes, and the [Retrospective](work_items.md#sprint-retrospective) produces action items. A change of mind just reorders the backlog. A formal [change request](work_items.md#scope-change-request) is needed only when a contract fixes the scope.
+
 ---
 
 ### 4. Kanban - "Finish before you start something new"
@@ -218,6 +277,20 @@ Where Scrum organizes work into time-boxed sprints, Kanban lets work flow contin
 
 **Practical detail:** [Lifecycle → Agile, Scrum, Kanban](lifecycle.md#agile-scrum-kanban)
 
+
+**How it works:** a board with one column per step and a WIP limit on each column. A card moves right only when the next column has room.
+
+```mermaid
+flowchart LR
+    BL[Backlog] --> RD["Ready (WIP 5)"]
+    RD --> DV["Doing (WIP 3)"]
+    DV --> RV["Review (WIP 2)"]
+    RV --> TS["Test (WIP 2)"]
+    TS --> DN[Done]
+```
+
+**Where the work items sit:** every card is a work item of any type: [story](work_items.md#user-story), [task](work_items.md#task-and-sub-task), [bug](work_items.md#bug), incident follow-up, or service request. The columns are the SDLC phases. Urgent work such as a [production incident](work_items.md#production-incident) uses an *expedite* swimlane that may break the WIP limit. There are no sprints. Instead there are regular meetings: a *replenishment* meeting refills Ready, and *delivery reviews* look at lead time, cycle time, and the cumulative flow diagram. Releases happen whenever work is done. **Scrumban** keeps Scrum's roles and retrospectives but replaces sprint commitments with a Kanban flow.
+
 ---
 
 ### 5. SAFe - "Scrum, but for 50 teams"
@@ -229,6 +302,25 @@ When Agile teams multiply across a large organization, the question becomes: how
 **Use when:** Many teams across an organization need to coordinate and ship together.
 
 **Ref:** Dean Leffingwell, [Scaled Agile Framework](https://scaledagileframework.com/)
+
+
+**How it works:**
+
+```mermaid
+flowchart TD
+    PF["Portfolio: strategic themes, epics, lean budgets"] --> ART["Agile Release Train (5–12 teams): features in the ART backlog"]
+    ART --> PIP["PI Planning: every 8–12 weeks, all teams plan together"]
+    PIP --> T1["Team 1: stories, 2-week iterations"]
+    PIP --> T2["Team 2: stories, 2-week iterations"]
+    PIP --> T3["Team n: stories, 2-week iterations"]
+    T1 --> SD[System Demo]
+    T2 --> SD
+    T3 --> SD
+    SD --> IA[Inspect and Adapt at the end of the PI]
+    IA -.->|next PI| PIP
+```
+
+**Where the work items sit:** portfolio [epics](work_items.md#epic) are split into *features* (each fits in one PI), and features into [stories](work_items.md#user-story) (each fits in one iteration). PI Planning produces PI objectives and a board of cross-team dependencies. The PI boundaries act as milestones, while releases can happen on demand. SAFe 6.0 renamed the *Program Increment* to the [Planning Interval ↗](https://framework.scaledagile.com/planning-interval); both are abbreviated PI.
 
 ---
 
@@ -242,6 +334,21 @@ Kent Beck asked a simple question: if code review is good, what if you reviewed 
 
 **Ref:** Kent Beck, [_Extreme Programming Explained_](https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658) (1999)
 
+
+**How it works:** nested feedback loops, from months down to minutes.
+
+```mermaid
+flowchart TD
+    RP["Release plan: months"] --> IP["Iteration: 1–2 weeks"]
+    IP --> DY["Day: stand-up, pair programming"]
+    DY --> TDDL["Minutes: TDD, red → green → refactor"]
+    TDDL --> CI["Hours: continuous integration"]
+    CI -.-> DY
+    IP -.->|small release| RP
+```
+
+**Where the work items sit:** XP is where [user stories](work_items.md#user-story) (on index cards) and [spikes](work_items.md#spike) come from. The customer writes acceptance tests for each story. Developers split stories into tasks and estimate them, and the velocity of the last iteration ("yesterday's weather") sets how much fits in the next one.
+
 ---
 
 ### 7. Shape Up - "Decide how much time it's worth, not how long it takes"
@@ -254,6 +361,19 @@ Basecamp grew tired of backlogs that never shrank and estimates that never held.
 
 **Ref:** Ryan Singer, [_Shape Up_](https://basecamp.com/shapeup) — Basecamp (free online book)
 
+
+**How it works:**
+
+```mermaid
+flowchart TD
+    SH["Shaping: senior people write a pitch"] --> BT["Betting table: pick pitches for the next cycle"]
+    BT --> CY["6-week cycle: a small team builds it end to end"]
+    CY --> CD["2-week cooldown: fix bugs, explore, shape the next pitches"]
+    CD --> BT
+```
+
+**Where the work items sit:** Shape Up has no backlog. A *pitch* replaces the epic and the story: it states the problem, the appetite, a rough solution, the rabbit holes, and the no-gos. The team splits the work into *scopes* instead of tasks and tracks progress on *hill charts*. A *circuit breaker* applies: work that isn't done in six weeks does not roll over automatically. It must be pitched again.
+
 ---
 
 ### 8. RUP - "Waterfall + iteration + formal governance"
@@ -265,6 +385,143 @@ RUP was IBM's answer to the rigidity of Waterfall and the looseness of early ite
 **Use when:** Large enterprise or government projects requiring formal traceability and documented governance.
 
 **Ref:** Philippe Kruchten, [_The Rational Unified Process_](https://www.amazon.com/Rational-Unified-Process-Introduction-3rd/dp/0321197704) (1998)
+
+
+**How it works:** four phases, each ending in a milestone, with iterations inside every phase. All the disciplines (requirements, design, implementation, test, deployment) run in every phase, just with different intensity.
+
+```mermaid
+flowchart TD
+    IN[Inception] -->|"LCO: Lifecycle Objectives"| EL[Elaboration]
+    EL -->|"LCA: Lifecycle Architecture"| CO[Construction]
+    CO -->|"IOC: Initial Operational Capability"| TR[Transition]
+    TR -->|"PR: Product Release"| RL([Release])
+```
+
+**Where the work items sit:** [phases and milestones](work_items.md#phase-milestone-and-deliverable) as in Waterfall, but each phase is planned as a series of iterations. The key artifacts are the vision document, the [use cases](sdlc_documents.md#use-case), the software architecture document, and an iteration plan per iteration.
+
+---
+
+### 9. Iterative & Incremental - "Build it in slices, improve it each pass"
+
+> _"Deliver a working slice, learn, repeat."_
+
+Instead of one long pass through the SDLC, the project is split into increments. Each increment goes through analysis, design, build, and test, and delivers a working slice of the system. Later increments add features (*incremental*) and improve what earlier ones built (*iterative*). It is older than Agile and is the common ancestor of Scrum, RUP, and Spiral.
+
+**Use when:** Requirements are mostly known but too big to deliver in one go, or you want early feedback without adopting a full framework.
+
+**Ref:** Craig Larman & Victor Basili, _Iterative and Incremental Development: A Brief History_ (IEEE Computer, 2003); [Wikipedia ↗](https://en.wikipedia.org/wiki/Iterative_and_incremental_development)
+
+**How it works:**
+
+```mermaid
+flowchart TD
+    P[Overall plan and core requirements] --> I1["Increment 1: analyze → design → build → test"]
+    I1 --> R1([Release or demo 1])
+    R1 --> I2["Increment 2: analyze → design → build → test"]
+    I2 --> R2([Release or demo 2])
+    R2 --> IN["Increment n …"]
+    IN --> F([Final release])
+    R1 -.->|feedback| I2
+    R2 -.->|feedback| IN
+```
+
+**Where the work items sit:** the release plan lists the increments as [milestones](work_items.md#phase-milestone-and-deliverable). Each increment has its own scope list (features or [stories](work_items.md#user-story)), its own test cycle, and its own [release notes](sdlc_documents.md#release-notes). Feedback changes the scope of the next increment instead of turning into a formal change request, unless the contract fixes scope.
+
+---
+
+### 10. Hybrid (Water-Scrum-Fall) - "Plan like waterfall, build like Scrum"
+
+> _"Fixed milestones outside, sprints inside."_
+
+Most real projects, outsourcing and fixed-price ones especially, are hybrid. The contract, budget, and milestones are planned up front, waterfall style. Development runs in Scrum sprints. Release goes back to waterfall, with formal SIT, UAT, sign-off, and go-live. Forrester analyst Dave West named this pattern *Water-Scrum-Fall* in 2011. It fits when the client needs a fixed date, price, or formal acceptance but the team still wants short feedback loops. The risk is that the up-front phase locks scope so tightly that each sprint becomes a mini-waterfall. Keep a working change-request process and an ordered backlog inside the fixed scope.
+
+**Use when:** Contracts fix scope, price, or dates and need formal acceptance, but the team wants iterative delivery.
+
+**Ref:** Dave West, _Water-Scrum-Fall Is the Reality of Agile for Most Organizations Today_ (Forrester, 2011)
+
+**How it works:**
+
+```mermaid
+flowchart TD
+    subgraph PLAN ["Waterfall: plan"]
+        A["Requirements: BRD, SRS, contract, milestone plan"] --> D[High-level design]
+    end
+    subgraph BUILD ["Scrum: build"]
+        PB[(Product backlog from the SRS)] --> SP["Sprints 1…n: stories, tasks, PRs, sprint reviews"]
+        SP -->|demo each sprint| PB
+    end
+    subgraph RELEASE ["Waterfall: release"]
+        SIT[SIT] --> UAT[UAT and sign-off]
+        UAT --> RH[Rehearsal and go / no-go]
+        RH --> GL[Go-live and hypercare]
+    end
+    D --> PB
+    SP --> SIT
+    CR[Change requests] -.-> PB
+```
+
+**Where the work items sit:** the outer plan is made of [phases, milestones, and deliverables](work_items.md#phase-milestone-and-deliverable), from M1 (SRS signed off) to M5 (go-live), often with payments attached. Changes to signed-off scope are [scope change requests](work_items.md#scope-change-request) against that baseline. Inside the build phase, the work is [epics, stories, tasks, and bugs](work_items.md#how-work-items-fit-together) in [sprints](work_items.md#sprint) with a Definition of Done. The release phase uses the [test plan, test summary report, UAT sign-off](sdlc_documents.md#testing-documents), [rehearsal](sdlc_documents.md#rehearsal), [go / no-go](sdlc_documents.md#go-no-go-meeting), and [release notes](sdlc_documents.md#release-notes). It ends with hypercare and a [handover](sdlc_documents.md#handover-document).
+
+---
+
+### 11. Spiral - "Spend the most effort where the risk is"
+
+> _"Find the biggest risk, kill it, repeat."_ 
+
+Barry Boehm's spiral model treats a project as a series of loops. Each loop starts by naming the biggest remaining risk and reducing it, often by building a prototype, before developing the next, more complete version. The loops grow in cost and completeness until the final one, which looks a lot like waterfall. It introduced the idea that *risk*, not a fixed sequence of phases, should drive the plan.
+
+**Use when:** Large, novel, high-risk systems, where the main question is "can this even work?"
+
+**Ref:** Barry Boehm, _A Spiral Model of Software Development and Enhancement_ (IEEE Computer, 1988); [Wikipedia ↗](https://en.wikipedia.org/wiki/Spiral_model)
+
+**How it works:**
+
+```mermaid
+flowchart TD
+    O["1. Set objectives, alternatives, constraints"] --> R["2. Analyze risks; build a prototype"]
+    R --> D["3. Develop and test the next version"]
+    D --> P["4. Review with stakeholders; plan the next loop"]
+    P -->|next loop, bigger and more complete| O
+```
+
+**Where the work items sit:** each loop ends at a review [milestone](work_items.md#phase-milestone-and-deliverable). The central artifact is the risk register (see [RAID log](work_items.md#other-item-types)), and [spikes](work_items.md#spike) and prototypes are the main tools for reducing risk.
+
+---
+
+### Comparing the Models
+
+| Model | Planning | Delivery | Change is handled by | Best for |
+|---|---|---|---|---|
+| **Waterfall** | All up front | Once, at the end | A formal CR against the baseline | Stable, well-understood requirements |
+| **V-Model** | All up front, with a test plan per level | Once, at the end | A formal CR, plus re-verification | Safety-critical systems |
+| **Iterative & Incremental** | An overall plan, plus a plan per increment | Each increment | The next increment's scope | Large systems with mostly known requirements |
+| **Spiral** | One loop at a time, driven by risk | Prototypes, then releases | The next loop | Large, novel, high-risk systems |
+| **RUP** | Phases with milestones, iterations inside | End of Construction / Transition | Iteration plans | Large enterprise or government projects |
+| **Scrum** | A product goal, plus one sprint at a time | Potentially every sprint | Reordering the backlog | Product teams with changing requirements |
+| **Kanban** | Continuous replenishment | Continuously | Reordering the queue | Support, ops, maintenance, unpredictable inflow |
+| **XP** | A release plan, plus iterations | Small, frequent releases | The next iteration | Teams that want strong engineering practices |
+| **Shape Up** | One six-week bet at a time | Each cycle | The next betting table | Small, autonomous product teams |
+| **SAFe** | Portfolio plus PI plans | Each PI, or on demand | PI planning | Many teams on one product line |
+| **Hybrid** | Milestones up front, sprints inside | At milestones (UAT, go-live) | CRs for scope; backlog order inside it | Fixed-price and outsourcing projects |
+
+---
+
+### Same Work, Different Words
+
+Each model names the same ideas differently. The items are defined, with templates, on [Work Items & Templates](work_items.md) and [SDLC Documents & Templates](sdlc_documents.md).
+
+| Concept | Waterfall / V-Model | Scrum | Kanban | SAFe |
+|---|---|---|---|---|
+| **Unit of time** | Phase | Sprint | None (continuous flow) | PI, split into iterations |
+| **Checkpoint** | Milestone, phase gate | Sprint Review | Delivery review | System Demo, Inspect & Adapt |
+| **Big unit of work** | Deliverable, work package | Epic | Epic, or a large card | Epic → Feature |
+| **Small unit of work** | WBS task | Story → task | Card | Story → task |
+| **Requirements live in** | BRD / SRS | Product Backlog | The backlog column | ART and team backlogs |
+| **Changing scope** | Change request against the baseline | Reorder the backlog | Reorder the backlog | Re-plan at PI planning |
+| **Progress shown by** | Gantt chart, % complete | Burndown, velocity | Cumulative flow, cycle time | PI objectives, burn-up |
+| **Owner of the plan** | Project Manager | Product Owner | The team / service delivery manager | Product Management, RTE |
+| **"Done" means** | Deliverable signed off | Definition of Done met | Reached the Done column | DoD met, PI objectives achieved |
+| **Looking back** | Lessons learned | Retrospective | Retrospective / operations review | Inspect & Adapt |
 
 ---
 
@@ -322,7 +579,7 @@ In a complex business, the hardest part of building software is understanding th
 | DDD   | Domain-Driven Design          | Model code around the real-world business domain       |
 | DRY   | Don't Repeat Yourself         | One source of truth for every piece of knowledge       |
 | KISS  | Keep It Simple, Stupid        | The simplest solution is usually the best              |
-| PI    | Program Increment             | ~10-week synchronized cycle across Scrum teams (SAFe)  |
+| PI    | Program Increment (Planning Interval since SAFe 6.0) | ~10-week synchronized cycle across Scrum teams (SAFe)  |
 | RUP   | Rational Unified Process      | IBM's structured iterative development process         |
 | SAFe  | Scaled Agile Framework        | Agile practices scaled for large organizations         |
 | SoC   | Separation of Concerns        | Different responsibilities belong in different parts   |

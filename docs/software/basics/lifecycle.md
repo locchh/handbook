@@ -19,6 +19,8 @@ Analysis → Design → Development → Testing → Deployment → Maintenance
 | **Deployment** | Release notes, deployment scripts, runbooks |
 | **Maintenance** | Hotfixes, monitoring, incident reports |
 
+For each work item type (epic, user story, task, bug, change request, incident, …), the phase it belongs to and a template to copy, see [Work Items & Templates](work_items.md#work-items-across-the-sdlc). For the documents of each phase (BRD, SRS, design doc, ADR, test plan, release checklist, runbook, …) and the events around them (kickoff, rehearsal, go / no-go), see [SDLC Documents & Templates](sdlc_documents.md#documents-by-phase). How Waterfall, V-Model, Scrum, Kanban, Hybrid, and other models run these phases is in [Philosophies & Methodologies](methodologies.md#comparing-the-models).
+
 ## Roles
 
 | Role | Responsibility |
@@ -52,7 +54,7 @@ Agile is a mindset, not a process. The Agile Manifesto values **people, working 
 
 **Kanban** — continuous flow instead of sprints. Visualize work on a board, limit WIP, measure cycle time, improve the flow. Better suited to support and ops-style work.
 
-Use Scrum when you want predictable delivery cadence and a clear rhythm; Kanban when priorities shift too fast to plan in two-week chunks.
+Use Scrum when you want predictable delivery cadence and a clear rhythm; Kanban when priorities shift too fast to plan in two-week chunks. Diagrams of each model, plus Waterfall, V-Model, Hybrid, and others, are in [Philosophies & Methodologies](methodologies.md#methodologies-the-how-to-do).
 
 ## Testing
 
