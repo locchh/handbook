@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {#- Point agents at the Markdown version the llmstxt plugin generates. -#}
+  {% if page and page.file %}
+    <link rel="alternate" type="text/markdown" title="Markdown" href="{{ config.site_url }}{{ page.file.dest_uri | replace('.html', '.md') }}">
+  {% endif %}
+{% endblock %}

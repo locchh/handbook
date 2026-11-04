@@ -12,6 +12,7 @@ edit_uri: edit/main/docs/
 # Theme
 theme:
   name: material
+  custom_dir: overrides
   palette:
     # Darker color scheme
     primary: indigo
@@ -103,4 +104,5 @@ plugins:
           - ai/basics/*.md
           - ai/tool_tip/*.md
         Reference:
+          - index.md
           - about.md
