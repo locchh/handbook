@@ -901,6 +901,8 @@
       
         
       
+        
+      
     
     
     
@@ -1466,85 +1468,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#measuring-delivery-from-work-items" class="md-nav__link">
+  <a href="#delivery-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Measuring Delivery from Work Items
+        Delivery Metrics
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Measuring Delivery from Work Items">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-ito-clock" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The ITO Clock
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dora-for-ito" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DORA for ITO
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#space-why-the-dora-numbers-move" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SPACE: Why the DORA Numbers Move
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-per-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost per Outcome
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keep-work-items-measurable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Keep Work Items Measurable
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-large-companies-measure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Large Companies Measure
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1650,6 +1580,34 @@
     
   
     Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delivery_metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery & Productivity Metrics
   
 
     
@@ -3569,85 +3527,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#measuring-delivery-from-work-items" class="md-nav__link">
+  <a href="#delivery-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Measuring Delivery from Work Items
+        Delivery Metrics
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Measuring Delivery from Work Items">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-ito-clock" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The ITO Clock
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dora-for-ito" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DORA for ITO
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#space-why-the-dora-numbers-move" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SPACE: Why the DORA Numbers Move
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-per-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost per Outcome
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keep-work-items-measurable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Keep Work Items Measurable
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-large-companies-measure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Large Companies Measure
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5010,265 +4896,8 @@ Closes #482
 </code></pre></div>
 <p>Messages like <code>fix</code>, <code>update</code>, <code>WIP</code>, or <code>address review comments</code> tell a reader nothing. If the team squash-merges, only the MR title and description reach <code>main</code>, so work-in-progress commits on the branch don't matter much. If you merge or rebase <em>without</em> squashing, every commit lands on <code>main</code>, so clean them up first with an <a href="../git/#5-interactive-rebase-cleaning-up-history">interactive rebase</a>.</p>
 <p>To get the template every time you commit, save it as <code>~/.gitmessage</code> and run <code>git config --global commit.template ~/.gitmessage</code>.</p>
-<h2 id="measuring-delivery-from-work-items">Measuring Delivery from Work Items<a class="headerlink" href="#measuring-delivery-from-work-items" title="Permanent link">&para;</a></h2>
-<p>Delivery dashboards don't measure the team directly. They read the fields on your work items and compute metrics from them. A delivery dashboard such as <strong>Andon</strong> computes DORA and SPACE metrics from Jira (and the repo), and a governance and cost dashboard such as <strong>Banto</strong> meters the AI tokens spent per story, user, and agent. Both are only as good as the work items behind them: a wrong field on the ticket gives a wrong number on the dashboard.</p>
-<p>Two ground rules come first:</p>
-<ul>
-<li><strong>The metrics describe the delivery system, not people.</strong> They are never used for individual appraisal.</li>
-<li><strong>Read every metric as a trend against your own baseline</strong>, never as a single-period score and never alone. Set the baseline before the first measured sprint or phase.</li>
-</ul>
-<h3 id="the-ito-clock">The ITO Clock<a class="headerlink" href="#the-ito-clock" title="Permanent link">&para;</a></h3>
-<p>Standard DORA reads production deploy events. In outsourcing (ITO) projects the team usually hands over for the client's acceptance test and has no production access, so every metric is anchored to delivery milestones instead. All durations are counted in <strong>working days</strong>.</p>
-<pre class="mermaid"><code>flowchart LR
-    T0["T0 Start Implementation&lt;br/&gt;(Start date / Planned start)"] --&gt; D["D Story Done&lt;br/&gt;(Closed date)"]
-    D --&gt; T1["T1 Delivered for Acceptance&lt;br/&gt;(release / product released)"]
-    T1 --&gt; T2["T2 Accepted by client"]</code></pre>
-<table>
-<thead>
-<tr>
-<th>Point</th>
-<th>Comes from</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>T0</strong></td>
-<td>The work item's <em>Start date</em> or <em>Planned start</em></td>
-<td>If both are empty the tool falls back to the <em>Create date</em>, and Lead Time inflates silently</td>
-</tr>
-<tr>
-<td><strong>D</strong></td>
-<td>The date the story is <em>Closed</em></td>
-<td>Close it when it is really done, not in a bulk move at sprint end</td>
-</tr>
-<tr>
-<td><strong>T1</strong></td>
-<td>Agile: the <em>Fix Version</em> release date. Plan-driven: a <em>Product</em> with status <em>Released</em> and marked deliverable</td>
-<td>A release at T1 is the delivery event</td>
-</tr>
-<tr>
-<td><strong>T2</strong></td>
-<td>Client acceptance</td>
-<td>T1 → T2 is the client acceptance period</td>
-</tr>
-</tbody>
-</table>
-<h3 id="dora-for-ito">DORA for ITO<a class="headerlink" href="#dora-for-ito" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Question it answers</th>
-<th>ITO formula</th>
-<th>Work-item data it needs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>DF</strong> Delivery Frequency</td>
-<td>Are we hitting the delivery commitment?</td>
-<td>Delivery events at T1 ÷ measurement window</td>
-<td>Releases / products marked <em>Released</em>; merges to the branch named in a deployment rule</td>
-</tr>
-<tr>
-<td><strong>LT</strong> Lead Time for Delivery</td>
-<td>Is the pipeline slowing down?</td>
-<td>MEDIAN(T1 − T0), working days</td>
-<td>T0 filled; item type ticked as a delivery unit; item linked to its release</td>
-</tr>
-<tr>
-<td><strong>CFR</strong> Change Failure Rate</td>
-<td>Are deliveries causing damage?</td>
-<td>Failed deliveries ÷ all deliveries × 100%</td>
-<td>Customer-reported Bug with priority <em>Critical</em> or <em>Blocker</em>, linked to the release, raised within the CFR window after T1</td>
-</tr>
-<tr>
-<td><strong>MTTR</strong> Recovery Time</td>
-<td>When it fails, how fast do we fix it?</td>
-<td>MEDIAN(bug reported → fix delivered), working days</td>
-<td><em>Created</em> and <em>Resolved</em> dates of the CFR / DRR bugs; <em>Resolved</em> set when the fix reaches the client</td>
-</tr>
-<tr>
-<td><strong>DRR</strong> Delivery Rework Rate</td>
-<td>How often is a delivery sent back?</td>
-<td>Rejected and redelivered ÷ all deliveries × 100%</td>
-<td>Customer-reported Bug at any priority, linked to the release, raised within the DRR window after T1</td>
-</tr>
-</tbody>
-</table>
-<p>CFR and DRR read the same bugs. CFR counts only <em>Critical</em> and <em>Blocker</em>, so every CFR delivery is also a DRR delivery and CFR ≤ DRR. The window lengths are agreed with the client per project.</p>
-<pre class="mermaid"><code>flowchart LR
-    REL["Delivery at T1"] --&gt; BUG{"Customer bug&lt;br/&gt;on this delivery?"}
-    BUG -- "No" --&gt; OK["Counts in DF only"]
-    BUG -- "Any priority, inside DRR window" --&gt; DRR["Counts in DRR"]
-    DRR --&gt; SEV{"Critical / Blocker,&lt;br/&gt;inside CFR window?"}
-    SEV -- "Yes" --&gt; CFR["Also counts in CFR"]</code></pre>
-<h3 id="space-why-the-dora-numbers-move">SPACE: Why the DORA Numbers Move<a class="headerlink" href="#space-why-the-dora-numbers-move" title="Permanent link">&para;</a></h3>
-<p>DORA says <em>what</em> happened; SPACE explains <em>why</em>. Read them in pairs (for example, Lead Time with Efficiency, or AI-assisted ratio with DRE).</p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Measure</th>
-<th>Work-item data it needs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>S</strong> Satisfaction</td>
-<td>Quarterly team survey</td>
-<td>—</td>
-</tr>
-<tr>
-<td><strong>P</strong> Performance (DRE)</td>
-<td>Defects found in the sprint or phase ÷ all defects, including those escaped to later phases or UAT</td>
-<td>Each Bug records the phase or sprint where it was found and is linked when it escaped</td>
-</tr>
-<tr>
-<td><strong>A</strong> Activity: AI-assisted ratio</td>
-<td>Agent-completed tasks ÷ all completed tasks</td>
-<td>AI-assisted tasks are tagged the same way every time</td>
-</tr>
-<tr>
-<td><strong>C</strong> Collaboration</td>
-<td>MEDIAN(first review − PR opened)</td>
-<td>PRs with timestamps, linked to their items</td>
-</tr>
-<tr>
-<td><strong>E</strong> Efficiency</td>
-<td>D − T0 per story, working days</td>
-<td>T0 and the Closed date filled correctly</td>
-</tr>
-</tbody>
-</table>
-<h3 id="cost-per-outcome">Cost per Outcome<a class="headerlink" href="#cost-per-outcome" title="Permanent link">&para;</a></h3>
-<p>When agents do part of the work, effort hours no longer show what a story cost. The cost becomes <strong>token + labor + other</strong>. Banto meters token spend live per story, user, and agent, logs every AI conversation (prompt, model, tokens, tool calls, file edits), and flags violations such as an unapproved model or PII in a prompt. Labor cost comes from the timesheet or project system (for example MB4 or Jira), and other cost (licences, infrastructure) from finance systems.</p>
-<pre class="mermaid"><code>flowchart LR
-    TOK["Token cost&lt;br/&gt;(Banto: per story / user / agent)"] --&gt; TOTAL["Total cost per outcome"]
-    LAB["Labor cost&lt;br/&gt;(timesheet / project system)"] --&gt; TOTAL
-    OTH["Other cost&lt;br/&gt;(licences, infrastructure)"] --&gt; TOTAL</code></pre>
-<h3 id="keep-work-items-measurable">Keep Work Items Measurable<a class="headerlink" href="#keep-work-items-measurable" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Mistake on the work item</th>
-<th>What the dashboard shows</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>Start date</em> / <em>Planned start</em> empty</td>
-<td>Lead Time inflated (T0 falls back to the Create date)</td>
-</tr>
-<tr>
-<td>Wrong item type, or the type is not ticked as a delivery unit</td>
-<td>Item missing from Lead Time, or not seen as a failure</td>
-</tr>
-<tr>
-<td>Wrong bug <em>Priority</em></td>
-<td>CFR under- or overstated</td>
-</tr>
-<tr>
-<td><em>Detected By</em> / <em>Role</em> not set to <em>Customer</em></td>
-<td>CFR = 0 and looks perfect</td>
-</tr>
-<tr>
-<td>Bug not linked to the release where it was found</td>
-<td>Bug counted against the wrong release, or not counted</td>
-</tr>
-<tr>
-<td>Release not marked <em>Released</em> / deliverable</td>
-<td>DF = 0, no T1</td>
-</tr>
-<tr>
-<td><em>Resolved</em> not set when the fix is delivered</td>
-<td>MTTR inflated (or understated if resolved too early)</td>
-</tr>
-<tr>
-<td>PR not linked to its item or release</td>
-<td>No Lead Time breakdown (Readiness → Coding → Review → Merge), or a release counted twice</td>
-</tr>
-</tbody>
-</table>
-<p>A short checklist for the Definition of Done:</p>
-<ul>
-<li>[ ] Item has the right type and is linked to its release (Fix Version / Product)</li>
-<li>[ ] <em>Start date</em> is set when work starts; the item is <em>Closed</em> when it is really done</li>
-<li>[ ] PRs reference the item key (see <a href="#linking-issues">Linking Issues</a>)</li>
-<li>[ ] AI-assisted work is tagged consistently</li>
-<li>[ ] Client bugs carry <em>Detected By = Customer</em>, a priority, the affected release, and <em>Resolved</em> when the fix is delivered</li>
-</ul>
-<p>If you cannot name the issues behind a number, it is not evidence yet. Every tile should resolve to a saved filter listing its work items.</p>
-<h3 id="how-large-companies-measure">How Large Companies Measure<a class="headerlink" href="#how-large-companies-measure" title="Permanent link">&para;</a></h3>
-<p>The DORA-for-ITO and SPACE metrics above are adaptations of public frameworks that large engineering organizations use. The main ones:</p>
-<table>
-<thead>
-<tr>
-<th>Framework</th>
-<th>From</th>
-<th>What it measures</th>
-<th>Worth knowing</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>DORA metrics</strong></td>
-<td>Google's DORA research program</td>
-<td>Five metrics in two groups. Throughput: change lead time, deployment frequency, failed deployment recovery time. Instability: change fail rate, deployment rework rate</td>
-<td>Rework rate was added in 2024, and recovery time moved from stability to throughput. See <a href="https://dora.dev/guides/dora-metrics/history/">DORA: History of the metrics ↗</a></td>
-</tr>
-<tr>
-<td><strong>DORA 2024 on AI</strong></td>
-<td>Google Cloud, 2024 State of DevOps report</td>
-<td>Delivery performance as AI adoption grows</td>
-<td>"As AI adoption increased, it was accompanied by an estimated decrease in delivery throughput by 1.5%, and an estimated reduction in delivery stability by 7.2%." Measure delivery outcomes, not only AI usage. See <a href="https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report">Announcing the 2024 DORA report ↗</a></td>
-</tr>
-<tr>
-<td><strong>SPACE</strong></td>
-<td>GitHub, Microsoft Research, University of Victoria (2021)</td>
-<td>Satisfaction and well-being, Performance, Activity, Communication and collaboration, Efficiency and flow</td>
-<td>Productivity can't be reduced to one metric. Use several dimensions together and report at team level. See <a href="https://queue.acm.org/detail.cfm?id=3454124">The SPACE of Developer Productivity, ACM Queue ↗</a></td>
-</tr>
-<tr>
-<td><strong>DevEx</strong></td>
-<td>DX, University of Victoria, Microsoft Research (2023)</td>
-<td>Feedback loops, cognitive load, flow state</td>
-<td>Combines developer surveys with data from engineering systems. See <a href="https://queue.acm.org/detail.cfm?id=3595878">DevEx: What Actually Drives Productivity, ACM Queue ↗</a></td>
-</tr>
-<tr>
-<td><strong>DX Core 4</strong></td>
-<td>DX, with input from the DORA, SPACE, and DevEx authors</td>
-<td>Speed, Effectiveness, Quality, Impact</td>
-<td>Unifies DORA, SPACE, and DevEx. Balances speed against experience and quality; warns that activity metrics such as diffs per engineer are easy to game. See <a href="https://getdx.com/research/measuring-developer-productivity-with-the-dx-core-4/">Measuring developer productivity with the DX Core 4 ↗</a></td>
-</tr>
-<tr>
-<td><strong>Google: QUANTS, speed / ease / quality</strong></td>
-<td>Google Engineering Productivity Research</td>
-<td>Quality of code, Attention, iNtellectual complexity, Tempo and velocity, Satisfaction</td>
-<td>No single metric; triangulate logs, surveys, interviews, and diary studies. Before choosing a metric, ask whether a bad result would change a decision. See <a href="https://getdx.com/blog/how-google-measures-developer-productivity/">How Google measures developer productivity (DX) ↗</a></td>
-</tr>
-<tr>
-<td><strong>LinkedIn DPH Framework</strong></td>
-<td>LinkedIn, open source</td>
-<td>Goals → Signals → Metrics, with "Persona Champions" representing each kind of engineer</td>
-<td>Includes principles and common pitfalls for designing engineering metrics. See <a href="https://linkedin.github.io/dph-framework">The LinkedIn DPH Framework ↗</a></td>
-</tr>
-<tr>
-<td><strong>GitHub Copilot impact</strong></td>
-<td>GitHub with Accenture</td>
-<td>Randomized controlled trial on AI-assisted development in an enterprise, plus the Copilot usage metrics API (for example, acceptance rate)</td>
-<td>Usage metrics come from IDE telemetry, so users without telemetry enabled are missing from the numbers. See <a href="https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise-with-accenture/">Quantifying GitHub Copilot's impact with Accenture ↗</a> and <a href="https://docs.github.com/en/copilot/concepts/copilot-usage-metrics/copilot-metrics">Copilot usage metrics ↗</a></td>
-</tr>
-</tbody>
-</table>
-<p>What they agree on, and what Andon and Banto follow:</p>
-<ul>
-<li><strong>No single metric.</strong> Pair a speed metric with a quality metric (DORA throughput with instability; Lead Time with DRR and CFR).</li>
-<li><strong>Measure teams and systems, not individuals.</strong></li>
-<li><strong>Combine system data with what developers report</strong> (SPACE, DevEx, Google, LinkedIn). In Andon, SPACE plays this role.</li>
-<li><strong>Judge AI by delivery outcomes and cost, not by adoption.</strong> An AI-assisted ratio that goes up while rework or failures go up is not a gain (DORA 2024). That is why Banto's cost per outcome sits next to Andon's quality metrics.</li>
-</ul>
+<h2 id="delivery-metrics">Delivery Metrics<a class="headerlink" href="#delivery-metrics" title="Permanent link">&para;</a></h2>
+<p>Delivery dashboards compute DORA, SPACE, and cost metrics from the fields on these work items: start and closed dates, item type, release links, bug priority, and who found the bug. A wrong field gives a wrong number. What each metric means, and the fields it reads, are on <a href="../delivery_metrics/">Delivery &amp; Productivity Metrics</a>. Its <a href="../delivery_metrics/#keep-work-items-measurable">Keep Work Items Measurable</a> section has a checklist to add to your Definition of Done.</p>
 <h2 id="other-item-types">Other Item Types<a class="headerlink" href="#other-item-types" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -21,6 +21,7 @@ A comprehensive collection of notes about Software Engineering, Data Science, an
 - [Networking](https://locchh.github.io/handbook/software/systems/networking/index.md)
 - [Security](https://locchh.github.io/handbook/software/systems/security/index.md)
 - [Code Review](https://locchh.github.io/handbook/software/process/code_review/index.md)
+- [Delivery & Productivity Metrics](https://locchh.github.io/handbook/software/process/delivery_metrics/index.md)
 - [Git: Merge vs Rebase](https://locchh.github.io/handbook/software/process/git/index.md)
 - [Lifecycle](https://locchh.github.io/handbook/software/process/lifecycle/index.md)
 - [Philosophies & Methodologies](https://locchh.github.io/handbook/software/process/methodologies/index.md)

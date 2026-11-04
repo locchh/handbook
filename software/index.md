@@ -31,6 +31,7 @@ Welcome to the Software Engineering section of my handbook. It is grouped the wa
 - **[SDLC Documents & Templates](https://locchh.github.io/handbook/software/process/sdlc_documents/index.md)** - BRD, SRS, design doc, ADR, test plan, changelog, release notes, runbook, plus kickoff, rehearsal, and go / no-go, organized by phase.
 - **[Git: Merge vs Rebase](https://locchh.github.io/handbook/software/process/git/index.md)** - Branch mechanics, conflicts, and the daily workflow.
 - **[Code Review](https://locchh.github.io/handbook/software/process/code_review/index.md)** - Reading a diff, reviewing a PR, and AI-assisted review.
+- **[Delivery & Productivity Metrics](https://locchh.github.io/handbook/software/process/delivery_metrics/index.md)** - DORA for outsourcing projects, SPACE, cost per outcome, and how large companies measure, computed from work-item fields.
 
 ## Career & Learning
 
