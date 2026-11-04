@@ -170,6 +170,8 @@ Three rules carry most of the model's value:
 - **Tag on `main`, never on `develop`.** The tag is what turns a commit into a release, and what you roll back to.
 - **`release/*` and `hotfix/*` merge both ways.** Merging only into `main` silently loses the fix in the next release. If a release branch is already open, a hotfix merges into *that* branch rather than straight into `develop`.
 
+When two people build one feature, don't both push to the same `feature/*` branch. Make it a merge point that takes PRs only, and give each person their own branch from it. See [Git → Two People on One Feature](https://locchh.github.io/handbook/software/process/git/#9-two-people-on-one-feature).
+
 Is Git Flow still the right default?
 
 Driessen added a caveat to his own post in 2020: the model was designed for software that keeps several versions live in production at once. If you practise continuous delivery, prefer something simpler — GitHub Flow, or trunk-based development (`main` + short-lived feature branches). Pick the simplest model your release cadence allows.

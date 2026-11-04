@@ -1475,6 +1475,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-two-people-on-one-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Two People on One Feature
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3367,6 +3378,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-two-people-on-one-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Two People on One Feature
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3704,12 +3726,14 @@ git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </
 <li>Use <code>git merge main</code> locally to catch up</li>
 <li>Maintain a local <code>main</code> branch — delete it, use <code>origin/main</code></li>
 <li>Leave stale branches for weeks</li>
+<li>Push to a branch someone else is also pushing to</li>
 </ul>
 <h2 id="8-golden-rules">8. Golden Rules<a class="headerlink" href="#8-golden-rules" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>Rebase to clean up your local work. Merge to integrate into shared history.</strong></p>
 <p><strong>main is protected and always merged online via PR.</strong></p>
 <p><strong>Feature branches are always rebased locally to catch up.</strong></p>
+<p><strong>A shared feature branch is a merge point: it changes only through PRs, and nobody rebases or force-pushes it</strong> (see <a href="#9-two-people-on-one-feature">Two People on One Feature</a>).</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>main (protected, on GitHub)
 ^
@@ -3719,6 +3743,87 @@ feature (local)
 └── rebased to catch up with origin/main
 └── pushed → PR → merged on GitHub
 </code></pre></div>
+<h2 id="9-two-people-on-one-feature">9. Two People on One Feature<a class="headerlink" href="#9-two-people-on-one-feature" title="Permanent link">&para;</a></h2>
+<p>Two people pushing to the same feature branch is a bad idea:</p>
+<ul>
+<li><strong>History gets overwritten.</strong> One rebase or force-push, and the other person's copy no longer matches. Their next push fails or brings old commits back.</li>
+<li><strong>Constant conflicts.</strong> You keep pulling each other's half-finished work.</li>
+<li><strong>No owner.</strong> Nobody is clearly responsible for CI, review comments, or when the branch is ready.</li>
+<li><strong>Hard to review.</strong> One PR mixes two people's changes.</li>
+</ul>
+<p>Instead, make the shared branch a <strong>merge point</strong>. Nobody commits to it directly. Each person works on their own branch from it and merges back through a PR. One owner finally merges the feature into <code>main</code>.</p>
+<div class="highlight"><pre><span></span><code>main
+└─ feature/checkout            ← merge point: one owner, PRs only
+   ├─ feature/checkout-api     ← person A
+   └─ feature/checkout-ui      ← person B
+</code></pre></div>
+<pre class="mermaid"><code>gitGraph
+    commit id: "main"
+    branch feature/checkout
+    checkout feature/checkout
+    branch feature/checkout-api
+    checkout feature/checkout-api
+    commit id: "api 1"
+    commit id: "api 2"
+    checkout feature/checkout
+    branch feature/checkout-ui
+    checkout feature/checkout-ui
+    commit id: "ui 1"
+    checkout feature/checkout
+    merge feature/checkout-api id: "PR: api"
+    checkout main
+    commit id: "other team"
+    checkout feature/checkout
+    merge main id: "update from main"
+    checkout feature/checkout-ui
+    commit id: "ui 2"
+    checkout feature/checkout
+    merge feature/checkout-ui id: "PR: ui"
+    checkout main
+    merge feature/checkout id: "PR: feature"</code></pre>
+<p><strong>The owner creates the merge point once.</strong> Then protect it on GitHub, or at least agree it takes PRs only:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/checkout<span class="w"> </span>origin/main
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>feature/checkout
+</code></pre></div>
+<p><strong>Each person works on their own branch.</strong> Like <code>main</code>, the merge point needs no local copy, so work from <code>origin/feature/checkout</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start your piece from the merge point</span>
+git<span class="w"> </span>fetch
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/checkout-ui<span class="w"> </span>origin/feature/checkout
+
+<span class="c1"># Do your work</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"meaningful commit message"</span>
+
+<span class="c1"># Catch up: rebasing is fine, this branch is yours</span>
+git<span class="w"> </span>fetch
+git<span class="w"> </span>rebase<span class="w"> </span>origin/feature/checkout
+
+<span class="c1"># Push and open a PR into the merge point, not into main</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>feature/checkout-ui
+<span class="c1"># after a rebase of an already-pushed branch:</span>
+git<span class="w"> </span>push<span class="w"> </span>--force-with-lease
+
+<span class="c1"># PR merged → delete it and start a fresh branch for the next piece</span>
+git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>feature/checkout-ui
+git<span class="w"> </span>fetch
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/checkout-ui-validation<span class="w"> </span>origin/feature/checkout
+</code></pre></div>
+<p>Start a fresh branch after every merge. If the PRs are squash-merged and you keep working on the old branch, your next PR conflicts with your own earlier work.</p>
+<p><strong>Keep the merge point up to date with <code>main</code>.</strong> This is the one place you catch up with a merge, because the merge point is shared history and must not be rebased. Do it online, never with a local <code>git merge</code>:</p>
+<ul>
+<li>open a PR from <code>main</code> into <code>feature/checkout</code>, or</li>
+<li>open the final <code>feature/checkout → main</code> PR early as a draft and click <strong>Update branch</strong> whenever <code>main</code> moves. Pick <em>Update with merge commit</em>, not <em>Update with rebase</em>. If <code>feature/checkout</code> is protected, GitHub may not offer the button; use the <code>main → feature/checkout</code> PR instead (<a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch">GitHub docs ↗</a>).</li>
+</ul>
+<p>After that, each person rebases their own branch onto <code>origin/feature/checkout</code> as usual.</p>
+<p><strong>Finish.</strong> When every piece is in, the owner reviews the <code>feature/checkout → main</code> PR, merges it on GitHub, and deletes <code>feature/checkout</code> and any leftover personal branches.</p>
+<p>Rules that keep it working:</p>
+<ul>
+<li>The merge point changes <strong>only through PRs</strong>. Nobody rebases or force-pushes it.</li>
+<li>Personal branches are <strong>short</strong>, a day or two each, and merge often.</li>
+<li><strong>One owner</strong> merges the feature into <code>main</code>. The whole feature stays short-lived, days rather than months. If part of it has to reach <code>main</code> before it's finished, hide it behind a feature flag.</li>
+</ul>
+<p><strong>When to skip this:</strong> if the two halves are independent, each person branches from <code>origin/main</code> and opens their own PR straight to <code>main</code>, behind a feature flag if needed. Fewer branches, same safety.</p>
 
 
 
