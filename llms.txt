@@ -70,5 +70,6 @@ A comprehensive collection of notes about Software Engineering, Data Science, an
 
 ## Reference
 
+- [Home](https://locchh.github.io/handbook/index.md)
 - [About](https://locchh.github.io/handbook/about/index.md)
 
