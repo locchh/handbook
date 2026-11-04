@@ -33,7 +33,7 @@ Examples: Snowflake / BigQuery / Redshift (warehouse), S3 / HDFS (lake), Delta /
 ## Batch vs Streaming
 
 - **Batch** — process scheduled chunks (nightly, hourly). Simple, cheap, the right default.
-- **Streaming** — process events continuously as they arrive, for low latency. Built on message queues and stream processors — see [Architecture](../../software/basics/architecture.md).
+- **Streaming** — process events continuously as they arrive, for low latency. Built on message queues and stream processors — see [Architecture](../../software/design/architecture.md).
 
 Start with batch; add streaming only when latency genuinely demands it.
 

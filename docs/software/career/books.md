@@ -10,7 +10,7 @@ This handbook now has two reading lists. They are not competing:
 
 | List | What it is | Use it when |
 |---|---|---|
-| [The Senior Curriculum](../basics/senior_curriculum.md) | An opinionated **path** — a small number of books plus courses, postmortems, and drills, in an order, on a cadence. | You want to know what to read *next*. |
+| [The Senior Curriculum](senior_curriculum.md) | An opinionated **path** — a small number of books plus courses, postmortems, and drills, in an order, on a cadence. | You want to know what to read *next*. |
 | **This page** | A comprehensive **map** — what exists per subfield and roughly why it exists. | You have a specific problem (splitting a monolith, designing an event pipeline) and want the literature on it. |
 
 Overlap is expected: *Designing Data-Intensive Applications*, *Release It!*, *A Philosophy of Software Design*, *SRE*, and *Fundamentals of Software Architecture* appear in both. When a book shows up on the curated path *and* near the top of the popularity survey, that is the strongest signal either list can give you.
@@ -59,7 +59,7 @@ The core of the field: how to structure a system and how to talk about that stru
 | [Software Architecture for Developers, Vol. 1–2](https://www.goodreads.com/book/show/33221518) — Brown | 2016 | Vol. 1: technical leadership. Vol. 2: [visualising and documenting](https://www.goodreads.com/book/show/33221619) — the origin of the [C4 model](https://c4model.com/). |
 | [Documenting Software Architectures](https://www.goodreads.com/book/show/223911) — Clements et al. | 2010 | Views and beyond. Heavy, but the reference when documentation is a contractual deliverable. |
 
-Pairs with [Architecture](../basics/architecture.md) and [Design Principles](../basics/principles.md).
+Pairs with [Architecture](../design/architecture.md) and [Design Principles](../design/principles.md).
 
 ## Design Patterns
 
@@ -132,7 +132,7 @@ The physics underneath everything above: partial failure, no shared clock, no gl
 | [Distributed Systems: Principles and Paradigms](https://www.goodreads.com/book/show/405614) — Tanenbaum & van Steen | 2016 | The university textbook; [free PDF from the authors](https://www.distributed-systems.net/index.php/books/ds3/). Use it to fill theory gaps. |
 | [Security Engineering](https://www.goodreads.com/book/show/3268675) — Anderson | 2020 | 3rd edition, [chapters free on the author's page](https://www.cl.cam.ac.uk/~rja14/book.html). Not really a distributed-systems book — it is the book on how systems fail when someone *wants* them to. |
 
-Pairs with [Concurrency](../basics/concurrency.md) and [Networking](../basics/networking.md).
+Pairs with [Concurrency](../foundations/concurrency.md) and [Networking](../systems/networking.md).
 
 ## Cloud & Infrastructure
 
@@ -168,7 +168,7 @@ How the work gets organized. Architecture decisions are constrained by delivery 
 | [The Art of Agile Development](https://www.goodreads.com/book/show/1654215) — Shore & Warden | 2007 | The most practice-level of the agile books (a 2021 second edition exists). |
 | [Planning Extreme Programming](https://www.goodreads.com/book/show/67839) — Beck & Fowler | 2000 | Short, and the clearest thinking on estimation and slack that the field has produced. |
 
-Pairs with [Lifecycle](../basics/lifecycle.md).
+Pairs with [Lifecycle](../process/lifecycle.md).
 
 ## DevOps
 
@@ -226,13 +226,13 @@ The source stopped updating in **October 2021**. Everything below post-dates it 
 - *Refactoring*, 2nd ed. (2018) — the mechanics of changing structure safely.
 - *Building Secure and Reliable Systems* (2020) — Google, [free online](https://sre.google/books/building-secure-reliable-systems/); security and reliability as one design problem.
 
-**Whole topics with no representation**: platform engineering, cost and FinOps as architectural inputs, and sustainability. For these, current conference talks and engineering blogs are ahead of the books — see the blog and postmortem sections of [The Senior Curriculum](../basics/senior_curriculum.md).
+**Whole topics with no representation**: platform engineering, cost and FinOps as architectural inputs, and sustainability. For these, current conference talks and engineering blogs are ahead of the books — see the blog and postmortem sections of [The Senior Curriculum](senior_curriculum.md).
 
 ## How to Actually Get Through Them
 
 A list this size is a way to feel behind. It isn't a queue.
 
-1. **One book per quarter, chosen by current problem.** Four a year beats a stalled stack of twelve. The [cadence table](../basics/senior_curriculum.md#suggested-cadence) puts this next to the weekly and monthly habits.
+1. **One book per quarter, chosen by current problem.** Four a year beats a stalled stack of twelve. The [cadence table](senior_curriculum.md#suggested-cadence) puts this next to the weekly and monthly habits.
 2. **Read the table of contents and two Goodreads reviews first** — the source author's own selection method, and it takes ten minutes.
 3. **Prefer the book that argues with the one you just read.** *Clean Architecture* then *A Philosophy of Software Design*; any microservices book then *Microservices AntiPatterns*. Disagreement between two experienced authors is where the trade-off actually lives.
 4. **Convert reading into an artifact.** One [ADR](https://adr.github.io/), design-doc section, or review comment per book. A book you cannot cite in a real decision was entertainment.

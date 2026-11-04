@@ -2,7 +2,7 @@
 
 How bytes get from one machine to another — and what actually happens between typing a URL and seeing the page.
 
-> Load balancers, CDNs, and rate limiting build on these basics — see [Architecture](architecture.md). For the contract layer on top of HTTP, see [APIs](apis.md).
+> Load balancers, CDNs, and rate limiting build on these basics — see [Architecture](../design/architecture.md). For the contract layer on top of HTTP, see [APIs](apis.md).
 
 ## The TCP/IP Model
 

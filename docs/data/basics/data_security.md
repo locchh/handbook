@@ -1,6 +1,6 @@
 # Data Classification & Security
 
-**Classification** labels data by how sensitive it is; **security** applies controls proportional to that label. The two are inseparable — the label is what tells you how hard to protect something. Sits under [governance](data_governance.md), which sets the policy this page enforces. For app-level security see [Security](../../software/basics/security.md).
+**Classification** labels data by how sensitive it is; **security** applies controls proportional to that label. The two are inseparable — the label is what tells you how hard to protect something. Sits under [governance](data_governance.md), which sets the policy this page enforces. For app-level security see [Security](../../software/systems/security.md).
 
 ## What It Is
 

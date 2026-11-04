@@ -1,6 +1,6 @@
 # API Design
 
-An API is a **contract**. Good ones are predictable, hard to misuse, and safe to evolve. This page covers the contract details; for where APIs sit in a system see [Architecture](architecture.md), and for the styles in context see [Tech Stacks](tech_stacks.md).
+An API is a **contract**. Good ones are predictable, hard to misuse, and safe to evolve. This page covers the contract details; for where APIs sit in a system see [Architecture](../design/architecture.md), and for the styles in context see [Tech Stacks](../design/tech_stacks.md).
 
 ## Styles
 
@@ -42,5 +42,5 @@ Treat a published API as immutable:
 ## Rule of Thumb
 
 - **Design for the caller, not the database.** Consistent naming, predictable shapes.
-- **Return structured errors** (`{code, message}`), never HTML or stack traces — see [Error Handling](error_handling.md).
+- **Return structured errors** (`{code, message}`), never HTML or stack traces — see [Error Handling](../foundations/error_handling.md).
 - **Paginate from day one**, and make the wrong call hard to make.

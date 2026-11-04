@@ -2,7 +2,7 @@
 
 Seven short LinkedIn posts on system design topics. They cover design patterns, API types, API protocols, authentication, how SSH works, deployment strategies, and retry and resilience. Each section below starts with the original post (cited and credited), then adds detail, trade-offs, and primary sources the post didn't have room for.
 
-For the building blocks these notes sit on, see [Architecture](architecture.md), [APIs](apis.md), [Security](security.md), and [Networking](networking.md).
+For the building blocks these notes sit on, see [Architecture](architecture.md), [APIs](../systems/apis.md), [Security](../systems/security.md), and [Networking](../systems/networking.md).
 
 !!! note "About the images"
     The infographics are copied from the original posts and remain the work of their authors. Each one is credited in its caption and linked back to the post. Posts 1–6 were read on 2026-10-15, post 7 on 2026-10-22.
@@ -173,7 +173,7 @@ A Stripe payment API is *public + REST*. A Netflix internal call is *internal + 
 
 **On GraphQL.** It fixes over-fetching and under-fetching for varied clients. The cost moves to the server: HTTP caching gets harder (one `POST /graphql` endpoint), you need query depth and cost limits to stop expensive queries, and per-field resolvers can cause the *N+1* query problem, which tools like DataLoader batch away[^graphql].
 
-The style comparison table and the contract rules (status codes, idempotency, versioning, pagination) are in [APIs](apis.md).
+The style comparison table and the contract rules (status codes, idempotency, versioning, pagination) are in [APIs](../systems/apis.md).
 
 ---
 
@@ -301,7 +301,7 @@ Corrections and additions to the post:
 - **mTLS in practice** is usually automated by a service mesh (Istio, Linkerd) or SPIFFE/SPIRE workload identities, so applications never handle certificates.
 - **Missing from the list:** *passkeys / WebAuthn* (phishing-resistant public-key login, the direction user authentication is heading), and *HTTP Basic*, which is fine only over TLS for internal tooling.
 
-AuthN vs. AuthZ, 401 vs. 403, and the OAuth sequence diagram are in [Security](security.md).
+AuthN vs. AuthZ, 401 vs. 403, and the OAuth sequence diagram are in [Security](../systems/security.md).
 
 ---
 
@@ -426,7 +426,7 @@ Things that decide whether these work in practice:
 - **Canary needs automatic judgment.** A canary is only as good as the signals it watches. Define the error rate, p99 latency, and saturation thresholds up front, and let the tool promote or abort on its own. Argo Rollouts and Flagger do this on Kubernetes[^argo]. Sticky routing (by user ID) keeps one person from bouncing between versions.
 - **Shadow traffic must have no side effects.** If the shadow version sends emails, charges cards, or writes to the real database, it isn't a test any more. Stub or sandbox the outbound calls. Mirroring is supported natively by Istio (`mirror:`) and Envoy.
 - **A/B testing is an experiment, not a deploy strategy.** It needs a hypothesis, a primary metric, a sample size fixed in advance, and statistical significance. It is usually done with **feature flags** inside *one* deployed build, not with two deployments.
-- **Feature flags separate *deploy* from *release*.** Code ships dark and gets turned on per user, percentage, or region. This makes most of the strategies above cheaper and gives you a kill switch. See [Becoming Senior](becoming_senior.md) on progressive delivery.
+- **Feature flags separate *deploy* from *release*.** Code ships dark and gets turned on per user, percentage, or region. This makes most of the strategies above cheaper and gives you a kill switch. See [Becoming Senior](../career/becoming_senior.md) on progressive delivery.
 - **What Kubernetes gives you natively:** a `Deployment` supports only `RollingUpdate` (tuned with `maxSurge` / `maxUnavailable`) and `Recreate`[^k8s]. Blue-green, canary, and shadow need a service mesh, ingress weights, or a rollout controller.
 
 ```yaml
@@ -494,7 +494,7 @@ flowchart LR
 **Retry**
 
 - **Only retry what can succeed next time:** connection errors, `503`, `429` (respect `Retry-After`), timeouts. Never retry `400`, `401`, `403`, or `404`: the answer won't change.
-- **Only retry idempotent operations,** or make them idempotent with an idempotency key (see [APIs](apis.md#idempotency)). Otherwise a retried payment can charge twice.
+- **Only retry idempotent operations,** or make them idempotent with an idempotency key (see [APIs](../systems/apis.md#idempotency)). Otherwise a retried payment can charge twice.
 - **Retry at one layer only.** If five layers each retry 3 times, one failing call at the bottom becomes 3⁵ = 243 calls. The Google SRE book calls this retry amplification and recommends a per-client **retry budget**: stop retrying once retries exceed about 10% of requests[^sre].
 
 **Exponential backoff + jitter**
@@ -551,7 +551,7 @@ stateDiagram-v2
 | **Hedged requests** | Send a second copy of a slow request to another replica and take whichever answers first. Cuts tail latency, from Google's *The Tail at Scale*[^tail] |
 | **Idempotency keys** | What makes retrying writes safe at all |
 
-The code-level view (exception handling, fail fast, graceful degradation) is in [Error Handling](error_handling.md).
+The code-level view (exception handling, fail fast, graceful degradation) is in [Error Handling](../foundations/error_handling.md).
 
 ---
 

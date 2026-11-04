@@ -253,7 +253,7 @@ git switch -c feature/name origin/main
 git push -u origin feature/name
 ```
 
-For branch integration and history rewriting, see [Git: Merge vs Rebase](../basics/git.md). For reviewing branch changes, see [Code Review](../basics/code_review.md).
+For branch integration and history rewriting, see [Git: Merge vs Rebase](../process/git.md). For reviewing branch changes, see [Code Review](../process/code_review.md).
 
 ## Docker Essentials
 

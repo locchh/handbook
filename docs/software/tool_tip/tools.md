@@ -75,7 +75,7 @@ git diff --check
 git diff
 ```
 
-Use [Git](../basics/git.md) for branch and history mechanics, and [Code Review](../basics/code_review.md) for evaluating the resulting change.
+Use [Git](../process/git.md) for branch and history mechanics, and [Code Review](../process/code_review.md) for evaluating the resulting change.
 
 ## Run services locally
 

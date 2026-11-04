@@ -1,6 +1,6 @@
 # Philosophies, Methodologies & Practices
 
-Where the ideas came from, and who to read. This page traces the *lineage* of how the industry builds software — each entry gives the origin story and a primary source. For the day-to-day application of these ideas, see [Design Principles](principles.md) and [Lifecycle](lifecycle.md).
+Where the ideas came from, and who to read. This page traces the *lineage* of how the industry builds software — each entry gives the origin story and a primary source. For the day-to-day application of these ideas, see [Design Principles](../design/principles.md) and [Lifecycle](lifecycle.md).
 
 ```
 Philosophy   — mindset & values
@@ -87,7 +87,7 @@ A system becomes hard to understand the moment different kinds of work start ble
 
 **Ref:** Edsger Dijkstra, [_On the role of scientific thought_](https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html) (1974)
 
-**Practical detail:** [Design Principles → Other Principles](principles.md#other-principles-worth-knowing) · [Architecture](architecture.md)
+**Practical detail:** [Design Principles → Other Principles](../design/principles.md#other-principles-worth-knowing) · [Architecture](../design/architecture.md)
 
 ---
 
@@ -99,7 +99,7 @@ When David Heinemeier Hansson released Ruby on Rails in 2004, he noticed that de
 
 **Ref:** David Heinemeier Hansson, [Ruby on Rails](https://rubyonrails.org/) (2004)
 
-**Practical detail:** [Design Principles → Other Principles](principles.md#other-principles-worth-knowing)
+**Practical detail:** [Design Principles → Other Principles](../design/principles.md#other-principles-worth-knowing)
 
 ---
 
@@ -119,7 +119,7 @@ Robert C. Martin distilled decades of painful object-oriented lessons into five 
 
 **Ref:** Robert C. Martin, [_Clean Architecture_](https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164) (2017)
 
-**Practical detail:** [Design Principles → SOLID](principles.md#solid)
+**Practical detail:** [Design Principles → SOLID](../design/principles.md#solid)
 
 ---
 
@@ -131,7 +131,7 @@ A null slipping through five layers of code before causing a cryptic crash is on
 
 **Ref:** Jim Shore, [_Fail Fast_](https://www.martinfowler.com/ieeeSoftware/failFast.pdf) — IEEE Software (2004)
 
-**Practical detail:** [Error Handling → Fail Fast](error_handling.md#fail-fast)
+**Practical detail:** [Error Handling → Fail Fast](../foundations/error_handling.md#fail-fast)
 
 ---
 
@@ -143,7 +143,7 @@ When the same logic lives in two places, you've created a silent promise that bo
 
 **Ref:** Andrew Hunt & David Thomas, [_The Pragmatic Programmer_](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) (1999)
 
-**Practical detail:** [Design Principles → The Core Three](principles.md#the-core-three-dry-kiss-yagni)
+**Practical detail:** [Design Principles → The Core Three](../design/principles.md#the-core-three-dry-kiss-yagni)
 
 ---
 
@@ -155,7 +155,7 @@ Every layer of cleverness you add is a layer the next person — or future you �
 
 **Ref:** Kelly Johnson, Lockheed Skunk Works (1960s); [_The Pragmatic Programmer_](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) — Hunt & Thomas (1999)
 
-**Practical detail:** [Design Principles → The Core Three](principles.md#the-core-three-dry-kiss-yagni)
+**Practical detail:** [Design Principles → The Core Three](../design/principles.md#the-core-three-dry-kiss-yagni)
 
 ---
 
@@ -167,7 +167,7 @@ Developers are optimists by nature — they build for futures that rarely arrive
 
 **Ref:** Ron Jeffries, Extreme Programming (1999); [_The Pragmatic Programmer_](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) — Hunt & Thomas
 
-**Practical detail:** [Design Principles → The Core Three](principles.md#the-core-three-dry-kiss-yagni)
+**Practical detail:** [Design Principles → The Core Three](../design/principles.md#the-core-three-dry-kiss-yagni)
 
 ---
 
@@ -565,7 +565,7 @@ In a complex business, the hardest part of building software is understanding th
 
 **Ref:** Eric Evans, [_Domain-Driven Design_](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215) (2003)
 
-**Further reading:** [The Architecture Bookshelf → Domain-Driven Design](../advanced/books.md#domain-driven-design)
+**Further reading:** [The Architecture Bookshelf → Domain-Driven Design](../career/books.md#domain-driven-design)
 
 ---
 
@@ -588,4 +588,4 @@ In a complex business, the hardest part of building software is understanding th
 | XP    | Extreme Programming           | Agile methodology focused on rigorous coding practices |
 | YAGNI | You Aren't Gonna Need It      | Build only what you need right now                     |
 
-For the full list of software, SDLC, and operations terms across the handbook, see [Terms](terms.md).
+For the full list of software, SDLC, and operations terms across the handbook, see [Terms](../terms.md).

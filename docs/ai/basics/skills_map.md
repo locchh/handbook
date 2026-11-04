@@ -42,7 +42,7 @@ This is the argument against vibe coding as a terminal skill. An inexperienced d
 
 Fundamentals turn that around. They give you the precise vocabulary of software engineering — coupling, idempotency, cache invalidation, backpressure, consistency — which is exactly the language you steer a coding agent with. The clearer the language, the better the steering.
 
-**In this handbook:** [Fundamentals](../../software/basics/fundamentals.md), [Design Principles](../../software/basics/principles.md), [Architecture](../../software/basics/architecture.md), and [Tech Stacks](../../software/basics/tech_stacks.md).
+**In this handbook:** [Fundamentals](../../software/foundations/fundamentals.md), [Design Principles](../../software/design/principles.md), [Architecture](../../software/design/architecture.md), and [Tech Stacks](../../software/design/tech_stacks.md).
 
 ## 3. Using Coding Agents
 
@@ -69,13 +69,13 @@ The expectation that you'll be handed a pixel-perfect design and asked only to i
 
 Ng frames this as an opportunity rather than a loss. AI lets you take on more ownership and agency than before — spotting a problem worth solving and executing on it responsibly. That requires knowing how to drive a project: when to build a quick MVP and put it in front of users, and when to slow down and build carefully instead.
 
-**In this handbook:** [Becoming Senior](../../software/basics/becoming_senior.md) covers thinking in business capabilities rather than frameworks; [Lifecycle](../../software/basics/lifecycle.md) covers the delivery process; [CI/CD Platforms](../../software/tool_tip/cicd.md) covers the concrete automation machinery.
+**In this handbook:** [Becoming Senior](../../software/career/becoming_senior.md) covers thinking in business capabilities rather than frameworks; [Lifecycle](../../software/process/lifecycle.md) covers the delivery process; [CI/CD Platforms](../../software/tool_tip/cicd.md) covers the concrete automation machinery.
 
 ## The Skill Underneath
 
 All four rest on **continuous learning**. AI keeps changing, so the practices above have a shelf life; the habit of revising them doesn't.
 
-**In this handbook:** [Study Guide](../../software/basics/study_guide.md) and [The Senior Curriculum](../../software/basics/senior_curriculum.md).
+**In this handbook:** [Study Guide](../../software/career/study_guide.md) and [The Senior Curriculum](../../software/career/senior_curriculum.md).
 
 ## Rule of Thumb
 

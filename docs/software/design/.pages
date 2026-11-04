@@ -1,0 +1,5 @@
+nav:
+  - Design Principles: principles.md
+  - Architecture: architecture.md
+  - System Design Notes: system_design.md
+  - Tech Stacks: tech_stacks.md

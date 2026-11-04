@@ -34,7 +34,7 @@ Everything left of "Build artifact" is **CI**. Everything right of it is **CD**.
 
 Vercel is Continuous Deployment out of the box. GitLab, GitHub, Azure Pipelines, and Jenkins give you the gate and let you choose.
 
-For where this sits in the wider delivery process, see [Lifecycle → CI/CD](../basics/lifecycle.md#cicd).
+For where this sits in the wider delivery process, see [Lifecycle → CI/CD](../process/lifecycle.md#cicd).
 
 ---
 
@@ -831,7 +831,7 @@ Vercel is neither: build output goes to its own edge network, every deploy is im
 - **Cancel superseded runs.** GitHub `concurrency`, GitLab `interruptible`, Azure `trigger: batch` and `pr: autoCancel`, Jenkins `disableConcurrentBuilds()`.
 - **Serialise deploys.** GitLab `resource_group`, GitHub `environment`, Azure environment Exclusive Lock + `lockBehavior`, Jenkins `disableConcurrentBuilds()`.
 - **Make it runnable locally.** If CI runs `make test`, you can run `make test`. Debugging by pushing commits is the slowest loop in software.
-- **Protect the production branch** — required reviews and status checks, no direct pushes. See [Lifecycle → Version Control](../basics/lifecycle.md#version-control).
+- **Protect the production branch** — required reviews and status checks, no direct pushes. See [Lifecycle → Version Control](../process/lifecycle.md#version-control).
 - **Least privilege on tokens.** GitHub `permissions`, GitLab `CI_JOB_TOKEN` allowlists, Azure per-pipeline service connection authorization, Jenkins per-folder credentials.
 - **Make deploys idempotent and reversible.** Re-running should be safe; rolling back should not require a rebuild.
 

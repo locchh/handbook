@@ -2,7 +2,7 @@
 
 A 2026 frontend stack: what one experienced developer dropped, what replaced each tool, and the 16 tools that stayed. The post is the starting point; the sections after it explain *why* each swap happened and when it would be the wrong choice for you.
 
-For the wider picture of languages and stacks, see [Tech Stacks](../basics/tech_stacks.md). For general tool habits, see [Tools](tools.md).
+For the wider picture of languages and stacks, see [Tech Stacks](../design/tech_stacks.md). For general tool habits, see [Tools](tools.md).
 
 !!! quote "Source"
     Petar Ivanov, *"6 frontend tools I dropped this year (and the 16 I kept)"*, LinkedIn, 2026-10-20. <https://www.linkedin.com/posts/petarivanovv9_6-frontend-tools-i-dropped-this-year-and-activity-7518280845837918208-IrXx>. Read on 2026-10-22.

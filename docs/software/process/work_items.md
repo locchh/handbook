@@ -2,7 +2,7 @@
 
 Every piece of work a team tracks is a **work item** (Jira calls it an *issue*, Azure Boards a *work item*, GitHub an *issue*). This page explains what each item type is for, how they fit together, and gives a template you can copy into your tracker.
 
-The process around them (Scrum, Kanban, the SDLC phases) lives in [Lifecycle](lifecycle.md), and how each development model (waterfall, Scrum, hybrid, …) uses these items is in [Philosophies & Methodologies](methodologies.md#methodologies-the-how-to-do). Documents you *write* rather than track (BRD, SRS, design doc, ADR, test plan, changelog, release notes, runbook) are on [SDLC Documents & Templates](sdlc_documents.md). Short definitions of every term are on the [Terms](terms.md) page.
+The process around them (Scrum, Kanban, the SDLC phases) lives in [Lifecycle](lifecycle.md), and how each development model (waterfall, Scrum, hybrid, …) uses these items is in [Philosophies & Methodologies](methodologies.md#methodologies-the-how-to-do). Documents you *write* rather than track (BRD, SRS, design doc, ADR, test plan, changelog, release notes, runbook) are on [SDLC Documents & Templates](sdlc_documents.md). Short definitions of every term are on the [Terms](../terms.md) page.
 
 ## How Work Items Fit Together
 
@@ -685,7 +685,7 @@ Clear roles stop five people from debugging the same thing while nobody updates 
 - **Communications Lead:** posts updates to stakeholders and the status page on a fixed schedule.
 - **Scribe:** records the timeline of what was seen, tried, and decided. This is the raw material for the postmortem.
 
-On a small team one person may hold several roles, but someone must say "I am the IC" out loud. How severity and on-call connect to escalation is covered in [Becoming Senior → Escalation](becoming_senior.md#escalation-is-a-designed-path). Step-by-step responses to known failures belong in [runbooks](../tool_tip/server_operations.md#11-runbooks).
+On a small team one person may hold several roles, but someone must say "I am the IC" out loud. How severity and on-call connect to escalation is covered in [Becoming Senior → Escalation](../career/becoming_senior.md#escalation-is-a-designed-path). Step-by-step responses to known failures belong in [runbooks](../tool_tip/server_operations.md#11-runbooks).
 
 **Template: Incident ticket**
 
@@ -742,7 +742,7 @@ Logins failed.
  Why? There is no config validation step in the deploy pipeline.   ← fix this
 ```
 
-See [Google SRE: Postmortem Culture ↗](https://sre.google/sre-book/postmortem-culture/) and its [example postmortem ↗](https://sre.google/sre-book/example-postmortem/). For reading other companies' postmortems as practice, see [The Postmortem Habit](senior_curriculum.md#the-postmortem-habit).
+See [Google SRE: Postmortem Culture ↗](https://sre.google/sre-book/postmortem-culture/) and its [example postmortem ↗](https://sre.google/sre-book/example-postmortem/). For reading other companies' postmortems as practice, see [The Postmortem Habit](../career/senior_curriculum.md#the-postmortem-habit).
 
 **Template: Postmortem**
 

@@ -1,5 +1,9 @@
 nav:
   - Overview: index.md
-  - Fundamentals: basics
-  - Advanced: advanced
+  - Foundations: foundations
+  - Design & Architecture: design
+  - "Networking, APIs & Security": systems
+  - Process & Delivery: process
+  - Career & Learning: career
   - Tool/Tip: tool_tip
+  - Terms: terms.md

@@ -320,7 +320,7 @@ An **ADR (Architecture Decision Record)** is a short note of *one* significant d
 - **Lifecycle:** `Proposed → Accepted`, later `Deprecated` or `Superseded by ADR-00xx`. Once accepted, an ADR is not edited. When the decision changes, write a new ADR that supersedes the old one, so the history stays readable.
 - **Formats:** the original by [Michael Nygard ↗](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) (below), or [MADR ↗](https://adr.github.io/madr/), which adds *considered options* with pros and cons. More templates and tools are at [adr.github.io ↗](https://adr.github.io/).
 
-Design docs propose. ADRs record what was decided. A design doc often ends in one or more ADRs. For why writing decisions down matters, see [Becoming Senior → Communication](becoming_senior.md#communication-is-part-of-the-system).
+Design docs propose. ADRs record what was decided. A design doc often ends in one or more ADRs. For why writing decisions down matters, see [Becoming Senior → Communication](../career/becoming_senior.md#communication-is-part-of-the-system).
 
 **Template: ADR**
 
@@ -344,7 +344,7 @@ Date: 2026-11-04 · Deciders: <names>
 
 ### API Contract
 
-An **API contract** is the agreed description of an interface: its endpoints, request and response shapes, errors, and auth. It is written *before* or alongside the code, so frontend, backend, and partner teams can work in parallel and contract tests can check that both sides keep it. For REST this is usually an [OpenAPI ↗](https://spec.openapis.org/oas/latest.html) file in the repo. For design rules on status codes, versioning, and pagination, see [APIs](apis.md).
+An **API contract** is the agreed description of an interface: its endpoints, request and response shapes, errors, and auth. It is written *before* or alongside the code, so frontend, backend, and partner teams can work in parallel and contract tests can check that both sides keep it. For REST this is usually an [OpenAPI ↗](https://spec.openapis.org/oas/latest.html) file in the repo. For design rules on status codes, versioning, and pagination, see [APIs](../systems/apis.md).
 
 **Template: OpenAPI stub**
 

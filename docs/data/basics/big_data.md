@@ -16,7 +16,7 @@ The first three are the classic definition; the last two are why it's hard to do
 
 ## Scale Up vs Scale Out
 
-One bigger machine (**up**) is simplest but has a ceiling. Big data forces **scale out** — many machines working together — which trades simplicity for capacity (see [Architecture](../../software/basics/architecture.md)).
+One bigger machine (**up**) is simplest but has a ceiling. Big data forces **scale out** — many machines working together — which trades simplicity for capacity (see [Architecture](../../software/design/architecture.md)).
 
 ## Distributed Processing
 
@@ -31,7 +31,7 @@ flowchart LR
     R1 & R2 --> O[(Result)]
 ```
 
-Storage scales out too: object stores or HDFS hold the data, **partitioned** so nodes work in parallel (see [Architecture](../../software/basics/architecture.md)), in columnar formats like Parquet (see [Data Engineering](data_engineering.md)). Common tools: **Spark** (batch + processing), **Kafka** (streaming), cloud warehouses (BigQuery, Snowflake).
+Storage scales out too: object stores or HDFS hold the data, **partitioned** so nodes work in parallel (see [Architecture](../../software/design/architecture.md)), in columnar formats like Parquet (see [Data Engineering](data_engineering.md)). Common tools: **Spark** (batch + processing), **Kafka** (streaming), cloud warehouses (BigQuery, Snowflake).
 
 ## Do You Actually Need It?
 

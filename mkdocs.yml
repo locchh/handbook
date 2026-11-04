@@ -57,15 +57,44 @@ extra_javascript:
 plugins:
   - search
   - awesome-pages
+  - redirects:
+      redirect_maps:
+        software/advanced/books.md: software/career/books.md
+        software/basics/abbreviations.md: software/terms.md
+        software/basics/algorithms.md: software/foundations/algorithms.md
+        software/basics/apis.md: software/systems/apis.md
+        software/basics/architecture.md: software/design/architecture.md
+        software/basics/becoming_senior.md: software/career/becoming_senior.md
+        software/basics/code_review.md: software/process/code_review.md
+        software/basics/concurrency.md: software/foundations/concurrency.md
+        software/basics/error_handling.md: software/foundations/error_handling.md
+        software/basics/fundamentals.md: software/foundations/fundamentals.md
+        software/basics/git.md: software/process/git.md
+        software/basics/lifecycle.md: software/process/lifecycle.md
+        software/basics/methodologies.md: software/process/methodologies.md
+        software/basics/networking.md: software/systems/networking.md
+        software/basics/posts.md: software/career/posts.md
+        software/basics/principles.md: software/design/principles.md
+        software/basics/security.md: software/systems/security.md
+        software/basics/senior_curriculum.md: software/career/senior_curriculum.md
+        software/basics/study_guide.md: software/career/study_guide.md
+        software/basics/styles.md: software/foundations/styles.md
+        software/basics/system_design.md: software/design/system_design.md
+        software/basics/tech_stacks.md: software/design/tech_stacks.md
+        software/basics/terms.md: software/terms.md
   - llmstxt:
       markdown_description: |
         A comprehensive collection of notes about Software Engineering, Data Science, and Artificial Intelligence.
       sections:
         Software Engineering:
           - software/index.md
-          - software/basics/*.md
-          - software/advanced/*.md
+          - software/foundations/*.md
+          - software/design/*.md
+          - software/systems/*.md
+          - software/process/*.md
+          - software/career/*.md
           - software/tool_tip/*.md
+          - software/terms.md
         Data Science:
           - data/index.md
           - data/basics/*.md

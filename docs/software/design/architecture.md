@@ -48,7 +48,7 @@ flowchart LR
     O --> DB[(Database)]
 ```
 
-- **DTO** — use at real boundaries to avoid leaking internal fields and to decouple your schema from your public [API](apis.md) contract. Don't mirror every entity with a DTO in a small app.
+- **DTO** — use at real boundaries to avoid leaking internal fields and to decouple your schema from your public [API](../systems/apis.md) contract. Don't mirror every entity with a DTO in a small app.
 - **DAO / Repository** — keeps SQL out of business logic, so you can test with fakes and swap stores ([Dependency Inversion](principles.md)). *Repository* is the more domain-oriented sibling; the terms are often used interchangeably.
 - **ORM** — a big win for CRUD, but watch the **N+1 query** trap and leaky abstractions. Use it for the 90%; drop to raw SQL for the complex 10%.
 - **Anti-pattern:** returning ORM entities straight from your API welds your database schema to your public contract — exactly what DTOs prevent.
@@ -354,4 +354,4 @@ Architecture is a series of trade-offs. When in doubt:
 
 ## Going Deeper
 
-The literature behind each of the concerns above — system architecture, DDD, microservices, streaming, distributed systems, scalability — is mapped by subfield in [The Architecture Bookshelf](../advanced/books.md).
+The literature behind each of the concerns above — system architecture, DDD, microservices, streaming, distributed systems, scalability — is mapped by subfield in [The Architecture Bookshelf](../career/books.md).

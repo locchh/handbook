@@ -1,0 +1,7 @@
+nav:
+  - Philosophies & Methodologies: methodologies.md
+  - Lifecycle: lifecycle.md
+  - "Work Items & Templates": work_items.md
+  - "SDLC Documents & Templates": sdlc_documents.md
+  - "Git: Merge vs Rebase": git.md
+  - Code Review: code_review.md

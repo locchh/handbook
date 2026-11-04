@@ -69,7 +69,7 @@ Code that works is only the beginning; **a system that fails well is the job**. 
 
 Notice these are **business categories wearing technical clothes**. "Is this retryable?" is a policy question. A generic `"Operation failed"` is a senior-level sin because it erases the business meaning of the failure.
 
-The supporting mechanics — see [Error Handling](error_handling.md) for details:
+The supporting mechanics — see [Error Handling](../foundations/error_handling.md) for details:
 
 - **Fail fast** on violated invariants; **idempotency** on anything involving money.
 - **Timeout budgets** end-to-end, not per-call.
