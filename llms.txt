@@ -10,6 +10,7 @@ A comprehensive collection of notes about Software Engineering, Data Science, an
 - [Overview](https://locchh.github.io/handbook/software/index.md)
 - [Data Structures & Algorithms](https://locchh.github.io/handbook/software/foundations/algorithms/index.md)
 - [Concurrency](https://locchh.github.io/handbook/software/foundations/concurrency/index.md)
+- [Debugging](https://locchh.github.io/handbook/software/foundations/debugging/index.md)
 - [Error Handling](https://locchh.github.io/handbook/software/foundations/error_handling/index.md)
 - [Fundamentals](https://locchh.github.io/handbook/software/foundations/fundamentals/index.md)
 - [Styles](https://locchh.github.io/handbook/software/foundations/styles/index.md)

@@ -8,6 +8,7 @@ Welcome to the Software Engineering section of my handbook. It is grouped the wa
 - **[Data Structures & Algorithms](https://locchh.github.io/handbook/software/foundations/algorithms/index.md)** - Big-O, core data structures, and common algorithmic patterns.
 - **[Concurrency](https://locchh.github.io/handbook/software/foundations/concurrency/index.md)** - Concurrency vs parallelism, shared mutable state, primitives, and hazards.
 - **[Error Handling](https://locchh.github.io/handbook/software/foundations/error_handling/index.md)** - Anticipate, detect, and report failures so they fail safely.
+- **[Debugging](https://locchh.github.io/handbook/software/foundations/debugging/index.md)** - Six famous engineers' debugging habits, fact-checked, and one workflow from repro to regression test.
 - **[Styles](https://locchh.github.io/handbook/software/foundations/styles/index.md)** - My naming and code conventions for folders, files, and components.
 
 ## Design & Architecture

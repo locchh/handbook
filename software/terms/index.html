@@ -360,6 +360,8 @@
       
         
       
+        
+      
     
     
     
@@ -501,6 +503,34 @@
     
   
     Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foundations/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
   
 
     
@@ -4146,7 +4176,22 @@
 <tr>
 <td><strong>Debugger / Breakpoint / Stack Trace</strong></td>
 <td>Tool to step through code / where execution pauses / the chain of calls at an error</td>
-<td><a href="../foundations/error_handling/#raising-and-chaining">Error Handling → Raising and Chaining</a>, <a href="https://en.wikipedia.org/wiki/Stack_trace">Wikipedia: Stack trace ↗</a></td>
+<td><a href="../foundations/debugging/#reading-the-code-and-questioning-assumptions">Debugging → Reading the Code</a>, <a href="../foundations/error_handling/#raising-and-chaining">Error Handling → Raising and Chaining</a>, <a href="https://en.wikipedia.org/wiki/Stack_trace">Wikipedia: Stack trace ↗</a></td>
+</tr>
+<tr>
+<td><strong>Repro / Minimal Reproducible Example</strong></td>
+<td>Steps that reliably show a bug, with the expected and actual result / the smallest code and input that still show it</td>
+<td><a href="../foundations/debugging/#isolation-make-the-failing-case-small">Debugging → Isolation</a>, <a href="../foundations/debugging/#expected-vs-actual">Debugging → Expected vs Actual</a></td>
+</tr>
+<tr>
+<td><strong>Rubber Duck Debugging</strong></td>
+<td>Explain the code line by line to someone, or something, until the wrong assumption surfaces</td>
+<td><a href="../foundations/debugging/#expected-vs-actual">Debugging → Expected vs Actual</a>, <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">Wikipedia: Rubber duck debugging ↗</a></td>
+</tr>
+<tr>
+<td><strong>Delta Debugging</strong></td>
+<td>Automatically shrink a failing input by removing parts while it still fails (Andreas Zeller)</td>
+<td><a href="../foundations/debugging/#isolation-make-the-failing-case-small">Debugging → Isolation</a>, <a href="https://en.wikipedia.org/wiki/Delta_debugging">Wikipedia: Delta debugging ↗</a></td>
 </tr>
 <tr>
 <td><strong>Profiler / Flame Graph</strong></td>
@@ -4303,7 +4348,7 @@
 <tr>
 <td><strong>Bisect</strong></td>
 <td>Binary-search history to find the commit that introduced a bug</td>
-<td><a href="https://git-scm.com/docs/git-bisect">git bisect ↗</a></td>
+<td><a href="../foundations/debugging/#isolation-make-the-failing-case-small">Debugging → Isolation</a>, <a href="https://git-scm.com/docs/git-bisect">git bisect ↗</a></td>
 </tr>
 <tr>
 <td><strong>Blame</strong></td>
@@ -5274,7 +5319,7 @@
 <tr>
 <td><strong>Correlation ID / Trace ID</strong></td>
 <td>ID attached to a request so logs and spans across services can be joined</td>
-<td><a href="../career/becoming_senior/#observability-is-a-property-of-the-pipeline">Becoming Senior → Observability</a></td>
+<td><a href="../foundations/debugging/#make-the-system-explain-itself">Debugging → Make the System Explain Itself</a>, <a href="../career/becoming_senior/#observability-is-a-property-of-the-pipeline">Becoming Senior → Observability</a></td>
 </tr>
 <tr>
 <td><strong>Structured Logging</strong></td>
