@@ -3,4 +3,5 @@ nav:
   - Data Structures & Algorithms: algorithms.md
   - Concurrency: concurrency.md
   - Error Handling: error_handling.md
+  - Debugging: debugging.md
   - Styles: styles.md

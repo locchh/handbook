@@ -6,7 +6,7 @@ Anticipate what can go wrong, detect it early, report it clearly. Good error han
 
 - **Reliability** — avoid crashes and data corruption.
 - **User experience** — meaningful feedback beats cryptic failures.
-- **Debuggability** — good error messages point straight at the problem.
+- **Debuggability** — good error messages point straight at the problem. For finding the bugs that get through anyway, see [Debugging](debugging.md).
 - **Security** — unhandled exceptions leak internals (stack traces, query text).
 
 ## Kinds of Errors

@@ -8,6 +8,7 @@ Welcome to the Software Engineering section of my handbook. It is grouped the wa
 - **[Data Structures & Algorithms](foundations/algorithms.md)** - Big-O, core data structures, and common algorithmic patterns.
 - **[Concurrency](foundations/concurrency.md)** - Concurrency vs parallelism, shared mutable state, primitives, and hazards.
 - **[Error Handling](foundations/error_handling.md)** - Anticipate, detect, and report failures so they fail safely.
+- **[Debugging](foundations/debugging.md)** - Six famous engineers' debugging habits, fact-checked, and one workflow from repro to regression test.
 - **[Styles](foundations/styles.md)** - My naming and code conventions for folders, files, and components.
 
 ## Design & Architecture

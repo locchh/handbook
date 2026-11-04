@@ -233,7 +233,10 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Dependency / Transitive Dependency** | A package your code uses / a package your dependencies use | [Wikipedia: Dependency ↗](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) |
 | **Environment Variable / Config** | Value set outside the code (secrets, URLs) / settings that change per environment | [CI/CD → Environment Variables and Secrets](tool_tip/cicd.md#8-environment-variables-and-secrets), [The Twelve-Factor App: Config ↗](https://12factor.net/config) |
 | **Logging / Log Levels** | Recording events / DEBUG, INFO, WARN, ERROR, FATAL | [Error Handling → Best Practices](foundations/error_handling.md#best-practices), [Wikipedia: Logging ↗](https://en.wikipedia.org/wiki/Logging_(computing)) |
-| **Debugger / Breakpoint / Stack Trace** | Tool to step through code / where execution pauses / the chain of calls at an error | [Error Handling → Raising and Chaining](foundations/error_handling.md#raising-and-chaining), [Wikipedia: Stack trace ↗](https://en.wikipedia.org/wiki/Stack_trace) |
+| **Debugger / Breakpoint / Stack Trace** | Tool to step through code / where execution pauses / the chain of calls at an error | [Debugging → Reading the Code](foundations/debugging.md#reading-the-code-and-questioning-assumptions), [Error Handling → Raising and Chaining](foundations/error_handling.md#raising-and-chaining), [Wikipedia: Stack trace ↗](https://en.wikipedia.org/wiki/Stack_trace) |
+| **Repro / Minimal Reproducible Example** | Steps that reliably show a bug, with the expected and actual result / the smallest code and input that still show it | [Debugging → Isolation](foundations/debugging.md#isolation-make-the-failing-case-small), [Debugging → Expected vs Actual](foundations/debugging.md#expected-vs-actual) |
+| **Rubber Duck Debugging** | Explain the code line by line to someone, or something, until the wrong assumption surfaces | [Debugging → Expected vs Actual](foundations/debugging.md#expected-vs-actual), [Wikipedia: Rubber duck debugging ↗](https://en.wikipedia.org/wiki/Rubber_duck_debugging) |
+| **Delta Debugging** | Automatically shrink a failing input by removing parts while it still fails (Andreas Zeller) | [Debugging → Isolation](foundations/debugging.md#isolation-make-the-failing-case-small), [Wikipedia: Delta debugging ↗](https://en.wikipedia.org/wiki/Delta_debugging) |
 | **Profiler / Flame Graph** | Measures where time and memory go / a visualization of sampled call stacks | [Architecture → Performance Bottlenecks](design/architecture.md#performance-bottlenecks) |
 | **REPL** | Read-Eval-Print Loop: interactive shell for a language | [Wikipedia: REPL ↗](https://en.wikipedia.org/wiki/Read–eval–print_loop) |
 | **CRUD** | Create, Read, Update, Delete: the four basic data operations | [APIs → Styles](systems/apis.md#styles), [Wikipedia: CRUD ↗](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) |
@@ -267,7 +270,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Amend** | `git commit --amend`: replace the last commit with a fixed version | [git commit ↗](https://git-scm.com/docs/git-commit) |
 | **Stash** | Shelve uncommitted changes and restore them later | [git stash ↗](https://git-scm.com/docs/git-stash) |
 | **Force Push** | Overwrite the remote branch; prefer `--force-with-lease`, and never on shared branches | [git push ↗](https://git-scm.com/docs/git-push) |
-| **Bisect** | Binary-search history to find the commit that introduced a bug | [git bisect ↗](https://git-scm.com/docs/git-bisect) |
+| **Bisect** | Binary-search history to find the commit that introduced a bug | [Debugging → Isolation](foundations/debugging.md#isolation-make-the-failing-case-small), [git bisect ↗](https://git-scm.com/docs/git-bisect) |
 | **Blame** | Show which commit last changed each line | [git blame ↗](https://git-scm.com/docs/git-blame) |
 | **.gitignore** | Patterns for files Git should never track | [gitignore ↗](https://git-scm.com/docs/gitignore) |
 | **Submodule** | A repo embedded inside another at a pinned commit | [git submodule ↗](https://git-scm.com/docs/git-submodule) |
@@ -469,7 +472,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Daemon / Service** | Long-running background process (systemd unit) | [Linux Commands → Services and Logs](tool_tip/linux_commands.md#services-and-logs), [Wikipedia: Daemon ↗](https://en.wikipedia.org/wiki/Daemon_(computing)) |
 | **Health Check / Readiness / Liveness** | Endpoint that reports service health / ready for traffic / still alive (restart if not) | [Kubernetes: Probes ↗](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) |
 | **Graceful Shutdown** | Finish in-flight requests before exiting | [Wikipedia: Graceful exit ↗](https://en.wikipedia.org/wiki/Graceful_exit) |
-| **Correlation ID / Trace ID** | ID attached to a request so logs and spans across services can be joined | [Becoming Senior → Observability](career/becoming_senior.md#observability-is-a-property-of-the-pipeline) |
+| **Correlation ID / Trace ID** | ID attached to a request so logs and spans across services can be joined | [Debugging → Make the System Explain Itself](foundations/debugging.md#make-the-system-explain-itself), [Becoming Senior → Observability](career/becoming_senior.md#observability-is-a-property-of-the-pipeline) |
 | **Structured Logging** | Logs as key–value JSON instead of free text | [Twelve-Factor: Logs ↗](https://12factor.net/logs) |
 | **Twelve-Factor App** | Methodology for cloud-native services: config in env, stateless processes, logs as streams | [12factor.net ↗](https://12factor.net/) |
 | **Headers / Body / Payload** | Request metadata / the content / the useful data being carried | [MDN: HTTP ↗](https://developer.mozilla.org/en-US/docs/Web/HTTP) |
