@@ -1,12 +1,12 @@
 # Work Items & Templates
 
-Every piece of work a team tracks is a **work item** (Jira calls it an *issue*, Azure Boards a *work item*, GitHub an *issue*). This page explains what each item type is for, how they fit together, and gives a template you can copy into your tracker.
+Every piece of work a team tracks is a **work item** (Jira calls it an *issue*, Azure Boards a *work item*, GitHub an *issue*). This page explains what each item type is for, how they fit together, and gives a template you can copy into your tracker. The one rule that matters most: **a backlog is a structure, not a flat list. Link every item to its parent** (see [Keep the Backlog Structured](#keep-the-backlog-structured)).
 
 The process around them (Scrum, Kanban, the SDLC phases) lives in [Lifecycle](lifecycle.md), and how each development model (waterfall, Scrum, hybrid, …) uses these items is in [Philosophies & Methodologies](methodologies.md#methodologies-the-how-to-do). Documents you *write* rather than track (BRD, SRS, design doc, ADR, test plan, changelog, release notes, runbook) are on [SDLC Documents & Templates](sdlc_documents.md). Short definitions of every term are on the [Terms](../terms.md) page.
 
 ## How Work Items Fit Together
 
-Work is planned top-down and delivered bottom-up. Big goals are split until each piece fits in one sprint, and those pieces are split into tasks a person can finish in a day or two.
+Work is planned top-down and delivered bottom-up. Big goals are split until each piece fits in one sprint, and those pieces are split into tasks a person can finish in a day or two. **Every item except an initiative or epic has a parent**, and that parent link is what turns a backlog from a pile of tickets into a plan.
 
 ```mermaid
 flowchart TD
@@ -24,6 +24,7 @@ flowchart TD
 |---|---|---|---|---|
 | **Initiative / Theme** | Quarters | Why are we investing here? | Leadership, product | The business outcome is measured |
 | **Epic** | Several sprints | What capability are we delivering? | Product Owner / PM | Child items are done and the success metric is checked |
+| **Feature** (Azure Boards, SAFe) | Fits in one Program Increment | Which shippable piece of the epic comes next? | Product Manager / PO | Its stories are done and it is released or releasable |
 | **User Story** | Fits in one sprint | What does the user get? | Product Owner, refined with the team | Acceptance criteria pass and the Definition of Done is met |
 | **Task / Sub-task** | Hours to a day or two | What does the team have to do? | Developers | The work is done |
 | **Spike** | Time-boxed | What do we need to learn first? | Developers | The question is answered and written up |
@@ -32,6 +33,90 @@ flowchart TD
 | **Production Incident** | Hours | What is broken for users *right now*? | On-call engineer | Service is restored and follow-ups are filed |
 
 Tools name the levels differently. Jira's defaults are Epic → Story / Task / Bug → Sub-task. Azure Boards' Agile process adds a **Feature** level (Epic → Feature → User Story → Task), and its Scrum process says **Product Backlog Item (PBI)** instead of User Story. The ideas are the same.
+
+### Hierarchy by Framework
+
+The number of levels grows with the size of the organization. A single Scrum team rarely needs more than three. Scaled frameworks such as SAFe add a Feature level and plan in **Program Increments (PI)**.
+
+```text
+Scrum team                Enterprise / SAFe
+Epic                      Epic
+└─ User Story             └─ Feature
+   └─ Task                   └─ User Story
+                                └─ Task
+```
+
+The same backlog in both shapes:
+
+```text
+Scrum team                                   Enterprise / SAFe
+Product Backlog                              PI 1
+└─ Epic: User Management                     └─ Epic: User Management
+   ├─ Story: User can register                  └─ Feature: Authentication
+   │  ├─ Task: Create API                          ├─ Story: Register
+   │  ├─ Task: Create UI                           ├─ Story: Login
+   │  └─ Task: Write tests                         └─ Story: Reset password
+   ├─ Story: User can login
+   │  ├─ Task: Implement authentication
+   │  └─ Task: Write tests
+   └─ Bug: Login error on Safari
+```
+
+Each level answers one question: the **Epic** says *what capability* we deliver, the **Feature** *which shippable piece* comes next, the **Story** *what value the user gets*, and the **Task** *what work the team does*.
+
+A **PI** is a *timebox*, not a work item: a planning period of several sprints, typically 8–12 weeks in SAFe. Features are planned into a PI; stories are planned into the sprints inside it.
+
+```text
+PI 1 (8–12 weeks)
+├─ Sprint 1
+├─ Sprint 2
+├─ Sprint 3
+└─ Sprint 4
+```
+
+### Keep the Backlog Structured
+
+!!! important "A backlog is a hierarchy, not a pile"
+    The tool may show one ranked list, but behind it **every item must be linked to a parent**. A story without an epic, a bug without the story or release it affects, or work without the change request that caused it cannot be traced, measured, or closed.
+
+Without parent links you can't answer the basic questions: which business goal does this story serve? Which change request created it? Is the epic finished? With them you get traceability, progress per epic, better planning, and a clear line from each item to its business value.
+
+The linking rules:
+
+- Every **story** has a parent **epic** (or **feature**, if you use that level).
+- Every **task / sub-task** belongs to a story, or is a standalone task under an epic.
+- Every **bug** is linked to the story or epic it affects, or to the release where it was found.
+- Every approved **change request** is the parent of the epics or stories it creates.
+- Only **initiatives / themes** and **epics** may sit at the top with no parent.
+
+```text
+Flat: no way to trace        Structured: every item has a parent
+Story A                      Epic: Authentication
+Bug B                        ├─ Story: Login
+Story C                      ├─ Story: Logout
+CR D                         ├─ Story: Reset password
+Story E                      └─ Bug: Login error on Safari
+```
+
+The same items have two views. The **hierarchy view** shows why each item exists. The **backlog view** shows what to do next. Both read the same parent links.
+
+```text
+Hierarchy view: why          Backlog view: what next (ranked)
+Epic                         1. Bug 101
+└─ Feature                   2. Story 201
+   └─ Story                  3. CR 301
+                             4. Story 202
+```
+
+A [change request](#change-request) is traced the same way: once approved, it becomes the parent of the work it causes.
+
+```text
+CR-001: Add MFA
+└─ Epic: Multi-factor authentication
+   ├─ Story: Email OTP
+   ├─ Story: SMS OTP
+   └─ Story: Recovery flow
+```
 
 ## Work Items Across the SDLC
 
@@ -147,6 +232,96 @@ body:
       required: true
 ```
 
+## Backlogs and Sprints Across Methods
+
+Agile is a mindset and a family of methods, not one process. Scrum, Kanban, SAFe, XP, and Lean are ways to apply it:
+
+```text
+Agile
+├─ Scrum    fixed-length sprints, defined roles and events
+├─ Kanban   continuous flow, WIP limits
+├─ SAFe     Scrum / Kanban teams scaled with Program Increments
+├─ XP       engineering practices: TDD, pair programming, CI
+└─ Lean     remove waste, optimize the whole flow
+```
+
+All Scrum teams are Agile, but not all Agile teams use Scrum.
+
+Not every method uses a backlog or sprints. The backlog is an Agile idea; plan-driven projects track work in a project plan instead (see [Phase, Milestone, and Deliverable](#phase-milestone-and-deliverable)). Each method is described in [Philosophies & Methodologies](methodologies.md#methodologies-the-how-to-do).
+
+| Method | Backlog? | Sprints? | Main planning artifact |
+|---|---|---|---|
+| **Scrum** | Yes: Product Backlog and Sprint Backlog | Yes, fixed length (usually 2 weeks) | Product Backlog |
+| **Kanban** | Usually a backlog feeding the board | No: continuous flow | Board with WIP limits |
+| **SAFe** | Yes: portfolio, program (ART), and team backlogs | Yes, grouped into Program Increments | Program backlog and PI plan |
+| **Waterfall / V-Model** | No | No: phases and milestones | Requirements documents and project plan |
+| **Hybrid** | Often, for the build phases | Often, inside the plan's phases | Project plan + backlog + change request log |
+
+Waterfall runs the phases once, in order, and manages work through requirement documents (BRD, SRS), the project plan, the change request log, and the issue log:
+
+```mermaid
+flowchart LR
+    BR[Business requirements] --> SR[System requirements] --> DS[Design] --> DV[Development] --> TS[Testing] --> DP[Deployment]
+```
+
+Hybrid projects mix the two. Customers often want fixed scope and budget, while the team wants to deliver iteratively. Two common shapes:
+
+```mermaid
+flowchart LR
+    subgraph H1["Plan up front, build in sprints"]
+        direction LR
+        A1["Requirements<br/>(waterfall-style)"] --> A2["Development<br/>(sprints)"] --> A3[UAT] --> A4[Release]
+    end
+    subgraph H2["Plan, sprint, deploy once"]
+        direction LR
+        B1[Project planning] --> B2[Sprint 1] --> B3[Sprint 2] --> B4[Sprint 3] --> B5[Final deployment]
+    end
+```
+
+Scrum and Kanban differ mainly in *when* new work enters:
+
+| | Scrum | Kanban |
+|---|---|---|
+| Cadence | Fixed-length sprints | Continuous flow |
+| New request mid-cycle | Usually waits for the next sprint | Pulled as soon as there is capacity |
+| Main flow metrics | Velocity | Cycle time, lead time, throughput |
+| Typical use | Product development | Support, operations, maintenance |
+
+For example, a change request (CR-101) arrives in the middle of the week:
+
+```text
+Scrum: 2-week sprint, scope fixed            Kanban: board, pull when free
+Sprint 12                                    To Do
+├─ Story A                                   ├─ Story A
+├─ Story B                                   ├─ CR-101   ← pulled as soon as
+└─ Story C                                   └─ Bug-55     someone has capacity
+CR-101 → waits for Sprint 13 planning
+```
+
+```mermaid
+flowchart LR
+    subgraph SC["Scrum: the sprint scope is fixed"]
+        direction LR
+        PB1[(Product Backlog)] -->|sprint planning| SB[Sprint Backlog] --> INC[Increment at sprint end]
+    end
+    subgraph KB["Kanban: items are pulled one by one"]
+        direction LR
+        PB2[(Backlog)] -->|pull when capacity| TD[To Do] --> IP[In Progress] --> TS[Testing] --> DN[Done]
+    end
+```
+
+A hybrid project keeps the plan-driven shell for the client and runs the build inside it with a backlog:
+
+```text
+Project
+├─ Requirements documents (BRD, SRS)
+├─ Product Backlog
+│  ├─ Epic
+│  │  └─ Story
+│  └─ Bug
+└─ Change request log   (an approved CR becomes the parent of new epics or stories)
+```
+
 ## Phase, Milestone, and Deliverable
 
 Plan-driven projects organize work in a **project plan** rather than a backlog. That covers [waterfall](methodologies.md#1-waterfall-do-it-in-order-no-going-back), the V-Model, most fixed-price contracts, and the outer shell of [hybrid](methodologies.md#10-hybrid-water-scrum-fall-plan-like-waterfall-build-like-scrum) projects. These are the items in a project plan:
@@ -240,7 +415,28 @@ The deliverables themselves (BRD, SRS, design, test report, UAT sign-off) have t
 
 ## Backlog
 
-The **Product Backlog** is the single ordered list of everything that might be done to the product. The Product Owner owns its order. The **Sprint Backlog** is the Sprint Goal plus the items the developers picked for this sprint and their plan to deliver them. The developers own it.
+The **Product Backlog** is the single ordered list of everything that might be done to the product. **It looks like a list but is built as a hierarchy: every item is linked to a parent** (see [Keep the Backlog Structured](#keep-the-backlog-structured)). The Product Owner owns its order. The **Sprint Backlog** is the Sprint Goal plus the items the developers picked for this sprint and their plan to deliver them. The developers own it.
+
+A product backlog holds more than stories:
+
+```text
+Product Backlog
+├─ Epic / Feature
+├─ User Story
+├─ Bug
+├─ Change Request (approved)
+├─ Spike
+└─ Technical Debt
+```
+
+A story should fit in one sprint, but a sprint holds several stories, not one:
+
+```text
+Sprint 1
+├─ Story: Register account
+├─ Story: Login
+└─ Story: Forgot password
+```
 
 A healthy product backlog is ordered, not just tagged with priorities. The top items are small, clear, and estimated. Items near the bottom can stay rough until they move up. Order by value, risk, dependencies, and cost of delay. If everything is "High", nothing is.
 
@@ -280,6 +476,7 @@ Sprint goal: Customers can check out with a saved address.
 
 For each item near the top of the backlog:
 - [ ] Title says the outcome, not the implementation
+- [ ] Linked to its parent epic / feature (or the CR that created it)
 - [ ] Description and acceptance criteria are written
 - [ ] Small enough to finish in one sprint (split it if not)
 - [ ] Dependencies and open questions are listed (create a spike if a question blocks the estimate)
@@ -301,6 +498,7 @@ Also:
 ```markdown
 An item is ready when:
 - [ ] It has a clear title and a user or business value
+- [ ] It is linked to its parent epic / feature
 - [ ] Acceptance criteria are written and agreed with the PO
 - [ ] UI designs / API contracts are linked (if needed)
 - [ ] Dependencies are resolved or have a date
@@ -434,6 +632,13 @@ Epic: EPIC-12 · Estimate: <story points> · Priority: <order or P1–P4>
 
 A **task** is a concrete piece of work that is not a user-facing story and not a bug. Examples are upgrading a library, setting up a CI job, or writing a migration. A **sub-task** is one step of a story or task: "Add API endpoint", "Build form", "Write e2e test". Splitting a story into sub-tasks helps the team see who does what and spot work that is stuck.
 
+```text
+Story: User can login
+├─ Sub-task: Create login API
+├─ Sub-task: Build login UI
+└─ Sub-task: Write unit tests
+```
+
 Start the title with a verb and make "done" unambiguous.
 
 **Template: Task**
@@ -487,6 +692,8 @@ A **bug** (or **defect**) is behavior that deviates from the spec or from what u
 
 One bug per ticket. The title should state the symptom and where it happens, so someone can triage it from the title alone.
 
+A bug can sit in the backlog on its own, be linked to the story it breaks, or be pulled straight into the current sprint when it is urgent.
+
 ### Severity vs Priority
 
 These are two different fields. Teams that use one number for both make bad trade-offs.
@@ -510,11 +717,14 @@ The two often disagree:
 
 A typical bug lifecycle looks like this:
 
-```
-New → Triaged → In Progress → Fixed (in review) → Ready for QA → Verified → Closed
-                                                       │
-                                                       └─ fails retest → Reopened
-Other exits from triage: Duplicate · Cannot Reproduce · Won't Fix · Works as Designed
+```mermaid
+flowchart LR
+    N[New] --> T[Triaged] --> IP[In Progress] --> F["Fixed (in review)"] --> Q[Ready for QA] --> V[Verified] --> C[Closed]
+    Q -- fails retest --> R[Reopened]
+    T -. other exits .-> X1[Duplicate]
+    T -.-> X2[Cannot Reproduce]
+    T -.-> X3[Won't Fix]
+    T -.-> X4[Works as Designed]
 ```
 
 **Template: Bug report**
@@ -565,8 +775,9 @@ The fix should come with a test that fails without it, so the bug can't quietly 
 
 In project work, and in fixed-price and outsourcing contracts especially, a **change request** is a formal request to change something that was already agreed and signed off. That can be a requirement, the scope, the timeline, or the budget. The CR exists so that "can you just add…" becomes a decision with a known cost instead of silent scope creep.
 
-```
-Raise → Log → Impact analysis → Approve / Reject / Defer → Re-plan (re-baseline) → Implement → Verify → Close
+```mermaid
+flowchart LR
+    A[Raise] --> B[Log] --> C[Impact analysis] --> D{Approve / Reject / Defer} --> E["Re-plan (re-baseline)"] --> F[Implement] --> G[Verify] --> H[Close]
 ```
 
 On larger projects, a **Change Control Board (CCB)** makes the decision. On smaller ones the client and PM decide together. Either way, get the approval in writing before the work starts.
@@ -659,8 +870,9 @@ Window: <start – end, with timezone> · Implementer: <name> · Approver: <name
 
 A **production incident** is an unplanned interruption or degradation of a live service. Examples are an outage, a spike in errors, a slowdown, or a data or security problem. A bug lives in the code. An incident is happening to users *now*. The first job is to **restore service** with a rollback, failover, feature-flag kill switch, or scale-up. Finding the root cause comes later.
 
-```
-Detect → Declare (assign SEV) → Mitigate → Resolve → Follow up (postmortem + action items)
+```mermaid
+flowchart LR
+    A[Detect] --> B["Declare (assign SEV)"] --> C[Mitigate] --> D[Resolve] --> E["Follow up (postmortem + action items)"]
 ```
 
 In ITIL terms, the underlying cause of one or more incidents is a **problem**, tracked separately until it is fixed for good.
@@ -802,7 +1014,16 @@ Action items without an owner and a ticket don't get done. Review them until the
 
 ## Sprint
 
-A **sprint** is a fixed timebox of one month or less, usually two weeks, in which the team turns backlog items into a usable increment. The Scrum events, roles, and artifacts are summarized in [Lifecycle → Agile, Scrum, Kanban](lifecycle.md#agile-scrum-kanban). This section gives the templates. The time limits below are the [Scrum Guide's ↗](https://scrumguides.org/scrum-guide.html) maximums for a one-month sprint; shorter sprints use shorter events.
+A **sprint** is a fixed timebox of one month or less, usually two weeks, in which the team turns backlog items into a usable increment. The Scrum events, roles, and artifacts are summarized in [Lifecycle → Agile, Scrum, Kanban](lifecycle.md#agile-scrum-kanban). This section gives the templates.
+
+```mermaid
+flowchart LR
+    PB[(Product Backlog)] --> PL[Sprint Planning] --> SP["Sprint (1–4 weeks)<br/>Daily Scrum every day"] --> RV[Sprint Review] --> RT[Retrospective] --> NX[Next sprint]
+    NX -.-> PL
+    RV -.->|feedback becomes new items| PB
+```
+
+The time limits below are the [Scrum Guide's ↗](https://scrumguides.org/scrum-guide.html) maximums for a one-month sprint; shorter sprints use shorter events.
 
 ### Sprint Planning
 
@@ -972,6 +1193,122 @@ Closes #482
 Messages like `fix`, `update`, `WIP`, or `address review comments` tell a reader nothing. If the team squash-merges, only the MR title and description reach `main`, so work-in-progress commits on the branch don't matter much. If you merge or rebase *without* squashing, every commit lands on `main`, so clean them up first with an [interactive rebase](git.md#5-interactive-rebase-cleaning-up-history).
 
 To get the template every time you commit, save it as `~/.gitmessage` and run `git config --global commit.template ~/.gitmessage`.
+
+## Measuring Delivery from Work Items
+
+Delivery dashboards don't measure the team directly. They read the fields on your work items and compute metrics from them. A delivery dashboard such as **Andon** computes DORA and SPACE metrics from Jira (and the repo), and a governance and cost dashboard such as **Banto** meters the AI tokens spent per story, user, and agent. Both are only as good as the work items behind them: a wrong field on the ticket gives a wrong number on the dashboard.
+
+Two ground rules come first:
+
+- **The metrics describe the delivery system, not people.** They are never used for individual appraisal.
+- **Read every metric as a trend against your own baseline**, never as a single-period score and never alone. Set the baseline before the first measured sprint or phase.
+
+### The ITO Clock
+
+Standard DORA reads production deploy events. In outsourcing (ITO) projects the team usually hands over for the client's acceptance test and has no production access, so every metric is anchored to delivery milestones instead. All durations are counted in **working days**.
+
+```mermaid
+flowchart LR
+    T0["T0 Start Implementation<br/>(Start date / Planned start)"] --> D["D Story Done<br/>(Closed date)"]
+    D --> T1["T1 Delivered for Acceptance<br/>(release / product released)"]
+    T1 --> T2["T2 Accepted by client"]
+```
+
+| Point | Comes from | Notes |
+|---|---|---|
+| **T0** | The work item's *Start date* or *Planned start* | If both are empty the tool falls back to the *Create date*, and Lead Time inflates silently |
+| **D** | The date the story is *Closed* | Close it when it is really done, not in a bulk move at sprint end |
+| **T1** | Agile: the *Fix Version* release date. Plan-driven: a *Product* with status *Released* and marked deliverable | A release at T1 is the delivery event |
+| **T2** | Client acceptance | T1 → T2 is the client acceptance period |
+
+### DORA for ITO
+
+| Metric | Question it answers | ITO formula | Work-item data it needs |
+|---|---|---|---|
+| **DF** Delivery Frequency | Are we hitting the delivery commitment? | Delivery events at T1 ÷ measurement window | Releases / products marked *Released*; merges to the branch named in a deployment rule |
+| **LT** Lead Time for Delivery | Is the pipeline slowing down? | MEDIAN(T1 − T0), working days | T0 filled; item type ticked as a delivery unit; item linked to its release |
+| **CFR** Change Failure Rate | Are deliveries causing damage? | Failed deliveries ÷ all deliveries × 100% | Customer-reported Bug with priority *Critical* or *Blocker*, linked to the release, raised within the CFR window after T1 |
+| **MTTR** Recovery Time | When it fails, how fast do we fix it? | MEDIAN(bug reported → fix delivered), working days | *Created* and *Resolved* dates of the CFR / DRR bugs; *Resolved* set when the fix reaches the client |
+| **DRR** Delivery Rework Rate | How often is a delivery sent back? | Rejected and redelivered ÷ all deliveries × 100% | Customer-reported Bug at any priority, linked to the release, raised within the DRR window after T1 |
+
+CFR and DRR read the same bugs. CFR counts only *Critical* and *Blocker*, so every CFR delivery is also a DRR delivery and CFR ≤ DRR. The window lengths are agreed with the client per project.
+
+```mermaid
+flowchart LR
+    REL["Delivery at T1"] --> BUG{"Customer bug<br/>on this delivery?"}
+    BUG -- "No" --> OK["Counts in DF only"]
+    BUG -- "Any priority, inside DRR window" --> DRR["Counts in DRR"]
+    DRR --> SEV{"Critical / Blocker,<br/>inside CFR window?"}
+    SEV -- "Yes" --> CFR["Also counts in CFR"]
+```
+
+### SPACE: Why the DORA Numbers Move
+
+DORA says *what* happened; SPACE explains *why*. Read them in pairs (for example, Lead Time with Efficiency, or AI-assisted ratio with DRE).
+
+| Dimension | Measure | Work-item data it needs |
+|---|---|---|
+| **S** Satisfaction | Quarterly team survey | — |
+| **P** Performance (DRE) | Defects found in the sprint or phase ÷ all defects, including those escaped to later phases or UAT | Each Bug records the phase or sprint where it was found and is linked when it escaped |
+| **A** Activity: AI-assisted ratio | Agent-completed tasks ÷ all completed tasks | AI-assisted tasks are tagged the same way every time |
+| **C** Collaboration | MEDIAN(first review − PR opened) | PRs with timestamps, linked to their items |
+| **E** Efficiency | D − T0 per story, working days | T0 and the Closed date filled correctly |
+
+### Cost per Outcome
+
+When agents do part of the work, effort hours no longer show what a story cost. The cost becomes **token + labor + other**. Banto meters token spend live per story, user, and agent, logs every AI conversation (prompt, model, tokens, tool calls, file edits), and flags violations such as an unapproved model or PII in a prompt. Labor cost comes from the timesheet or project system (for example MB4 or Jira), and other cost (licences, infrastructure) from finance systems.
+
+```mermaid
+flowchart LR
+    TOK["Token cost<br/>(Banto: per story / user / agent)"] --> TOTAL["Total cost per outcome"]
+    LAB["Labor cost<br/>(timesheet / project system)"] --> TOTAL
+    OTH["Other cost<br/>(licences, infrastructure)"] --> TOTAL
+```
+
+### Keep Work Items Measurable
+
+| Mistake on the work item | What the dashboard shows |
+|---|---|
+| *Start date* / *Planned start* empty | Lead Time inflated (T0 falls back to the Create date) |
+| Wrong item type, or the type is not ticked as a delivery unit | Item missing from Lead Time, or not seen as a failure |
+| Wrong bug *Priority* | CFR under- or overstated |
+| *Detected By* / *Role* not set to *Customer* | CFR = 0 and looks perfect |
+| Bug not linked to the release where it was found | Bug counted against the wrong release, or not counted |
+| Release not marked *Released* / deliverable | DF = 0, no T1 |
+| *Resolved* not set when the fix is delivered | MTTR inflated (or understated if resolved too early) |
+| PR not linked to its item or release | No Lead Time breakdown (Readiness → Coding → Review → Merge), or a release counted twice |
+
+A short checklist for the Definition of Done:
+
+- [ ] Item has the right type and is linked to its release (Fix Version / Product)
+- [ ] *Start date* is set when work starts; the item is *Closed* when it is really done
+- [ ] PRs reference the item key (see [Linking Issues](#linking-issues))
+- [ ] AI-assisted work is tagged consistently
+- [ ] Client bugs carry *Detected By = Customer*, a priority, the affected release, and *Resolved* when the fix is delivered
+
+If you cannot name the issues behind a number, it is not evidence yet. Every tile should resolve to a saved filter listing its work items.
+
+### How Large Companies Measure
+
+The DORA-for-ITO and SPACE metrics above are adaptations of public frameworks that large engineering organizations use. The main ones:
+
+| Framework | From | What it measures | Worth knowing |
+|---|---|---|---|
+| **DORA metrics** | Google's DORA research program | Five metrics in two groups. Throughput: change lead time, deployment frequency, failed deployment recovery time. Instability: change fail rate, deployment rework rate | Rework rate was added in 2024, and recovery time moved from stability to throughput. See [DORA: History of the metrics ↗](https://dora.dev/guides/dora-metrics/history/) |
+| **DORA 2024 on AI** | Google Cloud, 2024 State of DevOps report | Delivery performance as AI adoption grows | "As AI adoption increased, it was accompanied by an estimated decrease in delivery throughput by 1.5%, and an estimated reduction in delivery stability by 7.2%." Measure delivery outcomes, not only AI usage. See [Announcing the 2024 DORA report ↗](https://cloud.google.com/blog/products/devops-sre/announcing-the-2024-dora-report) |
+| **SPACE** | GitHub, Microsoft Research, University of Victoria (2021) | Satisfaction and well-being, Performance, Activity, Communication and collaboration, Efficiency and flow | Productivity can't be reduced to one metric. Use several dimensions together and report at team level. See [The SPACE of Developer Productivity, ACM Queue ↗](https://queue.acm.org/detail.cfm?id=3454124) |
+| **DevEx** | DX, University of Victoria, Microsoft Research (2023) | Feedback loops, cognitive load, flow state | Combines developer surveys with data from engineering systems. See [DevEx: What Actually Drives Productivity, ACM Queue ↗](https://queue.acm.org/detail.cfm?id=3595878) |
+| **DX Core 4** | DX, with input from the DORA, SPACE, and DevEx authors | Speed, Effectiveness, Quality, Impact | Unifies DORA, SPACE, and DevEx. Balances speed against experience and quality; warns that activity metrics such as diffs per engineer are easy to game. See [Measuring developer productivity with the DX Core 4 ↗](https://getdx.com/research/measuring-developer-productivity-with-the-dx-core-4/) |
+| **Google: QUANTS, speed / ease / quality** | Google Engineering Productivity Research | Quality of code, Attention, iNtellectual complexity, Tempo and velocity, Satisfaction | No single metric; triangulate logs, surveys, interviews, and diary studies. Before choosing a metric, ask whether a bad result would change a decision. See [How Google measures developer productivity (DX) ↗](https://getdx.com/blog/how-google-measures-developer-productivity/) |
+| **LinkedIn DPH Framework** | LinkedIn, open source | Goals → Signals → Metrics, with "Persona Champions" representing each kind of engineer | Includes principles and common pitfalls for designing engineering metrics. See [The LinkedIn DPH Framework ↗](https://linkedin.github.io/dph-framework) |
+| **GitHub Copilot impact** | GitHub with Accenture | Randomized controlled trial on AI-assisted development in an enterprise, plus the Copilot usage metrics API (for example, acceptance rate) | Usage metrics come from IDE telemetry, so users without telemetry enabled are missing from the numbers. See [Quantifying GitHub Copilot's impact with Accenture ↗](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise-with-accenture/) and [Copilot usage metrics ↗](https://docs.github.com/en/copilot/concepts/copilot-usage-metrics/copilot-metrics) |
+
+What they agree on, and what Andon and Banto follow:
+
+- **No single metric.** Pair a speed metric with a quality metric (DORA throughput with instability; Lead Time with DRR and CFR).
+- **Measure teams and systems, not individuals.**
+- **Combine system data with what developers report** (SPACE, DevEx, Google, LinkedIn). In Andon, SPACE plays this role.
+- **Judge AI by delivery outcomes and cost, not by adoption.** An AI-assisted ratio that goes up while rework or failures go up is not a gain (DORA 2024). That is why Banto's cost per outcome sits next to Andon's quality metrics.
 
 ## Other Item Types
 
