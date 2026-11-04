@@ -299,6 +299,7 @@ git checkout -b feature/TICKET-456-short-description origin/main
 - Use `git merge main` locally to catch up
 - Maintain a local `main` branch — delete it, use `origin/main`
 - Leave stale branches for weeks
+- Push to a branch someone else is also pushing to
 
 ## 8. Golden Rules
 
@@ -307,6 +308,8 @@ git checkout -b feature/TICKET-456-short-description origin/main
 > **main is protected and always merged online via PR.**
 
 > **Feature branches are always rebased locally to catch up.**
+
+> **A shared feature branch is a merge point: it changes only through PRs, and nobody rebases or force-pushes it** (see [Two People on One Feature](#9-two-people-on-one-feature)).
 
 ```
 main (protected, on GitHub)
@@ -317,3 +320,101 @@ feature (local)
 └── rebased to catch up with origin/main
 └── pushed → PR → merged on GitHub
 ```
+
+## 9. Two People on One Feature
+
+Two people pushing to the same feature branch is a bad idea:
+
+- **History gets overwritten.** One rebase or force-push, and the other person's copy no longer matches. Their next push fails or brings old commits back.
+- **Constant conflicts.** You keep pulling each other's half-finished work.
+- **No owner.** Nobody is clearly responsible for CI, review comments, or when the branch is ready.
+- **Hard to review.** One PR mixes two people's changes.
+
+Instead, make the shared branch a **merge point**. Nobody commits to it directly. Each person works on their own branch from it and merges back through a PR. One owner finally merges the feature into `main`.
+
+```text
+main
+└─ feature/checkout            ← merge point: one owner, PRs only
+   ├─ feature/checkout-api     ← person A
+   └─ feature/checkout-ui      ← person B
+```
+
+```mermaid
+gitGraph
+    commit id: "main"
+    branch feature/checkout
+    checkout feature/checkout
+    branch feature/checkout-api
+    checkout feature/checkout-api
+    commit id: "api 1"
+    commit id: "api 2"
+    checkout feature/checkout
+    branch feature/checkout-ui
+    checkout feature/checkout-ui
+    commit id: "ui 1"
+    checkout feature/checkout
+    merge feature/checkout-api id: "PR: api"
+    checkout main
+    commit id: "other team"
+    checkout feature/checkout
+    merge main id: "update from main"
+    checkout feature/checkout-ui
+    commit id: "ui 2"
+    checkout feature/checkout
+    merge feature/checkout-ui id: "PR: ui"
+    checkout main
+    merge feature/checkout id: "PR: feature"
+```
+
+**The owner creates the merge point once.** Then protect it on GitHub, or at least agree it takes PRs only:
+
+```bash
+git fetch
+git checkout -b feature/checkout origin/main
+git push -u origin feature/checkout
+```
+
+**Each person works on their own branch.** Like `main`, the merge point needs no local copy, so work from `origin/feature/checkout`:
+
+```bash
+# Start your piece from the merge point
+git fetch
+git checkout -b feature/checkout-ui origin/feature/checkout
+
+# Do your work
+git add .
+git commit -m "meaningful commit message"
+
+# Catch up: rebasing is fine, this branch is yours
+git fetch
+git rebase origin/feature/checkout
+
+# Push and open a PR into the merge point, not into main
+git push -u origin feature/checkout-ui
+# after a rebase of an already-pushed branch:
+git push --force-with-lease
+
+# PR merged → delete it and start a fresh branch for the next piece
+git branch -D feature/checkout-ui
+git fetch
+git checkout -b feature/checkout-ui-validation origin/feature/checkout
+```
+
+Start a fresh branch after every merge. If the PRs are squash-merged and you keep working on the old branch, your next PR conflicts with your own earlier work.
+
+**Keep the merge point up to date with `main`.** This is the one place you catch up with a merge, because the merge point is shared history and must not be rebased. Do it online, never with a local `git merge`:
+
+- open a PR from `main` into `feature/checkout`, or
+- open the final `feature/checkout → main` PR early as a draft and click **Update branch** whenever `main` moves. Pick *Update with merge commit*, not *Update with rebase*. If `feature/checkout` is protected, GitHub may not offer the button; use the `main → feature/checkout` PR instead ([GitHub docs ↗](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch)).
+
+After that, each person rebases their own branch onto `origin/feature/checkout` as usual.
+
+**Finish.** When every piece is in, the owner reviews the `feature/checkout → main` PR, merges it on GitHub, and deletes `feature/checkout` and any leftover personal branches.
+
+Rules that keep it working:
+
+- The merge point changes **only through PRs**. Nobody rebases or force-pushes it.
+- Personal branches are **short**, a day or two each, and merge often.
+- **One owner** merges the feature into `main`. The whole feature stays short-lived, days rather than months. If part of it has to reach `main` before it's finished, hide it behind a feature flag.
+
+**When to skip this:** if the two halves are independent, each person branches from `origin/main` and opens their own PR straight to `main`, behind a feature flag if needed. Fewer branches, same safety.

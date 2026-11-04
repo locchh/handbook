@@ -290,6 +290,7 @@ Software, coding, and SDLC vocabulary with abbreviations expanded, grouped by do
 | **Issue / PR Template** | A pre-filled description that a repo offers when someone opens an issue or pull request (`.github/ISSUE_TEMPLATE/`, `.gitlab/issue_templates/`) | [Work Items → Issue](process/work_items.md#issue), [Work Items → Where Templates Live](process/work_items.md#where-templates-live) |
 | **Monorepo** | Many projects in one repository | [Architecture → Code Organization](design/architecture.md#by-kind-anti-pattern) |
 | **Feature Branch / Release Branch / Hotfix Branch** | Short-lived branch per feature / stabilizing a version / urgent production fix | [Lifecycle → Branching Models](process/lifecycle.md#branching-models) |
+| **Merge Point / Shared Feature Branch** | A feature branch two or more people share: nobody commits to it directly, each person merges their own branch into it by PR, and one owner merges it into `main` | [Git → Two People on One Feature](process/git.md#9-two-people-on-one-feature) |
 | **Protected Branch** | Branch that only accepts changes through reviewed, passing PRs | [Git → Golden Rules](process/git.md#8-golden-rules) |
 | **Detached HEAD** | Checked out a commit, not a branch; new commits belong to no branch | [Git → Local main is optional](process/git.md#local-main-is-optional-senior-devs-delete-it) |
 | **Remote Tracking Branch** | Local read-only cache of a remote branch (`origin/main`) | [Git → origin/main is a local cache](process/git.md#originmain-is-a-local-cache-not-github-itself) |
