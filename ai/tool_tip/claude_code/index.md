@@ -801,7 +801,7 @@ The framing worth keeping is *backpressure*: downstream checks that reject inval
 | [Coverity](https://www.blackduck.com/static-analysis-tools-sast/coverity.html) | Static analysis for defects and security issues  |
 | [Black Duck](https://www.blackduck.com/)                                       | Open-source composition and licence analysis     |
 
-**In this handbook:** [Tools → Code Quality](https://locchh.github.io/handbook/software/tool_tip/tools/index.md) and [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md).
+**In this handbook:** [Tools → Code Quality](https://locchh.github.io/handbook/software/tool_tip/tools/index.md) and [Code Review](https://locchh.github.io/handbook/software/process/code_review/index.md).
 
 ### `/goal`
 
@@ -1630,7 +1630,7 @@ cd ../myapp
 git merge feature-x
 ```
 
-**In this handbook:** [Git](https://locchh.github.io/handbook/software/basics/git/index.md).
+**In this handbook:** [Git](https://locchh.github.io/handbook/software/process/git/index.md).
 
 ______________________________________________________________________
 

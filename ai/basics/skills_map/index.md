@@ -42,7 +42,7 @@ This is the argument against vibe coding as a terminal skill. An inexperienced d
 
 Fundamentals turn that around. They give you the precise vocabulary of software engineering — coupling, idempotency, cache invalidation, backpressure, consistency — which is exactly the language you steer a coding agent with. The clearer the language, the better the steering.
 
-**In this handbook:** [Fundamentals](https://locchh.github.io/handbook/software/basics/fundamentals/index.md), [Design Principles](https://locchh.github.io/handbook/software/basics/principles/index.md), [Architecture](https://locchh.github.io/handbook/software/basics/architecture/index.md), and [Tech Stacks](https://locchh.github.io/handbook/software/basics/tech_stacks/index.md).
+**In this handbook:** [Fundamentals](https://locchh.github.io/handbook/software/foundations/fundamentals/index.md), [Design Principles](https://locchh.github.io/handbook/software/design/principles/index.md), [Architecture](https://locchh.github.io/handbook/software/design/architecture/index.md), and [Tech Stacks](https://locchh.github.io/handbook/software/design/tech_stacks/index.md).
 
 ## 3. Using Coding Agents
 
@@ -69,13 +69,13 @@ The expectation that you'll be handed a pixel-perfect design and asked only to i
 
 Ng frames this as an opportunity rather than a loss. AI lets you take on more ownership and agency than before — spotting a problem worth solving and executing on it responsibly. That requires knowing how to drive a project: when to build a quick MVP and put it in front of users, and when to slow down and build carefully instead.
 
-**In this handbook:** [Becoming Senior](https://locchh.github.io/handbook/software/basics/becoming_senior/index.md) covers thinking in business capabilities rather than frameworks; [Lifecycle](https://locchh.github.io/handbook/software/basics/lifecycle/index.md) covers the delivery process; [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers the concrete automation machinery.
+**In this handbook:** [Becoming Senior](https://locchh.github.io/handbook/software/career/becoming_senior/index.md) covers thinking in business capabilities rather than frameworks; [Lifecycle](https://locchh.github.io/handbook/software/process/lifecycle/index.md) covers the delivery process; [CI/CD Platforms](https://locchh.github.io/handbook/software/tool_tip/cicd/index.md) covers the concrete automation machinery.
 
 ## The Skill Underneath
 
 All four rest on **continuous learning**. AI keeps changing, so the practices above have a shelf life; the habit of revising them doesn't.
 
-**In this handbook:** [Study Guide](https://locchh.github.io/handbook/software/basics/study_guide/index.md) and [The Senior Curriculum](https://locchh.github.io/handbook/software/basics/senior_curriculum/index.md).
+**In this handbook:** [Study Guide](https://locchh.github.io/handbook/software/career/study_guide/index.md) and [The Senior Curriculum](https://locchh.github.io/handbook/software/career/senior_curriculum/index.md).
 
 ## Rule of Thumb
 

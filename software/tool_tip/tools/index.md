@@ -75,7 +75,7 @@ git diff --check
 git diff
 ```
 
-Use [Git](https://locchh.github.io/handbook/software/basics/git/index.md) for branch and history mechanics, and [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md) for evaluating the resulting change.
+Use [Git](https://locchh.github.io/handbook/software/process/git/index.md) for branch and history mechanics, and [Code Review](https://locchh.github.io/handbook/software/process/code_review/index.md) for evaluating the resulting change.
 
 ## Run services locally
 

@@ -1,0 +1,4519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A handbook about Software Engineering, Data and AI">
+      
+      
+        <meta name="author" content="locch">
+      
+      
+        <link rel="canonical" href="https://locchh.github.io/handbook/software/process/sdlc_documents/">
+      
+      
+        <link rel="prev" href="../work_items/">
+      
+      
+        <link rel="next" href="../git/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>SDLC Documents & Templates - Software Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sdlc-documents-templates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Software Handbook" class="md-header__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SDLC Documents & Templates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Software Handbook" class="md-nav__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures & Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/system_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/tech_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking, APIs & Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking, APIs & Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Delivery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process & Delivery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work_items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Items & Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDLC Documents & Templates
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDLC Documents & Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documents-by-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents by Phase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brd-and-prd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BRD and PRD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#srs-and-frs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRS and FRS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qa-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q&amp;A Sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-doc-and-rfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Doc and RFC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        README
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-summary-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Summary Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uat-sign-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Sign-off
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runbook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handover-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handover Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meetings-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meetings and Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meetings and Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kickoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kickoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meeting-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meeting Minutes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rehearsal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rehearsal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-no-go-meeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Go / No-Go Meeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-documents-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Documents Live
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git: Merge vs Rebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career & Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Career & Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/becoming_senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/senior_curriculum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/study_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/machine_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/server_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/frontend_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/linux_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/introduction_to_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modelling & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality & Cleansing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance & Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Classification & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/big_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/skills_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The AI Engineering Skills Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The LLM Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/spec_driven_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/claude_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documents-by-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents by Phase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brd-and-prd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BRD and PRD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#srs-and-frs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SRS and FRS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qa-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q&amp;A Sheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-doc-and-rfc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Doc and RFC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        README
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-summary-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Summary Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uat-sign-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UAT Sign-off
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Documents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maintenance Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runbook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handover-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handover Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meetings-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meetings and Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Meetings and Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kickoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kickoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meeting-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meeting Minutes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rehearsal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rehearsal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-no-go-meeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Go / No-Go Meeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-documents-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Documents Live
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sdlc-documents-templates">SDLC Documents &amp; Templates<a class="headerlink" href="#sdlc-documents-templates" title="Permanent link">&para;</a></h1>
+<p><a href="../work_items/">Work items</a> live in a tracker and close when the work is done. <strong>Documents</strong> are what a team writes to agree on what to build, design it, prove it works, ship it, and run it. This page lists the common ones by <a href="../lifecycle/#sdlc-phases">SDLC phase</a> and gives a template for each.</p>
+<p>Not every project needs every document. Agile product teams keep them short and next to the code. Outsourcing and fixed-price projects usually need the formal ones (BRD, SRS, test report, UAT sign-off) signed by the client, because those documents <em>are</em> the agreed baseline that <a href="../work_items/#scope-change-request">change requests</a> are measured against.</p>
+<h2 id="documents-by-phase">Documents by Phase<a class="headerlink" href="#documents-by-phase" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Document</th>
+<th>Answers</th>
+<th>Usually written by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysis</td>
+<td><a href="#brd-and-prd">BRD / PRD</a></td>
+<td>Why does the business need this, and what should the product do?</td>
+<td>BA, PO / PM</td>
+</tr>
+<tr>
+<td>Analysis</td>
+<td><a href="#srs-and-frs">SRS / FRS</a></td>
+<td>Exactly what must the system do, and how well?</td>
+<td>BA, with the tech lead</td>
+</tr>
+<tr>
+<td>Analysis</td>
+<td><a href="#use-case">Use Case</a></td>
+<td>How does a user reach a goal, step by step?</td>
+<td>BA</td>
+</tr>
+<tr>
+<td>Analysis</td>
+<td><a href="#qa-sheet">Q&amp;A Sheet</a></td>
+<td>What did the client clarify?</td>
+<td>BA / BrSE</td>
+</tr>
+<tr>
+<td>Analysis → Testing</td>
+<td><a href="#rtm">RTM</a></td>
+<td>Is every requirement designed, built, and tested?</td>
+<td>BA / QA</td>
+</tr>
+<tr>
+<td>Design</td>
+<td><a href="#design-doc-and-rfc">Design Doc / RFC</a></td>
+<td>How will we build it, and why this way?</td>
+<td>Tech lead / architect</td>
+</tr>
+<tr>
+<td>Design</td>
+<td><a href="#detailed-design">Detailed Design</a></td>
+<td>Which modules, tables, and algorithms exactly?</td>
+<td>Developers</td>
+</tr>
+<tr>
+<td>Design</td>
+<td><a href="#adr">ADR</a></td>
+<td>What did we decide, and why?</td>
+<td>Whoever owns the decision</td>
+</tr>
+<tr>
+<td>Design</td>
+<td><a href="#api-contract">API Contract</a></td>
+<td>What does the interface look like?</td>
+<td>API owner, with its consumers</td>
+</tr>
+<tr>
+<td>Development</td>
+<td><a href="#readme">README</a></td>
+<td>How do I run, test, and use this?</td>
+<td>Developers</td>
+</tr>
+<tr>
+<td>Development → Deployment</td>
+<td><a href="#changelog">Changelog</a></td>
+<td>What changed in each version?</td>
+<td>Developers, often generated</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td><a href="#test-plan">Test Plan</a></td>
+<td>What will we test, how, and when are we done?</td>
+<td>QA lead</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td><a href="#test-case">Test Case</a></td>
+<td>What are the steps and expected result for one check?</td>
+<td>QA</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td><a href="#test-summary-report">Test Summary Report</a></td>
+<td>What did testing find? Is it ready to ship?</td>
+<td>QA lead</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td><a href="#uat-sign-off">UAT Sign-off</a></td>
+<td>Does the business accept it?</td>
+<td>Client / business owner</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td><a href="#release-checklist">Release Checklist</a></td>
+<td>Are we ready to go live, and can we roll back?</td>
+<td>Release manager / tech lead</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td><a href="#release-notes">Release Notes</a></td>
+<td>What do users need to know about this version?</td>
+<td>PM / tech writer</td>
+</tr>
+<tr>
+<td>Maintenance</td>
+<td><a href="#runbook">Runbook</a></td>
+<td>How do I handle this known situation?</td>
+<td>The team that runs the service</td>
+</tr>
+<tr>
+<td>Maintenance</td>
+<td><a href="#handover-document">Handover Document</a></td>
+<td>What does the new owner need to know?</td>
+<td>The outgoing team</td>
+</tr>
+</tbody>
+</table>
+<p>Incident reports and postmortems are covered with the other operational items on <a href="../work_items/#production-incident">Work Items → Production Incident</a> and <a href="../work_items/#postmortem">Work Items → Postmortem</a>. Project events and their documents (kickoff, meeting minutes, rehearsal, go / no-go, lessons learned) are in <a href="#meetings-and-events">Meetings and Events</a>.</p>
+<h2 id="analysis-documents">Analysis Documents<a class="headerlink" href="#analysis-documents" title="Permanent link">&para;</a></h2>
+<p>Analysis turns a business need into requirements that people can design, build, and test against.</p>
+<h3 id="brd-and-prd">BRD and PRD<a class="headerlink" href="#brd-and-prd" title="Permanent link">&para;</a></h3>
+<p>A <strong>BRD (Business Requirements Document)</strong> states the business problem, the objectives, who is involved, what is in and out of scope, and the high-level requirements. It contains no technical design. It is typical in enterprise and outsourcing projects, where the client approves it.</p>
+<p>A <strong>PRD (Product Requirements Document)</strong> is the product-company version. It covers the target users, the problems, the features, the success metrics, and the release criteria for a product or feature. Many teams write only one of the two.</p>
+<p><strong>Template: BRD</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Business Requirements Document: &lt;Project&gt;</span>
+
+Version: 1.0 · Date: &lt;yyyy-mm-dd&gt; · Author: &lt;BA&gt; · Approvers: &lt;business owner, sponsor&gt;
+
+<span class="gu">## 1. Background and problem</span>
+&lt;What is happening today, and why it is a problem for the business.&gt;
+
+<span class="gu">## 2. Business objectives</span>
+<span class="k">-</span><span class="w"> </span>BO-1: Reduce checkout abandonment from 68% to 55% by &lt;date&gt;
+
+<span class="gu">## 3. Stakeholders</span>
+| Name / role | Interest | Involvement |
+|---|---|---|
+| ... | ... | Approver / consulted / informed |
+
+<span class="gu">## 4. Scope</span>
+In scope:
+<span class="k">-</span><span class="w"> </span>...
+Out of scope:
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 5. Business requirements</span>
+| ID | Requirement | Priority (MoSCoW) | Source |
+|---|---|---|---|
+| BR-01 | Returning customers must not re-enter their shipping address | Must | Customer survey &lt;date&gt; |
+
+<span class="gu">## 6. Business rules</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 7. Assumptions and constraints</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 8. Success criteria / KPIs</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 9. Risks</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 10. Approval</span>
+| Name | Role | Signature | Date |
+|---|---|---|---|
+</code></pre></div>
+<p><strong>Template: PRD</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># PRD: &lt;Feature or product&gt;</span>
+
+Owner: &lt;PM&gt; · Status: Draft / In review / Approved · Target release: &lt;...&gt;
+
+<span class="gu">## Problem</span>
+&lt;Who has the problem, how often, how we know (data, research).&gt;
+
+<span class="gu">## Target users / personas</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Goals and success metrics</span>
+<span class="k">-</span><span class="w"> </span>&lt;Metric&gt;: from &lt;baseline&gt; to &lt;target&gt;
+
+<span class="gu">## Non-goals</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## User stories / use cases</span>
+<span class="k">-</span><span class="w"> </span>As a ..., I want ..., so that ...
+
+<span class="gu">## Requirements</span>
+| ID | Requirement | Priority | Notes |
+|---|---|---|---|
+
+<span class="gu">## UX / design</span>
+&lt;Links to flows and mockups.&gt;
+
+<span class="gu">## Release criteria</span>
+&lt;Functional, performance, accessibility, legal / compliance gates.&gt;
+
+<span class="gu">## Open questions</span>
+<span class="k">-</span><span class="w"> </span>...
+</code></pre></div>
+<h3 id="srs-and-frs">SRS and FRS<a class="headerlink" href="#srs-and-frs" title="Permanent link">&para;</a></h3>
+<p>An <strong>SRS (Software Requirements Specification)</strong> is the detailed, testable description of what the system must do. It holds the <strong>functional requirements</strong> (FR: <em>what</em> it does) and the <strong>non-functional requirements</strong> (NFR: <em>how well</em>: performance, security, availability, usability). An <strong>FRS (Functional Requirements Specification)</strong> covers only the functional part. The classic structure comes from IEEE 830, which has been replaced by ISO/IEC/IEEE 29148 (<a href="https://en.wikipedia.org/wiki/Software_requirements_specification">Wikipedia: SRS ↗</a>).</p>
+<p>Give every requirement an ID so that design, code, and tests can point to it (see <a href="#rtm">RTM</a>). Write each one so it can be tested: "p95 &lt; 1.5 s" can be tested, "the page is fast" cannot.</p>
+<p><strong>Template: SRS</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Software Requirements Specification: &lt;System&gt;</span>
+
+Version: &lt;n&gt; · Status: Draft / Approved · Based on: BRD v&lt;n&gt;
+
+<span class="gu">## 1. Introduction</span>
+1.1 Purpose · 1.2 Scope · 1.3 Definitions and abbreviations · 1.4 References
+
+<span class="gu">## 2. Overall description</span>
+2.1 Users and roles · 2.2 Operating environment · 2.3 Constraints · 2.4 Assumptions and dependencies
+
+<span class="gu">## 3. Functional requirements</span>
+<span class="gu">### FR-012 Save shipping address</span>
+<span class="k">-</span><span class="w"> </span>Description: The system shall let a logged-in customer save up to 5 shipping addresses.
+<span class="k">-</span><span class="w"> </span>Priority: Must
+<span class="k">-</span><span class="w"> </span>Source: BR-01
+<span class="k">-</span><span class="w"> </span>Inputs / outputs: &lt;fields, formats&gt;
+<span class="k">-</span><span class="w"> </span>Business rules: Postcode is validated against the selected country's format.
+<span class="k">-</span><span class="w"> </span>Acceptance: AC-012-1 … AC-012-3
+
+<span class="gu">## 4. Non-functional requirements</span>
+| ID | Category | Requirement | Measure |
+|---|---|---|---|
+| NFR-01 | Performance | Checkout page loads quickly on mobile | p95 &lt; 1.5 s on 4G |
+| NFR-02 | Availability | Checkout is available | 99.9% per month |
+| NFR-03 | Security | Addresses are encrypted at rest | AES-256 |
+| NFR-04 | Accessibility | Checkout is usable with a screen reader | WCAG 2.1 AA |
+
+<span class="gu">## 5. External interfaces</span>
+User interfaces · APIs · other systems · hardware
+
+<span class="gu">## 6. Data requirements</span>
+&lt;Entities, retention, privacy classification.&gt;
+
+<span class="gu">## Change history</span>
+| Version | Date | Change | Author |
+|---|---|---|---|
+</code></pre></div>
+<h3 id="use-case">Use Case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h3>
+<p>A <strong>use case</strong> describes how an <em>actor</em> (a user or another system) reaches one goal through a sequence of interactions with the system. It includes what happens when things go wrong. Use cases suit complex flows better than one-line user stories, and their alternative flows become test cases. The structure below follows Alistair Cockburn's <em>Writing Effective Use Cases</em>.</p>
+<p><strong>Template: Use case</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># UC-07: Check out with a saved address</span>
+
+Primary actor: Returning customer · Level: User goal
+Preconditions: Customer is logged in; cart is not empty
+Trigger: Customer clicks "Checkout"
+
+<span class="gu">## Main success scenario</span>
+<span class="k">1.</span> System shows the shipping step, pre-filled with the default saved address.
+<span class="k">2.</span> Customer confirms the address.
+<span class="k">3.</span> System shows the payment step.
+<span class="k">4.</span> Customer pays.
+<span class="k">5.</span> System confirms the order and sends an email.
+
+<span class="gu">## Extensions (alternative and error flows)</span>
+1a. Customer has no saved address: system shows an empty form with a "Save this address" option.
+2a. Customer picks another saved address: system updates shipping costs and continues at step 3.
+4a. Payment is declined: system shows the reason and stays on the payment step.
+
+<span class="gu">## Postconditions</span>
+Success: order is created and paid. Failure: no order is created; cart is unchanged.
+
+Related: FR-012, STORY-101
+</code></pre></div>
+<h3 id="qa-sheet">Q&amp;A Sheet<a class="headerlink" href="#qa-sheet" title="Permanent link">&para;</a></h3>
+<p>A <strong>Q&amp;A sheet</strong> is a shared log of questions to the client and their answers. It is how requirements get clarified on offshore projects, where the BrSE or BA collects the questions from the team. Every answer that changes a requirement should update the BRD or SRS. If the answer adds scope, it should become a <a href="../work_items/#scope-change-request">change request</a>.</p>
+<p><strong>Template: Q&amp;A sheet</strong></p>
+<div class="highlight"><pre><span></span><code>| No | Date | Ref (doc / section) | Question | Proposed answer / assumption | Asked by | Answer | Answered by | Date | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| 14 | 2026-10-02 | SRS FR-012 | Is the 5-address limit per account or per country? | Per account | Dev team | Per account | Client PO | 2026-10-03 | Closed |
+</code></pre></div>
+<p>Always include a <em>proposed answer</em>. It speeds up the reply, and if the client never answers, it documents the assumption the team worked from.</p>
+<h3 id="rtm">RTM<a class="headerlink" href="#rtm" title="Permanent link">&para;</a></h3>
+<p>An <strong>RTM (Requirements Traceability Matrix)</strong> links each requirement forward to its design, code, and tests, and back to its business source. It answers "is anything unbuilt or untested?" before release, and "what does this change affect?" when a CR arrives.</p>
+<p><strong>Template: RTM</strong></p>
+<div class="highlight"><pre><span></span><code>| Req ID | Requirement | Source | Design ref | Story / task | Test cases | Status |
+|---|---|---|---|---|---|---|
+| FR-012 | Save up to 5 shipping addresses | BR-01 | DD §4.2 | STORY-101 | TC-CHK-014, TC-CHK-015 | Passed |
+| NFR-01 | Checkout p95 &lt; 1.5 s on 4G | BR-03 | HLD §6 | TASK-220 | PT-003 | Not run |
+</code></pre></div>
+<h2 id="design-documents">Design Documents<a class="headerlink" href="#design-documents" title="Permanent link">&para;</a></h2>
+<p>Design turns requirements into a plan for building them, and records the decisions so later readers know <em>why</em>.</p>
+<h3 id="design-doc-and-rfc">Design Doc and RFC<a class="headerlink" href="#design-doc-and-rfc" title="Permanent link">&para;</a></h3>
+<p>A <strong>design doc</strong> (also <em>technical design</em>, <em>HLD (High-Level Design)</em>, or <em>Basic Design</em> on Japanese-style projects) explains how a system or change will be built. It covers the main components, how data flows between them, and the trade-offs. An <strong>RFC (Request for Comments)</strong> is the same kind of document, circulated widely for feedback before a decision. Write one when a change is hard to reverse, touches several teams, or takes more than a few weeks. See <a href="https://www.industrialempathy.com/posts/design-docs-at-google/">Design Docs at Google ↗</a> for how one large company uses them.</p>
+<p>The <em>Alternatives considered</em> section matters most. It shows reviewers the options you rejected and why.</p>
+<p><strong>Template: Design doc / RFC</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Design: &lt;Title&gt;</span>
+
+Author: &lt;name&gt; · Reviewers: &lt;names&gt; · Status: Draft / In review / Approved / Implemented
+Last updated: &lt;date&gt; · Related: &lt;PRD, epic, ADRs&gt;
+
+<span class="gu">## Context and problem</span>
+&lt;What exists today and why it isn't enough. Link the requirements.&gt;
+
+<span class="gu">## Goals</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Non-goals</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Proposal</span>
+&lt;Architecture diagram, main components, data flow, APIs, data model.&gt;
+
+<span class="gu">## Alternatives considered</span>
+| Option | Pros | Cons | Why not |
+|---|---|---|---|
+
+<span class="gu">## Cross-cutting concerns</span>
+Security · privacy · observability · scalability · cost · accessibility
+
+<span class="gu">## Risks and open questions</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Rollout and migration</span>
+&lt;Feature flags, phased rollout, data migration, rollback.&gt;
+
+<span class="gu">## Testing plan</span>
+<span class="k">-</span><span class="w"> </span>...
+</code></pre></div>
+<h3 id="detailed-design">Detailed Design<a class="headerlink" href="#detailed-design" title="Permanent link">&para;</a></h3>
+<p>A <strong>detailed design</strong> (also <em>LLD (Low-Level Design)</em> or <em>DD</em>) goes one level down from the design doc. It covers module structure, class and function responsibilities, database tables, sequence diagrams for the main flows, validation rules, and error handling. Formal projects deliver it as a document. Agile teams usually keep the same information as code, schemas, and short notes in the repo.</p>
+<p><strong>Template: Detailed design (per module)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Detailed Design: &lt;Module&gt;</span>
+
+Version: &lt;n&gt; · Based on: &lt;design doc / HLD section&gt;
+
+<span class="gu">## 1. Responsibilities</span>
+&lt;What this module does and doesn't do.&gt;
+
+<span class="gu">## 2. Structure</span>
+&lt;Packages / classes / functions and how they depend on each other.&gt;
+
+<span class="gu">## 3. Data model</span>
+| Table | Column | Type | Null | Key | Description |
+|---|---|---|---|---|---|
+| addresses | id | uuid | N | PK | |
+| addresses | customer_id | uuid | N | FK → customers.id, index | |
+| addresses | postcode | varchar(16) | N | | Validated per country |
+
+<span class="gu">## 4. Main flows</span>
+&lt;Sequence diagram per flow: who calls whom, in what order.&gt;
+
+<span class="gu">## 5. Interfaces</span>
+&lt;Function signatures or endpoints, inputs, outputs, errors.&gt;
+
+<span class="gu">## 6. Validation and error handling</span>
+| Case | Behavior | Error code / message |
+|---|---|---|
+
+<span class="gu">## 7. Logging, metrics, and security notes</span>
+<span class="k">-</span><span class="w"> </span>...
+</code></pre></div>
+<h3 id="adr">ADR<a class="headerlink" href="#adr" title="Permanent link">&para;</a></h3>
+<p>An <strong>ADR (Architecture Decision Record)</strong> is a short note of <em>one</em> significant decision: its context, the decision itself, and what follows from it. Write one whenever a decision is expensive to reverse, affects other teams, or is something a newcomer will ask "why?" about.</p>
+<ul>
+<li><strong>Where:</strong> in the repo, one file per decision, numbered: <code>docs/adr/0007-use-postgres-full-text-search.md</code>.</li>
+<li><strong>Lifecycle:</strong> <code>Proposed → Accepted</code>, later <code>Deprecated</code> or <code>Superseded by ADR-00xx</code>. Once accepted, an ADR is not edited. When the decision changes, write a new ADR that supersedes the old one, so the history stays readable.</li>
+<li><strong>Formats:</strong> the original by <a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions">Michael Nygard ↗</a> (below), or <a href="https://adr.github.io/madr/">MADR ↗</a>, which adds <em>considered options</em> with pros and cons. More templates and tools are at <a href="https://adr.github.io/">adr.github.io ↗</a>.</li>
+</ul>
+<p>Design docs propose. ADRs record what was decided. A design doc often ends in one or more ADRs. For why writing decisions down matters, see <a href="../../career/becoming_senior/#communication-is-part-of-the-system">Becoming Senior → Communication</a>.</p>
+<p><strong>Template: ADR</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># ADR-0007: Use PostgreSQL full-text search for product search</span>
+
+Status: Proposed / Accepted / Deprecated / Superseded by ADR-00xx
+Date: 2026-11-04 · Deciders: &lt;names&gt;
+
+<span class="gu">## Context</span>
+&lt;The forces at play: requirements, constraints, what the spike found.
+ e.g. 5M products, p95 &lt; 200 ms required, team has no OpenSearch experience.&gt;
+
+<span class="gu">## Decision</span>
+&lt;What we will do, in full sentences: "We will use PostgreSQL full-text search
+ with a GIN index on products, and revisit if the catalog passes 20M rows."&gt;
+
+<span class="gu">## Consequences</span>
+&lt;What becomes easier, what becomes harder, what we must now watch.&gt;
+</code></pre></div>
+<h3 id="api-contract">API Contract<a class="headerlink" href="#api-contract" title="Permanent link">&para;</a></h3>
+<p>An <strong>API contract</strong> is the agreed description of an interface: its endpoints, request and response shapes, errors, and auth. It is written <em>before</em> or alongside the code, so frontend, backend, and partner teams can work in parallel and contract tests can check that both sides keep it. For REST this is usually an <a href="https://spec.openapis.org/oas/latest.html">OpenAPI ↗</a> file in the repo. For design rules on status codes, versioning, and pagination, see <a href="../../systems/apis/">APIs</a>.</p>
+<p><strong>Template: OpenAPI stub</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">openapi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.1.0</span>
+<span class="nt">info</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Orders API</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.4.0</span>
+<span class="nt">paths</span><span class="p">:</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">/orders/{orderId}</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="nt">get</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get one order</span>
+<span class="w">      </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orderId</span>
+<span class="w">          </span><span class="nt">in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path</span>
+<span class="w">          </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">responses</span><span class="p">:</span>
+<span class="w">        </span><span class="s">"200"</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The order</span>
+<span class="w">          </span><span class="nt">content</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">application/json</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> $ref</span><span class="p">:</span><span class="w"> </span><span class="s">"#/components/schemas/Order"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="s">"404"</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Order not found</span>
+<span class="nt">components</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schemas</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Order</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">id</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">status</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">totalMinor</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">currency</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span><span class="nt"> enum</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">pending</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">paid</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">shipped</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">cancelled</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="nt">totalMinor</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">integer</span><span class="p p-Indicator">,</span><span class="nt"> description</span><span class="p">:</span><span class="w"> </span><span class="s">"Amount</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">minor</span><span class="nv"> </span><span class="s">units,</span><span class="nv"> </span><span class="s">e.g.</span><span class="nv"> </span><span class="s">cents"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="nt">currency</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span><span class="nt"> example</span><span class="p">:</span><span class="w"> </span><span class="s">"USD"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<h2 id="development-documents">Development Documents<a class="headerlink" href="#development-documents" title="Permanent link">&para;</a></h2>
+<p>These live next to the code and change with it.</p>
+<h3 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">&para;</a></h3>
+<p>The <strong>README</strong> is the front door of a repository. Someone new should be able to go from clone to a running app and passing tests using only the README. Anything longer than that (architecture, ADRs, runbooks) gets a link, not a copy.</p>
+<p><strong>Template: README</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># &lt;Project name&gt;</span>
+
+&lt;One sentence: what this is and who it's for.&gt;
+
+<span class="gu">## Quick start</span>
+<span class="sb">```bash</span>
+git<span class="w"> </span>clone<span class="w"> </span>&lt;repo&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;repo&gt;
+cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">          </span><span class="c1"># fill in the values marked TODO</span>
+make<span class="w"> </span>setup<span class="w">                    </span><span class="c1"># install dependencies</span>
+make<span class="w"> </span>run<span class="w">                      </span><span class="c1"># http://localhost:8000</span>
+<span class="sb">```</span>
+
+<span class="gu">## Running tests</span>
+<span class="sb">```bash</span>
+make<span class="w"> </span><span class="nb">test</span>
+<span class="sb">```</span>
+
+<span class="gu">## Configuration</span>
+| Variable | Required | Default | Description |
+|---|---|---|---|
+
+<span class="gu">## Deployment</span>
+&lt;How it gets to staging and production, or a link to the pipeline.&gt;
+
+<span class="gu">## Architecture</span>
+&lt;One paragraph and a link to the design doc / ADRs in <span class="sb">`docs/`</span>.&gt;
+
+<span class="gu">## Contributing</span>
+&lt;Branching model, commit convention, how to open a PR.&gt;
+
+<span class="gu">## Owners</span>
+&lt;Team, chat channel, on-call rotation.&gt;
+</code></pre></div>
+<h3 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h3>
+<p>A <strong>changelog</strong> is a file in the repo, <code>CHANGELOG.md</code>, that lists every notable change per version for developers, integrators, and operators. The <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog ↗</a> convention puts the newest version on top. It keeps an <code>[Unreleased]</code> section that fills up as work merges and becomes the next version at release time. It groups entries under fixed headings: <em>Added, Changed, Deprecated, Removed, Fixed, Security</em>. Pair it with <a href="../lifecycle/#semantic-versioning">Semantic Versioning</a> so the version number says whether anything breaks.</p>
+<p>If the team uses <a href="../lifecycle/#conventional-commits">Conventional Commits</a>, tools such as <a href="https://github.com/googleapis/release-please">release-please ↗</a>, <a href="https://github.com/semantic-release/semantic-release">semantic-release ↗</a>, or <a href="https://git-cliff.org/">git-cliff ↗</a> can generate the changelog and the next version number from the commit history.</p>
+<p><strong>Changelog vs release notes</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Changelog</th>
+<th>Release notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Audience</strong></td>
+<td>Developers, integrators, operators</td>
+<td>Users, customers, support, sales</td>
+</tr>
+<tr>
+<td><strong>Lives in</strong></td>
+<td><code>CHANGELOG.md</code> in the repo</td>
+<td>Product site, app store, docs, email</td>
+</tr>
+<tr>
+<td><strong>Content</strong></td>
+<td>Every notable change, grouped by type</td>
+<td>Curated highlights in plain, benefit-first language</td>
+</tr>
+<tr>
+<td><strong>Written</strong></td>
+<td>Continuously under <code>[Unreleased]</code>, or generated from commits</td>
+<td>At release time, using the changelog as input</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Template: CHANGELOG.md</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Changelog</span>
+
+All notable changes to this project are documented in this file.
+The format is based on [<span class="nt">Keep a Changelog</span>](<span class="na">https://keepachangelog.com/en/1.1.0/</span>),
+and this project adheres to [<span class="nt">Semantic Versioning</span>](<span class="na">https://semver.org/spec/v2.0.0.html</span>).
+
+<span class="gu">## [Unreleased]</span>
+<span class="gu">### Added</span>
+<span class="k">-</span><span class="w"> </span>Pay with a saved card (#117)
+
+<span class="gu">## [2.15.0] - 2026-11-04</span>
+<span class="gu">### Added</span>
+<span class="k">-</span><span class="w"> </span>Save shipping address at checkout (#101)
+<span class="gu">### Changed</span>
+<span class="k">-</span><span class="w"> </span>Coupon codes are now case-insensitive (#477)
+<span class="gu">### Deprecated</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`GET /v1/addresses`</span>; use <span class="sb">`/v2/addresses`</span>. Removal planned for 3.0.0
+<span class="gu">### Fixed</span>
+<span class="k">-</span><span class="w"> </span>Checkout returned 500 for lowercase coupon codes (#482)
+<span class="gu">### Security</span>
+<span class="k">-</span><span class="w"> </span>Upgrade <span class="sb">`&lt;library&gt;`</span> to fix CVE-YYYY-NNNNN
+
+[<span class="nl">Unreleased</span>]: <span class="na">https://github.com/&lt;org&gt;/&lt;repo&gt;/compare/v2.15.0...HEAD</span>
+[<span class="nl">2.15.0</span>]: <span class="na">https://github.com/&lt;org&gt;/&lt;repo&gt;/compare/v2.14.3...v2.15.0</span>
+</code></pre></div>
+<h2 id="testing-documents">Testing Documents<a class="headerlink" href="#testing-documents" title="Permanent link">&para;</a></h2>
+<p>Testing documents say what will be checked, record what was checked, and give the go / no-go evidence. The test types themselves are in <a href="../lifecycle/#testing">Lifecycle → Testing</a>.</p>
+<h3 id="test-plan">Test Plan<a class="headerlink" href="#test-plan" title="Permanent link">&para;</a></h3>
+<p>A <strong>test plan</strong> sets the strategy for a release or project: the scope, test levels and types, environments, entry and exit criteria, schedule, and risks. The classic standard is IEEE 829, now replaced by ISO/IEC/IEEE 29119-3 (<a href="https://en.wikipedia.org/wiki/ISO/IEC_29119">Wikipedia: ISO/IEC 29119 ↗</a>). <strong>Exit criteria</strong> are the most important part. They decide in advance what "done testing" means, so the decision isn't made under deadline pressure.</p>
+<p><strong>Template: Test plan</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Test Plan: &lt;Project / release&gt;</span>
+
+Version: &lt;n&gt; · Author: &lt;QA lead&gt; · Approvers: &lt;PM, tech lead, client&gt;
+
+<span class="gu">## 1. Scope</span>
+In scope: &lt;features, requirement IDs&gt; · Out of scope: &lt;...&gt;
+
+<span class="gu">## 2. Test levels and types</span>
+Unit (dev) · Integration · System / E2E · Regression · Performance · Security · UAT
+
+<span class="gu">## 3. Approach</span>
+&lt;Manual vs automated, tools, risk-based priorities, regression strategy.&gt;
+
+<span class="gu">## 4. Environments and test data</span>
+&lt;Which environment, which build, how data is created and reset. No real PII.&gt;
+
+<span class="gu">## 5. Entry criteria</span>
+<span class="k">-</span><span class="w"> </span>Build deployed to the test environment; smoke test passes
+<span class="k">-</span><span class="w"> </span>Test cases reviewed and approved
+
+<span class="gu">## 6. Exit criteria</span>
+<span class="k">-</span><span class="w"> </span>100% of planned cases executed; ≥ 95% passed
+<span class="k">-</span><span class="w"> </span>No open S1 / S2 defects; S3 defects have an agreed plan
+
+<span class="gu">## 7. Schedule</span>
+| Activity | Start | End | Owner |
+|---|---|---|---|
+
+<span class="gu">## 8. Roles and responsibilities</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 9. Risks and mitigations</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 10. Deliverables</span>
+Test cases · defect reports · test summary report
+</code></pre></div>
+<h3 id="test-case">Test Case<a class="headerlink" href="#test-case" title="Permanent link">&para;</a></h3>
+<p>A <strong>test case</strong> is one check: preconditions, steps, test data, and the expected result. It is written from a requirement or acceptance criterion and linked back to it in the <a href="#rtm">RTM</a>. Steps should be specific enough that someone else gets the same result. Automated tests are test cases too: the test name and assertions play the role of the title and the expected result.</p>
+<p><strong>Template: Test case</strong></p>
+<div class="highlight"><pre><span></span><code>| Field | Value |
+|---|---|
+| ID | TC-CHK-014 |
+| Title | Saved address is pre-filled at checkout |
+| Requirement / story | FR-012 / STORY-101 |
+| Priority | High |
+| Type | Functional · Regression |
+| Preconditions | Logged-in customer with one saved address |
+| Test data | Account <span class="sb">`qa_user_07`</span> |
+| Steps | 1. Add any item to the cart. 2. Click "Checkout". |
+| Expected result | The shipping form shows the saved address |
+| Actual result | |
+| Status | Not run / Passed / Failed / Blocked |
+| Defect | (bug ID if failed) |
+</code></pre></div>
+<h3 id="test-summary-report">Test Summary Report<a class="headerlink" href="#test-summary-report" title="Permanent link">&para;</a></h3>
+<p>A <strong>test summary report</strong> (also <em>test report</em> or <em>test completion report</em>) closes a test cycle. It covers what was tested, the results, open defects, risks, and a go / no-go recommendation. It is the evidence for the release decision and, on client projects, for acceptance.</p>
+<p><strong>Template: Test summary report</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Test Summary Report: &lt;Release / sprint&gt;</span>
+
+Build: &lt;version&gt; · Environment: &lt;staging&gt; · Period: &lt;dates&gt; · Author: &lt;QA lead&gt;
+
+<span class="gu">## Summary</span>
+&lt;One paragraph: ready to release? Under what conditions?&gt;
+
+<span class="gu">## Execution</span>
+| Planned | Executed | Passed | Failed | Blocked |
+|---|---|---|---|---|
+| 240 | 236 | 228 | 5 | 3 |
+
+<span class="gu">## Defects</span>
+| Severity | Found | Fixed | Open |
+|---|---|---|---|
+| S1 | 1 | 1 | 0 |
+| S2 | 6 | 6 | 0 |
+| S3 | 14 | 11 | 3 |
+
+<span class="gu">## Open defects accepted for release</span>
+| ID | Severity | Summary | Workaround / plan |
+|---|---|---|---|
+
+<span class="gu">## Not tested, and why</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Risks</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Recommendation</span>
+Go / Go with conditions / No-go
+</code></pre></div>
+<h3 id="uat-sign-off">UAT Sign-off<a class="headerlink" href="#uat-sign-off" title="Permanent link">&para;</a></h3>
+<p><strong>UAT (User Acceptance Testing)</strong> is when the business or client checks the system against their own scenarios. The <strong>sign-off</strong> is their written acceptance. On contract projects it often triggers go-live and the payment milestone, so it should name the version tested and any defects accepted as known issues.</p>
+<p><strong>Template: UAT sign-off</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># UAT Sign-off: &lt;Project&gt; &lt;version&gt;</span>
+
+UAT period: &lt;dates&gt; · Environment: &lt;UAT / staging&gt; · Build: &lt;version&gt;
+
+<span class="gu">## Scope tested</span>
+&lt;Business scenarios / requirement IDs covered.&gt;
+
+<span class="gu">## Results</span>
+&lt;Scenarios passed / failed; link to the test summary report.&gt;
+
+<span class="gu">## Known issues accepted for go-live</span>
+| ID | Summary | Agreed fix date |
+|---|---|---|
+
+<span class="gu">## Decision</span>
+[ ] Accepted   [ ] Accepted with conditions: &lt;...&gt;   [ ] Rejected: &lt;reason&gt;
+
+| Name | Role | Signature | Date |
+|---|---|---|---|
+</code></pre></div>
+<h2 id="deployment-documents">Deployment Documents<a class="headerlink" href="#deployment-documents" title="Permanent link">&para;</a></h2>
+<h3 id="release-checklist">Release Checklist<a class="headerlink" href="#release-checklist" title="Permanent link">&para;</a></h3>
+<p>A <strong>release checklist</strong> (or <em>go-live checklist</em>) makes launches repeatable. It lists what must be true before, during, and after the deploy, ending in an explicit <strong>go / no-go</strong> decision. Each production deploy may also need a <a href="../work_items/#production-change-request">production change request</a>.</p>
+<p><strong>Template: Release checklist</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Release checklist: v2.15.0 — &lt;date&gt;</span>
+
+<span class="gu">## Before</span>
+<span class="k">- [ ]</span> Scope frozen; release candidate built and tagged <span class="sb">`v2.15.0-rc.1`</span>
+<span class="k">- [ ]</span> Regression suite passed on staging; test summary report says Go
+<span class="k">- [ ]</span> UAT signed off (if required)
+<span class="k">- [ ]</span> DB migrations rehearsed on a production-size copy and backward compatible
+<span class="k">- [ ]</span> Backup taken; restore tested
+<span class="k">- [ ]</span> Rollback plan written and rehearsed
+<span class="k">- [ ]</span> Feature flags set to their launch values
+<span class="k">- [ ]</span> Changelog and release notes ready
+<span class="k">- [ ]</span> Production change request approved (if required)
+<span class="k">- [ ]</span> On-call and support briefed; status page message drafted
+<span class="k">- [ ]</span> Go / no-go meeting held: &lt;decision, who decided&gt;
+
+<span class="gu">## During</span>
+<span class="k">- [ ]</span> Deploy (canary / blue-green / rolling)
+<span class="k">- [ ]</span> Smoke tests pass in production
+<span class="k">- [ ]</span> Error rate, latency, and business metrics normal on the dashboards
+
+<span class="gu">## After</span>
+<span class="k">- [ ]</span> Tag <span class="sb">`v2.15.0`</span> on main; publish release notes
+<span class="k">- [ ]</span> Close or move released tickets
+<span class="k">- [ ]</span> Watch metrics for &lt;n&gt; hours
+<span class="k">- [ ]</span> Announce to stakeholders
+</code></pre></div>
+<h3 id="release-notes">Release Notes<a class="headerlink" href="#release-notes" title="Permanent link">&para;</a></h3>
+<p><strong>Release notes</strong> tell users what changed in a version and whether they need to do anything. They are curated from the <a href="#changelog">changelog</a> and written for the reader. Write "You can now save your shipping address", not "Added AddressService". Put anything that needs action, such as breaking changes or deprecations, where nobody can miss it.</p>
+<p><strong>Template: Release notes</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Release 2.15 — November 4, 2026</span>
+
+<span class="gu">## Highlights</span>
+<span class="gs">**Saved addresses at checkout.**</span> Returning customers can save their shipping
+address and skip retyping it next time. &lt;screenshot&gt;
+
+<span class="gu">## Improvements</span>
+<span class="k">-</span><span class="w"> </span>Coupon codes now work regardless of upper or lower case.
+
+<span class="gu">## Fixes</span>
+<span class="k">-</span><span class="w"> </span>Fixed an error at checkout when a coupon code was typed in lowercase.
+
+<span class="gu">## Action required</span>
+<span class="k">-</span><span class="w"> </span>API users: <span class="sb">`GET /v1/addresses`</span> is deprecated and will be removed in 3.0.
+  Move to <span class="sb">`/v2/addresses`</span> by &lt;date&gt;.
+
+<span class="gu">## Known issues</span>
+<span class="k">-</span><span class="w"> </span>...
+
+Full technical changelog: &lt;link&gt;
+</code></pre></div>
+<h2 id="maintenance-documents">Maintenance Documents<a class="headerlink" href="#maintenance-documents" title="Permanent link">&para;</a></h2>
+<h3 id="runbook">Runbook<a class="headerlink" href="#runbook" title="Permanent link">&para;</a></h3>
+<p>A <strong>runbook</strong> is a step-by-step guide for a known operational situation, usually linked from the alert that fires for it. Someone who has never seen the service should be able to follow it at 3 a.m. How to write and keep runbooks for a server is covered in <a href="../../tool_tip/server_operations/#11-runbooks">Running a Server → Runbooks</a>. The template below is the per-alert shape.</p>
+<p><strong>Template: Runbook</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Runbook: &lt;Alert or situation: "Orders API p95 latency &gt; 1 s"&gt;</span>
+
+Service: orders-api · Owner: &lt;team&gt; · Last tested: &lt;date&gt;
+
+<span class="gu">## When this fires</span>
+&lt;Alert name, threshold, dashboard link.&gt;
+
+<span class="gu">## Impact</span>
+&lt;What users experience; the usual severity.&gt;
+
+<span class="gu">## Diagnose</span>
+<span class="k">1.</span> Check &lt;dashboard&gt;: is it every endpoint or one?
+<span class="k">2.</span> <span class="sb">`kubectl -n orders top pods`</span>: is CPU or memory saturated?
+<span class="k">3.</span> Check the database: &lt;dashboard / query&gt; for slow queries or lock waits.
+
+<span class="gu">## Mitigate</span>
+<span class="k">-</span><span class="w"> </span>Recent deploy? Roll back: &lt;command or pipeline link&gt;
+<span class="k">-</span><span class="w"> </span>CPU-bound? Scale out: <span class="sb">`kubectl -n orders scale deploy/orders-api --replicas=&lt;n&gt;`</span>
+<span class="k">-</span><span class="w"> </span>Lock waits? &lt;steps&gt;
+
+<span class="gu">## Verify</span>
+&lt;What "recovered" looks like on the dashboard.&gt;
+
+<span class="gu">## Escalate</span>
+&lt;Who and when: "Not recovered in 30 min → page the DB on-call (&lt;rotation&gt;)".&gt;
+</code></pre></div>
+<h3 id="handover-document">Handover Document<a class="headerlink" href="#handover-document" title="Permanent link">&para;</a></h3>
+<p>A <strong>handover document</strong> transfers ownership of a system: to another team, to the client's operations team at the end of a project, or to the next person when someone leaves. It points to everything else (README, design docs, ADRs, runbooks) and adds what only the outgoing team knows. That includes quirks, open issues, and recurring manual tasks.</p>
+<p><strong>Template: Handover document</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Handover: &lt;System&gt; — from &lt;team A&gt; to &lt;team B&gt;</span>
+
+Date: &lt;date&gt; · Handover period: &lt;dates, with shadowing sessions&gt;
+
+<span class="gu">## 1. System overview</span>
+&lt;What it does, who uses it, how critical it is (SLA / SLO).&gt;
+
+<span class="gu">## 2. Where everything is</span>
+Repos · design docs · ADRs · runbooks · dashboards · CI/CD · tracker board
+
+<span class="gu">## 3. Environments and access</span>
+| Environment | URL | How to get access | Secrets stored in |
+|---|---|---|---|
+
+<span class="gu">## 4. How to deploy and roll back</span>
+&lt;Link to the pipeline and the release checklist.&gt;
+
+<span class="gu">## 5. Recurring tasks</span>
+| Task | Frequency | How |
+|---|---|---|
+| Rotate TLS certificates | 90 days | &lt;runbook link&gt; |
+
+<span class="gu">## 6. Known issues, tech debt, and quirks</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## 7. Open work</span>
+&lt;Tickets in progress and their state.&gt;
+
+<span class="gu">## 8. Contacts</span>
+&lt;Previous owners, vendors, client contacts, escalation.&gt;
+
+<span class="gu">## Sign-off</span>
+&lt;Receiving team confirms they can deploy, operate, and debug the system.&gt;
+</code></pre></div>
+<h2 id="meetings-and-events">Meetings and Events<a class="headerlink" href="#meetings-and-events" title="Permanent link">&para;</a></h2>
+<p>Some events happen at fixed points of a project, and each one has a document that comes out of it. The sprint events (planning, daily scrum, review, retrospective) are on <a href="../work_items/#sprint">Work Items → Sprint</a>. This section covers the project-level ones.</p>
+<pre class="mermaid"><code>flowchart TD
+    K([Kickoff]) --&gt; AN[Analysis]
+    AN --&gt; DE[Design]
+    DE --&gt; DR([Design review])
+    DR --&gt; BT["Development and Testing: sprint events every 1–4 weeks"]
+    BT --&gt; RH([Rehearsal])
+    RH --&gt; GN([Go / No-Go meeting])
+    GN --&gt;|Go| GL[Go-live]
+    GN --&gt;|No-go| BT
+    GL --&gt; HC([Hypercare])
+    HC --&gt; LL([Lessons learned])
+    SC([Steering committee]) -.-&gt;|at milestones| DR
+    SC -.-&gt; GN</code></pre>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When in the SDLC</th>
+<th>What comes out of it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kickoff</strong></td>
+<td>Start of the project or of a big phase</td>
+<td>Shared goals, scope, roles, plan, and ways of working, recorded in the minutes</td>
+</tr>
+<tr>
+<td><strong>Design review</strong></td>
+<td>End of Design</td>
+<td>An approved design doc and ADRs, or a list of changes needed</td>
+</tr>
+<tr>
+<td><strong>Steering committee</strong></td>
+<td>Monthly, or at each milestone</td>
+<td>Decisions on scope, budget, schedule, and escalated risks</td>
+</tr>
+<tr>
+<td><strong>Rehearsal</strong></td>
+<td>Before go-live, a data migration, or a failover</td>
+<td>A timed, corrected runbook and a proven rollback</td>
+</tr>
+<tr>
+<td><strong>Go / No-Go meeting</strong></td>
+<td>Just before a release</td>
+<td>A recorded go or no-go decision, with who made it and why</td>
+</tr>
+<tr>
+<td><strong>Hypercare</strong></td>
+<td>The first 1–4 weeks after go-live</td>
+<td>Fast fixes from the project team, then handover to normal support</td>
+</tr>
+<tr>
+<td><strong>Lessons learned</strong></td>
+<td>End of a phase or project</td>
+<td>What to repeat and what to change on the next project</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kickoff">Kickoff<a class="headerlink" href="#kickoff" title="Permanent link">&para;</a></h3>
+<p>A <strong>kickoff</strong> starts a project or a major phase. Its job is to make sure everyone, client and team alike, leaves with the same picture of the goal, the scope, who does what, and how the team will work. Send the deck and minutes afterwards. Most scope arguments later in a project trace back to something nobody said at the kickoff.</p>
+<p><strong>Template: Kickoff agenda</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Kickoff: &lt;Project&gt; — &lt;date&gt;</span>
+
+<span class="k">1.</span> Why this project: business goal and success criteria (PO / sponsor)
+<span class="k">2.</span> Scope: in, out, and the main assumptions
+<span class="k">3.</span> Plan: phases, milestones, release dates (or sprint cadence)
+<span class="k">4.</span> Team and roles: RACI, who decides what, contacts
+<span class="k">5.</span> Ways of working: tools (tracker, repo, chat), meetings, Definition of Done,
+   how change requests work, escalation path
+<span class="k">6.</span> Risks and dependencies known today
+<span class="k">7.</span> Next steps and owners
+<span class="k">8.</span> Questions
+</code></pre></div>
+<h3 id="meeting-minutes">Meeting Minutes<a class="headerlink" href="#meeting-minutes" title="Permanent link">&para;</a></h3>
+<p><strong>Meeting minutes</strong> (<em>MoM</em>, minutes of meeting) record what a meeting decided and who will do what by when. Most readers only read the decisions and the action items, so put those first. Send the minutes within a day and ask attendees to reply with any corrections. Once agreed, the minutes are the record if someone later disputes a decision.</p>
+<p><strong>Template: Meeting minutes</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Minutes: &lt;Meeting name&gt; — &lt;date&gt;</span>
+
+Attendees: &lt;names / roles&gt; · Absent: &lt;...&gt; · Note-taker: &lt;name&gt;
+
+<span class="gu">## Decisions</span>
+<span class="k">1.</span> &lt;Decision&gt; — decided by &lt;name / group&gt;
+
+<span class="gu">## Action items</span>
+| Action | Owner | Due |
+|---|---|---|
+| ... | ... | ... |
+
+<span class="gu">## Discussion notes</span>
+<span class="k">-</span><span class="w"> </span>&lt;Agenda item&gt;: &lt;key points, options discussed&gt;
+
+<span class="gu">## Open questions</span>
+<span class="k">-</span><span class="w"> </span>&lt;Question&gt; — owner to follow up: &lt;name&gt;
+
+Next meeting: &lt;date&gt;
+</code></pre></div>
+<h3 id="rehearsal">Rehearsal<a class="headerlink" href="#rehearsal" title="Permanent link">&para;</a></h3>
+<p>A <strong>rehearsal</strong> (or <em>dress rehearsal</em>) is a full practice run of a risky operation in a production-like environment, usually staging. The team follows the real runbook and times every step, including the rollback, before doing it for real. Every problem the rehearsal finds is one that won't happen on go-live night. The <a href="../lifecycle/#environments">staging environment</a> exists partly for this.</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>What you practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deployment rehearsal</strong></td>
+<td>The full release procedure from the <a href="#release-checklist">release checklist</a>: deploy, migrate, smoke test, roll back</td>
+</tr>
+<tr>
+<td><strong>Cutover rehearsal</strong></td>
+<td>Moving from an old system to a new one: freeze, migrate data, verify, switch traffic. Measure the total time against the allowed downtime window</td>
+</tr>
+<tr>
+<td><strong>Rollback rehearsal</strong></td>
+<td>Undoing the release, including the data. A rollback plan that has never run is a guess</td>
+</tr>
+<tr>
+<td><strong>DR drill / game day</strong></td>
+<td>Failing over to a backup region or restoring from backup on purpose, to prove recovery meets the RTO and RPO</td>
+</tr>
+</tbody>
+</table>
+<p>Rehearse until a run completes cleanly and inside the time window. Then freeze the runbook and use exactly that version on the day.</p>
+<p><strong>Template: Rehearsal plan and report</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Rehearsal: &lt;operation&gt; — run #&lt;n&gt; — &lt;date&gt;</span>
+
+Environment: &lt;staging, with production-size data&gt; · Runbook version: &lt;link / commit&gt;
+Participants: &lt;names and roles, same people as go-live&gt; · Time window allowed: &lt;e.g. 4 h&gt;
+
+<span class="gu">## Steps</span>
+| # | Step | Owner | Planned | Actual | Result | Notes |
+|---|---|---|---|---|---|---|
+| 1 | Announce freeze; stop writes | Ops | 0:00–0:10 | 0:00–0:12 | OK | |
+| 2 | Backup production DB | DBA | 0:10–0:40 | 0:12–0:55 | Slow | Snapshot took 43 min, tune |
+| 3 | Run migrations | Dev | 0:40–1:30 | ... | ... | |
+| 4 | Smoke tests | QA | ... | ... | ... | |
+| 5 | Rollback test | Ops | ... | ... | ... | |
+
+<span class="gu">## Total time</span>
+Planned &lt;h:mm&gt; · Actual &lt;h:mm&gt; · Within window? yes / no
+
+<span class="gu">## Issues found</span>
+| Issue | Fix | Owner | Fixed before next run? |
+|---|---|---|---|
+
+<span class="gu">## Decision</span>
+Ready for go-live / Needs another rehearsal
+</code></pre></div>
+<h3 id="go-no-go-meeting">Go / No-Go Meeting<a class="headerlink" href="#go-no-go-meeting" title="Permanent link">&para;</a></h3>
+<p>The <strong>go / no-go meeting</strong> is the last checkpoint before a release or go-live. The owners of each area say <em>go</em> or <em>no-go</em> against criteria agreed in advance. If any criterion is not met, the default is no-go, unless the business owner explicitly accepts the risk and that acceptance is written down.</p>
+<p><strong>Template: Go / No-Go</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Go / No-Go: &lt;release&gt; — &lt;date, time&gt;</span>
+
+| Area | Criterion | Owner | Status |
+|---|---|---|---|
+| Quality | Test summary report: Go; no open S1/S2 | QA lead | Go / No-go |
+| Business | UAT signed off | Client PO | Go / No-go |
+| Operations | Rehearsal passed within the window; rollback proven | Ops lead | Go / No-go |
+| Support | Support briefed; hypercare rota staffed | Support lead | Go / No-go |
+| Change | Production change request approved | Change manager | Go / No-go |
+| Communication | Users and stakeholders notified | PM | Go / No-go |
+
+Decision: GO / NO-GO · Decided by: &lt;name&gt; · Accepted risks: &lt;list, or none&gt;
+If no-go: next decision point &lt;date&gt;
+</code></pre></div>
+<h3 id="lessons-learned">Lessons Learned<a class="headerlink" href="#lessons-learned" title="Permanent link">&para;</a></h3>
+<p><strong>Lessons learned</strong> (or a <em>project retrospective</em>) is the <a href="../work_items/#sprint-retrospective">retrospective</a> held at the end of a phase or a whole project. It looks back further than a sprint retro and writes the results down for the <em>next</em> project, not only for this team. Make it blameless, and store the result where the next project's kickoff will actually read it.</p>
+<p><strong>Template: Lessons learned</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Lessons learned: &lt;Project / phase&gt; — &lt;date&gt;</span>
+
+Facilitator: &lt;name&gt; · Participants: &lt;team, client, stakeholders&gt;
+
+<span class="gu">## Outcome vs plan</span>
+| | Planned | Actual |
+|---|---|---|
+| Scope | | |
+| Schedule | | |
+| Effort / cost | | |
+| Quality (defects after go-live) | | |
+
+<span class="gu">## What went well (keep doing)</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## What went wrong (and why)</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Recommendations for the next project</span>
+| Recommendation | Area (estimation, requirements, testing, …) | Owner |
+|---|---|---|
+</code></pre></div>
+<h2 id="where-documents-live">Where Documents Live<a class="headerlink" href="#where-documents-live" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Next to the code</strong> (<em>docs as code</em>): README, changelog, ADRs, API contracts, runbooks, and design docs in Markdown in the repo. They are reviewed in PRs, versioned with the code, and published as a site, like this handbook.</li>
+<li><strong>In the wiki</strong> (Confluence, Notion, Google Docs): documents that non-developers write or approve, such as the BRD, PRD, Q&amp;A sheet, test reports, and sign-offs. Link them from the epic or the README.</li>
+<li><strong>In the tracker:</strong> work items and their templates. See <a href="../work_items/#where-templates-live">Work Items → Where Templates Live</a>.</li>
+</ul>
+<p>Whatever the location, each document needs an owner, a status (<em>Draft / Approved / Superseded</em>), and a date, so readers can tell whether it is still true.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax-init.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

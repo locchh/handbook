@@ -254,7 +254,7 @@ git switch -c feature/name origin/main
 git push -u origin feature/name
 ```
 
-For branch integration and history rewriting, see [Git: Merge vs Rebase](https://locchh.github.io/handbook/software/basics/git/index.md). For reviewing branch changes, see [Code Review](https://locchh.github.io/handbook/software/basics/code_review/index.md).
+For branch integration and history rewriting, see [Git: Merge vs Rebase](https://locchh.github.io/handbook/software/process/git/index.md). For reviewing branch changes, see [Code Review](https://locchh.github.io/handbook/software/process/code_review/index.md).
 
 ## Docker Essentials
 

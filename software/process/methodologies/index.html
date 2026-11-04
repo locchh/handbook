@@ -1,0 +1,4130 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A handbook about Software Engineering, Data and AI">
+      
+      
+        <meta name="author" content="locch">
+      
+      
+        <link rel="canonical" href="https://locchh.github.io/handbook/software/process/methodologies/">
+      
+      
+        <link rel="prev" href="../../systems/security/">
+      
+      
+        <link rel="next" href="../lifecycle/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Philosophies & Methodologies - Software Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#philosophies-methodologies-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Software Handbook" class="md-header__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Philosophies & Methodologies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Software Handbook" class="md-nav__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures & Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/system_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/tech_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking, APIs & Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking, APIs & Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Delivery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process & Delivery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#philosophies-the-why-and-what-to-believe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophies ( The why and what to believe )
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Philosophies ( The why and what to believe )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-systems-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Systems Thinking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-agile-able-to-move-quickly-and-change-direction-without-losing-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Agile ( Able to move quickly and change direction without losing balance )
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-unix-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Unix Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-separation-of-concerns-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Separation of Concerns (SoC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-convention-over-configuration-coc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Convention over Configuration (CoC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. SOLID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-fail-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fail Fast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-dry-dont-repeat-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. DRY ( Don't Repeat Yourself )
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-kiss-keep-it-simple-stupid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. KISS ( Keep It Simple, Stupid )
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-yagni-you-arent-gonna-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. YAGNI ( You Aren't Gonna Need It )
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodologies-the-how-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methodologies ( The how to do )
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methodologies ( The how to do )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-waterfall-do-it-in-order-no-going-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Waterfall - "Do it in order, no going back"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-v-model-for-every-step-define-how-youll-prove-it-worked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. V-Model - "For every step, define how you'll prove it worked"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scrum-build-a-little-show-it-improve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Scrum - "Build a little, show it, improve"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-kanban-finish-before-you-start-something-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Kanban - "Finish before you start something new"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-safe-scrum-but-for-50-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. SAFe - "Scrum, but for 50 teams"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-xp-extreme-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. XP (Extreme Programming)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-shape-up-decide-how-much-time-its-worth-not-how-long-it-takes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Shape Up - "Decide how much time it's worth, not how long it takes"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-rup-waterfall-iteration-formal-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. RUP - "Waterfall + iteration + formal governance"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-iterative-incremental-build-it-in-slices-improve-it-each-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Iterative &amp; Incremental - "Build it in slices, improve it each pass"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-hybrid-water-scrum-fall-plan-like-waterfall-build-like-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Hybrid (Water-Scrum-Fall) - "Plan like waterfall, build like Scrum"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-spiral-spend-the-most-effort-where-the-risk-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Spiral - "Spend the most effort where the risk is"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing the Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-work-different-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Work, Different Words
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practices-design-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practices &amp; Design Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practices &amp; Design Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tdd-test-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TDD — Test-Driven Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bdd-behavior-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDD — Behavior-Driven Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddd-domain-driven-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDD — Domain-Driven Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work_items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Items & Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdlc_documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDLC Documents & Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git: Merge vs Rebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career & Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Career & Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/becoming_senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/senior_curriculum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/study_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/machine_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/server_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/frontend_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/linux_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/introduction_to_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modelling & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality & Cleansing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance & Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Classification & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/big_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/skills_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The AI Engineering Skills Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The LLM Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/spec_driven_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/claude_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#philosophies-the-why-and-what-to-believe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophies ( The why and what to believe )
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Philosophies ( The why and what to believe )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-systems-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Systems Thinking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Lean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-agile-able-to-move-quickly-and-change-direction-without-losing-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Agile ( Able to move quickly and change direction without losing balance )
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. DevOps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-unix-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Unix Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-separation-of-concerns-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Separation of Concerns (SoC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-convention-over-configuration-coc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Convention over Configuration (CoC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. SOLID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-fail-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fail Fast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-dry-dont-repeat-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. DRY ( Don't Repeat Yourself )
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-kiss-keep-it-simple-stupid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. KISS ( Keep It Simple, Stupid )
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-yagni-you-arent-gonna-need-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. YAGNI ( You Aren't Gonna Need It )
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodologies-the-how-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methodologies ( The how to do )
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methodologies ( The how to do )">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-waterfall-do-it-in-order-no-going-back" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Waterfall - "Do it in order, no going back"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-v-model-for-every-step-define-how-youll-prove-it-worked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. V-Model - "For every step, define how you'll prove it worked"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-scrum-build-a-little-show-it-improve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Scrum - "Build a little, show it, improve"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-kanban-finish-before-you-start-something-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Kanban - "Finish before you start something new"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-safe-scrum-but-for-50-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. SAFe - "Scrum, but for 50 teams"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-xp-extreme-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. XP (Extreme Programming)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-shape-up-decide-how-much-time-its-worth-not-how-long-it-takes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Shape Up - "Decide how much time it's worth, not how long it takes"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-rup-waterfall-iteration-formal-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. RUP - "Waterfall + iteration + formal governance"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-iterative-incremental-build-it-in-slices-improve-it-each-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Iterative &amp; Incremental - "Build it in slices, improve it each pass"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-hybrid-water-scrum-fall-plan-like-waterfall-build-like-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Hybrid (Water-Scrum-Fall) - "Plan like waterfall, build like Scrum"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-spiral-spend-the-most-effort-where-the-risk-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Spiral - "Spend the most effort where the risk is"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing the Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-work-different-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same Work, Different Words
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practices-design-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practices &amp; Design Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practices &amp; Design Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tdd-test-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TDD — Test-Driven Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bdd-behavior-driven-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDD — Behavior-Driven Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddd-domain-driven-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDD — Domain-Driven Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="philosophies-methodologies-practices">Philosophies, Methodologies &amp; Practices<a class="headerlink" href="#philosophies-methodologies-practices" title="Permanent link">&para;</a></h1>
+<p>Where the ideas came from, and who to read. This page traces the <em>lineage</em> of how the industry builds software — each entry gives the origin story and a primary source. For the day-to-day application of these ideas, see <a href="../../design/principles/">Design Principles</a> and <a href="../lifecycle/">Lifecycle</a>.</p>
+<div class="highlight"><pre><span></span><code>Philosophy   — mindset &amp; values
+  └── Methodology — how you organize your team &amp; process
+        └── Practice — specific techniques while coding
+              └── Design approach — how you model and structure code
+</code></pre></div>
+<hr />
+<h2 id="philosophies-the-why-and-what-to-believe">Philosophies ( The why and what to believe )<a class="headerlink" href="#philosophies-the-why-and-what-to-believe" title="Permanent link">&para;</a></h2>
+<h3 id="1-systems-thinking">1. Systems Thinking<a class="headerlink" href="#1-systems-thinking" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"A system is more than the sum of its parts."</em></p>
+</blockquote>
+<p>Before you fix a team, a service, or a process, step back and look at the whole. A faster development team means nothing if deployment is still a bottleneck. A brilliant individual component can make the overall system worse if it shifts the problem somewhere else. Systems Thinking teaches you to ask "what does the whole look like?" before touching any one part.</p>
+<p><strong>Ref:</strong> Peter Senge, <a href="https://en.wikipedia.org/wiki/The_Fifth_Discipline"><em>The Fifth Discipline</em></a> (1990)</p>
+<hr />
+<h3 id="2-lean">2. Lean<a class="headerlink" href="#2-lean" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"The most dangerous kind of waste is the waste we do not recognize."</em> — Shigeo Shingo</p>
+</blockquote>
+<p>Toyota discovered in the 1950s that most time in any production process is not spent making things — it's spent waiting, fixing mistakes, and building things nobody asked for. Lean is the discipline of making that invisible waste visible, then relentlessly cutting it. When it crossed into software, it became the foundation for Agile, Kanban, and DevOps.</p>
+<p><strong>Ref:</strong> Toyota Production System; <a href="https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783"><em>Lean Software Development</em></a> — Mary &amp; Tom Poppendieck (2003)</p>
+<hr />
+<h3 id="3-agile-able-to-move-quickly-and-change-direction-without-losing-balance">3. Agile ( Able to move quickly and change direction without losing balance )<a class="headerlink" href="#3-agile-able-to-move-quickly-and-change-direction-without-losing-balance" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Responding to change over following a plan."</em> — Agile Manifesto</p>
+</blockquote>
+<p>In 2001, seventeen developers gathered at a ski lodge in Utah, frustrated by years of big upfront plans that crumbled on contact with reality. What they wrote — the Agile Manifesto — was a bet that short cycles, real working software, and continuous customer feedback would beat any rigid specification. It changed how the industry thinks about software delivery.</p>
+<p><strong>Ref:</strong> <a href="https://agilemanifesto.org/">Agile Manifesto</a> (2001)</p>
+<p><strong>How the frameworks relate:</strong> Agile is a set of values, not a process. Scrum, Kanban, XP, Shape Up, and SAFe are frameworks that put those values into practice. Kanban also draws directly on Lean.</p>
+<pre class="mermaid"><code>flowchart TD
+    AG["Agile: values and principles (Manifesto, 2001)"] --&gt; SC[Scrum]
+    AG --&gt; XP[XP]
+    AG --&gt; SU[Shape Up]
+    AG --&gt; SF["SAFe: Scrum scaled to many teams"]
+    AG --&gt; KB[Kanban]
+    LN[Lean] --&gt; KB
+    SC --&gt; SF</code></pre>
+<hr />
+<h3 id="4-devops">4. DevOps<a class="headerlink" href="#4-devops" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"You build it, you run it."</em> — Werner Vogels, Amazon CTO</p>
+</blockquote>
+<p>For decades, developers wrote code and handed it to a separate operations team to deploy. When things broke in production, nobody fully owned the problem. DevOps tore down that wall — the team that builds a service is also responsible for running it. The result is faster feedback, shared accountability, and systems designed with failure already in mind.</p>
+<p><strong>Ref:</strong> <a href="https://itrevolution.com/product/the-phoenix-project/"><em>The Phoenix Project</em></a> — Gene Kim (2013); <a href="https://itrevolution.com/product/accelerate/"><em>Accelerate</em></a> — Nicole Forsgren (2018)</p>
+<p><strong>Practical detail:</strong> <a href="../../tool_tip/cicd/">CI/CD Platforms</a> · <a href="../../tool_tip/server_operations/">Running a Server</a></p>
+<hr />
+<h3 id="5-unix-philosophy">5. Unix Philosophy<a class="headerlink" href="#5-unix-philosophy" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Write programs that do one thing and do it well."</em> — Doug McIlroy</p>
+</blockquote>
+<p>When Ken Thompson and Doug McIlroy built Unix at Bell Labs in the 1970s, they made a deliberate choice: keep every tool small, focused, and composable. <code>grep</code> finds text. <code>sort</code> orders lines. <code>curl</code> fetches URLs. None of them try to do more. Together, through pipes, they can do almost anything. That same idea lives on today in microservices — small services, clear boundaries, simple interfaces.</p>
+<p><strong>Ref:</strong> Doug McIlroy, <a href="http://www.catb.org/~esr/writings/taoup/"><em>The Art of Unix Programming</em></a> — Eric S. Raymond (2003)</p>
+<hr />
+<h3 id="6-separation-of-concerns-soc">6. Separation of Concerns (SoC)<a class="headerlink" href="#6-separation-of-concerns-soc" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"The art of programming is the art of organizing complexity."</em> — Edsger Dijkstra</p>
+</blockquote>
+<p>A system becomes hard to understand the moment different kinds of work start bleeding into each other — when a function that fetches data also formats it for display, or when payment logic lives alongside authentication. Separation of Concerns is the discipline of keeping distinct responsibilities in distinct places, so you can change one without disturbing the others.</p>
+<p><strong>Ref:</strong> Edsger Dijkstra, <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html"><em>On the role of scientific thought</em></a> (1974)</p>
+<p><strong>Practical detail:</strong> <a href="../../design/principles/#other-principles-worth-knowing">Design Principles → Other Principles</a> · <a href="../../design/architecture/">Architecture</a></p>
+<hr />
+<h3 id="7-convention-over-configuration-coc">7. Convention over Configuration (CoC)<a class="headerlink" href="#7-convention-over-configuration-coc" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Rails is omakase."</em> — DHH</p>
+</blockquote>
+<p>When David Heinemeier Hansson released Ruby on Rails in 2004, he noticed that developers were spending enormous energy making trivial decisions — what to name a table, where to put a file, how to structure a route. Convention over Configuration says: a good framework should make those decisions for you. You configure only what makes your app genuinely unique, and trust the framework for everything else.</p>
+<p><strong>Ref:</strong> David Heinemeier Hansson, <a href="https://rubyonrails.org/">Ruby on Rails</a> (2004)</p>
+<p><strong>Practical detail:</strong> <a href="../../design/principles/#other-principles-worth-knowing">Design Principles → Other Principles</a></p>
+<hr />
+<h3 id="8-solid">8. SOLID<a class="headerlink" href="#8-solid" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Write code so that when you change one thing, only that one thing changes."</em></p>
+</blockquote>
+<p>Robert C. Martin distilled decades of painful object-oriented lessons into five principles that keep code changeable over time. Violate them and the codebase slowly becomes a place where every change breaks something unexpected.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Principle</th>
+<th>Meaning</th>
+<th>Fights against</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S</strong></td>
+<td>Single Responsibility</td>
+<td>One class, one job</td>
+<td>One change affects unrelated things</td>
+</tr>
+<tr>
+<td><strong>O</strong></td>
+<td>Open/Closed</td>
+<td>Extend without modifying</td>
+<td>Editing old code introduces new bugs</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Liskov Substitution</td>
+<td>Subclasses replace parents safely</td>
+<td>Swapping parts breaks the system</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>Interface Segregation</td>
+<td>Don't force unused interfaces</td>
+<td>One change forces unrelated classes to change too</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Dependency Inversion</td>
+<td>Depend on abstractions, not concretions</td>
+<td>High-level logic breaks when low-level details change</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ref:</strong> Robert C. Martin, <a href="https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164"><em>Clean Architecture</em></a> (2017)</p>
+<p><strong>Practical detail:</strong> <a href="../../design/principles/#solid">Design Principles → SOLID</a></p>
+<hr />
+<h3 id="9-fail-fast">9. Fail Fast<a class="headerlink" href="#9-fail-fast" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Surface errors early and loudly — not silently downstream."</em></p>
+</blockquote>
+<p>A null slipping through five layers of code before causing a cryptic crash is one of the hardest bugs to trace. Fail Fast says: the moment something is wrong, say so immediately and loudly. Don't pass the problem downstream hoping someone else will catch it. The earlier an error surfaces, the cheaper it is to fix.</p>
+<p><strong>Ref:</strong> Jim Shore, <a href="https://www.martinfowler.com/ieeeSoftware/failFast.pdf"><em>Fail Fast</em></a> — IEEE Software (2004)</p>
+<p><strong>Practical detail:</strong> <a href="../../foundations/error_handling/#fail-fast">Error Handling → Fail Fast</a></p>
+<hr />
+<h3 id="10-dry-dont-repeat-yourself">10. DRY ( Don't Repeat Yourself )<a class="headerlink" href="#10-dry-dont-repeat-yourself" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system."</em> — Andrew Hunt &amp; David Thomas</p>
+</blockquote>
+<p>When the same logic lives in two places, you've created a silent promise that both will always stay in sync. Eventually, one changes and the other doesn't — and that gap becomes a bug. DRY is less about avoiding copy-paste and more about having one clear home for every piece of knowledge, so there's never any doubt about what the truth is.</p>
+<p><strong>Ref:</strong> Andrew Hunt &amp; David Thomas, <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"><em>The Pragmatic Programmer</em></a> (1999)</p>
+<p><strong>Practical detail:</strong> <a href="../../design/principles/#the-core-three-dry-kiss-yagni">Design Principles → The Core Three</a></p>
+<hr />
+<h3 id="11-kiss-keep-it-simple-stupid">11. KISS ( Keep It Simple, Stupid )<a class="headerlink" href="#11-kiss-keep-it-simple-stupid" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."</em> — Brian Kernighan</p>
+</blockquote>
+<p>Every layer of cleverness you add is a layer the next person — or future you — has to unpeel to understand what's happening. The simplest solution that actually works is almost always the right one, because simplicity is the only quality that survives time, team changes, and 3am incidents.</p>
+<p><strong>Ref:</strong> Kelly Johnson, Lockheed Skunk Works (1960s); <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"><em>The Pragmatic Programmer</em></a> — Hunt &amp; Thomas (1999)</p>
+<p><strong>Practical detail:</strong> <a href="../../design/principles/#the-core-three-dry-kiss-yagni">Design Principles → The Core Three</a></p>
+<hr />
+<h3 id="12-yagni-you-arent-gonna-need-it">12. YAGNI ( You Aren't Gonna Need It )<a class="headerlink" href="#12-yagni-you-arent-gonna-need-it" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Always implement things when you actually need them, never when you just foresee that you need them."</em> — Ron Jeffries</p>
+</blockquote>
+<p>Developers are optimists by nature — they build for futures that rarely arrive. The abstraction layer written "just in case" becomes a burden that slows down every future change while solving a problem that never materialized. YAGNI is a discipline of restraint: build exactly what's needed today, and trust that future-you will know what future-you needs.</p>
+<p><strong>Ref:</strong> Ron Jeffries, Extreme Programming (1999); <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"><em>The Pragmatic Programmer</em></a> — Hunt &amp; Thomas</p>
+<p><strong>Practical detail:</strong> <a href="../../design/principles/#the-core-three-dry-kiss-yagni">Design Principles → The Core Three</a></p>
+<hr />
+<h2 id="methodologies-the-how-to-do">Methodologies ( The how to do )<a class="headerlink" href="#methodologies-the-how-to-do" title="Permanent link">&para;</a></h2>
+<h3 id="1-waterfall-do-it-in-order-no-going-back">1. Waterfall - "Do it in order, no going back"<a class="headerlink" href="#1-waterfall-do-it-in-order-no-going-back" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Do it right the first time — in the right order."</em></p>
+</blockquote>
+<p>Waterfall treats software like construction: lay the foundation before the walls, walls before the roof. You gather all requirements, then design, then build, then test — in strict sequence with no going back. It works when the requirements are truly fixed and well understood from the start, and falls apart the moment reality diverges from the original plan.</p>
+<p><strong>Use when:</strong> Requirements are stable and unlikely to change.</p>
+<p><strong>Ref:</strong> Winston Royce, <a href="http://www-scf.usc.edu/~csci201/lectures/Lecture11/royce1970.pdf"><em>Managing the Development of Large Software Systems</em></a> (1970)</p>
+<p><strong>How it works:</strong> each phase ends at a milestone where its deliverable is signed off. Only then does the next phase start.</p>
+<pre class="mermaid"><code>flowchart TD
+    R[Requirements] --&gt;|"M1: SRS signed off"| D[Design]
+    D --&gt;|"M2: design approved"| I[Implementation]
+    I --&gt;|"M3: code complete"| T[Testing]
+    T --&gt;|"M4: UAT signed off"| DP[Deployment]
+    DP --&gt;|"M5: go-live"| M[Maintenance]</code></pre>
+<p><strong>Where the work items sit:</strong> the plan is a set of <a href="../work_items/#phase-milestone-and-deliverable">phases, milestones, and deliverables</a>, broken into WBS tasks on a Gantt chart. Requirements produce the <a href="../sdlc_documents/#analysis-documents">BRD and SRS</a>. Design produces the <a href="../sdlc_documents/#design-documents">design doc and detailed design</a>. Testing produces the <a href="../sdlc_documents/#testing-documents">test plan, test cases, test summary report, and UAT sign-off</a>. Deployment runs the <a href="../sdlc_documents/#rehearsal">rehearsal</a>, the <a href="../sdlc_documents/#go-no-go-meeting">go / no-go</a>, and the <a href="../sdlc_documents/#release-checklist">release checklist</a>. Any change to signed-off requirements is a <a href="../work_items/#scope-change-request">scope change request</a> against the baseline. Most <a href="../work_items/#bug">bugs</a> surface in the Testing phase, which is late and expensive to fix.</p>
+<hr />
+<h3 id="2-v-model-for-every-step-define-how-youll-prove-it-worked">2. V-Model - "For every step, define how you'll prove it worked"<a class="headerlink" href="#2-v-model-for-every-step-define-how-youll-prove-it-worked" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"For every decision, define how you'll prove it worked."</em></p>
+</blockquote>
+<pre class="mermaid"><code>flowchart TD
+    REQ[Requirements analysis] --&gt; SYS[System design]
+    SYS --&gt; ARC[Architecture design]
+    ARC --&gt; MOD[Module design]
+    MOD --&gt; CODE[Coding]
+    CODE --&gt; UT[Unit testing]
+    UT --&gt; IT[Integration testing]
+    IT --&gt; ST[System testing]
+    ST --&gt; AT[Acceptance testing]
+    REQ -.-&gt;|acceptance test plan| AT
+    SYS -.-&gt;|system test plan| ST
+    ARC -.-&gt;|integration test plan| IT
+    MOD -.-&gt;|unit test plan| UT</code></pre>
+<p>The left side goes down from requirements to code, and the right side climbs back up through testing. Each dotted line pairs a design level with the test level that verifies it. That test plan is written <em>at the same time</em> as the design, not after the code.</p>
+<p>An evolution of Waterfall for high-stakes domains. At every stage of development, you define a corresponding test that will prove the work was done correctly. Requirements get acceptance tests. Architecture gets integration tests. Code gets unit tests. Nothing moves forward without a plan for verifying it — because in aviation or medical devices, "it seemed to work" isn't good enough.</p>
+<p><strong>Use when:</strong> Safety-critical systems where correctness must be formally proven at every level.</p>
+<p><strong>Ref:</strong> Barry Boehm; DO-178C (aviation) and IEC 62304 (medical software) standards</p>
+<p><strong>Where the work items sit:</strong> the same phases, milestones, and sign-offs as Waterfall. Each design document (SRS, system design, architecture, <a href="../sdlc_documents/#detailed-design">detailed design</a>) comes with its own <a href="../sdlc_documents/#test-plan">test plan</a>. An <a href="../sdlc_documents/#rtm">RTM</a> traces every requirement to the test that proves it. A bug found on the right side is traced back to the left-side level whose specification it breaks.</p>
+<hr />
+<h3 id="3-scrum-build-a-little-show-it-improve">3. Scrum - "Build a little, show it, improve"<a class="headerlink" href="#3-scrum-build-a-little-show-it-improve" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Inspect and adapt."</em> — Ken Schwaber &amp; Jeff Sutherland</p>
+</blockquote>
+<p>Scrum broke the long planning horizon into short, repeatable sprints of one to two weeks. At the end of each sprint, you have something real to show — working software, not a status report. A Product Owner decides what matters, a Scrum Master keeps the team unblocked, and the team owns how the work gets done. The retrospective at the end of each cycle asks the question most processes skip: how do we get better?</p>
+<p><strong>Key roles:</strong> Product Owner, Scrum Master, Developers</p>
+<p><strong>Key ceremonies:</strong> Sprint Planning, Daily Standup, Sprint Review, Retrospective</p>
+<p><strong>Ref:</strong> <a href="https://scrumguides.org/"><em>The Scrum Guide</em></a> — Ken Schwaber &amp; Jeff Sutherland (free)</p>
+<p><strong>Practical detail:</strong> <a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a></p>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    PB[(Product Backlog)] --&gt; SP[Sprint Planning]
+    SP --&gt; SB[(Sprint Backlog + Sprint Goal)]
+    SB --&gt; SPR["Sprint, 1–4 weeks, with a Daily Scrum each day"]
+    SPR --&gt; INC[Increment that meets the Definition of Done]
+    INC --&gt; SR[Sprint Review]
+    SR --&gt; RE[Sprint Retrospective]
+    RE --&gt;|next sprint| SP
+    SR -.-&gt;|feedback reorders| PB</code></pre>
+<p><strong>Where the work items sit:</strong> <a href="../work_items/#how-work-items-fit-together">epics, stories, bugs, spikes, and tech debt</a> wait in the ordered <a href="../work_items/#backlog">Product Backlog</a> and are refined until they meet the Definition of Ready. <a href="../work_items/#sprint-planning">Sprint Planning</a> sets the Sprint Goal and breaks stories into <a href="../work_items/#task-and-sub-task">tasks</a>. Inside the sprint, each story runs a small SDLC of its own: design, code, <a href="../work_items/#pull-request-merge-request">pull request</a> and review, test. The <a href="../work_items/#sprint-review">Sprint Review</a> turns feedback into backlog changes, and the <a href="../work_items/#sprint-retrospective">Retrospective</a> produces action items. A change of mind just reorders the backlog. A formal <a href="../work_items/#scope-change-request">change request</a> is needed only when a contract fixes the scope.</p>
+<hr />
+<h3 id="4-kanban-finish-before-you-start-something-new">4. Kanban - "Finish before you start something new"<a class="headerlink" href="#4-kanban-finish-before-you-start-something-new" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Stop starting, start finishing."</em> — David Anderson</p>
+</blockquote>
+<p>Where Scrum organizes work into time-boxed sprints, Kanban lets work flow continuously — like a kitchen that cooks orders as they arrive rather than batching them by the hour. The key insight is WIP limits: capping how much work is "in progress" at once forces the team to finish things before starting new ones, which surfaces bottlenecks that would otherwise stay hidden.</p>
+<p><strong>Use when:</strong> Support, maintenance, or workflows where new tasks arrive unpredictably.</p>
+<p><strong>Ref:</strong> David Anderson, <a href="https://www.amazon.com/Kanban-David-J-Anderson/dp/0984521402"><em>Kanban: Successful Evolutionary Change</em></a> (2010)</p>
+<p><strong>Practical detail:</strong> <a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a></p>
+<p><strong>How it works:</strong> a board with one column per step and a WIP limit on each column. A card moves right only when the next column has room.</p>
+<pre class="mermaid"><code>flowchart LR
+    BL[Backlog] --&gt; RD["Ready (WIP 5)"]
+    RD --&gt; DV["Doing (WIP 3)"]
+    DV --&gt; RV["Review (WIP 2)"]
+    RV --&gt; TS["Test (WIP 2)"]
+    TS --&gt; DN[Done]</code></pre>
+<p><strong>Where the work items sit:</strong> every card is a work item of any type: <a href="../work_items/#user-story">story</a>, <a href="../work_items/#task-and-sub-task">task</a>, <a href="../work_items/#bug">bug</a>, incident follow-up, or service request. The columns are the SDLC phases. Urgent work such as a <a href="../work_items/#production-incident">production incident</a> uses an <em>expedite</em> swimlane that may break the WIP limit. There are no sprints. Instead there are regular meetings: a <em>replenishment</em> meeting refills Ready, and <em>delivery reviews</em> look at lead time, cycle time, and the cumulative flow diagram. Releases happen whenever work is done. <strong>Scrumban</strong> keeps Scrum's roles and retrospectives but replaces sprint commitments with a Kanban flow.</p>
+<hr />
+<h3 id="5-safe-scrum-but-for-50-teams">5. SAFe - "Scrum, but for 50 teams"<a class="headerlink" href="#5-safe-scrum-but-for-50-teams" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Align, collaborate, deliver."</em></p>
+</blockquote>
+<p>When Agile teams multiply across a large organization, the question becomes: how do fifty teams stay pointed in the same direction? SAFe answers by adding coordination layers above individual Scrum teams — synchronizing them into Program Increments of roughly ten weeks, with shared planning events and portfolio-level alignment. It trades some of Agile's simplicity for the structure large enterprises need.</p>
+<p><strong>Use when:</strong> Many teams across an organization need to coordinate and ship together.</p>
+<p><strong>Ref:</strong> Dean Leffingwell, <a href="https://scaledagileframework.com/">Scaled Agile Framework</a></p>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    PF["Portfolio: strategic themes, epics, lean budgets"] --&gt; ART["Agile Release Train (5–12 teams): features in the ART backlog"]
+    ART --&gt; PIP["PI Planning: every 8–12 weeks, all teams plan together"]
+    PIP --&gt; T1["Team 1: stories, 2-week iterations"]
+    PIP --&gt; T2["Team 2: stories, 2-week iterations"]
+    PIP --&gt; T3["Team n: stories, 2-week iterations"]
+    T1 --&gt; SD[System Demo]
+    T2 --&gt; SD
+    T3 --&gt; SD
+    SD --&gt; IA[Inspect and Adapt at the end of the PI]
+    IA -.-&gt;|next PI| PIP</code></pre>
+<p><strong>Where the work items sit:</strong> portfolio <a href="../work_items/#epic">epics</a> are split into <em>features</em> (each fits in one PI), and features into <a href="../work_items/#user-story">stories</a> (each fits in one iteration). PI Planning produces PI objectives and a board of cross-team dependencies. The PI boundaries act as milestones, while releases can happen on demand. SAFe 6.0 renamed the <em>Program Increment</em> to the <a href="https://framework.scaledagile.com/planning-interval">Planning Interval ↗</a>; both are abbreviated PI.</p>
+<hr />
+<h3 id="6-xp-extreme-programming">6. XP (Extreme Programming)<a class="headerlink" href="#6-xp-extreme-programming" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"If it's good practice, do it all the time."</em> — Kent Beck</p>
+</blockquote>
+<p>Kent Beck asked a simple question: if code review is good, what if you reviewed every line as it was written? If testing is good, what if you wrote the test before the code? XP takes the best-known engineering practices and applies them continuously rather than occasionally — pair programming, TDD, continuous integration, and small releases done constantly, not at the end of a long cycle.</p>
+<p><strong>Use when:</strong> Teams that want rigorous code quality and very fast feedback loops.</p>
+<p><strong>Ref:</strong> Kent Beck, <a href="https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658"><em>Extreme Programming Explained</em></a> (1999)</p>
+<p><strong>How it works:</strong> nested feedback loops, from months down to minutes.</p>
+<pre class="mermaid"><code>flowchart TD
+    RP["Release plan: months"] --&gt; IP["Iteration: 1–2 weeks"]
+    IP --&gt; DY["Day: stand-up, pair programming"]
+    DY --&gt; TDDL["Minutes: TDD, red → green → refactor"]
+    TDDL --&gt; CI["Hours: continuous integration"]
+    CI -.-&gt; DY
+    IP -.-&gt;|small release| RP</code></pre>
+<p><strong>Where the work items sit:</strong> XP is where <a href="../work_items/#user-story">user stories</a> (on index cards) and <a href="../work_items/#spike">spikes</a> come from. The customer writes acceptance tests for each story. Developers split stories into tasks and estimate them, and the velocity of the last iteration ("yesterday's weather") sets how much fits in the next one.</p>
+<hr />
+<h3 id="7-shape-up-decide-how-much-time-its-worth-not-how-long-it-takes">7. Shape Up - "Decide how much time it's worth, not how long it takes"<a class="headerlink" href="#7-shape-up-decide-how-much-time-its-worth-not-how-long-it-takes" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Appetite, not estimates."</em> — Ryan Singer</p>
+</blockquote>
+<p>Basecamp grew tired of backlogs that never shrank and estimates that never held. Shape Up inverts the usual approach: instead of estimating how long a feature will take, you decide upfront how much time you're willing to spend — the "appetite." Senior people shape the problem into something solvable within a fixed 6-week cycle, small teams own the solution completely, and anything that doesn't get bet on this cycle simply doesn't happen.</p>
+<p><strong>Use when:</strong> Small, autonomous product teams that want focused cycles without backlog debt.</p>
+<p><strong>Ref:</strong> Ryan Singer, <a href="https://basecamp.com/shapeup"><em>Shape Up</em></a> — Basecamp (free online book)</p>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    SH["Shaping: senior people write a pitch"] --&gt; BT["Betting table: pick pitches for the next cycle"]
+    BT --&gt; CY["6-week cycle: a small team builds it end to end"]
+    CY --&gt; CD["2-week cooldown: fix bugs, explore, shape the next pitches"]
+    CD --&gt; BT</code></pre>
+<p><strong>Where the work items sit:</strong> Shape Up has no backlog. A <em>pitch</em> replaces the epic and the story: it states the problem, the appetite, a rough solution, the rabbit holes, and the no-gos. The team splits the work into <em>scopes</em> instead of tasks and tracks progress on <em>hill charts</em>. A <em>circuit breaker</em> applies: work that isn't done in six weeks does not roll over automatically. It must be pitched again.</p>
+<hr />
+<h3 id="8-rup-waterfall-iteration-formal-governance">8. RUP - "Waterfall + iteration + formal governance"<a class="headerlink" href="#8-rup-waterfall-iteration-formal-governance" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Structure the chaos of iterative development."</em></p>
+</blockquote>
+<p>RUP was IBM's answer to the rigidity of Waterfall and the looseness of early iterative methods. It gives large teams a formal framework of four phases — Inception, Elaboration, Construction, Transition — each with defined milestones, roles, and artifacts. You iterate within each phase, but the overall governance structure stays firm. The result is more adaptable than Waterfall and more auditable than Scrum.</p>
+<p><strong>Use when:</strong> Large enterprise or government projects requiring formal traceability and documented governance.</p>
+<p><strong>Ref:</strong> Philippe Kruchten, <a href="https://www.amazon.com/Rational-Unified-Process-Introduction-3rd/dp/0321197704"><em>The Rational Unified Process</em></a> (1998)</p>
+<p><strong>How it works:</strong> four phases, each ending in a milestone, with iterations inside every phase. All the disciplines (requirements, design, implementation, test, deployment) run in every phase, just with different intensity.</p>
+<pre class="mermaid"><code>flowchart TD
+    IN[Inception] --&gt;|"LCO: Lifecycle Objectives"| EL[Elaboration]
+    EL --&gt;|"LCA: Lifecycle Architecture"| CO[Construction]
+    CO --&gt;|"IOC: Initial Operational Capability"| TR[Transition]
+    TR --&gt;|"PR: Product Release"| RL([Release])</code></pre>
+<p><strong>Where the work items sit:</strong> <a href="../work_items/#phase-milestone-and-deliverable">phases and milestones</a> as in Waterfall, but each phase is planned as a series of iterations. The key artifacts are the vision document, the <a href="../sdlc_documents/#use-case">use cases</a>, the software architecture document, and an iteration plan per iteration.</p>
+<hr />
+<h3 id="9-iterative-incremental-build-it-in-slices-improve-it-each-pass">9. Iterative &amp; Incremental - "Build it in slices, improve it each pass"<a class="headerlink" href="#9-iterative-incremental-build-it-in-slices-improve-it-each-pass" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Deliver a working slice, learn, repeat."</em></p>
+</blockquote>
+<p>Instead of one long pass through the SDLC, the project is split into increments. Each increment goes through analysis, design, build, and test, and delivers a working slice of the system. Later increments add features (<em>incremental</em>) and improve what earlier ones built (<em>iterative</em>). It is older than Agile and is the common ancestor of Scrum, RUP, and Spiral.</p>
+<p><strong>Use when:</strong> Requirements are mostly known but too big to deliver in one go, or you want early feedback without adopting a full framework.</p>
+<p><strong>Ref:</strong> Craig Larman &amp; Victor Basili, <em>Iterative and Incremental Development: A Brief History</em> (IEEE Computer, 2003); <a href="https://en.wikipedia.org/wiki/Iterative_and_incremental_development">Wikipedia ↗</a></p>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    P[Overall plan and core requirements] --&gt; I1["Increment 1: analyze → design → build → test"]
+    I1 --&gt; R1([Release or demo 1])
+    R1 --&gt; I2["Increment 2: analyze → design → build → test"]
+    I2 --&gt; R2([Release or demo 2])
+    R2 --&gt; IN["Increment n …"]
+    IN --&gt; F([Final release])
+    R1 -.-&gt;|feedback| I2
+    R2 -.-&gt;|feedback| IN</code></pre>
+<p><strong>Where the work items sit:</strong> the release plan lists the increments as <a href="../work_items/#phase-milestone-and-deliverable">milestones</a>. Each increment has its own scope list (features or <a href="../work_items/#user-story">stories</a>), its own test cycle, and its own <a href="../sdlc_documents/#release-notes">release notes</a>. Feedback changes the scope of the next increment instead of turning into a formal change request, unless the contract fixes scope.</p>
+<hr />
+<h3 id="10-hybrid-water-scrum-fall-plan-like-waterfall-build-like-scrum">10. Hybrid (Water-Scrum-Fall) - "Plan like waterfall, build like Scrum"<a class="headerlink" href="#10-hybrid-water-scrum-fall-plan-like-waterfall-build-like-scrum" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Fixed milestones outside, sprints inside."</em></p>
+</blockquote>
+<p>Most real projects, outsourcing and fixed-price ones especially, are hybrid. The contract, budget, and milestones are planned up front, waterfall style. Development runs in Scrum sprints. Release goes back to waterfall, with formal SIT, UAT, sign-off, and go-live. Forrester analyst Dave West named this pattern <em>Water-Scrum-Fall</em> in 2011. It fits when the client needs a fixed date, price, or formal acceptance but the team still wants short feedback loops. The risk is that the up-front phase locks scope so tightly that each sprint becomes a mini-waterfall. Keep a working change-request process and an ordered backlog inside the fixed scope.</p>
+<p><strong>Use when:</strong> Contracts fix scope, price, or dates and need formal acceptance, but the team wants iterative delivery.</p>
+<p><strong>Ref:</strong> Dave West, <em>Water-Scrum-Fall Is the Reality of Agile for Most Organizations Today</em> (Forrester, 2011)</p>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    subgraph PLAN ["Waterfall: plan"]
+        A["Requirements: BRD, SRS, contract, milestone plan"] --&gt; D[High-level design]
+    end
+    subgraph BUILD ["Scrum: build"]
+        PB[(Product backlog from the SRS)] --&gt; SP["Sprints 1…n: stories, tasks, PRs, sprint reviews"]
+        SP --&gt;|demo each sprint| PB
+    end
+    subgraph RELEASE ["Waterfall: release"]
+        SIT[SIT] --&gt; UAT[UAT and sign-off]
+        UAT --&gt; RH[Rehearsal and go / no-go]
+        RH --&gt; GL[Go-live and hypercare]
+    end
+    D --&gt; PB
+    SP --&gt; SIT
+    CR[Change requests] -.-&gt; PB</code></pre>
+<p><strong>Where the work items sit:</strong> the outer plan is made of <a href="../work_items/#phase-milestone-and-deliverable">phases, milestones, and deliverables</a>, from M1 (SRS signed off) to M5 (go-live), often with payments attached. Changes to signed-off scope are <a href="../work_items/#scope-change-request">scope change requests</a> against that baseline. Inside the build phase, the work is <a href="../work_items/#how-work-items-fit-together">epics, stories, tasks, and bugs</a> in <a href="../work_items/#sprint">sprints</a> with a Definition of Done. The release phase uses the <a href="../sdlc_documents/#testing-documents">test plan, test summary report, UAT sign-off</a>, <a href="../sdlc_documents/#rehearsal">rehearsal</a>, <a href="../sdlc_documents/#go-no-go-meeting">go / no-go</a>, and <a href="../sdlc_documents/#release-notes">release notes</a>. It ends with hypercare and a <a href="../sdlc_documents/#handover-document">handover</a>.</p>
+<hr />
+<h3 id="11-spiral-spend-the-most-effort-where-the-risk-is">11. Spiral - "Spend the most effort where the risk is"<a class="headerlink" href="#11-spiral-spend-the-most-effort-where-the-risk-is" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Find the biggest risk, kill it, repeat."</em> </p>
+</blockquote>
+<p>Barry Boehm's spiral model treats a project as a series of loops. Each loop starts by naming the biggest remaining risk and reducing it, often by building a prototype, before developing the next, more complete version. The loops grow in cost and completeness until the final one, which looks a lot like waterfall. It introduced the idea that <em>risk</em>, not a fixed sequence of phases, should drive the plan.</p>
+<p><strong>Use when:</strong> Large, novel, high-risk systems, where the main question is "can this even work?"</p>
+<p><strong>Ref:</strong> Barry Boehm, <em>A Spiral Model of Software Development and Enhancement</em> (IEEE Computer, 1988); <a href="https://en.wikipedia.org/wiki/Spiral_model">Wikipedia ↗</a></p>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    O["1. Set objectives, alternatives, constraints"] --&gt; R["2. Analyze risks; build a prototype"]
+    R --&gt; D["3. Develop and test the next version"]
+    D --&gt; P["4. Review with stakeholders; plan the next loop"]
+    P --&gt;|next loop, bigger and more complete| O</code></pre>
+<p><strong>Where the work items sit:</strong> each loop ends at a review <a href="../work_items/#phase-milestone-and-deliverable">milestone</a>. The central artifact is the risk register (see <a href="../work_items/#other-item-types">RAID log</a>), and <a href="../work_items/#spike">spikes</a> and prototypes are the main tools for reducing risk.</p>
+<hr />
+<h3 id="comparing-the-models">Comparing the Models<a class="headerlink" href="#comparing-the-models" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Planning</th>
+<th>Delivery</th>
+<th>Change is handled by</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Waterfall</strong></td>
+<td>All up front</td>
+<td>Once, at the end</td>
+<td>A formal CR against the baseline</td>
+<td>Stable, well-understood requirements</td>
+</tr>
+<tr>
+<td><strong>V-Model</strong></td>
+<td>All up front, with a test plan per level</td>
+<td>Once, at the end</td>
+<td>A formal CR, plus re-verification</td>
+<td>Safety-critical systems</td>
+</tr>
+<tr>
+<td><strong>Iterative &amp; Incremental</strong></td>
+<td>An overall plan, plus a plan per increment</td>
+<td>Each increment</td>
+<td>The next increment's scope</td>
+<td>Large systems with mostly known requirements</td>
+</tr>
+<tr>
+<td><strong>Spiral</strong></td>
+<td>One loop at a time, driven by risk</td>
+<td>Prototypes, then releases</td>
+<td>The next loop</td>
+<td>Large, novel, high-risk systems</td>
+</tr>
+<tr>
+<td><strong>RUP</strong></td>
+<td>Phases with milestones, iterations inside</td>
+<td>End of Construction / Transition</td>
+<td>Iteration plans</td>
+<td>Large enterprise or government projects</td>
+</tr>
+<tr>
+<td><strong>Scrum</strong></td>
+<td>A product goal, plus one sprint at a time</td>
+<td>Potentially every sprint</td>
+<td>Reordering the backlog</td>
+<td>Product teams with changing requirements</td>
+</tr>
+<tr>
+<td><strong>Kanban</strong></td>
+<td>Continuous replenishment</td>
+<td>Continuously</td>
+<td>Reordering the queue</td>
+<td>Support, ops, maintenance, unpredictable inflow</td>
+</tr>
+<tr>
+<td><strong>XP</strong></td>
+<td>A release plan, plus iterations</td>
+<td>Small, frequent releases</td>
+<td>The next iteration</td>
+<td>Teams that want strong engineering practices</td>
+</tr>
+<tr>
+<td><strong>Shape Up</strong></td>
+<td>One six-week bet at a time</td>
+<td>Each cycle</td>
+<td>The next betting table</td>
+<td>Small, autonomous product teams</td>
+</tr>
+<tr>
+<td><strong>SAFe</strong></td>
+<td>Portfolio plus PI plans</td>
+<td>Each PI, or on demand</td>
+<td>PI planning</td>
+<td>Many teams on one product line</td>
+</tr>
+<tr>
+<td><strong>Hybrid</strong></td>
+<td>Milestones up front, sprints inside</td>
+<td>At milestones (UAT, go-live)</td>
+<td>CRs for scope; backlog order inside it</td>
+<td>Fixed-price and outsourcing projects</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="same-work-different-words">Same Work, Different Words<a class="headerlink" href="#same-work-different-words" title="Permanent link">&para;</a></h3>
+<p>Each model names the same ideas differently. The items are defined, with templates, on <a href="../work_items/">Work Items &amp; Templates</a> and <a href="../sdlc_documents/">SDLC Documents &amp; Templates</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Waterfall / V-Model</th>
+<th>Scrum</th>
+<th>Kanban</th>
+<th>SAFe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unit of time</strong></td>
+<td>Phase</td>
+<td>Sprint</td>
+<td>None (continuous flow)</td>
+<td>PI, split into iterations</td>
+</tr>
+<tr>
+<td><strong>Checkpoint</strong></td>
+<td>Milestone, phase gate</td>
+<td>Sprint Review</td>
+<td>Delivery review</td>
+<td>System Demo, Inspect &amp; Adapt</td>
+</tr>
+<tr>
+<td><strong>Big unit of work</strong></td>
+<td>Deliverable, work package</td>
+<td>Epic</td>
+<td>Epic, or a large card</td>
+<td>Epic → Feature</td>
+</tr>
+<tr>
+<td><strong>Small unit of work</strong></td>
+<td>WBS task</td>
+<td>Story → task</td>
+<td>Card</td>
+<td>Story → task</td>
+</tr>
+<tr>
+<td><strong>Requirements live in</strong></td>
+<td>BRD / SRS</td>
+<td>Product Backlog</td>
+<td>The backlog column</td>
+<td>ART and team backlogs</td>
+</tr>
+<tr>
+<td><strong>Changing scope</strong></td>
+<td>Change request against the baseline</td>
+<td>Reorder the backlog</td>
+<td>Reorder the backlog</td>
+<td>Re-plan at PI planning</td>
+</tr>
+<tr>
+<td><strong>Progress shown by</strong></td>
+<td>Gantt chart, % complete</td>
+<td>Burndown, velocity</td>
+<td>Cumulative flow, cycle time</td>
+<td>PI objectives, burn-up</td>
+</tr>
+<tr>
+<td><strong>Owner of the plan</strong></td>
+<td>Project Manager</td>
+<td>Product Owner</td>
+<td>The team / service delivery manager</td>
+<td>Product Management, RTE</td>
+</tr>
+<tr>
+<td><strong>"Done" means</strong></td>
+<td>Deliverable signed off</td>
+<td>Definition of Done met</td>
+<td>Reached the Done column</td>
+<td>DoD met, PI objectives achieved</td>
+</tr>
+<tr>
+<td><strong>Looking back</strong></td>
+<td>Lessons learned</td>
+<td>Retrospective</td>
+<td>Retrospective / operations review</td>
+<td>Inspect &amp; Adapt</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="practices-design-approaches">Practices &amp; Design Approaches<a class="headerlink" href="#practices-design-approaches" title="Permanent link">&para;</a></h2>
+<h3 id="tdd-test-driven-development">TDD — Test-Driven Development<a class="headerlink" href="#tdd-test-driven-development" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Red, Green, Refactor."</em> — Kent Beck</p>
+</blockquote>
+<p>You write the test before you write the code — which means you define exactly what "done" looks like before you start. The test fails (red), you write just enough code to make it pass (green), then you clean it up without breaking it (refactor). The discipline forces small, focused steps and produces a safety net that makes future changes fearless.</p>
+<p><strong>Ref:</strong> Kent Beck, <a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530"><em>Test-Driven Development: By Example</em></a> (2002)</p>
+<p><strong>Practical detail:</strong> <a href="../lifecycle/#tdd-and-bdd">Lifecycle → TDD and BDD</a></p>
+<hr />
+<h3 id="bdd-behavior-driven-development">BDD — Behavior-Driven Development<a class="headerlink" href="#bdd-behavior-driven-development" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"Given... When... Then."</em></p>
+</blockquote>
+<p>BDD extends TDD by writing tests in plain English, so that a non-technical product manager can read a test suite and verify it describes the right behavior. The format — Given a context, When an action happens, Then something should be true — bridges the gap between what the business wants and what the code actually does.</p>
+<div class="highlight"><pre><span></span><code>Given: a user is logged in
+When: they click "Delete Account"
+Then: their account is removed and they receive a confirmation email
+</code></pre></div>
+<p><strong>Ref:</strong> Dan North, <a href="https://dannorth.net/introducing-bdd/"><em>Introducing BDD</em></a> (2006); <a href="https://cucumber.io/docs/bdd/">Cucumber</a></p>
+<p><strong>Practical detail:</strong> <a href="../lifecycle/#tdd-and-bdd">Lifecycle → TDD and BDD</a></p>
+<hr />
+<h3 id="ddd-domain-driven-design">DDD — Domain-Driven Design<a class="headerlink" href="#ddd-domain-driven-design" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"The heart of software is its ability to solve domain-related problems for its users."</em> — Eric Evans</p>
+</blockquote>
+<p>In a complex business, the hardest part of building software is understanding the domain — the real-world rules, relationships, and language of banking, healthcare, logistics, or whatever the business actually does. DDD says the code should speak that language directly. When a developer and a domain expert talk about an "Order," they should mean exactly the same thing, with no translation layer between them.</p>
+<p><strong>Ref:</strong> Eric Evans, <a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215"><em>Domain-Driven Design</em></a> (2003)</p>
+<p><strong>Further reading:</strong> <a href="../../career/books/#domain-driven-design">The Architecture Bookshelf → Domain-Driven Design</a></p>
+<hr />
+<h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Full form</th>
+<th>Plain meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BDD</td>
+<td>Behavior-Driven Development</td>
+<td>Write tests as plain English user stories</td>
+</tr>
+<tr>
+<td>CI</td>
+<td>Continuous Integration</td>
+<td>Merge and test code many times per day</td>
+</tr>
+<tr>
+<td>CoC</td>
+<td>Convention over Configuration</td>
+<td>Sensible defaults reduce trivial decisions</td>
+</tr>
+<tr>
+<td>DDD</td>
+<td>Domain-Driven Design</td>
+<td>Model code around the real-world business domain</td>
+</tr>
+<tr>
+<td>DRY</td>
+<td>Don't Repeat Yourself</td>
+<td>One source of truth for every piece of knowledge</td>
+</tr>
+<tr>
+<td>KISS</td>
+<td>Keep It Simple, Stupid</td>
+<td>The simplest solution is usually the best</td>
+</tr>
+<tr>
+<td>PI</td>
+<td>Program Increment (Planning Interval since SAFe 6.0)</td>
+<td>~10-week synchronized cycle across Scrum teams (SAFe)</td>
+</tr>
+<tr>
+<td>RUP</td>
+<td>Rational Unified Process</td>
+<td>IBM's structured iterative development process</td>
+</tr>
+<tr>
+<td>SAFe</td>
+<td>Scaled Agile Framework</td>
+<td>Agile practices scaled for large organizations</td>
+</tr>
+<tr>
+<td>SoC</td>
+<td>Separation of Concerns</td>
+<td>Different responsibilities belong in different parts</td>
+</tr>
+<tr>
+<td>TDD</td>
+<td>Test-Driven Development</td>
+<td>Write tests before writing code</td>
+</tr>
+<tr>
+<td>WIP</td>
+<td>Work In Progress</td>
+<td>Tasks currently being worked (Kanban limits this)</td>
+</tr>
+<tr>
+<td>XP</td>
+<td>Extreme Programming</td>
+<td>Agile methodology focused on rigorous coding practices</td>
+</tr>
+<tr>
+<td>YAGNI</td>
+<td>You Aren't Gonna Need It</td>
+<td>Build only what you need right now</td>
+</tr>
+</tbody>
+</table>
+<p>For the full list of software, SDLC, and operations terms across the handbook, see <a href="../../terms/">Terms</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax-init.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

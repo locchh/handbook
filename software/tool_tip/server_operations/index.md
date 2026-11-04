@@ -312,7 +312,7 @@ Three rules that prevent most incidents:
 - **Terminate TLS at the proxy.** Use [certbot](https://certbot.eff.org/) for certificates and generate the TLS config from [Mozilla's SSL Configuration Generator](https://ssl-config.mozilla.org/) rather than copying a blog post.
 - **Never `systemctl reload nginx` without `nginx -t` first.** A syntax error takes the site down until you notice.
 
-See [Networking & the Web](https://locchh.github.io/handbook/software/basics/networking/index.md) for the protocol layer beneath this, and [Security](https://locchh.github.io/handbook/software/basics/security/index.md) for the threat model.
+See [Networking & the Web](https://locchh.github.io/handbook/software/systems/networking/index.md) for the protocol layer beneath this, and [Security](https://locchh.github.io/handbook/software/systems/security/index.md) for the threat model.
 
 ______________________________________________________________________
 

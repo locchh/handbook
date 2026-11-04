@@ -1,0 +1,4670 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A handbook about Software Engineering, Data and AI">
+      
+      
+        <meta name="author" content="locch">
+      
+      
+        <link rel="canonical" href="https://locchh.github.io/handbook/software/process/work_items/">
+      
+      
+        <link rel="prev" href="../lifecycle/">
+      
+      
+        <link rel="next" href="../sdlc_documents/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Work Items & Templates - Software Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto Mono";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#work-items-templates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Software Handbook" class="md-header__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Work Items & Templates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Software Handbook" class="md-nav__button md-logo" aria-label="Software Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/locchh/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    locchh/handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures & Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/error_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundations/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design & Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design & Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Principles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/system_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/tech_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking, APIs & Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking, APIs & Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systems/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Delivery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process & Delivery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophies & Methodologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Items & Templates
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Items & Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-work-items-fit-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Work Items Fit Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#work-items-across-the-sdlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Items Across the SDLC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-milestone-and-deliverable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase, Milestone, and Deliverable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-ready-and-definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of Ready and Definition of Done
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Story
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Story">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-and-sub-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task and Sub-task
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spike" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spike
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-vs-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity vs Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-change-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope Change Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-change-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Change Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-incident" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Incident
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Incident">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postmortem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Postmortem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprint-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Scrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-retrospective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Retrospective
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-merge-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request / Merge Request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pull Request / Merge Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mr-title-and-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MR Title and Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-item-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Item Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-templates-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Templates Live
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdlc_documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDLC Documents & Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git: Merge vs Rebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career & Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Career & Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/becoming_senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/senior_curriculum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior Curriculum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/study_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Books
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../career/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/machine_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/server_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/frontend_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Toolchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/linux_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool_tip/tmux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tmux Cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/introduction_to_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modelling & Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Quality & Cleansing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Governance & Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/data_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Classification & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/big_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Big Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/skills_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The AI Engineering Skills Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The LLM Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/basics/posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tool/Tip
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tool/Tip
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/spec_driven_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/claude_code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/tool_tip/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-work-items-fit-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Work Items Fit Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#work-items-across-the-sdlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Items Across the SDLC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-milestone-and-deliverable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase, Milestone, and Deliverable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backlog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-ready-and-definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of Ready and Definition of Done
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Story
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Story">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-and-sub-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task and Sub-task
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spike" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spike
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-vs-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity vs Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope-change-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope Change Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-change-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Change Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-incident" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Incident
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Incident">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postmortem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Postmortem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprint-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Daily Scrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-retrospective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Retrospective
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request-merge-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Request / Merge Request
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pull Request / Merge Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mr-title-and-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MR Title and Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-item-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Item Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-templates-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where Templates Live
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="work-items-templates">Work Items &amp; Templates<a class="headerlink" href="#work-items-templates" title="Permanent link">&para;</a></h1>
+<p>Every piece of work a team tracks is a <strong>work item</strong> (Jira calls it an <em>issue</em>, Azure Boards a <em>work item</em>, GitHub an <em>issue</em>). This page explains what each item type is for, how they fit together, and gives a template you can copy into your tracker.</p>
+<p>The process around them (Scrum, Kanban, the SDLC phases) lives in <a href="../lifecycle/">Lifecycle</a>, and how each development model (waterfall, Scrum, hybrid, …) uses these items is in <a href="../methodologies/#methodologies-the-how-to-do">Philosophies &amp; Methodologies</a>. Documents you <em>write</em> rather than track (BRD, SRS, design doc, ADR, test plan, changelog, release notes, runbook) are on <a href="../sdlc_documents/">SDLC Documents &amp; Templates</a>. Short definitions of every term are on the <a href="../../terms/">Terms</a> page.</p>
+<h2 id="how-work-items-fit-together">How Work Items Fit Together<a class="headerlink" href="#how-work-items-fit-together" title="Permanent link">&para;</a></h2>
+<p>Work is planned top-down and delivered bottom-up. Big goals are split until each piece fits in one sprint, and those pieces are split into tasks a person can finish in a day or two.</p>
+<pre class="mermaid"><code>flowchart TD
+    I[Initiative / Theme] --&gt; E1[Epic]
+    I --&gt; E2[Epic]
+    E1 --&gt; S1[User Story]
+    E1 --&gt; S2[User Story]
+    E1 --&gt; SP[Spike]
+    E1 --&gt; B[Bug]
+    S1 --&gt; T1[Sub-task]
+    S1 --&gt; T2[Sub-task]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Typical size</th>
+<th>Answers</th>
+<th>Usually written by</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Initiative / Theme</strong></td>
+<td>Quarters</td>
+<td>Why are we investing here?</td>
+<td>Leadership, product</td>
+<td>The business outcome is measured</td>
+</tr>
+<tr>
+<td><strong>Epic</strong></td>
+<td>Several sprints</td>
+<td>What capability are we delivering?</td>
+<td>Product Owner / PM</td>
+<td>Child items are done and the success metric is checked</td>
+</tr>
+<tr>
+<td><strong>User Story</strong></td>
+<td>Fits in one sprint</td>
+<td>What does the user get?</td>
+<td>Product Owner, refined with the team</td>
+<td>Acceptance criteria pass and the Definition of Done is met</td>
+</tr>
+<tr>
+<td><strong>Task / Sub-task</strong></td>
+<td>Hours to a day or two</td>
+<td>What does the team have to do?</td>
+<td>Developers</td>
+<td>The work is done</td>
+</tr>
+<tr>
+<td><strong>Spike</strong></td>
+<td>Time-boxed</td>
+<td>What do we need to learn first?</td>
+<td>Developers</td>
+<td>The question is answered and written up</td>
+</tr>
+<tr>
+<td><strong>Bug</strong></td>
+<td>Varies</td>
+<td>What is broken?</td>
+<td>Anyone: QA, support, users, developers</td>
+<td>The fix is verified and a regression test exists</td>
+</tr>
+<tr>
+<td><strong>Change Request</strong></td>
+<td>Varies</td>
+<td>What agreed thing must change?</td>
+<td>Client, PM, or operations</td>
+<td>Approved or rejected; if approved, implemented and verified</td>
+</tr>
+<tr>
+<td><strong>Production Incident</strong></td>
+<td>Hours</td>
+<td>What is broken for users <em>right now</em>?</td>
+<td>On-call engineer</td>
+<td>Service is restored and follow-ups are filed</td>
+</tr>
+</tbody>
+</table>
+<p>Tools name the levels differently. Jira's defaults are Epic → Story / Task / Bug → Sub-task. Azure Boards' Agile process adds a <strong>Feature</strong> level (Epic → Feature → User Story → Task), and its Scrum process says <strong>Product Backlog Item (PBI)</strong> instead of User Story. The ideas are the same.</p>
+<h2 id="work-items-across-the-sdlc">Work Items Across the SDLC<a class="headerlink" href="#work-items-across-the-sdlc" title="Permanent link">&para;</a></h2>
+<p>Each item type is born in one <a href="../lifecycle/#sdlc-phases">SDLC phase</a>, worked in others, and often creates new items that flow back into the backlog. In waterfall you run the phases once for the whole project. In Scrum, each sprint runs Design → Development → Testing (and often Deployment) for the items it picked, so the same items still pass through the same phases, just in smaller batches.</p>
+<pre class="mermaid"><code>flowchart TD
+    CR["Scope Change Request"] -.-&gt;|impact analysis, re-baseline| AN
+    AN["Analysis: Epic · User Story · Acceptance criteria"] --&gt;|stories| BL[(Backlog)]
+    BL --&gt;|"sprint planning (Definition of Ready)"| DE["Design: Spike · ADR · Task breakdown"]
+    DE --&gt; DV["Development: Task · Sub-task · Pull Request"]
+    DV --&gt; TE["Testing: Bug · Acceptance check · Definition of Done"]
+    TE --&gt; DP["Deployment: Production Change · Release Notes"]
+    DP --&gt; MA["Maintenance: Incident · Postmortem · Hotfix"]
+    TE -.-&gt;|bugs not fixed in sprint| BL
+    MA -.-&gt;|bugs, postmortem actions, tech debt| BL</code></pre>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Born in</th>
+<th>Worked in</th>
+<th>Ends in, or what it feeds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Epic</strong></td>
+<td>Analysis: from a business need or BRD</td>
+<td>Across several sprints, Design → Deployment</td>
+<td>Closes after release, once the success metric is checked</td>
+</tr>
+<tr>
+<td><strong>User Story</strong></td>
+<td>Analysis: requirements split into stories with acceptance criteria</td>
+<td>Refined before the sprint; built in Development; verified in Testing</td>
+<td>Deployment. Its acceptance criteria become the test cases in Testing</td>
+</tr>
+<tr>
+<td><strong>Backlog</strong></td>
+<td>Fed by Analysis, scope CRs, bugs, and postmortem actions</td>
+<td>Ordered and refined continuously</td>
+<td>Consumed by sprint planning</td>
+</tr>
+<tr>
+<td><strong>Sprint</strong></td>
+<td>Sprint planning picks items that meet the Definition of Ready</td>
+<td>Design → Development → Testing for those items</td>
+<td>An increment that meets the Definition of Done; retro actions go to the next sprint</td>
+</tr>
+<tr>
+<td><strong>Spike</strong></td>
+<td>Analysis or Design: an unknown blocks the estimate or design</td>
+<td>Design</td>
+<td>An ADR, a recommendation, or new estimated stories</td>
+</tr>
+<tr>
+<td><strong>ADR / design doc</strong></td>
+<td>Design</td>
+<td>Reviewed in Design</td>
+<td>Guides Development; superseded later if the decision changes. See <a href="../sdlc_documents/#adr">SDLC Documents → ADR</a></td>
+</tr>
+<tr>
+<td><strong>Task / Sub-task</strong></td>
+<td>Design / sprint planning: a story broken into steps</td>
+<td>Development</td>
+<td>Done in Development; checked in Testing</td>
+</tr>
+<tr>
+<td><strong>Pull Request / Merge Request</strong></td>
+<td>Development</td>
+<td>Development: review and CI</td>
+<td>Merged. Feeds Testing on the integration or staging environment</td>
+</tr>
+<tr>
+<td><strong>Bug</strong></td>
+<td>Mostly Testing (QA). Also Development (CI, code review) and Maintenance (users, support)</td>
+<td>Fixed in Development, retested in Testing</td>
+<td>Shipped in the next Deployment. The earlier it is found, the cheaper the fix</td>
+</tr>
+<tr>
+<td><strong>Phase / Milestone</strong></td>
+<td>Planned up front, before Analysis starts</td>
+<td>Each phase covers one or more SDLC phases</td>
+<td>Each phase ends at a milestone where a deliverable is signed off</td>
+</tr>
+<tr>
+<td><strong>Scope Change Request</strong></td>
+<td>Any phase after the requirements are signed off</td>
+<td>Impact analysis loops back to Analysis and Design</td>
+<td>A re-baselined plan, plus new or changed stories in the backlog</td>
+</tr>
+<tr>
+<td><strong>Production Change Request</strong></td>
+<td>Deployment, or Maintenance for config and infra changes</td>
+<td>The change window</td>
+<td>Verified in production, or rolled back</td>
+</tr>
+<tr>
+<td><strong>Release Notes</strong></td>
+<td>Deployment</td>
+<td>Written from the changelog and merged items</td>
+<td>Published with the version. See <a href="../sdlc_documents/#release-notes">SDLC Documents → Release Notes</a></td>
+</tr>
+<tr>
+<td><strong>Production Incident</strong></td>
+<td>Maintenance: an alert or user report on a live service</td>
+<td>Mitigated by on-call; may trigger an emergency change or hotfix</td>
+<td>Resolved; leads to a postmortem</td>
+</tr>
+<tr>
+<td><strong>Hotfix</strong></td>
+<td>Maintenance: from an incident or critical bug</td>
+<td>A short Development → Testing → Deployment path on a <code>hotfix/*</code> branch</td>
+<td>Merged back so the next release keeps the fix</td>
+</tr>
+<tr>
+<td><strong>Postmortem</strong></td>
+<td>Maintenance, after an incident</td>
+<td>Written and reviewed within days</td>
+<td>Action items go back to the backlog and start the cycle again</td>
+</tr>
+</tbody>
+</table>
+<p>The dotted arrows show what makes it a <em>cycle</em>: Testing and Maintenance keep generating new backlog items, and those flow back through the same phases.</p>
+<h2 id="issue">Issue<a class="headerlink" href="#issue" title="Permanent link">&para;</a></h2>
+<p><strong>Issue</strong> is the generic name for any tracked item. In Jira every work item is an issue, and its <em>issue type</em> (Epic, Story, Task, Bug, Sub-task) says what kind it is. GitHub and GitLab issues are generic: teams mark the kind with <strong>labels</strong>, or with <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization">issue types ↗</a> in GitHub organizations.</p>
+<p>In project management, "issue" also has a narrower meaning. It is a problem that <em>has already happened</em> and needs a decision, while a <em>risk</em> is one that <em>might</em> happen. This is the "I" in a <a href="#other-item-types">RAID log</a>.</p>
+<p>A good issue:</p>
+<ul>
+<li>covers one problem or request;</li>
+<li>has a title that says <em>what</em> and <em>where</em>, so it can be triaged from a list;</li>
+<li>gives enough context that someone else can pick it up without asking you;</li>
+<li>links the parent epic, related issues, and the PRs that fix it;</li>
+<li>carries labels for type, priority, and area, for example <code>type: bug</code>, <code>priority: P2</code>, <code>area: checkout</code>.</li>
+</ul>
+<p>Use the <a href="#bug">bug report</a> template for bugs. For everything else, a feature-request issue works:</p>
+<p><strong>Template: Feature request issue</strong> (<code>.github/ISSUE_TEMPLATE/feature_request.md</code>)</p>
+<div class="highlight"><pre><span></span><code>---
+name: Feature request
+about: Suggest an improvement
+<span class="gu">labels: "type: feature"</span>
+<span class="gu">---</span>
+<span class="gu">## Problem</span>
+&lt;What is hard or impossible today? Who is affected, and how often?&gt;
+
+<span class="gu">## Proposal</span>
+&lt;What you would like to happen.&gt;
+
+<span class="gu">## Alternatives considered</span>
+&lt;Other ways to solve it, and why they are worse.&gt;
+
+<span class="gu">## Acceptance criteria</span>
+<span class="k">- [ ]</span> ...
+
+<span class="gu">## Additional context</span>
+&lt;Screenshots, links, data.&gt;
+</code></pre></div>
+<p>GitHub also supports <strong>issue forms</strong>: YAML templates that render as a web form with required fields, so nobody can skip "steps to reproduce". See <a href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms">GitHub: Syntax for issue forms ↗</a>.</p>
+<p><strong>Template: Bug report issue form</strong> (<code>.github/ISSUE_TEMPLATE/bug_report.yml</code>)</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bug report</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Something is broken</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"[Bug]:</span><span class="nv"> </span><span class="s">"</span>
+<span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"type:</span><span class="nv"> </span><span class="s">bug"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"needs-triage"</span><span class="p p-Indicator">]</span>
+<span class="nt">body</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">textarea</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">steps</span>
+<span class="w">    </span><span class="nt">attributes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Steps to reproduce</span>
+<span class="w">      </span><span class="nt">placeholder</span><span class="p">:</span><span class="w"> </span><span class="s">"1.</span><span class="nv"> </span><span class="s">Go</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">…\n2.</span><span class="nv"> </span><span class="s">Click</span><span class="nv"> </span><span class="s">…"</span>
+<span class="w">    </span><span class="nt">validations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">textarea</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">expected-actual</span>
+<span class="w">    </span><span class="nt">attributes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Expected vs actual result</span>
+<span class="w">    </span><span class="nt">validations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">input</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">version</span>
+<span class="w">    </span><span class="nt">attributes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Version / commit</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dropdown</span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">environment</span>
+<span class="w">    </span><span class="nt">attributes</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Environment</span>
+<span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Production</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Staging</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Local</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">validations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h2 id="phase-milestone-and-deliverable">Phase, Milestone, and Deliverable<a class="headerlink" href="#phase-milestone-and-deliverable" title="Permanent link">&para;</a></h2>
+<p>Plan-driven projects organize work in a <strong>project plan</strong> rather than a backlog. That covers <a href="../methodologies/#1-waterfall-do-it-in-order-no-going-back">waterfall</a>, the V-Model, most fixed-price contracts, and the outer shell of <a href="../methodologies/#10-hybrid-water-scrum-fall-plan-like-waterfall-build-like-scrum">hybrid</a> projects. These are the items in a project plan:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What it is</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase</strong></td>
+<td>A stage of the project with its own goal and outputs, usually one SDLC phase or a group of them</td>
+<td>Requirements, Design, Build, Test, Deploy</td>
+</tr>
+<tr>
+<td><strong>Phase Gate</strong></td>
+<td>A review at the end of a phase where sponsors decide go / no-go for the next one</td>
+<td>Design review signed off</td>
+</tr>
+<tr>
+<td><strong>Milestone</strong></td>
+<td>A zero-duration checkpoint marking an important event, usually the approval of a deliverable. Contracts often tie payments to milestones</td>
+<td>M1: SRS signed off, 25 Jan</td>
+</tr>
+<tr>
+<td><strong>Deliverable</strong></td>
+<td>A tangible output handed to the client or to the next phase</td>
+<td>SRS v1.0, test summary report, the running system</td>
+</tr>
+<tr>
+<td><strong>Work Package</strong></td>
+<td>The lowest level of the WBS: a chunk of work with one owner that can be estimated and tracked</td>
+<td>Checkout module, detailed design</td>
+</tr>
+<tr>
+<td><strong>Task / Activity</strong></td>
+<td>One scheduled step of a work package, with an owner, dates, and dependencies. It becomes a bar on the Gantt chart</td>
+<td>Write the DD for the address table, 2 days</td>
+</tr>
+<tr>
+<td><strong>Baseline</strong></td>
+<td>The approved scope, schedule, and cost that progress is measured against. Only an approved <a href="#scope-change-request">change request</a> changes it</td>
+<td>Plan v1.0, approved 10 Jan</td>
+</tr>
+<tr>
+<td><strong>Critical Path</strong></td>
+<td>The longest chain of dependent tasks. Any delay on it delays the whole project</td>
+<td>SRS → DD → build → SIT → UAT</td>
+</tr>
+</tbody>
+</table>
+<p>The word <strong>task</strong> means slightly different things in the two worlds. In a project plan, a task is a <em>scheduled activity</em> with dates and dependencies. In Scrum, a task is a <em>step of a story</em> with no dates, only To Do / Doing / Done (see <a href="#task-and-sub-task">Task and Sub-task</a>).</p>
+<p>A <strong>WBS (Work Breakdown Structure)</strong> splits the whole project into deliverables and then work packages. Follow the <em>100% rule</em>: the children of each node add up to all of the parent's work, and nothing outside it. A common rule of thumb keeps work packages between 8 and 80 hours of effort.</p>
+<pre class="mermaid"><code>flowchart TD
+    P[Online Shop v2] --&gt; R[1 Requirements]
+    P --&gt; D[2 Design]
+    P --&gt; B[3 Build]
+    P --&gt; T[4 Test]
+    P --&gt; L[5 Deploy]
+    R --&gt; R1[1.1 BRD]
+    R --&gt; R2[1.2 SRS]
+    D --&gt; D1[2.1 Basic design]
+    D --&gt; D2[2.2 Detailed design]
+    B --&gt; B1[3.1 Checkout module]
+    B --&gt; B2[3.2 Payment integration]
+    T --&gt; T1[4.1 SIT]
+    T --&gt; T2[4.2 UAT]
+    L --&gt; L1[5.1 Rehearsal]
+    L --&gt; L2[5.2 Go-live]</code></pre>
+<p>Phases run in order, and each one ends at a milestone where its deliverables are signed off. In SDLC terms, the phases <em>are</em> the <a href="../lifecycle/#sdlc-phases">SDLC phases</a>. On a hybrid project, the Build phase runs as sprints inside the plan:</p>
+<pre class="mermaid"><code>gantt
+    title Online Shop v2: phases and milestones
+    dateFormat YYYY-MM-DD
+    axisFormat %d %b
+    section Requirements
+    BRD and SRS                  :req, 2026-01-05, 20d
+    M1 SRS signed off            :milestone, m1, after req, 0d
+    section Design
+    Basic and detailed design    :des, after m1, 15d
+    M2 Design approved           :milestone, m2, after des, 0d
+    section Build
+    Sprints 1-4                  :build, after m2, 40d
+    M3 Code complete             :milestone, m3, after build, 0d
+    section Test
+    SIT                          :sit, after m3, 10d
+    UAT                          :uat, after sit, 10d
+    M4 UAT signed off            :milestone, m4, after uat, 0d
+    section Deploy
+    Rehearsal and go-live        :live, after m4, 5d
+    M5 Go-live                   :milestone, m5, after live, 0d</code></pre>
+<p><strong>Template: Milestone plan</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Milestone plan: &lt;project&gt;</span>
+
+| ID | Milestone | Deliverables | Accepted by | Planned | Actual | Payment |
+|---|---|---|---|---|---|---|
+| M1 | Requirements signed off | BRD v1.0, SRS v1.0 | Client PO | 2026-01-25 | | 20% |
+| M2 | Design approved | Basic + detailed design | Client architect | 2026-02-09 | | — |
+| M3 | Code complete | Source code, unit test report | PM | 2026-03-21 | | 30% |
+| M4 | UAT signed off | Test summary report, UAT sign-off | Client PO | 2026-04-10 | | 30% |
+| M5 | Go-live | Production release, handover document | Client sponsor | 2026-04-15 | | 20% |
+</code></pre></div>
+<p><strong>Template: Task list (one work package)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Tasks: 2.2 Detailed design</span>
+
+| WBS | Task | Owner | Start | End | Effort (MD) | Depends on | % done | Status |
+|---|---|---|---|---|---|---|---|---|
+| 2.2.1 | DD: address table and API | Dev A | 01-27 | 01-29 | 3 | 1.2 | 100% | Done |
+| 2.2.2 | DD: checkout flow sequence | Dev B | 01-27 | 01-30 | 4 | 1.2 | 60% | In progress |
+| 2.2.3 | DD review | Tech lead | 02-02 | 02-03 | 1 | 2.2.1, 2.2.2 | 0% | Not started |
+</code></pre></div>
+<p>The deliverables themselves (BRD, SRS, design, test report, UAT sign-off) have templates on <a href="../sdlc_documents/">SDLC Documents &amp; Templates</a>.</p>
+<h2 id="backlog">Backlog<a class="headerlink" href="#backlog" title="Permanent link">&para;</a></h2>
+<p>The <strong>Product Backlog</strong> is the single ordered list of everything that might be done to the product. The Product Owner owns its order. The <strong>Sprint Backlog</strong> is the Sprint Goal plus the items the developers picked for this sprint and their plan to deliver them. The developers own it.</p>
+<p>A healthy product backlog is ordered, not just tagged with priorities. The top items are small, clear, and estimated. Items near the bottom can stay rough until they move up. Order by value, risk, dependencies, and cost of delay. If everything is "High", nothing is.</p>
+<p><strong>Backlog refinement</strong> (or <em>grooming</em>) is the ongoing work of splitting, clarifying, and estimating upcoming items. Most teams hold a weekly session. A common rule of thumb is to spend no more than about 10% of the team's capacity on it.</p>
+<p><strong>Template: Product backlog</strong> (top = next)</p>
+<div class="highlight"><pre><span></span><code>| Rank | Key | Type | Title | Value / why | Estimate | Ready? | Epic |
+|---|---|---|---|---|---|---|---|
+| 1 | SHOP-101 | Story | Save shipping address at checkout | Removes a step for ~60% of orders | 5 | Yes | EPIC-12 |
+| 2 | SHOP-482 | Bug | Checkout 500 on lowercase coupon | S2; ~3% of coupon orders fail | 2 | Yes | — |
+| 3 | SHOP-130 | Spike | Postgres FTS vs OpenSearch for search | Unblocks the EPIC-15 estimate | 2 days | Yes | EPIC-15 |
+| 4 | SHOP-117 | Story | Pay with a saved card | Faster repeat checkout | 8 | No: needs design | EPIC-12 |
+| 5 | SHOP-140 | Tech debt | Replace deprecated payment SDK v2 | Vendor drops v2 next quarter | 5 | No: needs spike | — |
+</code></pre></div>
+<p><strong>Template: Sprint backlog</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Sprint 24 backlog</span>
+Sprint goal: Customers can check out with a saved address.
+
+| Key | Title | Points | Owner | Status |
+|---|---|---|---|---|
+| SHOP-101 | Save shipping address at checkout | 5 | Dev A | In progress |
+| ↳ SHOP-101-1 | API: address endpoints | — | Dev A | Done |
+| ↳ SHOP-101-2 | Checkout form pre-fill | — | Dev B | In progress |
+| ↳ SHOP-101-3 | E2E test for saved address | — | QA | To do |
+| SHOP-482 | Checkout 500 on lowercase coupon | 2 | Dev C | In review |
+</code></pre></div>
+<p><strong>Template: Refinement checklist</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Backlog refinement — &lt;date&gt;</span>
+
+For each item near the top of the backlog:
+<span class="k">- [ ]</span> Title says the outcome, not the implementation
+<span class="k">- [ ]</span> Description and acceptance criteria are written
+<span class="k">- [ ]</span> Small enough to finish in one sprint (split it if not)
+<span class="k">- [ ]</span> Dependencies and open questions are listed (create a spike if a question blocks the estimate)
+<span class="k">- [ ]</span> Estimated by the people who will build it
+<span class="k">- [ ]</span> Ordered against the items around it
+
+Also:
+<span class="k">- [ ]</span> Close items untouched for 6+ months, or move them to an "icebox"
+<span class="k">- [ ]</span> Merge duplicates
+</code></pre></div>
+<h3 id="definition-of-ready-and-definition-of-done">Definition of Ready and Definition of Done<a class="headerlink" href="#definition-of-ready-and-definition-of-done" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Definition of Done (DoD)</strong> is the quality bar every item must meet before it counts as done. It is a formal commitment in the <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide ↗</a>. Work that misses it is not shown at the Sprint Review.</li>
+<li><strong>Definition of Ready (DoR)</strong> is the bar an item must meet before the team pulls it into a sprint. It is a team practice, not part of the Scrum Guide. Use it as a checklist, not a gate that blocks conversation.</li>
+</ul>
+<p><strong>Template: Definition of Ready</strong></p>
+<div class="highlight"><pre><span></span><code>An item is ready when:
+<span class="k">- [ ]</span> It has a clear title and a user or business value
+<span class="k">- [ ]</span> Acceptance criteria are written and agreed with the PO
+<span class="k">- [ ]</span> UI designs / API contracts are linked (if needed)
+<span class="k">- [ ]</span> Dependencies are resolved or have a date
+<span class="k">- [ ]</span> It is estimated and fits in one sprint
+</code></pre></div>
+<p><strong>Template: Definition of Done</strong></p>
+<div class="highlight"><pre><span></span><code>An item is done when:
+<span class="k">- [ ]</span> Code is merged to the main branch through a reviewed PR
+<span class="k">- [ ]</span> Unit and integration tests are written and pass in CI
+<span class="k">- [ ]</span> Acceptance criteria are verified (by QA or the PO)
+<span class="k">- [ ]</span> No new lint, security, or accessibility violations
+<span class="k">- [ ]</span> Docs, changelog, and runbooks are updated
+<span class="k">- [ ]</span> Deployed to staging (or production, behind a flag if needed)
+<span class="k">- [ ]</span> Monitoring / alerts exist for new behavior
+</code></pre></div>
+<h2 id="epic">Epic<a class="headerlink" href="#epic" title="Permanent link">&para;</a></h2>
+<p>An <strong>epic</strong> is a large body of work that delivers one capability and is too big for a single sprint. It is split into user stories, spikes, and bugs, and usually spans several sprints. An epic should describe an <em>outcome</em> ("Customers can pay with saved cards"), not a component ("Payment service refactor").</p>
+<p>The epic closes when its child items are done and you have checked whether the success metric moved. Long-running epics that never close usually mean the goal was a theme, not an epic.</p>
+<p><strong>Template: Epic</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [Epic] &lt;Outcome-oriented name: "Customers can pay with saved cards"&gt;</span>
+
+<span class="gu">## Goal</span>
+&lt;One or two sentences: the user or business outcome this epic delivers.&gt;
+
+<span class="gu">## Problem / context</span>
+&lt;Why now? The pain, opportunity, or request behind it. Link data, research, tickets.&gt;
+
+<span class="gu">## Success metrics</span>
+<span class="k">-</span><span class="w"> </span>&lt;Metric&gt;: from &lt;baseline&gt; to &lt;target&gt; by &lt;date&gt;
+
+<span class="gu">## Scope</span>
+In scope:
+<span class="k">-</span><span class="w"> </span>...
+Out of scope:
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Users / personas</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Non-functional requirements</span>
+<span class="k">-</span><span class="w"> </span>Performance, security, privacy, accessibility, compliance ...
+
+<span class="gu">## Child items</span>
+<span class="k">- [ ]</span> STORY-101 ...
+<span class="k">- [ ]</span> STORY-102 ...
+<span class="k">- [ ]</span> SPIKE-7 ...
+
+<span class="gu">## Dependencies and risks</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Links</span>
+<span class="k">-</span><span class="w"> </span>Design: &lt;link&gt; · Spec: &lt;link&gt; · ADR: &lt;link&gt;
+
+Owner: &lt;PO / PM&gt; · Target: &lt;quarter or release&gt;
+</code></pre></div>
+<h2 id="user-story">User Story<a class="headerlink" href="#user-story" title="Permanent link">&para;</a></h2>
+<p>A <strong>user story</strong> is a small requirement written from the user's point of view. It describes <em>who</em> wants <em>what</em> and <em>why</em>, and leaves <em>how</em> to the team:</p>
+<blockquote>
+<p><strong>As a</strong> returning customer, <strong>I want</strong> to save my shipping address, <strong>so that</strong> checkout takes fewer steps.</p>
+</blockquote>
+<p>A story is a placeholder for a conversation, not a full spec. Ron Jeffries' <em>3 Cs</em> describe it: the <strong>Card</strong> (the short text), the <strong>Conversation</strong> (the discussion that fills in the details), and the <strong>Confirmation</strong> (the acceptance criteria that prove it works).</p>
+<p>Good stories follow <a href="https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/">INVEST ↗</a>: <strong>I</strong>ndependent, <strong>N</strong>egotiable, <strong>V</strong>aluable, <strong>E</strong>stimable, <strong>S</strong>mall, <strong>T</strong>estable.</p>
+<p>A common anti-pattern is "As a developer, I want a <code>users</code> table". That is a task. A story should describe something a user can see or use. Technical work that serves no single story goes in as a task or a tech-debt item.</p>
+<p>Stories carry <em>functional</em> requirements (what the system does). <em>Non-functional</em> requirements, such as latency, security, and accessibility, go in the acceptance criteria or the Definition of Done. See <a href="../lifecycle/#sdlc-phases">Lifecycle → SDLC Phases</a> for where stories sit next to BRDs and specs.</p>
+<h3 id="acceptance-criteria">Acceptance Criteria<a class="headerlink" href="#acceptance-criteria" title="Permanent link">&para;</a></h3>
+<p><strong>Acceptance criteria</strong> are the testable conditions that say the story is done. They come in two styles:</p>
+<ul>
+<li><strong>Rule list</strong>: "Address is validated against the postcode format of the selected country."</li>
+<li><strong>Scenarios</strong> in <a href="https://cucumber.io/docs/gherkin/reference/">Gherkin ↗</a> <code>Given / When / Then</code>. These map directly to BDD tests (see <a href="../lifecycle/#tdd-and-bdd">Lifecycle → TDD and BDD</a>):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">Scenario:</span><span class="nf"> Saved address is pre-filled</span>
+<span class="k">  Given </span><span class="nf">I am logged in and have a saved shipping address</span>
+<span class="nf">  </span><span class="k">When </span><span class="nf">I start checkout</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">the shipping form is pre-filled with my saved address</span>
+
+<span class="k">Scenario:</span><span class="nf"> Customer has no saved address</span>
+<span class="k">  Given </span><span class="nf">I am logged in and have no saved address</span>
+<span class="nf">  </span><span class="k">When </span><span class="nf">I start checkout</span>
+<span class="nf">  </span><span class="k">Then </span><span class="nf">the shipping form is empty</span>
+<span class="nf">  </span><span class="k">And </span><span class="nf">I can tick "</span><span class="s">Save this address</span><span class="nf">"</span>
+</code></pre></div>
+<p>Cover the happy path, the main edge cases, and the error cases. If you can't write the criteria, the story isn't ready.</p>
+<p><strong>Template: User Story</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [Story] &lt;Short title: "Save shipping address at checkout"&gt;</span>
+
+As a &lt;role / persona&gt;
+I want &lt;capability&gt;
+so that &lt;benefit / value&gt;
+
+<span class="gu">## Acceptance criteria</span>
+Scenario: &lt;happy path&gt;
+  Given &lt;precondition&gt;
+  When &lt;action&gt;
+  Then &lt;observable result&gt;
+
+Scenario: &lt;edge or error case&gt;
+  Given ...
+  When ...
+  Then ...
+
+<span class="gu">## Notes</span>
+<span class="k">-</span><span class="w"> </span>Out of scope: ...
+<span class="k">-</span><span class="w"> </span>Non-functional: &lt;e.g. p95 response &lt; 300 ms, WCAG 2.1 AA&gt;
+<span class="k">-</span><span class="w"> </span>Design: &lt;link&gt; · API contract: &lt;link&gt;
+
+Epic: EPIC-12 · Estimate: &lt;story points&gt; · Priority: &lt;order or P1–P4&gt;
+</code></pre></div>
+<h2 id="task-and-sub-task">Task and Sub-task<a class="headerlink" href="#task-and-sub-task" title="Permanent link">&para;</a></h2>
+<p>A <strong>task</strong> is a concrete piece of work that is not a user-facing story and not a bug. Examples are upgrading a library, setting up a CI job, or writing a migration. A <strong>sub-task</strong> is one step of a story or task: "Add API endpoint", "Build form", "Write e2e test". Splitting a story into sub-tasks helps the team see who does what and spot work that is stuck.</p>
+<p>Start the title with a verb and make "done" unambiguous.</p>
+<p><strong>Template: Task</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [Task] &lt;Verb-first title: "Add index on orders.customer_id"&gt;</span>
+
+<span class="gu">## What</span>
+&lt;The concrete change.&gt;
+
+<span class="gu">## Why</span>
+&lt;Parent story or epic, or the reason if standalone: chore, upgrade, config, tech debt.&gt;
+
+<span class="gu">## Done when</span>
+<span class="k">- [ ]</span> ...
+<span class="k">- [ ]</span> ...
+
+Parent: STORY-101 · Estimate: &lt;hours or points&gt; · Assignee: &lt;name&gt;
+</code></pre></div>
+<h2 id="spike">Spike<a class="headerlink" href="#spike" title="Permanent link">&para;</a></h2>
+<p>A <strong>spike</strong> is a time-boxed investigation that answers a question the team needs answered before it can estimate or design something. The term comes from Extreme Programming. A spike produces <em>knowledge</em>: a recommendation, a measurement, a throwaway prototype. It does not produce shippable code. When the timebox runs out, stop and report what you have.</p>
+<p><strong>Template: Spike</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [Spike] &lt;The question: "Can Postgres full-text search meet 200 ms p95 on 5M products?"&gt;</span>
+
+<span class="gu">## Question</span>
+&lt;What exactly do we need to know?&gt;
+
+<span class="gu">## Why it matters</span>
+&lt;Which story or epic is blocked or can't be estimated without the answer.&gt;
+
+<span class="gu">## Timebox</span>
+&lt;e.g. 2 days&gt;
+
+<span class="gu">## Approach</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Output</span>
+<span class="k">- [ ]</span> Findings written up: recommendation + evidence (numbers, links)
+<span class="k">- [ ]</span> Follow-up stories created and estimated
+<span class="k">- [ ]</span> Prototype code deleted or clearly marked as throwaway
+</code></pre></div>
+<h2 id="bug">Bug<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h2>
+<p>A <strong>bug</strong> (or <strong>defect</strong>) is behavior that deviates from the spec or from what users can reasonably expect. A bug found in production that is hurting users <em>now</em> is handled as a <a href="#production-incident">production incident</a> first. The bug ticket holds the permanent fix.</p>
+<p>One bug per ticket. The title should state the symptom and where it happens, so someone can triage it from the title alone.</p>
+<h3 id="severity-vs-priority">Severity vs Priority<a class="headerlink" href="#severity-vs-priority" title="Permanent link">&para;</a></h3>
+<p>These are two different fields. Teams that use one number for both make bad trade-offs.</p>
+<ul>
+<li><strong>Severity</strong> is how bad the impact is. It is set by whoever reports or triages the bug, usually QA or the developer.</li>
+<li><strong>Priority</strong> is how soon we fix it. It is set by the Product Owner, who weighs the bug against other work.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S1 Critical</strong></td>
+<td>Crash, data loss, security hole, or a core flow blocked with no workaround</td>
+</tr>
+<tr>
+<td><strong>S2 Major</strong></td>
+<td>Important feature broken; the workaround is painful</td>
+</tr>
+<tr>
+<td><strong>S3 Minor</strong></td>
+<td>Feature misbehaves; an easy workaround exists</td>
+</tr>
+<tr>
+<td><strong>S4 Trivial</strong></td>
+<td>Cosmetic: typo, alignment, wording</td>
+</tr>
+</tbody>
+</table>
+<p>The two often disagree:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Low priority</th>
+<th>High priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High severity</strong></td>
+<td>Export crashes on a report one internal user runs once a year</td>
+<td>Checkout fails for every card payment</td>
+</tr>
+<tr>
+<td><strong>Low severity</strong></td>
+<td>Icon slightly misaligned on the settings page</td>
+<td>Company name misspelled on the homepage</td>
+</tr>
+</tbody>
+</table>
+<p>A typical bug lifecycle looks like this:</p>
+<div class="highlight"><pre><span></span><code>New → Triaged → In Progress → Fixed (in review) → Ready for QA → Verified → Closed
+                                                       │
+                                                       └─ fails retest → Reopened
+Other exits from triage: Duplicate · Cannot Reproduce · Won't Fix · Works as Designed
+</code></pre></div>
+<p><strong>Template: Bug report</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [Bug] &lt;Symptom + where: "Checkout returns 500 when coupon code is lowercase"&gt;</span>
+
+<span class="gu">## Environment</span>
+<span class="k">-</span><span class="w"> </span>App / version / commit: &lt;web 2.14.3 (a1b2c3d)&gt;
+<span class="k">-</span><span class="w"> </span>Environment: production / staging / local
+<span class="k">-</span><span class="w"> </span>Browser / OS / device: &lt;Chrome 130, macOS 15&gt;
+<span class="k">-</span><span class="w"> </span>Account / tenant: &lt;test user id — no real PII&gt;
+
+<span class="gu">## Steps to reproduce</span>
+<span class="k">1.</span> ...
+<span class="k">2.</span> ...
+<span class="k">3.</span> ...
+
+<span class="gu">## Expected result</span>
+...
+
+<span class="gu">## Actual result</span>
+... &lt;error message, HTTP status&gt;
+
+<span class="gu">## Frequency</span>
+Always / Intermittent (~1 in 5) / Happened once
+
+<span class="gu">## Impact</span>
+Who is affected, how many, is there a workaround?
+
+<span class="gu">## Evidence</span>
+<span class="k">-</span><span class="w"> </span>Screenshot / recording:
+<span class="k">-</span><span class="w"> </span>Logs / trace id / request id:
+
+Severity: S1–S4 · Priority: &lt;set at triage&gt; · Found in: &lt;version&gt; · Related: &lt;story / incident&gt;
+</code></pre></div>
+<p>The fix should come with a test that fails without it, so the bug can't quietly come back.</p>
+<h2 id="change-request">Change Request<a class="headerlink" href="#change-request" title="Permanent link">&para;</a></h2>
+<p>"<strong>CR</strong>" means two different things depending on who says it:</p>
+<ol>
+<li><strong>Change Request.</strong> This page covers it below. It has two flavors: a change to <em>agreed scope</em>, and a change to a <em>production system</em>.</li>
+<li><strong>Code Review.</strong> This is a review of a pull request before merge. See <a href="../lifecycle/#code-review">Lifecycle → Code Review</a>, <a href="../code_review/">Code Review</a>, and the <a href="#pull-request-merge-request">Pull Request / Merge Request</a> template below.</li>
+</ol>
+<h3 id="scope-change-request">Scope Change Request<a class="headerlink" href="#scope-change-request" title="Permanent link">&para;</a></h3>
+<p>In project work, and in fixed-price and outsourcing contracts especially, a <strong>change request</strong> is a formal request to change something that was already agreed and signed off. That can be a requirement, the scope, the timeline, or the budget. The CR exists so that "can you just add…" becomes a decision with a known cost instead of silent scope creep.</p>
+<div class="highlight"><pre><span></span><code>Raise → Log → Impact analysis → Approve / Reject / Defer → Re-plan (re-baseline) → Implement → Verify → Close
+</code></pre></div>
+<p>On larger projects, a <strong>Change Control Board (CCB)</strong> makes the decision. On smaller ones the client and PM decide together. Either way, get the approval in writing before the work starts.</p>
+<p><strong>Template: Scope change request</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [CR-&lt;id&gt;] &lt;Short title of the requested change&gt;</span>
+
+Requested by: &lt;name, organization&gt; · Date: &lt;yyyy-mm-dd&gt; · Project / contract: &lt;...&gt;
+
+<span class="gu">## Current baseline</span>
+&lt;What was agreed: requirement id, spec section, story, contract clause.&gt;
+
+<span class="gu">## Requested change</span>
+&lt;What should be different.&gt;
+
+<span class="gu">## Reason / business justification</span>
+...
+
+<span class="gu">## Impact analysis</span>
+| Area | Impact |
+|---|---|
+| Scope | &lt;stories added / changed / removed&gt; |
+| Effort | &lt;person-days&gt; |
+| Schedule | &lt;milestones that move&gt; |
+| Cost | &lt;amount; billable or not&gt; |
+| Quality / risk | &lt;regression risk, NFRs affected&gt; |
+| Other teams / systems | ... |
+
+<span class="gu">## Options</span>
+<span class="k">1.</span> Accept as requested — &lt;effort, date&gt;
+<span class="k">2.</span> Accept a reduced version — &lt;what's cut&gt;
+<span class="k">3.</span> Defer to a later phase / reject — &lt;consequence&gt;
+
+<span class="gu">## Decision</span>
+Status: Proposed / Approved / Rejected / Deferred
+Approved by: &lt;client, PM, CCB&gt; · Date: ...
+</code></pre></div>
+<h3 id="production-change-request">Production Change Request<a class="headerlink" href="#production-change-request" title="Permanent link">&para;</a></h3>
+<p>In IT operations (<a href="https://en.wikipedia.org/wiki/Change_management_(ITSM)">ITIL ↗</a>), a <strong>change</strong> is any addition, modification, or removal that could affect a live service. Changes come in three types:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Approval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard</strong></td>
+<td>Low-risk, repeatable, pre-approved (e.g. a routine deploy through the CI/CD pipeline)</td>
+<td>None per change; the procedure is approved once</td>
+</tr>
+<tr>
+<td><strong>Normal</strong></td>
+<td>Anything else that needs assessment (e.g. a database migration, a firewall rule change)</td>
+<td>Change authority or <strong>CAB</strong> (Change Advisory Board)</td>
+</tr>
+<tr>
+<td><strong>Emergency</strong></td>
+<td>Must happen now, usually to fix an incident</td>
+<td>Fast-track approval; documented afterwards</td>
+</tr>
+</tbody>
+</table>
+<p>Teams with strong CI/CD turn most changes into <em>standard</em> ones: the pipeline's tests, reviews, and rollback ability serve as the approval.</p>
+<p><strong>Template: Production change</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [Change] &lt;What is changing: "Upgrade orders DB from Postgres 15 to 17"&gt;</span>
+
+Type: Standard / Normal / Emergency · Risk: Low / Medium / High
+Window: &lt;start – end, with timezone&gt; · Implementer: &lt;name&gt; · Approver: &lt;name&gt;
+
+<span class="gu">## Description</span>
+&lt;What changes, on which systems and environments.&gt;
+
+<span class="gu">## Reason</span>
+&lt;Linked story, bug, incident, or CR.&gt;
+
+<span class="gu">## Impact</span>
+<span class="k">-</span><span class="w"> </span>Services and users affected:
+<span class="k">-</span><span class="w"> </span>Expected downtime:
+<span class="k">-</span><span class="w"> </span>Customer notice needed? yes / no
+
+<span class="gu">## Pre-checks</span>
+<span class="k">- [ ]</span> Rehearsed in staging (link to evidence)
+<span class="k">- [ ]</span> Backup / snapshot taken and restore tested
+<span class="k">- [ ]</span> On-call and stakeholders informed
+
+<span class="gu">## Implementation steps</span>
+<span class="k">1.</span> ...
+
+<span class="gu">## Verification</span>
+&lt;Health checks, dashboards, and smoke tests that prove it worked.&gt;
+
+<span class="gu">## Rollback plan</span>
+<span class="k">-</span><span class="w"> </span>Trigger: &lt;e.g. error rate &gt; 2% for 5 minutes&gt;
+<span class="k">-</span><span class="w"> </span>Steps: ...
+<span class="k">-</span><span class="w"> </span>Time to roll back: &lt;minutes&gt;
+</code></pre></div>
+<h2 id="production-incident">Production Incident<a class="headerlink" href="#production-incident" title="Permanent link">&para;</a></h2>
+<p>A <strong>production incident</strong> is an unplanned interruption or degradation of a live service. Examples are an outage, a spike in errors, a slowdown, or a data or security problem. A bug lives in the code. An incident is happening to users <em>now</em>. The first job is to <strong>restore service</strong> with a rollback, failover, feature-flag kill switch, or scale-up. Finding the root cause comes later.</p>
+<div class="highlight"><pre><span></span><code>Detect → Declare (assign SEV) → Mitigate → Resolve → Follow up (postmortem + action items)
+</code></pre></div>
+<p>In ITIL terms, the underlying cause of one or more incidents is a <strong>problem</strong>, tracked separately until it is fixed for good.</p>
+<h3 id="severity-levels">Severity Levels<a class="headerlink" href="#severity-levels" title="Permanent link">&para;</a></h3>
+<p>Exact numbers vary by company: some start at SEV0, some say P1–P5. What matters is that the definitions are written down before 3 a.m., so nobody argues about them during an outage.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SEV1</strong></td>
+<td>Critical: core service down, data loss, or security breach for many customers</td>
+<td>Checkout down for everyone</td>
+<td>Page immediately, 24/7; incident commander assigned; updates every 30 min; postmortem required</td>
+</tr>
+<tr>
+<td><strong>SEV2</strong></td>
+<td>Major: key feature down or badly degraded for a subset; no good workaround</td>
+<td>Card payments failing in one region</td>
+<td>Page on-call; regular updates; postmortem required</td>
+</tr>
+<tr>
+<td><strong>SEV3</strong></td>
+<td>Minor: partial degradation; workaround exists</td>
+<td>Report export slow</td>
+<td>Business hours; tracked as a ticket</td>
+</tr>
+<tr>
+<td><strong>SEV4</strong></td>
+<td>Low: cosmetic or internal-only</td>
+<td>Typo in the admin UI</td>
+<td>Normal backlog</td>
+</tr>
+</tbody>
+</table>
+<h3 id="incident-roles">Incident Roles<a class="headerlink" href="#incident-roles" title="Permanent link">&para;</a></h3>
+<p>Clear roles stop five people from debugging the same thing while nobody updates the customers. See <a href="https://sre.google/sre-book/managing-incidents/">Google SRE: Managing Incidents ↗</a> and the <a href="https://response.pagerduty.com/">PagerDuty Incident Response guide ↗</a>.</p>
+<ul>
+<li><strong>Incident Commander (IC):</strong> coordinates, decides, and delegates. The IC does <em>not</em> debug.</li>
+<li><strong>Ops / Tech Lead:</strong> hands on keyboard. Investigates and applies the mitigation.</li>
+<li><strong>Communications Lead:</strong> posts updates to stakeholders and the status page on a fixed schedule.</li>
+<li><strong>Scribe:</strong> records the timeline of what was seen, tried, and decided. This is the raw material for the postmortem.</li>
+</ul>
+<p>On a small team one person may hold several roles, but someone must say "I am the IC" out loud. How severity and on-call connect to escalation is covered in <a href="../../career/becoming_senior/#escalation-is-a-designed-path">Becoming Senior → Escalation</a>. Step-by-step responses to known failures belong in <a href="../../tool_tip/server_operations/#11-runbooks">runbooks</a>.</p>
+<p><strong>Template: Incident ticket</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># [INC-&lt;id&gt;] [SEV&lt;n&gt;] &lt;Symptom users see: "Login failing for ~40% of EU users"&gt;</span>
+
+Status: Investigating / Identified / Mitigated / Resolved
+Detected: &lt;time, timezone&gt; by &lt;alert / customer / staff&gt;
+IC: &lt;name&gt; · Ops lead: &lt;name&gt; · Comms: &lt;name&gt; · Scribe: &lt;name&gt;
+Channel / bridge: &lt;#inc-1234&gt; · &lt;call link&gt;
+
+<span class="gu">## Impact</span>
+<span class="k">-</span><span class="w"> </span>Who / how many are affected:
+<span class="k">-</span><span class="w"> </span>Services / regions:
+<span class="k">-</span><span class="w"> </span>Started at:
+
+<span class="gu">## Current hypothesis</span>
+...
+
+<span class="gu">## Actions taken (newest first)</span>
+<span class="k">-</span><span class="w"> </span>14:32 Rolled back release 2.14.3 → 2.14.2
+<span class="k">-</span><span class="w"> </span>14:20 Declared SEV2, paged auth on-call
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Next update</span>
+&lt;time&gt;
+</code></pre></div>
+<p><strong>Template: Status update</strong> (keep the same shape every time)</p>
+<div class="highlight"><pre><span></span><code>[SEV2] Login failures – EU – Update #3 – 14:45 UTC
+Status: Mitigated
+Impact: About 40% of EU logins failed between 13:58 and 14:35 UTC. Logins are succeeding now.
+What we did: Rolled back release 2.14.3.
+Next: Monitoring for 30 minutes; root-cause investigation continues.
+Next update: 15:15 UTC, or sooner if anything changes.
+</code></pre></div>
+<h2 id="postmortem">Postmortem<a class="headerlink" href="#postmortem" title="Permanent link">&para;</a></h2>
+<p>A <strong>postmortem</strong> (also <em>incident review</em> or <em>RCA report</em>) is a written record of an incident. It covers the impact, the timeline, the root causes, and the actions that stop it from happening again. Write one for every SEV1/SEV2 and for any incident with data loss, user-visible downtime, a manual rollback, or a monitoring miss.</p>
+<p>A postmortem must be <strong>blameless</strong>. Write about how the <em>system</em> let a reasonable person make the mistake. If the answer is "Bob ran the wrong command", the real question is why the tooling let that command reach production. People who fear blame hide information, and then the same incident happens again.</p>
+<p>To find root causes, ask <strong><a href="https://en.wikipedia.org/wiki/Five_whys">5 Whys ↗</a></strong> until you reach something you can change in the system:</p>
+<div class="highlight"><pre><span></span><code>Logins failed.
+ Why? The auth service rejected valid tokens.
+ Why? The new release read the signing key from a renamed config variable.
+ Why? The rename was missed in the production config.
+ Why? Staging and production configs are edited separately by hand.
+ Why? There is no config validation step in the deploy pipeline.   ← fix this
+</code></pre></div>
+<p>See <a href="https://sre.google/sre-book/postmortem-culture/">Google SRE: Postmortem Culture ↗</a> and its <a href="https://sre.google/sre-book/example-postmortem/">example postmortem ↗</a>. For reading other companies' postmortems as practice, see <a href="../../career/senior_curriculum/#the-postmortem-habit">The Postmortem Habit</a>.</p>
+<p><strong>Template: Postmortem</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Postmortem: &lt;Incident title&gt; (INC-&lt;id&gt;)</span>
+
+Date: ... · Authors: ... · Status: Draft / In review / Final
+Severity: SEV&lt;n&gt; · Duration: &lt;start&gt; → &lt;end&gt; (&lt;total&gt;)
+
+<span class="gu">## Summary</span>
+&lt;Two or three sentences: what happened, the impact, and how it was resolved.&gt;
+
+<span class="gu">## Impact</span>
+<span class="k">-</span><span class="w"> </span>Users / customers affected:
+<span class="k">-</span><span class="w"> </span>SLA / SLO impact (error budget consumed):
+<span class="k">-</span><span class="w"> </span>Revenue / data loss:
+
+<span class="gu">## Timeline (UTC)</span>
+| Time | Event |
+|---|---|
+| 13:52 | Release 2.14.3 deploy starts |
+| 13:58 | Alert: login success rate &lt; 90% |
+| 14:20 | SEV2 declared |
+| 14:32 | Rollback started |
+| 14:35 | Logins recovered |
+
+<span class="gu">## Root cause</span>
+&lt;The chain of events (5 Whys) down to the system weakness.&gt;
+
+<span class="gu">## Trigger</span>
+&lt;What set it off: deploy, config change, traffic spike, dependency failure.&gt;
+
+<span class="gu">## Detection</span>
+&lt;How we found out and how long it took. Could monitoring have caught it sooner?&gt;
+
+<span class="gu">## Resolution</span>
+&lt;What restored service.&gt;
+
+<span class="gu">## What went well</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## What went wrong</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Where we got lucky</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Action items</span>
+| Action | Type | Owner | Ticket | Due |
+|---|---|---|---|---|
+| Validate config keys in the deploy pipeline | Prevent | ... | OPS-123 | ... |
+| Alert on login success rate, not only on 5xx | Detect | ... | OPS-124 | ... |
+| Add the rollback steps to the auth runbook | Mitigate | ... | OPS-125 | ... |
+</code></pre></div>
+<p>Action items without an owner and a ticket don't get done. Review them until they are closed.</p>
+<h2 id="sprint">Sprint<a class="headerlink" href="#sprint" title="Permanent link">&para;</a></h2>
+<p>A <strong>sprint</strong> is a fixed timebox of one month or less, usually two weeks, in which the team turns backlog items into a usable increment. The Scrum events, roles, and artifacts are summarized in <a href="../lifecycle/#agile-scrum-kanban">Lifecycle → Agile, Scrum, Kanban</a>. This section gives the templates. The time limits below are the <a href="https://scrumguides.org/scrum-guide.html">Scrum Guide's ↗</a> maximums for a one-month sprint; shorter sprints use shorter events.</p>
+<h3 id="sprint-planning">Sprint Planning<a class="headerlink" href="#sprint-planning" title="Permanent link">&para;</a></h3>
+<p>At most 8 hours. Planning answers three questions: <em>why</em> this sprint is valuable (the <strong>Sprint Goal</strong>), <em>what</em> can be done, and <em>how</em> the work will get done. Base the plan on real <strong>capacity</strong>: people's days available after leave and meetings, checked against recent <strong>velocity</strong> (points finished per sprint).</p>
+<p><strong>Template: Sprint plan</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Sprint &lt;n&gt; — &lt;start date&gt; → &lt;end date&gt;</span>
+
+<span class="gu">## Sprint goal</span>
+&lt;One sentence describing the outcome: "Customers can pay with saved cards."&gt;
+
+<span class="gu">## Capacity</span>
+| Member | Days available | Notes |
+|---|---|---|
+| ... | 9 / 10 | 1 day leave |
+Velocity (average of last 3 sprints): &lt;n&gt; points · Planned this sprint: &lt;n&gt; points
+
+<span class="gu">## Selected items</span>
+| Key | Title | Points | Owner |
+|---|---|---|---|
+| STORY-101 | ... | 5 | ... |
+
+<span class="gu">## Risks and dependencies</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Explicitly not in this sprint</span>
+<span class="k">-</span><span class="w"> </span>...
+</code></pre></div>
+<h3 id="daily-scrum">Daily Scrum<a class="headerlink" href="#daily-scrum" title="Permanent link">&para;</a></h3>
+<p>At most 15 minutes, for the developers. Inspect progress toward the Sprint Goal and re-plan the next day. The classic three questions (yesterday / today / blockers) are optional. Walking the board from right to left, starting with the items closest to done, often works better. Solve problems <em>after</em> the stand-up, with only the people who need to be there.</p>
+<h3 id="sprint-review">Sprint Review<a class="headerlink" href="#sprint-review" title="Permanent link">&para;</a></h3>
+<p>At most 4 hours. Show the working increment to stakeholders and adapt the backlog from their feedback. Treat it as a working session, not a slide show.</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Sprint &lt;n&gt; review — agenda</span>
+<span class="k">1.</span> Sprint goal: met / partly / not met (1 min)
+<span class="k">2.</span> Demo of done items, in the product, not on slides (20 min)
+<span class="k">3.</span> What wasn't finished and why (5 min)
+<span class="k">4.</span> Stakeholder feedback → new or re-ordered backlog items (15 min)
+<span class="k">5.</span> What's next: the likely goal of the next sprint (5 min)
+</code></pre></div>
+<h3 id="sprint-retrospective">Sprint Retrospective<a class="headerlink" href="#sprint-retrospective" title="Permanent link">&para;</a></h3>
+<p>At most 3 hours. The team looks at <em>how</em> it worked (people, process, tools, Definition of Done) and picks a few improvements. Many teams open by reading Norm Kerth's <em>Prime Directive</em>: everyone did the best job they could, given what they knew at the time. Vary the format so retros don't go stale. Common formats are <em>Start / Stop / Continue</em>, <em>Went well / To improve / Actions</em>, and <em>4Ls</em> (Liked, Learned, Lacked, Longed for).</p>
+<p><strong>Template: Retrospective</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Retro — Sprint &lt;n&gt;</span>
+
+Sprint goal met? yes / partly / no — &lt;one line why&gt;
+Last retro's actions: &lt;done / not done, and why&gt;
+
+<span class="gu">## Start</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Stop</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Continue</span>
+<span class="k">-</span><span class="w"> </span>...
+
+<span class="gu">## Actions (max 3)</span>
+| Action | Owner | Due |
+|---|---|---|
+| ... | ... | ... |
+</code></pre></div>
+<p>Pick at most three actions, give each an owner, and check them at the start of the next retro. Twenty sticky notes and no owners change nothing.</p>
+<h2 id="pull-request-merge-request">Pull Request / Merge Request<a class="headerlink" href="#pull-request-merge-request" title="Permanent link">&para;</a></h2>
+<p>A <strong>pull request (PR)</strong> (GitHub, Bitbucket, Azure Repos), or <strong>merge request (MR)</strong> (GitLab), proposes merging a branch. It is where code review happens. Keep each one small and about one thing; <a href="../lifecycle/#code-review">Lifecycle → Code Review</a> has the size rules, and <a href="../code_review/">Code Review</a> covers what reviewers look for.</p>
+<h3 id="mr-title-and-description">MR Title and Description<a class="headerlink" href="#mr-title-and-description" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Title:</strong> write it like a commit subject, for example <code>feat(checkout): save shipping address</code>. With <em>squash merge</em>, the title becomes the commit on <code>main</code>, so it has to make sense in <code>git log</code> a year from now. Add the ticket key if your tools link by key: <code>SHOP-101 feat(checkout): …</code>.</li>
+<li><strong>Draft:</strong> open it early as a draft (a <em>draft pull request</em> on GitHub, a <code>Draft:</code> title prefix on GitLab) to get CI results and early comments. Mark it ready when you want a full review.</li>
+<li><strong>Description:</strong> a reviewer should understand <em>why</em> the change exists and <em>how to verify it</em> without asking you.</li>
+</ul>
+<p><strong>Template: PR / MR description</strong> (<code>.github/pull_request_template.md</code> or <code>.gitlab/merge_request_templates/Default.md</code>)</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## What</span>
+&lt;Summary of the change.&gt;
+
+<span class="gu">## Why</span>
+Closes <span class="ni">#123</span> / SHOP-101. &lt;Context the reviewer needs.&gt;
+
+<span class="gu">## How</span>
+&lt;Approach, and anything non-obvious or that you want feedback on.&gt;
+
+<span class="gu">## How to test</span>
+<span class="k">1.</span> ...
+
+<span class="gu">## Screenshots / recordings</span>
+&lt;For UI changes.&gt;
+
+<span class="gu">## Risk and rollout</span>
+&lt;Breaking changes, migrations, feature flags, how to roll back.&gt;
+
+<span class="gu">## Checklist</span>
+<span class="k">- [ ]</span> Tests added or updated
+<span class="k">- [ ]</span> Docs / changelog updated
+<span class="k">- [ ]</span> No secrets, PII, or debug code
+</code></pre></div>
+<h3 id="linking-issues">Linking Issues<a class="headerlink" href="#linking-issues" title="Permanent link">&para;</a></h3>
+<p>Mention the issue in the PR description or a commit message, and the tools connect them. A <em>closing keyword</em> such as <code>Closes</code> also closes the issue on merge:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Write</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub</strong></td>
+<td><code>Closes #123</code>, <code>Fixes #123</code>, <code>Resolves #123</code></td>
+<td>The issue closes when the PR merges into the default branch (<a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue">docs ↗</a>)</td>
+</tr>
+<tr>
+<td><strong>GitLab</strong></td>
+<td><code>Closes #123</code>, <code>Fixes #123</code>, <code>Resolves #123</code></td>
+<td>The issue closes when the MR merges into the default branch (<a href="https://docs.gitlab.com/user/project/issues/managing_issues/">docs ↗</a>)</td>
+</tr>
+<tr>
+<td><strong>Jira</strong></td>
+<td>The issue key, <code>SHOP-101</code>, in the branch name, commit message, or PR title</td>
+<td>Branches, commits, and PRs show up on the Jira issue (needs the GitHub / GitLab / Bitbucket integration). <a href="https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/">Smart Commits ↗</a> such as <code>SHOP-101 #comment …</code> can also comment, log time, or move the issue</td>
+</tr>
+<tr>
+<td><strong>Any</strong></td>
+<td>A plain <code>#123</code> or <code>Refs #123</code></td>
+<td>Links without closing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="commit-message">Commit Message<a class="headerlink" href="#commit-message" title="Permanent link">&para;</a></h3>
+<p>A commit message is written once and read many times: in <code>git log</code>, <code>git blame</code>, reviews, and generated changelogs. The widely used rules come from <a href="https://cbea.ms/git-commit/">How to Write a Git Commit Message ↗</a>:</p>
+<ol>
+<li>Separate the subject from the body with a blank line.</li>
+<li>Keep the subject short: about 50 characters, 72 at most.</li>
+<li>Use the imperative mood: "Add", "Fix", "Remove", not "Added" or "Fixes".</li>
+<li>Don't end the subject with a period.</li>
+<li>Wrap the body at 72 characters.</li>
+<li>Use the body to explain <em>what</em> changed and <em>why</em>. The diff already shows <em>how</em>.</li>
+</ol>
+<p>Many teams prefix the subject with a <a href="../lifecycle/#conventional-commits">Conventional Commits</a> type (<code>feat</code>, <code>fix</code>, <code>docs</code>, …). That lets tools generate the <a href="../sdlc_documents/#changelog">changelog</a> and the next version number. The <a href="https://www.conventionalcommits.org/en/v1.0.0/">spec ↗</a> also defines a <code>BREAKING CHANGE:</code> footer.</p>
+<p><strong>Template: Commit message</strong></p>
+<div class="highlight"><pre><span></span><code>&lt;type&gt;(&lt;scope&gt;): &lt;imperative summary, ~50 chars&gt;
+
+&lt;What changed and WHY, wrapped at 72 columns. What was the problem?
+Why this approach instead of the alternatives? Anything surprising?&gt;
+
+BREAKING CHANGE: &lt;what breaks and how to migrate&gt;   (only if any)
+Refs: SHOP-101
+Closes #482
+</code></pre></div>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code>fix(auth): read signing key from AUTH_SIGNING_KEY
+
+Release 2.14.3 renamed JWT_KEY to AUTH_SIGNING_KEY, but production
+config still set the old name, so token validation used an empty key
+and rejected every login (INC-1234).
+
+Read the new name, fall back to the old one with a deprecation
+warning, and fail at startup if neither is set.
+
+Closes #482
+</code></pre></div>
+<p>Messages like <code>fix</code>, <code>update</code>, <code>WIP</code>, or <code>address review comments</code> tell a reader nothing. If the team squash-merges, only the MR title and description reach <code>main</code>, so work-in-progress commits on the branch don't matter much. If you merge or rebase <em>without</em> squashing, every commit lands on <code>main</code>, so clean them up first with an <a href="../git/#5-interactive-rebase-cleaning-up-history">interactive rebase</a>.</p>
+<p>To get the template every time you commit, save it as <code>~/.gitmessage</code> and run <code>git config --global commit.template ~/.gitmessage</code>.</p>
+<h2 id="other-item-types">Other Item Types<a class="headerlink" href="#other-item-types" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Initiative / Theme</strong></td>
+<td>A group of epics serving one strategic goal; spans quarters</td>
+</tr>
+<tr>
+<td><strong>Feature</strong></td>
+<td>Azure Boards / SAFe level between Epic and Story: a shippable capability</td>
+</tr>
+<tr>
+<td><strong>PBI</strong></td>
+<td>Product Backlog Item: Scrum's generic name for any backlog entry</td>
+</tr>
+<tr>
+<td><strong>Improvement / Enhancement</strong></td>
+<td>A change to existing behavior that isn't a bug</td>
+</tr>
+<tr>
+<td><strong>Technical Debt</strong></td>
+<td>Work to pay back past shortcuts: refactoring, upgrades, missing tests. Record the cost of <em>not</em> doing it, or it never gets prioritized</td>
+</tr>
+<tr>
+<td><strong>Chore</strong></td>
+<td>Maintenance with no user-visible change: dependency bumps, CI tweaks</td>
+</tr>
+<tr>
+<td><strong>Hotfix</strong></td>
+<td>Urgent fix shipped straight to production, often after an incident. See <a href="../lifecycle/#branching-models">Lifecycle → Branching Models</a></td>
+</tr>
+<tr>
+<td><strong>Problem</strong> (ITIL)</td>
+<td>The underlying cause of one or more incidents, managed until it is permanently fixed</td>
+</tr>
+<tr>
+<td><strong>Known Error</strong> (ITIL)</td>
+<td>A problem whose root cause and workaround are documented</td>
+</tr>
+<tr>
+<td><strong>Service Request</strong></td>
+<td>A routine user request such as access, a password reset, or a new environment. It is not a failure</td>
+</tr>
+<tr>
+<td><strong>Impediment / Blocker</strong></td>
+<td>Something stopping the team. Removing it is the Scrum Master's job</td>
+</tr>
+<tr>
+<td><strong>Action Item</strong></td>
+<td>A follow-up from a retro or postmortem, with an owner and a due date</td>
+</tr>
+<tr>
+<td><strong>RAID log</strong></td>
+<td>Project-level list of Risks, Assumptions, Issues, and Dependencies</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where-templates-live">Where Templates Live<a class="headerlink" href="#where-templates-live" title="Permanent link">&para;</a></h2>
+<p>Put templates where people create the items, so they are used by default:</p>
+<ul>
+<li><strong>GitHub:</strong> issue templates and forms in <code>.github/ISSUE_TEMPLATE/</code>, and a PR template at <code>.github/pull_request_template.md</code>. See <a href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository">GitHub: Issue templates ↗</a>.</li>
+<li><strong>GitLab:</strong> <code>.gitlab/issue_templates/*.md</code> and <code>.gitlab/merge_request_templates/*.md</code>. See <a href="https://docs.gitlab.com/user/project/description_templates/">GitLab: Description templates ↗</a>.</li>
+<li><strong>Azure Boards:</strong> built-in <a href="https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/work-item-template">work item templates ↗</a> pre-fill fields per item type.</li>
+<li><strong>Jira:</strong> make the key fields required per issue type, such as severity, environment, and acceptance criteria. Keep the long-form templates (CR, postmortem, ADR) in the team wiki or the repo and link to them.</li>
+<li><strong>Git:</strong> a commit message template in <code>~/.gitmessage</code>, enabled with <code>git config --global commit.template ~/.gitmessage</code>.</li>
+</ul>
+<p>Document templates (BRD, SRS, design doc, ADR, test plan, changelog, release notes, runbook) and where to keep them are on <a href="../sdlc_documents/#where-documents-live">SDLC Documents &amp; Templates</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.sections", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax-init.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
