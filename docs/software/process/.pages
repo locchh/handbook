@@ -5,3 +5,4 @@ nav:
   - "SDLC Documents & Templates": sdlc_documents.md
   - "Git: Merge vs Rebase": git.md
   - Code Review: code_review.md
+  - "Delivery & Productivity Metrics": delivery_metrics.md
